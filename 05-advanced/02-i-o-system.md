@@ -1,30 +1,41 @@
+# 02  I O System
+
 스파이더젠에서는 컴포넌트 매핑 방식의 뛰어난 I/O 시스템을 제공합니다.
 
-## Library 추가
+### Library 추가
 
-스파이더젠에서 I/O 통신을 위해서는 Library에 통신 관련 라이브러리를 추가해야 합니다. 
+스파이더젠에서 I/O 통신을 위해서는 Library에 통신 관련 라이브러리를 추가해야 합니다.
 
 ![](https://wikidocs.net/images/page/24910/IO_lib.png)
 
+**`AppManager.js`: Indicator 관련 클래스**
 
-#### **`AppManager.js`**: Indicator 관련 클래스
-#### **`encoding-indexes.js`**: euc-kr 인코딩 정보가 들어있는 클래스
-#### **`encoding.js`**: 인코딩 클래스
-#### **`ABuffer.js`**: 버퍼 관리 클래스
-#### **`AQuery.js`**: AP 정보인 쿼리파일을 로드하여 가지고 있는 클래스
-#### **`AQueryData.js`**: 데이터를 구조화하여 가지고 있는 클래스
-#### **`QueryManager.js`**: 전문을 구성하는 클래스
-#### **`NetworkIO.js`**: 네트워크 송수신 클래스
-#### **`HttpIO.js`**: 웹서버 송수신 클래스
-#### **`SocketIO.js`**: 소켓 송수신 클래스
-#### **`WebsocketIO.js`**: 웹소켓 송수신 클래스
+**`encoding-indexes.js`: euc-kr 인코딩 정보가 들어있는 클래스**
 
-## QueryManager 객체 초기화
+**`encoding.js`: 인코딩 클래스**
 
-#### 1. I/O 데이터 통신을 위해서는 QueryManager 객체를 생성하고 초기화 해야 합니다. 
+**`ABuffer.js`: 버퍼 관리 클래스**
 
-#### 2. 대부분 초기화는 각 프로젝트 Application 파일 (프로젝트명App.js)의 onReady 메소드에 추가합니다. 
- 
+**`AQuery.js`: AP 정보인 쿼리파일을 로드하여 가지고 있는 클래스**
+
+**`AQueryData.js`: 데이터를 구조화하여 가지고 있는 클래스**
+
+**`QueryManager.js`: 전문을 구성하는 클래스**
+
+**`NetworkIO.js`: 네트워크 송수신 클래스**
+
+**`HttpIO.js`: 웹서버 송수신 클래스**
+
+**`SocketIO.js`: 소켓 송수신 클래스**
+
+**`WebsocketIO.js`: 웹소켓 송수신 클래스**
+
+### QueryManager 객체 초기화
+
+**1. I/O 데이터 통신을 위해서는 QueryManager 객체를 생성하고 초기화 해야 합니다.**
+
+**2. 대부분 초기화는 각 프로젝트 Application 파일 (프로젝트명App.js)의 onReady 메소드에 추가합니다.**
+
 ```javascript
  
 onReady() 
@@ -38,28 +49,28 @@ onReady()
     this.queryManager.startManager(‘127.0.0.1’, 80); 
 };  
  
-``` 
- 
-#### 초기화 순서 
+```
+
+**초기화 순서**
 
 1. **QueryManager 객체를 생성합니다.**
-2. **QueryManager에서 사용할 IO 객체를 생성합니다.** 
-3. **HttpIO : http 통신을 위한 I/O 객체 입니다.** 
-    * WebsocketIO : WebSocket 통신을 위한 I/O 객체 입니다. 
-    * SocketIO : TCP/IP 소켓 통신을 위한 I/O 객체 입니다. 
-    * QueryManager에 I/O 객체를 설정합니다. 
-4. **전송을 시작합니다.**  
+2. **QueryManager에서 사용할 IO 객체를 생성합니다.**
+3. **HttpIO : http 통신을 위한 I/O 객체 입니다.**
+   * WebsocketIO : WebSocket 통신을 위한 I/O 객체 입니다.
+   * SocketIO : TCP/IP 소켓 통신을 위한 I/O 객체 입니다.
+   * QueryManager에 I/O 객체를 설정합니다.
+4. **전송을 시작합니다.**
 
-## 쿼리파일 추가 방법
+### 쿼리파일 추가 방법
 
-프로젝트 뷰의 Query 폴더에 쿼리파일을 추가 합니다. 마우스 우측 버튼을 클릭해서 컨텍스트 메뉴를 오픈 합니다. 
+프로젝트 뷰의 Query 폴더에 쿼리파일을 추가 합니다. 마우스 우측 버튼을 클릭해서 컨텍스트 메뉴를 오픈 합니다.
 
 ![](https://wikidocs.net/images/page/24912/%EC%BF%BC%EB%A6%AC%ED%8C%8C%EC%9D%BC%EC%B6%94%EA%B0%80.png)
 
 * ( **기존 쿼리파일 추가** ) Add existing files... 를 클릭 한 후 이미 존재하는 쿼리파일을 추가합니다.
 * ( **쿼리파일 새로 생성** ) Query Maker 를 클릭하여 아래 단계를 통해 신규 쿼리파일을 생성합니다.
 
-## Query Maker 를 이용하여 신규 쿼리파일생성
+### Query Maker 를 이용하여 신규 쿼리파일생성
 
 ![](https://wikidocs.net/images/page/24912/queryMaker%EC%84%A4%EB%AA%85.png)
 
@@ -80,16 +91,15 @@ onReady()
 
 파일을 열면 json 형식의 쿼리정보를 담은 쿼리파일을 확인할 수 있습니다.
 
-<예시>
-![](https://wikidocs.net/images/page/24912/%EC%BF%BC%EB%A6%AC%EC%83%9D%EC%84%B1%ED%9B%84%EB%A9%94%EB%89%B4.png)
+<예시> ![](https://wikidocs.net/images/page/24912/%EC%BF%BC%EB%A6%AC%EC%83%9D%EC%84%B1%ED%9B%84%EB%A9%94%EB%89%B4.png)
 
 **이 때 새로운 InBlock 이나 OutBlock 을 추가하기 위해서는 .qry 파일을 열어서 직접 타이핑하여 추가하는 방법과 QueryMaker 에서 키보드 Tab 버튼을 클릭하여 추가하는 방법이 있습니다.**
 
-### 1. .qry 파일 직접 타이핑하여 수정하기
+#### 1. .qry 파일 직접 타이핑하여 수정하기
 
 ![](https://wikidocs.net/images/page/24912/%EC%BF%BC%EB%A6%AC%EC%BD%94%EB%93%9C%EC%88%98%EC%A0%95.png)
 
-### 2. Query Maker 에서 새로운 InBlock/OutBlock 추가
+#### 2. Query Maker 에서 새로운 InBlock/OutBlock 추가
 
 예시로 InBlock1 아래에 InBlock2 를 생성하려면 오른쪽 버튼을 클릭하여 Add InBlock 을 클릭합니다.
 
@@ -101,7 +111,7 @@ onReady()
 
 그 후 위 단계를 따라서 들어갈 내용을 차례대로 입력하면 됩니다.
 
-### 3. 생성한 Query 호출
+#### 3. 생성한 Query 호출
 
 사용할 화면 .js 에서 아래처럼 함수를 만들면 Query 를 호출하고 데이터를 송신 받을 수 있습니다.
 
@@ -137,22 +147,18 @@ sendData() {
 };  
 ```
 
-## 컴포넌트에 Query 매핑하기
+### 컴포넌트에 Query 매핑하기
 
 .lay 에서 Query 를 매핑할 컴포넌트를 오른쪽 클릭합니다.
 
 ![](https://wikidocs.net/images/page/24912/%EC%BF%BC%EB%A6%AC%EB%A7%A4%ED%95%91.png)
- 
- All Query 에서 매핑할 쿼리를 선택하고, 컴포넌트에 매핑할 OutBlock 데이터를 더블클릭하여 등록한 후 적용을 눌러 저장합니다.
- ![](https://wikidocs.net/images/page/24912/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%A4%ED%95%91.png)
+
+All Query 에서 매핑할 쿼리를 선택하고, 컴포넌트에 매핑할 OutBlock 데이터를 더블클릭하여 등록한 후 적용을 눌러 저장합니다. ![](https://wikidocs.net/images/page/24912/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A7%A4%ED%95%91.png)
 
 그 후 위에 작성한 함수를 호출한다면 testQuery01 의 result(결과값) 이 ALabel 에 매핑되어 데이터가 출력되는 것을 확인할 수 있습니다.
 
-###  매핑관련 참고사항 
-* 각 컴포넌트마다 매핑 가능한 개수는 정해져 있습니다. 
-* View, Layout 컴포넌트는 자식 컴포넌트의 개수 만큼 매핑이 가능합니다. 
-* 또한, 매핑 할 항목이 연속되어 있는 경우 컴포넌트도 연속되게 생성하고 다중 추가하면 편리합니다.   
- 
- 
- 
- 
+#### 매핑관련 참고사항
+
+* 각 컴포넌트마다 매핑 가능한 개수는 정해져 있습니다.
+* View, Layout 컴포넌트는 자식 컴포넌트의 개수 만큼 매핑이 가능합니다.
+* 또한, 매핑 할 항목이 연속되어 있는 경우 컴포넌트도 연속되게 생성하고 다중 추가하면 편리합니다.
