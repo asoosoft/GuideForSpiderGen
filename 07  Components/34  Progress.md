@@ -1,16 +1,20 @@
-![](https://wikidocs.net/images/page/24858/progress.png) 
+# 34  Progress
 
-**프로그래스(AProgress)** 는 진행 상황을 시각적으로 표시하는 데 사용되는 컴포넌트입니다. <br />
+![](https://wikidocs.net/images/page/24858/progress.png)
+
+**프로그래스(AProgress)** 는 진행 상황을 시각적으로 표시하는 데 사용되는 컴포넌트입니다.\
+
 
 프로그래스는 작업의 완료 비율을 나타내는 데 유용하며, 사용자에게 현재 진행 상태를 알려주는 역할을 합니다.
 
-    
-## Example
-AProgress 컴포넌트는 파일 업로드, 다운로드 진행 상황, 작업 처리 상태 등을 사용자에게 시각적으로 알릴 때 유용하게 사용됩니다.<br />
+### Example
 
- 프로그레스 바의 값을 동적으로 업데이트하여 사용자에게 실시간으로 진행 상황을 보여줄 수 있습니다.
+AProgress 컴포넌트는 파일 업로드, 다운로드 진행 상황, 작업 처리 상태 등을 사용자에게 시각적으로 알릴 때 유용하게 사용됩니다.\
 
-#### 1️⃣ 레이아웃에서 생성
+
+프로그레스 바의 값을 동적으로 업데이트하여 사용자에게 실시간으로 진행 상황을 보여줄 수 있습니다.
+
+**1️⃣ 레이아웃에서 생성**
 
 ![](https://wikidocs.net/images/page/24858/pg_res1.png)
 
@@ -45,13 +49,9 @@ class  MainView  extends  AView
 }
 ```
 
+***
 
-
-
----
-
-
-#### 2️⃣ 코드에서 생성
+**2️⃣ 코드에서 생성**
 
 ![](https://wikidocs.net/images/page/24858/pg_res2.png)
 
@@ -85,4 +85,4 @@ createProgress()
 	this.view.$ele.append(progress.$ele);
 }
 
-``` 
+```

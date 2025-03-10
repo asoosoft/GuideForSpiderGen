@@ -1,16 +1,20 @@
-![](https://wikidocs.net/images/page/274102/spacer.png) 
+# 41 Spacer
 
-**스페이서(ASpacer)** 주로 레이아웃에서 공간을 확보하거나 다른 컴포넌트 간의 간격을 조정하는 데 사용됩니다. <br>
+![](https://wikidocs.net/images/page/274102/spacer.png)
+
+**스페이서(ASpacer)** 주로 레이아웃에서 공간을 확보하거나 다른 컴포넌트 간의 간격을 조정하는 데 사용됩니다.\
+
+
 > 스페이서 컴포넌트는 자체적으로는 기능을 수행하지 않습니다.
 
+### Example
 
-## Example
-
-#### 1️⃣ 레이아웃에서 생성
+**1️⃣ 레이아웃에서 생성**
 
 ① Spacer 컴포넌트를 클릭한 후 Placement Pane > Size에서 설정
 
 ② Spacer 컴포넌트에 ID를 부여한 후 js에서 밑 코드 작성
+
 ```javascript
 // 2. js에서 Spacer 설정하기
 // 너비 100%, 높이 50px로 설정
@@ -18,10 +22,12 @@ this.spacer.setSize('50px', '50px');
 // 위치 설정
 this.spacer.setPosition('left: 0px, top: 0px');
 ```
-<br>
-<br>
 
-#### 2️⃣ 코드에서 생성
+\
+\
+
+
+**2️⃣ 코드에서 생성**
 
 ```javascript
 
@@ -42,5 +48,7 @@ onInitDone()
 }
 
 ```
+
 ![](https://wikidocs.net/images/page/274102/spacer2.png)
-#### <사진 - flexLayout 내부에 spacer 컴포넌트를 사용한 예시>
+
+**<사진 - flexLayout 내부에 spacer 컴포넌트를 사용한 예시>**
