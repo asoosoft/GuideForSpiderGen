@@ -1,8 +1,8 @@
 # Table of contents
 
-* [SpiderGen 제품 설명서](README.md)
+* [00 Summary](README.md)
 * [01  Introduce](<01  Introduce.md>)
-* [SpiderGen 다운로드 및 설치](<02  Installation.md>)
+* [02 Installation](<02  Installation.md>)
 * [03  Start Guide](03-start-guide/README.md)
   * [01  프로젝트 생성](03-start-guide/01.md)
   * [02  컴포넌트 배치 및 이벤트 연결](03-start-guide/02.md)

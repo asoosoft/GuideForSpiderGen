@@ -1,4 +1,6 @@
-# SpiderGen 다운로드 및 설치
+# 02 Installation
+
+## 🕷️ SpiderGen 다운로드 및 설치
 
 ## SpiderGen 다운로드
 
