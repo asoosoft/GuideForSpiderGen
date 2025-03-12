@@ -7,7 +7,7 @@
   * [01 프로젝트 생성](03-start-guide/01.md)
   * [02 컴포넌트 배치 및 이벤트 연결](03-start-guide/02.md)
   * [03 빌드 및 실행 (Web)](03-start-guide/03.md)
-  * [04 모바일](03-start-guide/04.md)
+  * [04 빌드 및 실행(Mobile)](03-start-guide/04.md)
 * [04 Basic](04-basic/README.md)
   * [Component System](04-basic/01-component-system.md)
   * [02 Layout](04-basic/02-layout.md)
