@@ -1,7 +1,7 @@
 # Table of contents
 
 * [00 Summary](README.md)
-* [01 Introduce](<01  Introduce.md>)
+* [01 소개](<01  Introduce.md>)
 * [02 Installation](<02  Installation.md>)
 * [03 Start Guide](03-start-guide/README.md)
   * [01 프로젝트 생성](03-start-guide/01.md)
