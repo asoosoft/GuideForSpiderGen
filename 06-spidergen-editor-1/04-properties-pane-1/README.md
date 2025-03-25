@@ -1,2 +1,0 @@
-# 04  Properties Pane
-
