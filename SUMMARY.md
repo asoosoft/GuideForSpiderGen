@@ -21,6 +21,7 @@
   * [06. 화면에 WebPage 추가](<Guide for SpiderGen/04  Basic/06  화면에 WebPage 추가.md>)
   * [07. Style](04-basic/07-style/README.md)
     * [01. Background 및 Border 배경·테두리 디자인](04-basic/07-style/01-background-border.md)
+    * [02. BoxShadow 및 TextShadow 그림자 디자인](04-basic/07-style/02.-boxshadow-textshadow.md)
     * [03. Transform 변형 디자인](04-basic/07-style/03-transform.md)
     * [04. 스타일 생성 및 적용](04-basic/07-style/04.md)
     * [05. 디자인 템플릿 생성 및 적용](04-basic/07-style/05.md)
