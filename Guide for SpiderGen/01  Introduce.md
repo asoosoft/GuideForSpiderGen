@@ -1,4 +1,4 @@
-# 01  Introduce
+# 01. Introduce
 
 ## One Source Multi Use 쉽고 빠른 통합 플랫폼 개발 솔루션
 
@@ -10,11 +10,11 @@
 
 **각각의 OS 및 해상도마다 별도의 개발공수 없이 한 번에 개발 가능**하며, 새롭게 생겨나는 OS에 대한 대처와 다양한 기기로의 확장 및 융합이 용이합니다. (TV,태블릿,카메라,PC 등, 크로스 카테고리 컨버전스)
 
-![](../Guide%20for%20SpiderGen/01%20%20Introduce.images/img1001.png)
+![](../.gitbook/assets/img1001.png)
 
 고객의 다양한 요구를 충족시킬 수 있는 **반응형 레이아웃 및 반응형 테마를 손쉽게 구현**할 수 있어, 빠르게 변화하는 고객의 요구에 대한 대응이 용이합니다.
 
-![](../Guide%20for%20SpiderGen/01%20%20Introduce.images/img1002.png)
+![](../.gitbook/assets/img1002.png)
 
 ## 쉽고 강력한 통합 플랫폼 편집기
 
@@ -28,7 +28,7 @@
 
 ## 대 고객에 대한 최상의 모바일 환경 제공
 
-![](../Guide%20for%20SpiderGen/01%20%20Introduce.images/img1004.png)
+![](../.gitbook/assets/img1004.png)
 
 쉽고 빠른 고객 맞춤형 UI와 다양한 콘텐츠 제공으로 폭넓은 고객 확보가 가능하며, 담당자가 직접 개발하여 고객중심의 향상된 기능의 UI/UX 구현이 가능합니다. 또한, 빠르게 변화하는 스마트 기기에 완벽히 대응하며 신규 기기로의 확장이 쉬워 개발 및 유지보수의 획기적 비용절감으로 경쟁력을 확보할 수 있습니다.
 
@@ -39,4 +39,4 @@
 
 스파이더젠은 클라우드, 음성인식, 빅데이터, IoT, AI, VR 등 SW시장의 4차 산업혁명에 대응한 연동제품을 통하여 전체 SW 개발 시장 성정을 견인합니다.
 
-![](../Guide%20for%20SpiderGen/01%20%20Introduce.images/img_1001234.png)
+![](../.gitbook/assets/img_1001234.png)
