@@ -10,7 +10,7 @@
 
 Android Studio 는 Android 앱 개발을 위한 공식 IDE입니다.
 
-> [Android Studio 공식 홈페이지](../../../Guide%20for%20SpiderGen/03%20%20Start%20Guide/04%20%20%EB%B9%8C%EB%93%9C%20%EB%B0%8F%20%EC%8B%A4%ED%96%89\(Mobile\)/\[https:/developer.android.com/studio)
+> [Android Studio 공식 홈페이지](../../Guide%20for%20SpiderGen/03%20%20Start%20Guide/04%20%20%EB%B9%8C%EB%93%9C%20%EB%B0%8F%20%EC%8B%A4%ED%96%89\(Mobile\)/\[https:/developer.android.com/studio)
 
 (직접 디바이스를 연결 하거나 가상 디바이스로 앱을 실행할 수 있습니다.)
 
@@ -44,7 +44,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 (Cordova 프로젝트에 android 플랫폼을 추가합니다.)
 
-> [코르도바 공식 홈페이지](../../../Guide%20for%20SpiderGen/03%20%20Start%20Guide/04%20%20%EB%B9%8C%EB%93%9C%20%EB%B0%8F%20%EC%8B%A4%ED%96%89\(Mobile\)/cordova.apache.org#getstarted)
+> [코르도바 공식 홈페이지](../../Guide%20for%20SpiderGen/03%20%20Start%20Guide/04%20%20%EB%B9%8C%EB%93%9C%20%EB%B0%8F%20%EC%8B%A4%ED%96%89\(Mobile\)/cordova.apache.org#getstarted)
 
 ### 4. SpiderGen cordova export
 
@@ -154,4 +154,4 @@ Android Studio의 Menu에 진입 후 File -> Open 생성해두었던 `MyApp\plat
 
 필요한 플러그인이 있다면 [cordova 공식 페이지](https://cordova.apache.org/)에서 찾아볼 수 있습니다.
 
-[스파이더젠 프로젝트 안드로이드 앱 코르도바 플러그인 사용방법](https://wikidocs.net/278959)
+[스파이더젠 프로젝트 안드로이드 앱 코르도바 플러그인 사용방법](<../../Guide for SpiderGen/05  Advanced/09  Cordova Hybrid앱 구축하기.md>)
