@@ -1,4 +1,4 @@
-# 09  TextArea
+# TextArea
 
 ![](https://wikidocs.net/images/page/24785/textarea-comp-00.png)
 
@@ -86,5 +86,3 @@ onButtonClick(comp, info, e)
 2. 텍스트를 입력하고 추가 버튼을 클릭해 봅니다.\
    TextArea 컴포넌트 영역에 입력하는 텍스트가 잘 추가되는지 확인합니다.
 3. 마지막으로 지금까지 입력된 내용 다음에 TextArea에 직접 입력을 해봅니다.
-
-![](https://wikidocs.net/images/page/24787/textarea-ex-006.png)

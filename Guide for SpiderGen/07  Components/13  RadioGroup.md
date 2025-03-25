@@ -1,4 +1,4 @@
-# 13  RadioGroup
+# RadioGroup
 
 ![](https://wikidocs.net/images/page/24830/radiogroup-comp-00.png)
 
@@ -19,4 +19,4 @@
 
 ### Example
 
-#### [Radio Button 탭 확인](https://wikidocs.net/24700)
+#### [Radio Button 탭 확인](<05  Radio Button.md>)

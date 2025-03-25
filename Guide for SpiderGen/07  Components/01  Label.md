@@ -1,4 +1,4 @@
-# 01  Label
+# Label
 
 ![](https://wikidocs.net/images/page/24553/label.png)
 
@@ -8,7 +8,7 @@
 
 ### Appearance
 
-공통 Appearance 는 [**6. Global Properties**](https://wikidocs.net/24099) 속성을 참고
+공통 Appearance 는 [**6. Global Properties**](<../06  SpiderGen Editor/04  Properties Pane/02 Appearence.md>) 속성을 참고
 
 ### Attribute
 
