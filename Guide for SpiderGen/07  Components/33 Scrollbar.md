@@ -1,24 +1,28 @@
+# 33 Scrollbar
+
 ![](https://wikidocs.net/images/page/274095/scrollBar.png)
-####
+
+
 
 콘텐츠의 스크롤 가능 영역을 제공하여 사용자가 화면 내에서 콘텐츠를 상하 또는 좌우로 이동할 수 있도록 하는 컴포넌트
 
-## Example
+### Example
 
-**_Framework > afc > AScrollBar.js 추가_**
+_**Framework > afc > AScrollBar.js 추가**_
 
-### 컴포넌트 생성
+#### 컴포넌트 생성
 
-#### 1. listVIew & ScrollBar 컴포넌트 배치
-* listView ID는 listview, ScrollBar ID는 scrollbar 
+**1. listVIew & ScrollBar 컴포넌트 배치**
+
+* listView ID는 listview, ScrollBar ID는 scrollbar
 
 ![](https://wikidocs.net/images/page/274095/scorll_first.png)
 
-#### 2. item.lay 생성
-* ALabel 컴포넌트 추가 & ID는 txtLbl로 설정
-![](https://wikidocs.net/images/page/274095/scorll_list.png)
+**2. item.lay 생성**
 
-#### 3. item.js 아래 코드 입력
+* ALabel 컴포넌트 추가 & ID는 txtLbl로 설정![](https://wikidocs.net/images/page/274095/scorll_list.png)
+
+**3. item.js 아래 코드 입력**
 
 ```javascript
 ...
@@ -31,7 +35,7 @@ setData(data)
 ...
 ```
 
-#### 4. MainView.js 아래 코드 입력
+**4. MainView.js 아래 코드 입력**
 
 ```javascript
 ...
@@ -70,11 +74,11 @@ onInitDone()
 
 ![](https://wikidocs.net/images/page/274095/scroll_result.png)
 
-### 코드로 ScrollBar 생성
+#### 코드로 ScrollBar 생성
 
-#### 1. 프로젝트 생성
+**1. 프로젝트 생성**
 
-#### 2. & MainView.js 파일 수정
+**2. & MainView.js 파일 수정**
 
 ```javascript
 ...

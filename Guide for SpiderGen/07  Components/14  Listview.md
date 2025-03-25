@@ -1,69 +1,70 @@
+# 14  Listview
 
 ![](https://wikidocs.net/images/page/24833/listView.png)
-####
+
+
+
 여러 개의 아이템을 리스트 형태로 표시하고 관리할 수 있는 컴포넌트
 
-## Apperance
+### Apperance
 
 **Style**
 
-* **`select item`** 
-	* ListView 에서 기본적으로 선택될 아이템을 설정하는 기능
-	* 이 옵션을 사용하면 리스트뷰가 초기화 될 때 특정 아이템이 선택된 상태로 사용 가능
+* **`select item`**
+  * ListView 에서 기본적으로 선택될 아이템을 설정하는 기능
+  * 이 옵션을 사용하면 리스트뷰가 초기화 될 때 특정 아이템이 선택된 상태로 사용 가능
 
-## Attribute
+### Attribute
 
-![](https://wikidocs.net/images/page/24833/listview_attribute.png) 
- 
-#### Item  
+![](https://wikidocs.net/images/page/24833/listview_attribute.png)
 
-| 이름 | 내용 |
-|--|--|
+**Item**
+
+| 이름           | 내용                      |
+| ------------ | ----------------------- |
 | **`Height`** | 리스트뷰의 각 아이템 높이를 지정하는 속성 |
-| **`Gap`** | 리스트뷰의 각 아이템 사이의 간격을 설정 |
+| **`Gap`**    | 리스트뷰의 각 아이템 사이의 간격을 설정  |
 
-#### Contents
-| 이름 | 내용 |
-|--|--|
+**Contents**
+
+| 이름                | 내용                                         |
+| ----------------- | ------------------------------------------ |
 | **`Default Url`** | 리스트뷰에 아이템을 추가할 때 기본적으로 사용할 레이아웃 파일의 경로를 설정 |
-| **`add`** | 새로운 아이템을 리스트뷰에 추가 |
-| **`edit`** | 기존에 추가된 아이템의 경로를 수정 |
-| **`del`** | 리스트뷰에서 특정 아이템을 삭제 |
-| **`up`** | 선택한 아이템을 한 단계 위로 이동 |
-| **`down`** | 선택한 아이템을 한 단계 아래로 이동 |
+| **`add`**         | 새로운 아이템을 리스트뷰에 추가                          |
+| **`edit`**        | 기존에 추가된 아이템의 경로를 수정                        |
+| **`del`**         | 리스트뷰에서 특정 아이템을 삭제                          |
+| **`up`**          | 선택한 아이템을 한 단계 위로 이동                        |
+| **`down`**        | 선택한 아이템을 한 단계 아래로 이동                       |
 
-#### Option
+**Option**
 
- * **`Direction`**
-	 * **`vertical`** : 리스트뷰가 상하 방향으로 스크롤
-	 * **`horizontal`** : 리스트뷰가 좌우 방향으로 스크롤
-
+* **`Direction`**
+  * **`vertical`** : 리스트뷰가 상하 방향으로 스크롤
+  * **`horizontal`** : 리스트뷰가 좌우 방향으로 스크롤
 * **`Selectable`**
-	* 리스트뷰의 아이템이 선택 가능한지 여부 확인
-	* 활성화 시 리스트뷰의 아이템을 선택 가능
-
+  * 리스트뷰의 아이템이 선택 가능한지 여부 확인
+  * 활성화 시 리스트뷰의 아이템을 선택 가능
 * **`Wrap`**
-	* 리스트뷰의 아이템이 가로로 배치될 때, 공간이 부족하면 개행하여 다시 추가할지 여부를 설정
-	* 활성화 시 아이템이 화면에 맞게 자동으로 줄바꿈되어 표시
+  * 리스트뷰의 아이템이 가로로 배치될 때, 공간이 부족하면 개행하여 다시 추가할지 여부를 설정
+  * 활성화 시 아이템이 화면에 맞게 자동으로 줄바꿈되어 표시
 
-## Example
+### Example
 
-#### 1. lay 파일 오픈 및 컴포넌트 배치  
- 
-| component	| id | text	
-| -------- | -------- | --------
-| ALabel	| lbl001| 선택내용|
-| AListView	| listView|  |
-| AButton	| btnAdd | Add	|
-| AButton	| btnDel| Delete	|
- 
-![](https://wikidocs.net/images/page/24833/listview_view.png) 
- 
- 
-#### 2. 리스트뷰에 추가할 데이터 작성
- 
-* MainView.js 파일을 오픈 후 다음과 같이 데이터를 설정  
-  
+**1. lay 파일 오픈 및 컴포넌트 배치**
+
+| component | id       | text   |
+| --------- | -------- | ------ |
+| ALabel    | lbl001   | 선택내용   |
+| AListView | listView |        |
+| AButton   | btnAdd   | Add    |
+| AButton   | btnDel   | Delete |
+
+![](https://wikidocs.net/images/page/24833/listview_view.png)
+
+**2. 리스트뷰에 추가할 데이터 작성**
+
+* MainView.js 파일을 오픈 후 다음과 같이 데이터를 설정
+
 ```javascript
 ...
 
@@ -94,9 +95,9 @@ init(context, evtListener)
  
 ```
 
-#### 3. 리스트뷰에 데이터를 바인딩
+**3. 리스트뷰에 데이터를 바인딩**
 
-* MainView.js 파일 오픈  후 다음과 같이 설정
+* MainView.js 파일 오픈 후 다음과 같이 설정
 
 ```javascript
 ...
@@ -109,23 +110,23 @@ onInitDone()
 ...
 ```
 
-#### 4. Source 폴더 안에 Items 폴더를 생성
+**4. Source 폴더 안에 Items 폴더를 생성**
+
 생성한 Items 폴더 내에 ItemView 이름의 뷰를 추가하고 아래 내용을 참고해서 컴포넌트를 배치
- 
-| component	| id| text	| etc
-| -------- | -------- | -------- | --------
-| ItemView	| 		| 	| background: transparent
-| ALabel	| lbl001	| | 	background: transparent | 
-| AButton	| btn001	|	| Delete	|  
+
+| component | id     | text | etc                     |
+| --------- | ------ | ---- | ----------------------- |
+| ItemView  |        |      | background: transparent |
+| ALabel    | lbl001 |      | background: transparent |
+| AButton   | btn001 |      | Delete                  |
 
 ![](https://wikidocs.net/images/page/24833/listview_ItemView.png)
 
- 
-#### 5. setData 메소드를 추가
+**5. setData 메소드를 추가**
 
 * 데이터가 바인딩 될 때 호출됩니다.
 * ItmeView.js 파일 오픈 후 다음과 같이 설정
- 
+
 ```javascript
 ...
 
@@ -138,14 +139,14 @@ setData(data)
 };  
 
 ... 
-``` 
- 
-#### 6. 프로젝트 실행
- 
-![](https://wikidocs.net/images/page/24833/listview_exam.png) 
- 
- 
-#### 7. Add 버튼 Click 이벤트를 추가
+```
+
+**6. 프로젝트 실행**
+
+![](https://wikidocs.net/images/page/24833/listview_exam.png)
+
+**7. Add 버튼 Click 이벤트를 추가**
+
 ```javascript
 ...
 
@@ -163,23 +164,23 @@ onBtnAddClick(comp, info, e)
 
 ... 
 ```
-#### 8.  프로젝트 실행
+
+**8. 프로젝트 실행**
 
 ![](https://wikidocs.net/images/page/24833/listView_add.png)
- 
 
-#### 9.  아이템 선택 시 스타일 적용
+**9. 아이템 선택 시 스타일 적용**
 
-* 프로젝트 트리 Template 폴더에서 오른쪽 클릭  > 메뉴에서 Add new 클릭
-* Style 파일을 생성 > Name 은 listView 로 설정 >listView.stl 오른쪽 클릭 후  오픈 
-* 오픈 된 Styler 메뉴 중에 상단 오른쪽 끝 + 버튼을 클릭   
-![](https://wikidocs.net/images/page/24833/listview_tpl.png)
+* 프로젝트 트리 Template 폴더에서 오른쪽 클릭 > 메뉴에서 Add new 클릭
+* Style 파일을 생성 > Name 은 listView 로 설정 >listView.stl 오른쪽 클릭 후 오픈
+* 오픈 된 Styler 메뉴 중에 상단 오른쪽 끝 + 버튼을 클릭\
+  ![](https://wikidocs.net/images/page/24833/listview_tpl.png)
 
-![](https://wikidocs.net/images/page/24833/listView_style.png) 
+![](https://wikidocs.net/images/page/24833/listView_style.png)
 
- 
- * 추가된 스타일 이름을 selected_item 이라 설정
- * 스타일 css 를 아래처럼 설정
+* 추가된 스타일 이름을 selected\_item 이라 설정
+* 스타일 css 를 아래처럼 설정
+
 ```css
 .selected_item
 {
@@ -190,20 +191,18 @@ onBtnAddClick(comp, info, e)
 
 ![](https://wikidocs.net/images/page/24833/listview_style_select.png)
 
-* MainView.lay에 listView 클릭 > Appearance > Style > select item 속성 더블클릭 > show all 버튼 누르고 selected_item 추가 > 적용
+* MainView.lay에 listView 클릭 > Appearance > Style > select item 속성 더블클릭 > show all 버튼 누르고 selected\_item 추가 > 적용
 
 ![](https://wikidocs.net/images/page/24833/listVeiw_Appear.png)
 
 * listView > Class > select 더블 클릭 후 생성
 * F5 누르고 프로젝트를 빌드하고 실행
-* 실행된 화면에서 리스트의 아이템을 선택하고 스타일이 적용되는걸 확인
-    ![](https://wikidocs.net/images/page/24833/listView_check.png)
- 
- 
-#### 10. 리스트 아이템 선택 및 삭제
+* 실행된 화면에서 리스트의 아이템을 선택하고 스타일이 적용되는걸 확인![](https://wikidocs.net/images/page/24833/listView_check.png)
+
+**10. 리스트 아이템 선택 및 삭제**
 
 * ItemView.lay에서 아이템에 있는 Delete 버튼에 Click 이벤트를 설정 후 설정 함수 내용은 다음과 같이 수정
- 
+
 ```javascript
 ...
 
@@ -217,13 +216,12 @@ onBnt001Click(comp, info, e)
 ...  
 ```
 
-* 프로젝트를 빌드하고 실행한 후 리스트 아이템에 있는 Delete 버튼을 클릭 후 클릭한 아이템이 삭제 되는 것을 확인 
- 
- 
-#### 11.  모든 아이템 삭제 기능 추가
- 
+* 프로젝트를 빌드하고 실행한 후 리스트 아이템에 있는 Delete 버튼을 클릭 후 클릭한 아이템이 삭제 되는 것을 확인
+
+**11. 모든 아이템 삭제 기능 추가**
+
 * Delete 버튼에 Click 이벤트를 설정하고 설정 함수는 다음과 같이 수정
- 
+
 ```javascript
 ...
 
@@ -233,4 +231,4 @@ onBtnDelClick(comp, info, e)
 }
 
 ... 
-``` 
+```

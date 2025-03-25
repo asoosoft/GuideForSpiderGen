@@ -1,10 +1,15 @@
+# PivotGrid Example
+
 아래 사진과 같이 PivotGrid 배치
 
-**Data Properties**: 총 컬럼 **9** <br>
-> [ 경기수, 득점수, 실점수, 도움, 슈팅, 유효슈팅, 세트피스 골, PK 골, PK 골 허용 ] 을 테이블 명으로 설정 
+**Data Properties**: 총 컬럼 **9**\
+
+
+> \[ 경기수, 득점수, 실점수, 도움, 슈팅, 유효슈팅, 세트피스 골, PK 골, PK 골 허용 ] 을 테이블 명으로 설정
 
 **Pivot Data Properties**: 총 컬럼 **2**
-> [ 순위, 빈 칸 ] 을 테이블 명으로 설정
+
+> \[ 순위, 빈 칸 ] 을 테이블 명으로 설정
 
 ![](https://wikidocs.net/images/page/276292/pivot_lay.png)
 
@@ -12,16 +17,16 @@ PivotGrid를 우클릭하면 아래 사진과 같은 메뉴가 나옴
 
 ![](https://wikidocs.net/images/page/276292/pivot_set.png)
 
-- **Data Properties**: 스크롤이 될 테이블 설정 창
+* **Data Properties**: 스크롤이 될 테이블 설정 창
+* **Pivot Data Properties**: 고정될 테이블 설정 창
 
-- **Pivot Data Properties**: 고정될 테이블 설정 창
+각 설정 창을 통해 \[ 보더, 셀 높이, 배경색 ] 등을 설정
 
-각 설정 창을 통해 [ 보더, 셀 높이, 배경색 ] 등을 설정
+**⚠️ 피벗 그리드는 setData()의 파라미터가 2개가 필요**\
+**setData(pivotData, scrollData)**
 
- **⚠️ 피벗 그리드는 setData()의 파라미터가 2개가 필요** <br>
- **setData(pivotData, scrollData)**
- > pivotData: 스크롤 될 데이터 목록 <br>
- > scrollData: 고정 될 데이터 목록
+> pivotData: 스크롤 될 데이터 목록\
+> scrollData: 고정 될 데이터 목록
 
 ```js
 let pivotData =  [
@@ -68,10 +73,14 @@ let scrollData =  [
 
 this.grid.setData(pivotData, scrollData);
 ```
-<br>
 
-시뮬레이터를 통해 결과확인 <br>
-> ⚠️ 좌우 스크롤은 모바일 환경에서만 가능하므로 <br>
+\
+
+
+시뮬레이터를 통해 결과확인\
+
+
+> ⚠️ 좌우 스크롤은 모바일 환경에서만 가능하므로\
 > DevTool을 활성화한 후 모바일 환경에서 테스트 가능
 
 ![](https://wikidocs.net/images/page/276292/pivot_res.png)
