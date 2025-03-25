@@ -1,4 +1,4 @@
-# C  View
+# C. View
 
 ### Open Matching
 
@@ -11,7 +11,7 @@ Component Pane이 비활성화(Hide) 되어 있을 경우 활성화(Show) 합니
 
 > 프로젝트에서 사용할 수 있는 다양한 컴포넌트를 탐색하고 추가하는데 사용되는 인터페이스입니다. 이 Pane을 통해 프로젝트에 필요한 컴포넌트를 쉽게 추가할 수 있습니다.
 
-참조 [Components](https://wikidocs.net/24554)
+참조 [Components](<../../07  Components.md>)
 
 ![](https://wikidocs.net/images/page/22814/menu_view03.png)
 
@@ -21,7 +21,7 @@ Project Pane이 비활성화(Hide) 되어 있을 경우 활성화(Show) 합니�
 
 > 프로젝트의 전반적인 구조와 파일을 관리하는 데 사용되는 인터페이스입니다. 이 Pane을 통해 사용자는 프로젝트 내의 다양한 파일과 리소스를 탐색하고, 관리할 수 있습니다.
 
-참조 [Project Pane](https://wikidocs.net/22787)
+참조 [Project Pane](<../02  Project Pane.md>)
 
 ![](https://wikidocs.net/images/page/22814/menu_view02.png)
 
@@ -30,8 +30,6 @@ Project Pane이 비활성화(Hide) 되어 있을 경우 활성화(Show) 합니�
 Class Pane 이 비활성화(Hide) 되어 있을 경우 활성화(Show) 합니다.
 
 > 프로젝트 내의 클래스와 관련된 작업을 수행하는 데 사용되는 인터페이스입니다. 이 Pane을 통해 사용자는 클래스의 구조를 탐색하고, 메서드와 변수를 관리합니다.
-
-참조 [Class Pane](https://wikidocs.net/22790)
 
 ![](https://wikidocs.net/images/page/22814/menu_view05.png)
 
