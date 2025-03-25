@@ -2,7 +2,7 @@
 
 * [SpiderGen 제품 설명서](README.md)
 * [01  Introduce](<Guide for SpiderGen/01  Introduce.md>)
-* [SpiderGen 다운로드 및 설치](<Guide for SpiderGen/02  Installation.md>)
+* [02 Installation](<Guide for SpiderGen/02  Installation.md>)
 * [03  Start Guide](<Guide for SpiderGen/03  Start Guide.md>)
 * [04  Basic](<Guide for SpiderGen/04  Basic.md>)
 * [05  Advanced](<Guide for SpiderGen/05  Advanced.md>)
