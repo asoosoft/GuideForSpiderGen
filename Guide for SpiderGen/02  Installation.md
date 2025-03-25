@@ -1,4 +1,4 @@
-# SpiderGen 다운로드 및 설치
+# 02 Installation
 
 ## SpiderGen 다운로드
 
@@ -21,8 +21,7 @@
 
 ![](https://wikidocs.net/images/page/22780/setup2.png)
 
-**4. 설치 완료후 마침으로 SpiderGen4 을 실행합니다.**
+**4. 설치 완료 후 마침으로 SpiderGen4 을 실행합니다.**
 
 ![](https://wikidocs.net/images/page/22780/setup3.png)
 
-<실행 화면>!\[]\(https://wikidocs.net/images/page/22780/Setup4.png)
