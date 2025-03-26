@@ -2,7 +2,7 @@
 
 스파이더젠에서 I/O 통신을 위해서는 Library에 통신 관련 라이브러리를 추가해야 합니다.
 
-![](https://wikidocs.net/images/page/24910/IO_lib.png)
+![](../../../.gitbook/assets/IO_lib.png)
 
 **`AppManager.js`: Indicator 관련 클래스**
 

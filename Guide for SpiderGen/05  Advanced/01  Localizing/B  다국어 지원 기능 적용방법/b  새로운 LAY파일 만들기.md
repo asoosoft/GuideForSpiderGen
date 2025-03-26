@@ -1,6 +1,6 @@
-# 1. LAY 컨텍스트 메뉴에서 해당 언어의 LAY파일을 생성합니다.
+# b. 새로운 LAY 파일 만들기
 
-![](https://wikidocs.net/images/page/42752/local_lay.png)
+![](../../../../.gitbook/assets/local_lay.png)
 
 * 생성된 파일은 cls는 공동으로 사용합니다.
 * LAY파일을 생성할때 Resource/LocalizeInfo.json파일에 경로정보를 저장합니다.

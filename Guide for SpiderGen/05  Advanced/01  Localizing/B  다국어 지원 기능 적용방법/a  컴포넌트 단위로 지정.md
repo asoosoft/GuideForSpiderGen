@@ -1,20 +1,20 @@
-# a  컴포넌트 단위로 지정
+# a. 컴포넌트 단위로 지정
 
 #### 1. 언어별 컨텍스트 메뉴 중 Open As Text 를 눌러 소스코드를 오픈합니다.
 
-![](https://wikidocs.net/images/page/42753/local_create.png)
+![](../../../../.gitbook/assets/local_create.png)
 
 #### 2. 리소스 파일에 key : value 형식으로 json파일을 작성합니다.
 
 * 언어 별로 작성해야합니다.
 
-![](https://wikidocs.net/images/page/42753/local_setting.png)
+![](../../../../.gitbook/assets/local_setting.png)
 
 #### 2. Label 컴포넌트를 추가합니다.
 
 * ALabel 의 ID 값은 label 로 설정합니다.
 
-![](https://wikidocs.net/images/page/42753/local_label.png)
+![](../../../../.gitbook/assets/local_label.png)
 
 #### 3. 프로젝트명.js 수정
 
