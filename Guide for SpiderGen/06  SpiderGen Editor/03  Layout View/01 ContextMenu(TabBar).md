@@ -1,8 +1,8 @@
-# 01 ContextMenu(TabBar)
+# 01. ContextMenu(TabBar)
 
 메인 탭바 컨텍스트 메뉴
 
-![](https://wikidocs.net/images/page/23228/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_143104.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_143104.png)
 
 **Close**
 
