@@ -1,4 +1,4 @@
-# E  Window Show and Hide
+# E. Window Show and Hide
 
 **open()** 메서드는 **새로운 윈도우나 컨테이너를 생성**하고 화면에 띄우는 기능을 함.\
 프로그램이 처음 실행될 때 특정 레이아웃 파일을 로드하고 원하는 위치와 크기로 윈도우를 표시할 때 사용됨.\
@@ -22,7 +22,7 @@ close()를 호출하면 객체가 제거되며, 다시 사용하려면 open()을
   * 메시지(알림창)를 간단히 띄우기 위해 afc 폴더에 **AToast.js** 파일을 추가함.
   * 이후 코드에서 `AToast.show("메시지")`처럼 바로 알림창을 표시할 수 있음.
 
-![](https://wikidocs.net/images/page/24886/Window01.png)
+![](<../../.gitbook/assets/Window01 (1).png>)
 
 ***
 
@@ -37,7 +37,7 @@ close()를 호출하면 객체가 제거되며, 다시 사용하려면 open()을
 | AButton   | Show  |
 | AButton   | Close |
 
-![](https://wikidocs.net/images/page/24901/WindowShowand.png)
+![](../../.gitbook/assets/WindowShowand.png)
 
 ***
 
@@ -118,7 +118,7 @@ onCloseClick(comp, info, e) {
 | AButton   | Hide  |
 | AButton   | Close |
 
-![](https://wikidocs.net/images/page/24901/WindowShowandHide.png)
+![](../../.gitbook/assets/WindowShowandHide.png)
 
 ***
 

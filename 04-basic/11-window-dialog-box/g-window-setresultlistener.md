@@ -1,4 +1,4 @@
-# G  Window setResultListener
+# G. Window setResultListener
 
 **setResultListener** 는 스파이더젠에서 윈도우가 닫힐 때 결과값을 수신받을 객체를 설정하는 기능을 제공함.\
 이 메서드를 사용하면 윈도우가 닫힐 때 특정 객체의 메서드를 호출하여 결과값과 데이터를 처리할 수 있음.\
@@ -63,5 +63,5 @@ onWindowResult(result, data, awindow) {
 2. DataWindow가 열리면 텍스트 영역에 원하는 내용을 입력한 후, **내용추가** 버튼 등을 통해 데이터를 저장함.
 3. **X** 버튼을 눌러 DataWindow를 닫으면, 메인 화면의 Label(객체 id: text)에 입력했던 내용이 출력되는지 확인함.
 
-![](https://wikidocs.net/images/page/24903/setResultListener.png)\
-![](https://wikidocs.net/images/page/24903/setResultListener001.png)
+![](../../.gitbook/assets/setResultListener.png)\
+![](../../.gitbook/assets/setResultListener001.png)

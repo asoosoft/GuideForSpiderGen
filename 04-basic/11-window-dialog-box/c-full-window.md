@@ -1,4 +1,4 @@
-# C  Full Window
+# C. Full Window
 
 윈도우는 애플리케이션 내에서 추가 정보를 보여주거나 별도의 작업을 수행할 수 있는 UI 요소임.\
 Full Window 기능은 일반적인 윈도우 오픈 방식과 동일하게 동작하지만, 윈도우의 크기를 픽셀이 아닌 `%` 단위로 설정하여 부모 컨테이너의 전체 영역을 채우도록 하는 기능임.
@@ -50,4 +50,4 @@ onAButtonClick(comp, info, e) {
 * 메인 화면에서 **Full Size Window** 버튼을 클릭하면, 전체 화면을 채우는 Full Size Window가 표시됨.
 * Full Size Window 내부의 **닫기** 버튼을 클릭하면, 윈도우가 정상적으로 종료됨.
 
-![](https://wikidocs.net/images/page/24899/Full_Size_Window.png)
+![](../../.gitbook/assets/Full_Size_Window.png)

@@ -1,17 +1,17 @@
-# 11  Window(Dialog Box)
+# 09. Window(Dialog Box)
 
 **Window(Dialog Box)** 는 사용자 인터페이스에서 팝업 창을 생성하여 추가적인 정보를 표시하거나 사용자 입력을 받을 수 있는 기능을 제공합니다.
 
-#### [A. Modal/Modeless Window](https://wikidocs.net/24886)
+#### [A. Modal/Modeless Window](a-modal-modeless-window.md)
 
-#### [B. Window Option](https://wikidocs.net/24898)
+#### [B. Window Option](b-window-option.md)
 
-#### [C. Full Window](https://wikidocs.net/24899)
+#### [C. Full Window](c-full-window.md)
 
-#### [D. Frame Window](https://wikidocs.net/24900)
+#### [D. Frame Window](d-frame-window.md)
 
-#### [E. Window Show and Hide](https://wikidocs.net/24901)
+#### [E. Window Show and Hide](e-window-show-and-hide.md)
 
-#### [F. Window setResultCallback](https://wikidocs.net/24902)
+#### [F. Window setResultCallback](f-window-setresultcallback.md)
 
-#### [G. Window setResultListener](https://wikidocs.net/24903)
+#### [G. Window setResultListener](g-window-setresultlistener.md)

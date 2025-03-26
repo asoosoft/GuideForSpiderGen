@@ -1,4 +1,4 @@
-# D  Frame Window
+# D. Frame Window
 
 **Frame Window**는 상단에 타이틀바와 최대화, 최소화, 닫기 버튼을 가지고 있으며, 하단에는 상태바를 포함하고 있음.
 
@@ -9,7 +9,7 @@
 * 프로젝트 시작 전에 필요한 Framework를 준비함.
   * afc 폴더에 **AFrameWnd.js** 컴포넌트를 추가함.
 
-![](https://wikidocs.net/images/page/24900/Window004.png)
+![](../../.gitbook/assets/Window004.png)
 
 ***
 
@@ -40,4 +40,4 @@ onFrameWindowClick(comp, info, e) {
 * 윈도우 프레임 부분을 마우스 오른쪽 버튼으로 드래그하면 창을 이동할 수 있음.
 * 프레임 우측에 있는 최소화, 최대화, 닫기 버튼을 각각 클릭하여 기능을 확인함.
 
-![](https://wikidocs.net/images/page/24900/Frame_Window.png)
+![](../../.gitbook/assets/Frame_Window.png)

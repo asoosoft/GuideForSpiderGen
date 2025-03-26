@@ -1,4 +1,4 @@
-# F  Window setResultCallback
+# F. Window setResultCallback
 
 **setResultCallback** 메서드는 스파이더젠에서 윈도우가 닫힌 후 특정 작업을 수행하기 위해 콜백 함수를 설정하는 기능을 제공함.\
 이 메서드를 사용하면 윈도우가 닫힐 때 원하는 동작을 정의할 수 있으며, 닫힐 때 전달된 결과값과 데이터를 콜백 함수로 받을 수 있음.
@@ -15,7 +15,7 @@
 | ATextArea | txtData |      |
 | AButton   |         | 내용추가 |
 
-![](https://wikidocs.net/images/page/24902/WindowsetResultCallback01.png)
+![](../../.gitbook/assets/WindowsetResultCallback01.png)
 
 ***
 
@@ -109,7 +109,7 @@ onSetResultCallbackClick(comp, info, e) {
 * 메인 화면에 Label 컴포넌트를 추가하고, id를 **text** 로 설정함.
 * 구분을 위해 Label 에 텍스트 추가(예 :내용 전달 받는 곳)
 
-![](https://wikidocs.net/images/page/24902/WindowsetResultCallback03.png)
+![](../../.gitbook/assets/WindowsetResultCallback03.png)
 
 ***
 
@@ -120,4 +120,4 @@ onSetResultCallbackClick(comp, info, e) {
 * **X** 버튼을 눌러 윈도우를 닫음.
 * 메인 화면의 Label(text)에 입력했던 내용이 표시되는지 확인함.
 
-![](https://wikidocs.net/images/page/24902/WindowsetResultCallback02.png)
+![](../../.gitbook/assets/WindowsetResultCallback02.png)
