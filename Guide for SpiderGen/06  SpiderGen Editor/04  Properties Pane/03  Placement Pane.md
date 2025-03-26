@@ -1,25 +1,25 @@
-# 03  Placement Pane
+# 03. Placement Pane
 
 Placement pane은 컴포넌트의 위치, 사이즈, 마진 값을 설정 가능
 
-![](https://wikidocs.net/images/page/22792/placement.png)
+![](../../../.gitbook/assets/placement.png)
 
 ### Align - View Based
 
 컴포넌트를 담고 있는 뷰를 기준으로 선택된 컴포넌트들을 정렬
 
-* ![](https://wikidocs.net/images/page/22792/placement_left.png) : 가장 왼쪽에 있는 컴포넌트로 줄 맞춤
-* ![](https://wikidocs.net/images/page/22792/placement_right.png) : 가장 오른쪽에 있는 컴포넌트로 줄 맞춤
-* ![](https://wikidocs.net/images/page/22792/placement_top.png) : 가장 상단에 있는 컴포넌트로 줄 맞춤
-* ![](https://wikidocs.net/images/page/22792/placement_bottom.png) : 가장 하단에 있는 컴포넌트로 줄 맞춤
-* ![](https://wikidocs.net/images/page/22792/placement_LR.png) : 컴포넌트 좌우 중심선으로 줄 맞춤
-* ![](https://wikidocs.net/images/page/22792/placement_TB.png) : 컴포넌트 상하 중심선으로 줄 맞춤
-* ![](https://wikidocs.net/images/page/22792/placement_width.png) : 간격은 고정된 상태로 컴포넌트 넓이를 같은 비율로 유지
-* ![](https://wikidocs.net/images/page/22792/placement_height.png) : 간격은 고정된 상태로 컴포넌트 높이를 같은 비율로 유지
-* ![](https://wikidocs.net/images/page/22792/placement_full.png) : 같은 비율의 넓이로 부모를 가득 채움
-* ![](https://wikidocs.net/images/page/22792/placement_fullH.png) : 같은 비율의 높이로 부모를 가득 채움
-* ![](https://wikidocs.net/images/page/22792/placement_smallW.png) : 가장 작은 넓이의 컴포넌트로 사이즈를 동일
-* ![](https://wikidocs.net/images/page/22792/placement_fullH.png) : 가장 작은 높이의 컴포넌트로 사이즈를 통일
+* ![](../../../.gitbook/assets/placement_left.png) : 가장 왼쪽에 있는 컴포넌트로 줄 맞춤
+* ![](../../../.gitbook/assets/placement_right.png) : 가장 오른쪽에 있는 컴포넌트로 줄 맞춤
+* ![](../../../.gitbook/assets/placement_top.png) : 가장 상단에 있는 컴포넌트로 줄 맞춤
+* ![](../../../.gitbook/assets/placement_bottom_WyqTsMF.png) : 가장 하단에 있는 컴포넌트로 줄 맞춤
+* ![](../../../.gitbook/assets/placement_LR.png) : 컴포넌트 좌우 중심선으로 줄 맞춤
+* ![](../../../.gitbook/assets/placement_TB.png) : 컴포넌트 상하 중심선으로 줄 맞춤
+* ![](../../../.gitbook/assets/placement_width.png) : 간격은 고정된 상태로 컴포넌트 넓이를 같은 비율로 유지
+* ![](../../../.gitbook/assets/placement_height.png) : 간격은 고정된 상태로 컴포넌트 높이를 같은 비율로 유지
+* ![](../../../.gitbook/assets/placement_full.png) : 같은 비율의 넓이로 부모를 가득 채움
+* ![](../../../.gitbook/assets/placement_fullH.png) : 같은 비율의 높이로 부모를 가득 채움
+* ![](../../../.gitbook/assets/placement_smallW.png) : 가장 작은 넓이의 컴포넌트로 사이즈를 동일
+* ![](../../../.gitbook/assets/placement_smallH.png) : 가장 작은 높이의 컴포넌트로 사이즈를 통일
 
 ### Position
 
