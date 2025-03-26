@@ -1,4 +1,4 @@
-# 03 Container 를 사용한 컴포넌트 배치
+# 03. Container 를 사용한 컴포넌트 배치
 
 ### View
 
@@ -6,7 +6,7 @@
 
 > 사용 예시
 
-![](https://wikidocs.net/images/page/276096/View02.png)
+![](../../.gitbook/assets/View02.png)
 
 #### 언제 사용할까?
 
@@ -16,7 +16,7 @@
 
 **✅ 화면 크기, 테마 변경, 반응형 디자인 등 다양한 환경에 맞춰 유연하게 관리할 때 사용**
 
-> 자세한 구현은 링크 참조[ 11. View](https://wikidocs.net/24827)
+> 자세한 구현은 링크 참조[ View](<../07  Components/11  View.md>)
 
 ### GridLayout
 
@@ -24,11 +24,11 @@
 
 > 사용 예시
 
-![](https://wikidocs.net/images/page/276096/GridLayout02.png)
+![](../../.gitbook/assets/GridLayout02.png)
 
 > 응용 예시
 
-![](https://wikidocs.net/images/page/276096/GridLayout01.png)
+![](../../.gitbook/assets/GridLayout01.png)
 
 #### 언제 사용할까?
 
@@ -38,7 +38,7 @@
 
 **✅ 복잡한 UI를 만들 때 사용**
 
-> 자세한 구현은 링크 참조 [20. GridLayout](https://wikidocs.net/24866)
+> 자세한 구현은 링크 참조 [GridLayout](<../07  Components/20  GridLayout.md>)
 
 ### FlexLayout
 
@@ -46,11 +46,11 @@
 
 > 사용 예시
 
-![](https://wikidocs.net/images/page/276096/FlexLayout_01.png)
+![](../../.gitbook/assets/FlexLayout_01.png)
 
 > 응용 예시
 
-![](https://wikidocs.net/images/page/276096/FlexLayout02.png)
+![](../../.gitbook/assets/FlexLayout02.png)
 
 #### 언제 사용할까?
 
@@ -60,7 +60,7 @@
 
 **✅ 버튼 그룹, 네비게이션 바, 카드 레이아웃 등을 만들 때 사용**
 
-> 자세한 구현은 링크 참조 [23. FlexLayout](https://wikidocs.net/24874)
+> 자세한 구현은 링크 참조 [FlexLayout](<../07  Components/23  FlexLayout.md>)
 
 ### Vertical
 
@@ -68,11 +68,11 @@
 
 > 사용 예시
 
-![](https://wikidocs.net/images/page/276096/Vertical02.png)
+![](../../.gitbook/assets/Vertical02.png)
 
 > 응용 예시
 
-![](https://wikidocs.net/images/page/276096/Vertical001.png)
+![](../../.gitbook/assets/Vertical001.png)
 
 #### 언제 사용할까?
 
@@ -84,7 +84,7 @@
 
 **✅ 카드형 UI를 가로로 배치할 때 사용**
 
-> 자세한 구현은 링크 참조 [39.Vertical](https://wikidocs.net/274100)
+> 자세한 구현은 링크 참조 [Vertical](<../07  Components/39 Vertical.md>)
 
 ### Horizontal
 
@@ -92,11 +92,11 @@
 
 > 사용 예시
 
-![](https://wikidocs.net/images/page/276096/Horizontal.png)
+![](../../.gitbook/assets/Horizontal.png)
 
 > 응용 예시
 
-![](https://wikidocs.net/images/page/276096/Horizontal02.png)
+![](../../.gitbook/assets/Horizontal02.png)
 
 #### 언제 사용할까?
 
@@ -108,4 +108,4 @@
 
 \*\*✅ 플렉스 컨테이너 안에서 텍스트 또는 아이콘을 세로로 정렬할 때 \*\*
 
-> 자세한 구현은 링크 참조 [40.Horizontal](https://wikidocs.net/274101)
+> 자세한 구현은 링크 참조 [Horizontal](<../07  Components/40 Horizontal.md>)
