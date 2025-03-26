@@ -9,7 +9,7 @@
 * **컨테이너**: UI의 시작점, 전체 액자 역할
 * **뷰**: 컨테이너 내의 영역으로, 다른 컴퍼넌트를 담아 UI를 구성
 
-![](https://wikidocs.net/images/page/276095/Component.png)
+![](../../.gitbook/assets/Component2.png)
 
 ## 2. 컨테이너 (Container)
 
