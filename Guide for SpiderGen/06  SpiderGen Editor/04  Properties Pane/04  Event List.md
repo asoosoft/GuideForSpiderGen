@@ -122,7 +122,11 @@
 
     ![](../../../.gitbook/assets/select.gif)
 
-    alert('선택한 뷰: ' + info.innerText);
+
+
+    ```
+        alert('선택한 뷰: '  + info.innerText);
+    ```
 
 ***
 
@@ -132,9 +136,13 @@
 
     ![](../../../.gitbook/assets/keyDown.gif)
 
-    if (e.key == 'Enter') {\
-    alert('엔터가 입력되었습니다.');\
-    }
+
+
+    ```
+    	if (e.key == 'Enter') {
+    		alert('엔터가 입력되었습니다.');
+    	}
+    ```
 
     ***
 17. **keyup(comp, info, e)**
@@ -151,7 +159,11 @@
 
     ![](../../../.gitbook/assets/change.gif)
 
-    console.log(this.textfield.getText());
+
+
+    ```
+        console.log(this.textfield.getText());
+    ```
 
 ***
 
