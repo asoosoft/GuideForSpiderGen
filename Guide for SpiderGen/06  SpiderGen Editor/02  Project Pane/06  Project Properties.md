@@ -1,6 +1,6 @@
-# 06  Project Properties
+# 06. Project Properties
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_112626.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_112626.png)
 
 스파이더젠과 프로젝트의 옵션을 설정하는 기능.
 
@@ -12,7 +12,7 @@
 
 #### General
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111018.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111018.png)
 
 프로젝트의 기본 요소를 설정하는 기능.
 
@@ -30,7 +30,7 @@
 
 #### Build
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111144.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111144.png)
 
 프로젝트 빌드 요소를 설정하는 메뉴.
 
@@ -86,7 +86,7 @@
 
 #### Deployment
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111241.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111241.png)
 
 현재 프로젝트의 배포를 위한 환경을 설정하는 기능.
 
@@ -110,7 +110,7 @@
 
 #### Localizing
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111343.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111343.png)
 
 애플리케이션을 여러 언어로 지원하기 위한 중요한 기능.
 
@@ -128,7 +128,7 @@
 
 #### Flavor
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111735.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111735.png)
 
 프로젝트의 다양한 변형 버전을 관리하고 배포하는 데 유용한 기능.
 
@@ -148,7 +148,7 @@
 
 #### Script
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111800.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111800.png)
 
 **Pre Build Event**
 
@@ -160,7 +160,7 @@
 
 #### Git
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111820.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111820.png)
 
 Git 저장소를 초기화하는 기능.
 
@@ -174,7 +174,7 @@ Git 저장소를 초기화하는 기능.
 
 ### SpiderGen Prop
 
-![](https://wikidocs.net/images/page/22819/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_111853.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_111853.png)
 
 스파이더젠의 웍스페이스와 코드테마를 설정하는 기능.
 

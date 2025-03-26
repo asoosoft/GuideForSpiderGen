@@ -1,8 +1,8 @@
-# 05 ContextMenu(Template)
+# 05. ContextMenu(Template)
 
 템플릿 폴더 컨텍스트 메뉴
 
-![](https://wikidocs.net/images/page/23227/screens_folter.png)
+![](../../../.gitbook/assets/screens_folter.png)
 
 **Sort Items**
 
@@ -16,7 +16,7 @@
 \- 새로운 폴더를 생성하는 옵션\
 \- 프로젝트 구조를 체계적으로 관리하기 위해 새로운 폴더 생성
 
-![](https://wikidocs.net/images/page/23227/pop-template-newfolder.png)
+![](../../../.gitbook/assets/pop-template-newfolder.png)
 
 **Add existing files...**
 
@@ -39,7 +39,7 @@
 \- 선택한 파일이나 폴더를 삭제할 수 있는 옵션\
 \- 삭제된 파일이나 폴더는 복구 불가능
 
-![](https://wikidocs.net/images/page/23226/pop-lib-del.png)
+![](../../../.gitbook/assets/pop-lib-del.png)
 
 **Rename**
 
@@ -58,8 +58,10 @@
 
 **Web Deployment**
 
-\[웹 배포 다이얼로그]\(https://wikidocs.net/23223) 오픈
+[웹 배포 다이얼로그](<01  ContextMenu(Root).md>) 오픈
+
+
 
 **File Transmiter**
 
-\[파일을 서버로 송수신하는 다이얼로그]\(https://wikidocs.net/23223) 오픈
+[파일을 서버로   송수신하는 다이얼로그](<01  ContextMenu(Root).md>) 오픈

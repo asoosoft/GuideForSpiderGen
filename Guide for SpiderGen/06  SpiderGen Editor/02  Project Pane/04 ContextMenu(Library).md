@@ -1,8 +1,8 @@
-# 04 ContextMenu(Library)
+# 04. ContextMenu(Library)
 
 라이브러리 폴더 컨텍스트 메뉴
 
-![](https://wikidocs.net/images/page/23226/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_112155.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_112155.png)
 
 **Sort Items**
 
@@ -14,13 +14,13 @@
 
 새 폴더
 
-![](https://wikidocs.net/images/page/23226/dialog-libfolder.png)
+![](../../../.gitbook/assets/dialog-libfolder.png)
 
 **Add System LIB**
 
 스파이더젠 시스템에서 라이브러리를 추가하는 기능. 추가할 라이브러리를 더블클릭으로 선택하면 추가됩니다.
 
-![](https://wikidocs.net/images/page/23226/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_112836_gM1yiq8.png)
+![](../../../.gitbook/assets/스크린샷_2025-02-03_112836.png)
 
 **Add existing files...**
 
@@ -40,18 +40,21 @@
 
 라이브러리 폴더 삭제
 
-![](https://wikidocs.net/images/page/23226/pop-lib-del.png)
+![](../../../.gitbook/assets/pop-lib-del.png)
 
 **Rename**
 
 라이브러리 폴더명 변경
 
-![](https://wikidocs.net/images/page/23226/dialog-lib-rename.png)
+![](../../../.gitbook/assets/dialog-lib-rename.png)
 
 **Web Deployment**
 
-\[웹 배포 다이얼로그]\(https://wikidocs.net/23223) 오픈
+[웹 배포 다이얼로그](<01  ContextMenu(Root).md>) 오픈
+
+
 
 **File Transmiter**
 
-\[파일을 서버로 송수신하는 다이얼로그]\(https://wikidocs.net/23223) 오픈
+[파일을 서버로   송수신하는 다이얼로그](<01  ContextMenu(Root).md>) 오픈
+
