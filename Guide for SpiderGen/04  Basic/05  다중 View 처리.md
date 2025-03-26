@@ -60,6 +60,6 @@
 &#x20; ✅ 여러 개의 아이템을 포함할 수 있으며, 각 아이템은 클릭 시 확장되거나 축소되어 내용을 표시하거나 숨길 수 있음\
 &#x20; ✅ 여러 섹션의 콘텐츠를 한 화면에서 관리할 수 있도록 도와주며, 공간을 효율적으로 활용 가능
 
-**📂** [**AAccordion 문서참조**](<05  다중 View 처리.md#id-6-aaccordion>)
+**📂** [**AAccordion 문서참조**](<../07  Components/27  Accordion.md>)
 
 ![](../../.gitbook/assets/AAccordion.png)
