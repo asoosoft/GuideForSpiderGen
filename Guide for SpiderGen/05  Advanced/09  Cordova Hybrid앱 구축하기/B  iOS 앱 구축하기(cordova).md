@@ -14,7 +14,7 @@ cmd 창에서 프로젝트 경로에 진입 후 Plugin을 설치합니다
 
 `cordova plugin add cordova-plugin-screen-orientation`
 
-![](https://wikidocs.net/images/page/278959/cordova.png)
+![](../../../.gitbook/assets/cordova.png)
 
 > [cordova 공식 홈페이지](https://cordova.apache.org/plugins/)
 
@@ -61,7 +61,7 @@ cordova.exec(
 
 위 경로에 있는 ios 폴더를 스파이더젠의 Assets 폴더에 export 합니다.
 
-![](https://wikidocs.net/images/page/278960/002.png)
+![](../../../.gitbook/assets/002.png)
 
 **02. bin파일 생성**
 
@@ -69,7 +69,7 @@ F7을 눌러 빌드하고 bin파일을 생성합니다.
 
 (open folder 기능을 이용해서 프로젝트 폴더로 쉽게 이동할 수 있습니다.)
 
-![](https://wikidocs.net/images/page/278959/build.png)
+![](<../../../.gitbook/assets/build (1).png>)
 
 `MyApp\platforms\ios\app\src\main\assets\www`
 

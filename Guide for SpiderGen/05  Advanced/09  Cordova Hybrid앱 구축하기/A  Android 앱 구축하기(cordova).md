@@ -15,7 +15,7 @@ cmd 창에서 프로젝트 경로에 진입 후 cordova Plugin을 설치합니�
 
 `cordova plugin add cordova-plugin-screen-orientation`
 
-![](https://wikidocs.net/images/page/278959/cordova.png)
+![](../../../.gitbook/assets/cordova.png)
 
 > [cordova 공식 홈페이지](https://cordova.apache.org/plugins/)
 
@@ -63,13 +63,13 @@ MainView = class MainView extends AView {
 
 위 경로에 있는 android 폴더를 스파이더젠의 Assets 폴더에 export 합니다.
 
-![](https://wikidocs.net/images/page/278959/assets.png)
+![](../../../.gitbook/assets/assets.png)
 
 **02. bin파일 생성**
 
 F7을 눌러 빌드하고 bin파일을 생성합니다.
 
-(open folder 기능을 이용해서 프로젝트 폴더로 쉽게 이동할 수 있습니다.)![](https://wikidocs.net/images/page/278959/build.png)
+(open folder 기능을 이용해서 프로젝트 폴더로 쉽게 이동할 수 있습니다.)![](../../../.gitbook/assets/build.png)
 
 `MyApp\platforms\android\app\src\main\assets\www`
 
@@ -80,9 +80,9 @@ F7을 눌러 빌드하고 bin파일을 생성합니다.
 Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\android` 를 선택하여 파일을 오픈합니다.
 
 > 처음 Android Studio 를 설치하면\
-> sdk파일이 없어서 빌드가 안되는 경우가 있을수있습니다.**menu - tools - sdk managersdk tools**에서 사용할 버전을 찾아 설치하고 다시 빌드합니다.
+> sdk파일이 없어서 빌드가 안되는 경우가 있을수있습니다. **menu - tools - sdk managersdk tools**에서 사용할 버전을 찾아 설치하고 다시 빌드합니다.
 
-![](https://wikidocs.net/images/page/278959/sdk_tools.png)
+![](../../../.gitbook/assets/sdk_tools.png)
 
 **04. Cordova 설정**
 
@@ -97,10 +97,10 @@ Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\android` 를
 > 디바이스를 직접 연결 하거나 가상 디바이스를 설정해야 합니다.\
 > 가상 디바이스는 **Menu - Tools -Device Manager** 에서 설정할 수 있습니다.
 
-![](https://wikidocs.net/images/page/278959/Android001.png)
+![](../../../.gitbook/assets/Android001.png)
 
 **06. 버튼을 눌러 정상 동작을 확인합니다.**
 
-![](https://wikidocs.net/images/page/278959/Android002.png)
+![](../../../.gitbook/assets/Android002.png)
 
-![](https://wikidocs.net/images/page/278959/Android003.png)
+![](../../../.gitbook/assets/Android003.png)

@@ -6,15 +6,19 @@
 
 Location 에 Clone 할 Git repository url 을 입력하고 Clone 받을 directory 경로를 설정합니다.
 
-![](https://wikidocs.net/images/page/276665/%ED%85%8C%EB%A7%882.png)
+![](../../.gitbook/assets/테마2.png)
 
 Clone 받은 directory 로 이동하여 SpiderGen 에서 .prj 파일을 엽니다.
 
-\<Clone 받은 directory 를 열었을 때>![](https://wikidocs.net/images/page/276665/%ED%85%8C%EB%A7%88444.png)
+
+
+\<Clone 받은 directory 를 열었을 때>
+
+![](../../.gitbook/assets/테마444.png)
 
 SpiderGen 에서 실행하면 Git 메뉴 사용이 가능해집니다.
 
-![](https://wikidocs.net/images/page/276665/%EC%BA%A1%EC%B2%984.png)
+![](../../.gitbook/assets/캡처4.png)
 
 ## 2. 각 메뉴별 설명
 
