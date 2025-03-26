@@ -1,4 +1,4 @@
-# 03  빌드 및 실행 (Web)
+# 03. 빌드 및 실행 (Web)
 
 [**02. 컴포넌트 배치 및 이벤트 연결**](02.md)에서 레이아웃 구성 후 실행
 
@@ -10,7 +10,7 @@
 
 ![](https://wikidocs.net/images/page/276221/run.png)
 
-**Build 탭 설명** ➡️ [**E. Build**](https://wikidocs.net/22816)
+**Build 탭 설명** ➡️ [**E. Build**](<../Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/E  Build.md>)
 
 ![](https://wikidocs.net/images/page/276221/result.png)
 
