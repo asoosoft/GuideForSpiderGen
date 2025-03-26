@@ -1,10 +1,10 @@
-# B  Edit
+# B. Edit
 
 ### Edit
 
 **스파이더젠 명령 재실행 및 쿼리 메이커 기능**
 
-![](https://wikidocs.net/images/page/22813/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_161235.png)\
+![](../../../.gitbook/assets/스크린샷_2025-01-24_161235.png)\
 
 
 | 메뉴                       | 설명              |

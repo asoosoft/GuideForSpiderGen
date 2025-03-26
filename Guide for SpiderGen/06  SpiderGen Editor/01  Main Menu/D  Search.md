@@ -1,6 +1,6 @@
-# D  Search
+# D. Search
 
-![](https://wikidocs.net/images/page/22815/search.png)
+![](../../../.gitbook/assets/search.png)
 
 프로젝트 내에서 특정 텍스트나 코드를 검색할 수 있는 기능을 제공합니다.\
 이 기능을 통해 개발자는 프로젝트의 다양한 파일과 코드에서 원하는 정보를 빠르게 찾을 수 있습니다.
@@ -16,13 +16,13 @@
 
 > 검색할 파일 타입종류: **모든 파일**, 코드(.cls, .js), 레이아웃 (.lay), 스타일(css, stl)
 
-![](https://wikidocs.net/images/page/22815/pop-searchAll.png)
+![](../../../.gitbook/assets/pop-searchAll.png)
 
 ### Search File
 
 현재 프로젝트에서 파일명으로 파일을 검색 할 수 있는 도킹이 가능한 메뉴Pane 입니다.
 
-![](https://wikidocs.net/images/page/22815/pop-searchfile.png)
+![](../../../.gitbook/assets/pop-searchfile.png)
 
 ### Edit Class Identify
 
@@ -31,5 +31,5 @@
 
 > 이 기능은 프로젝트 내에서 특정 클래스나 식별자를 검색하고, 이를 편집할 수 있도록 도와줍니다.
 
-![](https://wikidocs.net/images/page/22815/search_id.png)\
+![](../../../.gitbook/assets/search_id.png)\
 <사진> Edit Class Identify 중 ID 선택 시 화면

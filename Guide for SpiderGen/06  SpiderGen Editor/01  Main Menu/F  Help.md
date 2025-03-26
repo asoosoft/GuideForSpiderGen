@@ -1,6 +1,6 @@
-# F  Help
+# F. Help
 
-![](https://wikidocs.net/images/page/22817/help.png)
+![](../../../.gitbook/assets/help.png)
 
 스파이더젠의 **Help** 탭에는 **Home, Samples, SpiderGPT, About**이 있습니다.
 
@@ -23,7 +23,7 @@
 
 ### SpiderGPT
 
-![](https://wikidocs.net/images/page/22817/spidergpt.png)
+![](../../../.gitbook/assets/spidergpt.png)
 
 스파이더GPT는 사용자가 프로젝트 개발 중에 인공지능의 도움을 받을 수 있는 기능입니다.\
 

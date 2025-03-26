@@ -1,10 +1,10 @@
-# A  File
+# A. File
 
 \## File
 
 **스파이더젠 프로젝트 및 파일관련 메뉴**
 
-![](https://wikidocs.net/images/page/22812/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_151618.png)\
+![](../../../.gitbook/assets/스크린샷_2025-01-24_151618.png)\
 
 
 | 메뉴                | 설명                                                         |

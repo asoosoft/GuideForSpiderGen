@@ -1,4 +1,4 @@
-# E  Build
+# E. Build
 
 현재 프로젝트를 전체 또는 화면 단위별로 빌드하거나 동시에 실행 할 수 있는 메뉴 입니다.
 
@@ -6,7 +6,7 @@
 
 현재 프로젝트를 빌드 후 실행하는 메뉴 입니다.
 
-![](https://wikidocs.net/images/page/22816/build01.png)
+![](../../../.gitbook/assets/build01.png)
 
 ### Run Unit
 
@@ -52,13 +52,13 @@
 
 JavaScript 파일을 특정 버전으로 관리하기 위해 사용됩니다.
 
-![](https://wikidocs.net/images/page/22816/build02.png)
+![](../../../.gitbook/assets/build02.png)
 
 #### Update Index Version
 
 현재 프로젝트를 빌드후 생성되는 Index.html 버전을 관리하는 기능입니다.
 
-![](https://wikidocs.net/images/page/22816/build03.png)
+![](../../../.gitbook/assets/build03.png)
 
 Index.html에는 프레임워크 관련 파일들(**.js**, **.html**, **.css**)이 링크됩니다.\
 따라서 수정 사항이 발생한 프레임워크 파일들 버전관리가 필요 할 경우 해당 파일을\

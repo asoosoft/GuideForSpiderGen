@@ -1,6 +1,6 @@
-# G  Git
+# G. Git
 
-![](https://wikidocs.net/images/page/22818/git.png)\
+![](../../../.gitbook/assets/git.png)\
 
 
 **Git** 탭은 프로젝트의 버전 관리를 돕기 위해 다양한 기능을 제공합니다.\
@@ -39,7 +39,7 @@
 
 > 프로젝트를 Git 저장소로 초기화하려면 **Initialize** 기능을 사용합니다.
 
-[SpiderGen 과 Git 연동 방법](https://wikidocs.net/276665)
+[SpiderGen 과 Git 연동 방법](<../../05  Advanced/08  Git 연동.md>)
 
 ### Git 탭 각 기능 설명
 
@@ -89,7 +89,7 @@
 
 **사용 방법** : **Pull & Push** 버튼을 클릭하여 양방향으로 동기화합니다.
 
-![](https://wikidocs.net/images/page/22818/pp_tab.png)\
+![](../../../.gitbook/assets/pp_tab.png)\
 &#xNAN;**<사진> Pull & Push 세부 탭**\
 
 
@@ -140,7 +140,7 @@
 
 **사용 방법** : **Branch** 버튼을 클릭하여 브랜치를 생성하거나 전환합니다.
 
-![](https://wikidocs.net/images/page/22818/branch_tab.png)\
+![](../../../.gitbook/assets/branch_tab.png)\
 &#xNAN;**<사진> Branch 세부 탭**\
 
 
