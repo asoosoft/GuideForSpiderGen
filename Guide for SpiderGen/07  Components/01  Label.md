@@ -1,6 +1,6 @@
 # Label
 
-![](https://wikidocs.net/images/page/24553/label.png)
+![](../../.gitbook/assets/label.png)
 
 
 
@@ -14,7 +14,7 @@
 
 Label 속성
 
-![](https://wikidocs.net/images/page/24553/label_Attribute.png)
+![](../../.gitbook/assets/label_Attribute.png)
 
 **Data**
 
@@ -33,7 +33,7 @@ Label 속성
 
 **pre formatted**
 
-텍스트의 공백과 줄바꿈이 HTML에서 일반적으로 무시되는 것과 달리, 입력된 그대로 화면에 표시![](https://wikidocs.net/images/page/24553/label_pre.png)
+텍스트의 공백과 줄바꿈이 HTML에서 일반적으로 무시되는 것과 달리, 입력된 그대로 화면에 표시![](../../.gitbook/assets/label_pre.png)
 
 ### Example
 
@@ -41,15 +41,24 @@ Label 속성
 
 * 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 Label 컴포넌트를 선택하고 드래그하여 아래와 같이 레이아웃에 배치
-* Class 에서 ID를 lbl001로 입력![](https://wikidocs.net/images/page/24553/label_create.png)
+* Class 에서 ID를 lbl001로 입력
+* ![](../../.gitbook/assets/label_create.png)
+
+
 
 **2. Attribute 텍스트 설정**
 
 * Attribute 에서 Data 항목을 다음과 같이 설정
-  *   Text : 라벨테스트
+* Text : 라벨테스트
 
-      ![](https://wikidocs.net/images/page/24553/label_test.png)
-* 레이아웃에 레이블의 Display를 확인![](https://wikidocs.net/images/page/24553/label_screen.png)
+![](../../.gitbook/assets/label_test.png)
+
+
+
+
+
+* 레이아웃에 레이블의 Display를 확인
+* ![](../../.gitbook/assets/label_screen.png)
 
 **3. 텍스트 설정**
 
@@ -77,7 +86,7 @@ onInitDone()
 
 * 레이블의 텍스트가 바뀌어서 출력 되는 것을 확인
 
-![](https://wikidocs.net/images/page/24553/label_screen2.png)
+![](../../.gitbook/assets/label_screen2.png)
 
 **5. 코드로 라벨 생성**
 
@@ -96,17 +105,18 @@ onInitDone()
 }
 ```
 
-![](https://wikidocs.net/images/page/24553/label_new.png)
+![](../../.gitbook/assets/label_new.png)
 
-\*\*\* Build 에러발생시 처리\*\*\*
+Build 에러발생시 처리
 
-_**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings... > Component > ALabel.js 체크**_![](https://wikidocs.net/images/page/24553/label_component.png)
+_**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings... > Component > ALabel.js 체크**_![](../../.gitbook/assets/label_component.png)
 
 ### Event
 
 **Tool 이벤트 설정**
 
-* Class 에서 아래로 스크롤 > Event 더블 클릭 > 확인![](https://wikidocs.net/images/page/24553/label_event.png)
+* Class 에서 아래로 스크롤 > Event 더블 클릭 > 확인
+* ![](../../.gitbook/assets/label_event.png)
 
 ```javascript
 onLabelClick(comp, info, e)
