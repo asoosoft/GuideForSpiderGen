@@ -1,14 +1,14 @@
-# 02  Project Pane
+# 02. Project Pane
 
 ### Project Pane
 
 프로젝트뷰는 기본적으로 맨 좌측에 위치하며 프로젝트의 폴더 및 파일의 구성을 트리형태
 
-프로젝트뷰의 위치는 드래그앤드롭으로 이동 가능
+프로젝트 뷰의 위치는 드래그 앤 드롭으로 이동 가능
 
-프로젝트 내의 파일 및 폴더도 드래그앤드롭으로 이동이 가능하며 마우스 우측버튼 클릭을 통해서 새 폴더 및 파일 생성, 파일 불러오기 기능이 가능
+프로젝트 내의 파일 및 폴더도 드래그 앤 드롭으로 이동이 가능하며 마우스 우측 버튼 클릭을 통해서 새 폴더 및 파일 생성, 파일 불러오기 기능이 가능
 
-![](https://wikidocs.net/images/page/22785/screens_prj.png)
+![](../../.gitbook/assets/screens_prj.png)
 
 **Folders**
 
@@ -23,7 +23,7 @@
 * **Bridge**
   * 네이티브앱과 브릿지하기 위한 파일이 로드되는 폴더
 * **Query**
-  * TR 통신을 위한 매핑정보 파일들이 로드되는 폴더
+  * TR 통신을 위한 매핑 정보 파일들이 로드되는 폴더
 * **Assets**
   * 리소스 파일이 로드되는 폴더. 해당 폴더는 프로젝트 빌드시 컴파일 되지 않으며 원본이 유지
 * **Source**
@@ -31,11 +31,11 @@
 
 ### Folder Context Menu
 
-[6. ContextMenu 참고](https://wikidocs.net/23227)
+[05. ContextMenu(Template) 참고](<02  Project Pane/05 ContextMenu(Template).md>)
 
 ### File Context Menu
 
-![](https://wikidocs.net/images/page/22785/screens_File.png)
+![](../../.gitbook/assets/screens_File.png)
 
 * **Open**
   * 선택한 파일을 열어 편집 가능
