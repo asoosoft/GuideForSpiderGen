@@ -1,10 +1,10 @@
-# 01  Class
+# 01. Class
 
 **스파이더젠에서 클래스와 관련된 다양한 속성 및 기능을 관리하는 영역은 주로 Class Pane에서 이루어집니다.**
 
 **이 영역에서는 Identity, Event, Query, Mask, Tooltip, Cursor 등의 다양한 설정을 할 수 있습니다.**
 
-![](https://wikidocs.net/images/page/22790/classpane.png)
+![](../../../.gitbook/assets/classpane.png)
 
 ### Identity
 
@@ -44,7 +44,7 @@
 
 컴포넌트의 이벤트를 설정 할 수 있습니다.\
 설정하기 위한 이벤트 컬럼을 더블클릭하면 Add Event 다이얼로그가 오픈됩니다.\
-각 컴포넌트의 이벤트 리스트는 [링크](https://wikidocs.net/273987) 를 참고해주세요.
+각 컴포넌트의 이벤트 리스트는 [링크](<04  Event List.md>) 를 참고해주세요.
 
 ### Query
 
@@ -55,7 +55,7 @@
 
 컴포넌트에 마스킹을 설정할 수 있습니다. add 버튼을 클릭하면 사용 가능한 마스크 리스트를 확인 할 수 있습니다.
 
-![](https://wikidocs.net/images/page/22790/class_mask.png)
+![](../../../.gitbook/assets/pop-mask.png)
 
 * **Type**
   * 마스킹 함수의 유형을 설정
@@ -69,7 +69,7 @@
 컴포넌트에 마우스를 올렸을 때 나타나는 **툴팁 메시지를 설정**하고 관리하는 부분입니다.\
 이 영역은 사용자가 컴포넌트의 기능이나 정보를 쉽게 이해할 수 있도록 돕는 역할을 합니다.
 
-![](https://wikidocs.net/images/page/22790/class_tool.png)
+![](../../../.gitbook/assets/tooltip.png)
 
 ***
 
@@ -127,8 +127,6 @@ onButtonLeave(comp, info, e)
 ### Cursor Type
 
 컴포넌트의 마우스 커서를 설정 할 수 있습니다.
-
-![](https://wikidocs.net/images/page/22790/class_Cursor.png)
 
 * **default**
   * 기본 커서 모양
