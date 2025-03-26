@@ -1,10 +1,10 @@
-# 03  Button
+# Button
 
-![](https://wikidocs.net/images/page/24562/btn-comp-00.png)
+![](../../.gitbook/assets/btn-comp-00.png)
 
 사용자와의 상호작용을 처리하는 데 사용 및 클릭 이벤트를 통해 특정 기능을 수행하는 **버튼 컴포넌트**
 
-![](https://wikidocs.net/images/page/24562/1.png)
+![](<../../.gitbook/assets/1 (1).png>)
 
 ### Data
 
@@ -24,16 +24,16 @@
 | `After Text`    | 아이콘이 텍스트 다음에 위치   |
 | `New Line Text` | 아이콘과 텍스트를 위아래로 위치 |
 
-![](https://wikidocs.net/images/page/24562/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-01-22_161501.png)\
+![](../../.gitbook/assets/화면_캡처_2025-01-22_161501.png)\
 `기본`
 
-![](https://wikidocs.net/images/page/24562/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-01-22_161544.png)\
+![](../../.gitbook/assets/화면_캡처_2025-01-22_161544.png)\
 `✅After Text`
 
-![](https://wikidocs.net/images/page/24562/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-01-22_161610.png)\
+![](../../.gitbook/assets/화면_캡처_2025-01-22_161610.png)\
 `✅New Line Text`
 
-![](https://wikidocs.net/images/page/24562/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-01-22_161633.png)\
+![](../../.gitbook/assets/화면_캡처_2025-01-22_161633.png)\
 `✅After Text ✅New Line Text`
 
 ### Option
@@ -64,7 +64,7 @@
 
 ### Style
 
-![](https://wikidocs.net/images/page/24562/2.png)
+![](<../../.gitbook/assets/2 (1).png>)
 
 | Style     | 설명                             |
 | --------- | ------------------------------ |
@@ -80,14 +80,14 @@
 
 **1-1. 버튼 컴포넌트를 추가하고, ID를 할당**
 
-![](https://wikidocs.net/images/page/24562/%ED%99%94%EB%A9%B4_%EC%BA%A1%EC%B2%98_2025-01-22_163749.png)\
+![](../../.gitbook/assets/화면_캡처_2025-01-22_163749.png)\
 `Component -> Button`\
-![](https://wikidocs.net/images/page/24562/2_1Kcg0W6.png)\
+![](../../.gitbook/assets/2_1Kcg0W6.png)\
 `Identify -> ID -> btn001 입력`
 
 **1-2. Click 이벤트를 설정.**
 
-![](https://wikidocs.net/images/page/24562/3.png)\
+![](<../../.gitbook/assets/3 (1).png>)\
 `방법 1 : 버튼을 오른쪽 클릭후 Add Event 선택하여 이벤트 추가.`\
 `방법 2 : 캡처 화면과 같이 Event -> click 이벤트 리스트 우측 영역을 클릭 후 이벤트 추가.`
 
