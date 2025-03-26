@@ -1,6 +1,6 @@
-# 08  TextField
+# TextField
 
-![](https://wikidocs.net/images/page/24782/tf.png)
+![](../../.gitbook/assets/tf.png)
 
 **텍스트필드(ATextField)** 는 사용자가 문자를 입력할 수 있는 기본적인 입력 컴포넌트입니다.\
 
@@ -9,7 +9,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24782/tf_Attribute.png)
+![](../../.gitbook/assets/tf_Attribute.png)
 
 **1️⃣ Data**
 
@@ -83,7 +83,7 @@ onInitDone()
 
 **예시 1️⃣**
 
-![](https://wikidocs.net/images/page/24782/tf_ex1.png)\
+![](../../.gitbook/assets/tf_ex1.png)\
 
 
 1️⃣ **컴포넌트 생성**\
@@ -110,7 +110,7 @@ onInitDone()
 	}
 ```
 
-![](https://wikidocs.net/images/page/24782/tf_ex1_result.png)
+![](../../.gitbook/assets/tf_ex1_result.png)
 
 텍스트필드의 값이 변할 때마다 텍스트를 받아와 이를 콘솔에 출력
 
@@ -121,7 +121,7 @@ onInitDone()
 
 > 위 예시 1에서 이어지는 예시 입니다.
 
-![](https://wikidocs.net/images/page/24782/tf_ex2.png)
+![](../../.gitbook/assets/tf_ex2.png)
 
 1️⃣ **컴포넌트 추가**\
 

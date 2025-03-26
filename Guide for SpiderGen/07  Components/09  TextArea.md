@@ -1,6 +1,6 @@
 # TextArea
 
-![](https://wikidocs.net/images/page/24785/textarea-comp-00.png)
+![](../../.gitbook/assets/textarea-comp-00.png)
 
 **텍스트에어리어(ATextArea)** 는 여러 줄의 텍스트를 입력할 수 있는 텍스트 입력기 컴포넌트입니다.\
 
@@ -9,7 +9,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24785/ta_Attribute.png)
+![](../../.gitbook/assets/ta_Attribute.png)
 
 **Data**
 
@@ -47,7 +47,7 @@
 | ATextArea  | textarea  |      | -          |
 | AButton    | button    | 추가   | -          |
 
-![](https://wikidocs.net/images/page/24785/ta_ex1.png)
+![](../../.gitbook/assets/ta_ex1.png)
 
 **2️⃣ 이벤트 설정**
 

@@ -1,6 +1,6 @@
-# 06  DropBox
+# DropBox
 
-![](https://wikidocs.net/images/page/24712/dropBox.png)
+![](../../.gitbook/assets/dropBox.png)
 
 
 
@@ -8,7 +8,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24712/db_Attribute.png)
+![](../../.gitbook/assets/db_Attribute.png)
 
 **Data**
 
@@ -31,11 +31,11 @@
 | AButton    | Button   | 등록   |             |
 | ADropBox   | drop     |      |             |
 
-![](https://wikidocs.net/images/page/24712/dp_screen2.png)
+![](../../.gitbook/assets/dp_screen2.png)
 
 **2. click 이벤트를 등록**
 
-![](https://wikidocs.net/images/page/24712/db_regi.png)
+![](../../.gitbook/assets/db_regi.png)
 
 ```javascript
  onButtonClick(comp, info, e)
@@ -59,16 +59,16 @@
 };  
 ```
 
-![](https://wikidocs.net/images/page/24712/dp_test3.png)
+![](../../.gitbook/assets/dp_test3.png)
 
-![](https://wikidocs.net/images/page/24712/db_test2.png)
+![](../../.gitbook/assets/db_test2.png)
 
 **3. select 이벤트 등록**
 
 이벤트명은 onDropSelect라고 사용
 
 처리 내용은 드롭박스의 아이템이 선택되면 선택된 내용을 확인하는 토스트 메시지를 출력\
-![](https://wikidocs.net/images/page/24712/db_select.png)
+![](../../.gitbook/assets/db_select.png)
 
 ```javascript
 ...
@@ -83,7 +83,7 @@ onDropSelect(comp, info, e)
 
 _**AToast Component 추가**_
 
-_**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings... > Component > AToast.js 체크**_![](https://wikidocs.net/images/page/24712/dp_test_suc.png)
+_**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings... > Component > AToast.js 체크**_![](../../.gitbook/assets/dp_test_suc.png)
 
 ### 검색기능
 
@@ -114,11 +114,11 @@ init(context, evtListener)
 
 * 검색전
 
-![](https://wikidocs.net/images/page/24712/db_search_before.png)
+![](../../.gitbook/assets/db_search_before.png)
 
 * 검색후
 
-![](https://wikidocs.net/images/page/24712/db_search_after.png)
+![](../../.gitbook/assets/db_search_after.png)
 
 ### 코드로 DropBox 생성하는 법
 
@@ -145,4 +145,4 @@ onInitDone()
 ...
 ```
 
-![](https://wikidocs.net/images/page/24712/dp_new.png)
+![](../../.gitbook/assets/dp_new.png)

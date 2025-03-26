@@ -1,6 +1,6 @@
-# 07  SelectBox
+# SelectBox
 
-![](https://wikidocs.net/images/page/24779/selectBox.png)
+![](../../.gitbook/assets/selectBox.png)
 
 사용자가 미리 정의된 옵션 목록에서 하나의 항목을 선택할 수 있도록 하는 UI 컴포넌트.
 
@@ -10,7 +10,7 @@
 
 #### Default Data4
 
-![](https://wikidocs.net/images/page/24779/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_093757.png)
+![](../../.gitbook/assets/스크린샷_2025-02-03_093757.png)
 
 셀렉트박스에 보여질 리스트 데이터를 설정.
 
@@ -32,15 +32,15 @@ value1은 해당 아이템의 값. 이 값은 주로 프로그램 내에서 선�
 
 * 컴포넌트 > SelectBox 선택
 
-![](https://wikidocs.net/images/page/24779/makeselectbox.png)
+![](../../.gitbook/assets/makeselectbox.png)
 
 * Attribute > Data에 옵션 추가
 
-![](https://wikidocs.net/images/page/24779/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_152739.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_152739.png)
 
 * SelectBox 선택 > Event > Change 클릭
 
-![](https://wikidocs.net/images/page/24779/selectboxevent.png)
+![](../../.gitbook/assets/selectboxevent.png)
 
 * 코드 생성
 
@@ -58,11 +58,11 @@ onSelectBoxChange(comp, info, e){
 
 * Project > Framework > afc > Default Load Settings
 
-![](https://wikidocs.net/images/page/24779/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_155755.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_155755.png)
 
 * ASelectBox.js 선택 > 창닫기 > 변경된 정보를 저장하시겠습니까? > Yes
 
-![](https://wikidocs.net/images/page/24779/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_162355.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_162355.png)
 
 * 코드 생성
 
@@ -96,4 +96,4 @@ onSelectBoxChange(comp, info, e){
 
 * 실행 화면
 
-![](https://wikidocs.net/images/page/24779/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_162155.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_162155.png)

@@ -1,6 +1,6 @@
-# 04  CheckBox
+# CheckBox
 
-![](https://wikidocs.net/images/page/24697/checkBox.png)
+![](../../.gitbook/assets/checkBox.png)
 
 **체크박스(ACheckBox)** 는 사용자가 선택할 수 있는 옵션을 제공하는 컴포넌트입니다.\
 
@@ -9,7 +9,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24697/checkBox_Attribute.png)
+![](../../.gitbook/assets/checkBox_Attribute.png)
 
 **1️⃣ Data**
 
@@ -47,7 +47,7 @@
 | AButton   | button   | 확인   |       |
 | ACheckBox | checkBox | 사과   | 200   |
 
-![](https://wikidocs.net/images/page/24697/checkBox_ex1_re.png)
+![](../../.gitbook/assets/checkBox_ex1_re.png)
 
 **2️⃣ 클릭 이벤트 설정**
 
@@ -74,7 +74,7 @@ onButtonClick(comp, info, e)
 * 실행된 화면에서 체크박스를 선택하고 확인버튼을 클릭합니다.
 * 레이블에 선택된 체크박스의 Value 값을 출력하는걸 확인합니다.
 
-![](https://wikidocs.net/images/page/24697/checkBox_result_re.png)
+![](../../.gitbook/assets/checkBox_result_re.png)
 
 > 2번 예제
 >

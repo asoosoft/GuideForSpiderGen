@@ -1,6 +1,6 @@
-# 10  SwitchButton
+# SwitchButton
 
-![](https://wikidocs.net/images/page/24818/switchbtn-comp-00.png)
+![](../../.gitbook/assets/switchbtn-comp-00.png)
 
 \
 \*\*스위치 버튼 (SwitchButton)\*\* 는 사용자가 on/off 상태를 전환할 수 있는 컴포넌트입니다.\
@@ -14,7 +14,7 @@ UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니�
 
 ### Appearance
 
-![](https://wikidocs.net/images/page/24818/switchbtn-ex-002.png)
+![](../../.gitbook/assets/switchbtn-ex-002.png)
 
 **style**
 
@@ -43,7 +43,7 @@ UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니�
 | ATextBox      | textBox | 1번 텍스트입니다. |
 | ASwitchButton | switch  |            |
 
-![](https://wikidocs.net/images/page/24818/switchbtn-ex-01.png)
+![](../../.gitbook/assets/switchbtn-ex-01.png)
 
 **2. 이벤트 연결**
 
@@ -69,7 +69,7 @@ UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니�
 
 * 스위치 버튼을 좌측 스위치 상태에서 버튼 클릭 메시지 확인. 우측 상태로 스위칭하고 메시지를 확인합니다.
 
-![](https://wikidocs.net/images/page/24818/switchbtn-ex-02.png)
+![](../../.gitbook/assets/switchbtn-ex-02.png)
 
 ### 다음 예제는 JavaScript를 사용하여 스위치 버튼(SwitchButton)을 만듭니다.
 
@@ -79,7 +79,7 @@ UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니�
 
 > 컴포넌트를 코드로 추가할 때는 컴포넌트(componet)와 이벤트(event)를 둘 다 추가해야 합니다.
 
-![](https://wikidocs.net/images/page/24818/switchbutton-ex-05.png)
+![](../../.gitbook/assets/switchbutton-ex-05.png)
 
 **2.코드를 추가합니다.**
 
@@ -140,4 +140,4 @@ UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니�
 
 * 버튼을 눌러서 내용이 바뀌는지 확인합니다
 
-![](https://wikidocs.net/images/page/24818/switchbtn-ex-01.png) ![](https://wikidocs.net/images/page/24818/switchbtn-ex-02.png)
+![](../../.gitbook/assets/switchbtn-ex-01.png) ![](../../.gitbook/assets/switchbtn-ex-02.png)
