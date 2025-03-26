@@ -8,17 +8,17 @@
 
 > 단축키: F5
 
-![](https://wikidocs.net/images/page/276221/run.png)
+![](../.gitbook/assets/run.png)
 
 **Build 탭 설명** ➡️ [**E. Build**](<../Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/E  Build.md>)
 
-![](https://wikidocs.net/images/page/276221/result.png)
+![](../.gitbook/assets/result.png)
 
 **시뮬레이터를 통해 실행 결과를 확인**
 
 lay에서 생성했던 button을 시뮬레이터를 통해 클릭
 
-![](https://wikidocs.net/images/page/276221/alert.png)
+![](../.gitbook/assets/alert.png)
 
 위 사진과 같이 알림창이 실행되면 성공
 
@@ -33,7 +33,7 @@ lay에서 생성했던 button을 시뮬레이터를 통해 클릭
 
 아래 사진과 같이 시뮬레이터를 컨트롤할 수 있는 메뉴가 나옴
 
-![](https://wikidocs.net/images/page/276221/simul.png)
+![](../.gitbook/assets/simul.png)
 
 * **Reload** : **시뮬레이터를 새로고침** 하고 스파이더젠에서 **새로 빌드된 사항을 적용**합니다.
 * **FullScreen** : 시뮬레이터 창을 **최대화** 합니다.
@@ -62,7 +62,7 @@ lay에서 생성했던 button을 시뮬레이터를 통해 클릭
 Build > Run AsBrowser 선택 ➡️\
 자동으로 생성되어진 로컬서버에 빌드 된 프로젝트가 옮겨지고 바로 웹에서 확인 가능
 
-![](https://wikidocs.net/images/page/276221/runBrowser.png)
+![](../.gitbook/assets/runBrowser.png)
 
 ### 수동 실행
 
@@ -70,7 +70,7 @@ Build > Run AsBrowser 선택 ➡️\
 
 프로젝트 빌드 후 생성되는 bin 폴더 내부의 index.html을 포함한 생성된 모든 폴더 및 파일들을 웹 서버에 복사하거나 옮겨서 사용 가능
 
-![](https://wikidocs.net/images/page/276221/bin.png)
+![](../.gitbook/assets/bin.png)
 
 **< 사진 - bin 폴더 내부 구조 >**
 
