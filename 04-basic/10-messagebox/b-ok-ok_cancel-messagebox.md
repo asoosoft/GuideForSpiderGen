@@ -1,4 +1,4 @@
-# B OK   OK\_CANCEL MessageBox
+# B. OK   OK\_CANCEL MessageBox
 
 `AMessageBox.OK`는 단일 버튼 메시지 박스 타입으로, 오직 "OK" 버튼만 제공함.\
 이 타입은 사용자가 정보를 단순히 확인한 후 진행할 때 유용함.\
@@ -14,7 +14,7 @@
   * 메시지(알림창)를 간단히 띄우기 위해 afc 폴더에 `AToast.js` 파일을 추가함.
   * 이후 코드에서 `AToast.show("메시지")`처럼 바로 알림창을 표시할 수 있음.
 
-![](https://wikidocs.net/images/page/275962/MessageBox.png)
+![](<../../.gitbook/assets/MessageBox (1).png>)
 
 ***
 
@@ -27,7 +27,7 @@
 | AButton   | OK         |
 | AButton   | OK\_CANCEL |
 
-![](https://wikidocs.net/images/page/275962/OKMessageBox01.png)
+![](../../.gitbook/assets/OKMessageBox01.png)
 
 ***
 
@@ -80,6 +80,6 @@ onOK_CANCELClick(comp, info, e) {
 * 프로젝트를 빌드 후 실행함.
 * 각 버튼(OK, OK\_CANCEL)을 클릭하여 출력되는 메시지 박스와 알림창을 확인함.
 
-![](https://wikidocs.net/images/page/275962/OKMessageBox02.png)
+![](../../.gitbook/assets/OKMessageBox02.png)
 
-![](https://wikidocs.net/images/page/275962/OKMessageBox03.png)
+![](../../.gitbook/assets/OKMessageBox03.png)

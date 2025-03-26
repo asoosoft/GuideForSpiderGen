@@ -1,4 +1,4 @@
-# A Empty MessageBox
+# A. Empty MessageBox
 
 `AMessageBox.EMPTY`는 메시지 박스를 띄울 때 버튼이 없는 타입을 의미함.\
 이 타입을 사용하면 메시지 박스에 단순히 메시지만 표시되고, 사용자가 클릭할 수 있는 버튼은 제공되지 않음.
@@ -10,7 +10,7 @@
 * 프로젝트를 시작하기 전에 필요한 기능들을 준비함.
   * MessageBox를 사용하기 위해 `afc` 폴더에 **AMessageBox.js** 컴포넌트를 추가함.
 
-![](https://wikidocs.net/images/page/275961/MessageBox.png)
+![](../../.gitbook/assets/MessageBox.png)
 
 ***
 
@@ -22,7 +22,7 @@
 | --------- | ----- |
 | AButton   | EMPTY |
 
-![](https://wikidocs.net/images/page/275961/EmptyMessageBox.png)
+![](../../.gitbook/assets/EmptyMessageBox.png)
 
 ***
 
@@ -52,4 +52,4 @@ onEMPTYClick(comp, info, e) {
 * 프로젝트를 빌드 후 실행함.
 * **EMPTY** 버튼을 클릭하여 출력되는 MessageBox를 확인함.
 
-![](https://wikidocs.net/images/page/275961/EmptyMessageBox01.png)
+![](../../.gitbook/assets/EmptyMessageBox01.png)

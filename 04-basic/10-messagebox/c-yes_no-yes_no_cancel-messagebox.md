@@ -1,4 +1,4 @@
-# C YES\_NO YES\_NO\_CANCEL MessageBox
+# C. YES\_NO YES\_NO\_CANCEL MessageBox
 
 `AMessageBox.YES_NO`와 `AMessageBox.YES_NO_CANCEL`은 세 가지 버튼을 제공하는 메시지 박스 타입임.\
 이 타입은 "YES", "NO", "CANCEL" 버튼을 제공하며, 사용자가 세 가지 선택지 중 하나를 선택해야 하는 상황에 유용함.\
@@ -13,7 +13,7 @@
   * 메시지(알림창)를 간단히 띄우기 위해 `afc` 폴더에 **AToast.js** 파일을 추가함.
   * 이후 코드에서 `AToast.show("메시지")`처럼 바로 알림창을 표시할 수 있음.
 
-![](https://wikidocs.net/images/page/275963/MessageBox.png)
+![](<../../.gitbook/assets/MessageBox (2).png>)
 
 ***
 
@@ -26,7 +26,7 @@
 | AButton   | YES\_NO         |
 | AButton   | YES\_NO\_CANCEL |
 
-![](https://wikidocs.net/images/page/275963/YES_NO_CANCELMessageBox01.png)
+![](../../.gitbook/assets/YES_NO_CANCELMessageBox01.png)
 
 ***
 
@@ -83,5 +83,5 @@ onYES_NO_CANCELClick(comp, info, e) {
 * 프로젝트를 빌드 후 실행함.
 * 각 버튼(YES\_NO, YES\_NO\_CANCEL)을 클릭하여 출력되는 메시지 박스와 알림창을 확인함.
 
-![](https://wikidocs.net/images/page/275963/YES_NO_CANCELMessageBox02.png)\
-![](https://wikidocs.net/images/page/275963/YES_NO_CANCELMessageBox03.png)
+![](../../.gitbook/assets/YES_NO_CANCELMessageBox02.png)\
+![](../../.gitbook/assets/YES_NO_CANCELMessageBox03.png)
