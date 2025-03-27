@@ -1,6 +1,6 @@
-# 11  View
+# View
 
-![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_111628.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_111628.png)
 
 화면 구성을 위한 기본 단위로, 다른 컴포넌트를 자식으로 포함할 수 있는 컴포넌트.
 
@@ -14,7 +14,7 @@ AView는 자식 컴포넌트에 공통 속성과 스타일을 손쉽게 전달.
 
 ### Attribute
 
-* Load Url![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_135819.png)
+* Load Url![](../../.gitbook/assets/스크린샷_2025-01-23_135819.png)
 
 뷰 컴포넌트에 로드할 레이아웃 파일(.lay)의 경로를 설정하는 속성.
 
@@ -26,11 +26,11 @@ AView는 자식 컴포넌트에 공통 속성과 스타일을 손쉽게 전달.
 
 * 컴포넌트에서 View 생성.
 
-![](https://wikidocs.net/images/page/24827/create_view.png)
+![](../../.gitbook/assets/create_view.png)
 
 * Event에서 Click 선택 후 확인
 
-![](https://wikidocs.net/images/page/24827/view_event.png)
+![](../../.gitbook/assets/view_event.png)
 
 *   이벤트 함수 생성
 
@@ -39,7 +39,7 @@ AView는 자식 컴포넌트에 공통 속성과 스타일을 손쉽게 전달.
       alert("hello world");
     }
     ```
-* Run Project 실행 후 View 클릭![](https://wikidocs.net/images/page/24827/run_prj.png)
+* Run Project 실행 후 View 클릭![](../../.gitbook/assets/run_prj.png)
 
 ***
 
@@ -97,7 +97,9 @@ onMyViewClick(comp, info, e) {
 }
 ```
 
-* 실행 결과![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_131044.png)
+* 실행 결과
+
+![](../../.gitbook/assets/스크린샷_2025-02-18_131044.png)
 
 ***
 
@@ -113,7 +115,7 @@ onMyViewClick(comp, info, e) {
 | AButton   | btnChange | Change Text  |
 | ALabel    | lblText   | Initial Text |
 
-![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_170927.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_170927.png)
 
 * MainView.js에 코드 생성
 
@@ -151,40 +153,55 @@ class  MainView  extends  AView
 
 * 실행 결과
 
-![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_164941.png) ![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_164926.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_164941.png) ![](../../.gitbook/assets/스크린샷_2025-01-23_164926.png)
 
 #### 4. 코드로 컴포넌트 추가
 
-* Project > Framework > afc 마우스 우클릭 > Default Load Settings![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_132513.png)
-* AButton.js, ALabel.js 선택![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_132854.png)![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_132907.png)
-* 창닫기 > 변경사항 적용 Yes![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_132942.png)
-*   MainView.js에 코드 생성
+* Project > Framework > afc 마우스 우클릭 > Default Load Settings![](../../.gitbook/assets/스크린샷_2025-02-18_132513.png)
 
-    onInitDone() {\
-    super.onInitDone();
 
-    ```
-      // AView 인스턴스 생성
-      var dynamicView = new  AView();
-      dynamicView.init(); // 뷰 초기화
-      dynamicView.setSize(400, 300); // 뷰의 크기 설정
-      dynamicView.setPos(50, 50); // 뷰의 위치 설정
-      // 뷰의 배경색을 파란색으로 설정
-      dynamicView.setStyle('background-color', 'blue');
-      
-      // AButton 인스턴스 생성
-      const button = new  AButton();
-      button.init(); // 버튼 초기화
-      button.setText('Hello World'); // 버튼의 텍스트 설정
-      button.setSize(100, 40); // 버튼의 크기 설정
-      button.setPos(150, 130); // 버튼의 위치 설정
-      
-      // AView에 버튼 추가
-      dynamicView.addComponent(button, false, null);
-      
-      // MainView에 동적으로 생성한 AView 추가
-      this.addComponent(dynamicView, false, null);
-    ```
 
-    }
-* Build 및 실행![](https://wikidocs.net/images/page/24827/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_174659.png)
+* AButton.js, ALabel.js 선택
+
+![](../../.gitbook/assets/스크린샷_2025-02-18_132854.png)![](../../.gitbook/assets/스크린샷_2025-02-18_132907.png)
+
+
+
+* 창닫기 > 변경사항 적용 Yes
+
+![](../../.gitbook/assets/스크린샷_2025-02-18_132942.png)
+
+
+
+* MainView.js에 코드 생성
+
+```
+    onInitDone() {
+	    super.onInitDone();
+	    
+	    // AView 인스턴스 생성
+	    var dynamicView = new  AView();
+	    dynamicView.init(); // 뷰 초기화
+	    dynamicView.setSize(400, 300); // 뷰의 크기 설정
+	    dynamicView.setPos(50, 50); // 뷰의 위치 설정
+	    // 뷰의 배경색을 파란색으로 설정
+	    dynamicView.setStyle('background-color', 'blue');
+	    
+	    // AButton 인스턴스 생성
+	    const button = new  AButton();
+	    button.init(); // 버튼 초기화
+	    button.setText('Hello World'); // 버튼의 텍스트 설정
+	    button.setSize(100, 40); // 버튼의 크기 설정
+	    button.setPos(150, 130); // 버튼의 위치 설정
+	    
+	    // AView에 버튼 추가
+	    dynamicView.addComponent(button, false, null);
+	    
+	    // MainView에 동적으로 생성한 AView 추가
+	    this.addComponent(dynamicView, false, null);
+    } 
+```
+
+* Build 및 실행
+
+![](../../.gitbook/assets/스크린샷_2025-01-23_174659.png)
