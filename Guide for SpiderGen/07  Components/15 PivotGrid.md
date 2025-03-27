@@ -1,6 +1,6 @@
-# 15 PivotGrid
+# PivotGrid
 
-![](https://wikidocs.net/images/page/274103/pg.png)
+![](../../.gitbook/assets/pg.png)
 
 **피벗 그리드(APivotGrid)** 는 데이터를 피벗 테이블 형식으로 시각화하는 데 사용되는 컴포넌트\
 
@@ -11,7 +11,7 @@ Grid 와 동일하나, 대량의 컬럼으로 구성할경우 좌우 스크롤�
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/274103/pg_Attribute.png)
+![](../../.gitbook/assets/pg_Attribute.png)
 
 **1️⃣ Option**
 

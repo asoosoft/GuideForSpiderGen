@@ -1,12 +1,12 @@
-# 23  FlexLayout
+# FlexLayout
 
-![](https://wikidocs.net/images/page/24874/flexlayout-comp-01.png)
+![](../../.gitbook/assets/flexlayout-comp-01.png)
 
 컴포넌트 배열과 정렬을 위해 사용하는 레이아웃 컴포넌트.
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_105017.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_105017.png)
 
 #### 1. Direction
 
@@ -17,10 +17,27 @@
 | column         | 자식 요소를 수직 방향(상->하)으로 배치.      |
 | column-reverse | 자식 요소를 수직 방향(하->상)으로 배치.      |
 
-* row 예시화면![](https://wikidocs.net/images/page/24874/dir-row.png)
-* row-reverse 예시화면![](https://wikidocs.net/images/page/24874/dir-rowreverse.png)
-* column 예시화면![](https://wikidocs.net/images/page/24874/dir-column.png)
-* column-reverse 예시화면![](https://wikidocs.net/images/page/24874/dir-columreverse.png)
+* row 예시화면
+
+![](../../.gitbook/assets/dir-row.png)
+
+
+
+* row-reverse 예시화면
+
+![](../../.gitbook/assets/dir-rowreverse.png)
+
+
+
+* column 예시화면
+
+![](../../.gitbook/assets/dir-column.png)
+
+
+
+* column-reverse 예시화면
+
+![](../../.gitbook/assets/dir-columreverse.png)
 
 #### 2. Wrap
 
@@ -30,8 +47,13 @@
 | wrap         | 자식 요소가 적정 길이보다 길면 다음 줄에 배치. |
 | wrap-reverse | wrap과 같으나 역방향으로 배치.         |
 
-* wrap 예시화면![](https://wikidocs.net/images/page/24874/wrap.png)
-* wrap-reverse 예시화면![](https://wikidocs.net/images/page/24874/wrap-reverse.png)
+* wrap 예시화면
+
+![](../../.gitbook/assets/wrap.png)
+
+* wrap-reverse 예시화면
+
+![](../../.gitbook/assets/wrap-reverse.png)
 
 #### 3. Justify Content
 
@@ -44,11 +66,35 @@
 | space-around    | 자식 요소 전후에 일정한 간격을 두고 정렬. |
 | space-evenly    | 자식 요소 사이에 동일한 간격을 두고 정렬. |
 
-* center 예시화면![](https://wikidocs.net/images/page/24874/just-center.png)
-* flex-end 예시화면![](https://wikidocs.net/images/page/24874/just-flexend.png)
-* space-between 예시화면![](https://wikidocs.net/images/page/24874/just-spacebetw.png)
-* space-around 예시화면![](https://wikidocs.net/images/page/24874/just-spacearound.png)
-* space-evenly 예시화면![](https://wikidocs.net/images/page/24874/just-spaceeven.png)
+* center 예시화면
+
+![](../../.gitbook/assets/just-center.png)
+
+
+
+* flex-end 예시화면
+
+![](../../.gitbook/assets/just-flexend.png)
+
+
+
+* space-between 예시화면
+
+![](../../.gitbook/assets/just-spacebetw.png)
+
+
+
+* space-around 예시화면
+
+![](../../.gitbook/assets/just-spacearound.png)
+
+
+
+* space-evenly 예시화면
+
+![](../../.gitbook/assets/just-spaceeven.png)
+
+
 
 #### 4. Align Items
 
@@ -60,10 +106,29 @@
 | flex-end    | 자식 요소를 수직 방향의 끝점에 배치.        |
 | base-line   | 자식 요소를 수직 방향의 베이스라인에 배치.     |
 
-* stretch 예시화면![](https://wikidocs.net/images/page/24874/align-stretch.png)
-* center 예시화면![](https://wikidocs.net/images/page/24874/align-center.png)
-* flex-end 예시화면![](https://wikidocs.net/images/page/24874/align-flexend.png)
-* baseline 예시화면![](https://wikidocs.net/images/page/24874/align-baseline.png)
+* stretch 예시화면
+
+![](../../.gitbook/assets/align-stretch.png)
+
+
+
+* center 예시화면
+
+![](../../.gitbook/assets/align-center.png)
+
+
+
+* flex-end 예시화면
+
+![](../../.gitbook/assets/align-flexend.png)
+
+
+
+* baseline 예시화면
+
+![](../../.gitbook/assets/align-baseline.png)
+
+
 
 #### 5. Align Content
 
@@ -76,30 +141,47 @@
 | space-between | 자식 요소 사이에 동일한 간격을 배치.                                             |
 | space-around  | 자식 요소의 주위에 동일한 간격을 배치.                                            |
 
-* center 예시화면![](https://wikidocs.net/images/page/24874/contend-center.png)
-* flex-end 예시화면![](https://wikidocs.net/images/page/24874/content-flexend.png)
-* stretch 예시화면![](https://wikidocs.net/images/page/24874/align-stretch.png)
-* space-around 예시화면![](https://wikidocs.net/images/page/24874/content-spacearound.png)
+* center 예시화면
+
+![](../../.gitbook/assets/contend-center.png)
+
+
+
+* flex-end 예시화면
+
+![](../../.gitbook/assets/content-flexend.png)
+
+
+
+* stretch 예시화면
+
+![](<../../.gitbook/assets/align-stretch (1).png>)
+
+
+
+* space-around 예시화면
+
+![](../../.gitbook/assets/content-spacearound.png)
 
 ### Example
 
 #### 화면에 컴포넌트 생성
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_165601.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_165601.png)
 
 #### 코드로 컴포넌트 생성
 
 * Framework > afc > Default Load Settings
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_143530.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_143530.png)
 
 * AFlexLayout.js 선택 > 창닫기
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_143542.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_143542.png)
 
 * 변경된 정보를 저장하시겠습니까> -> Yes
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_143555.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_143555.png)
 
 * js에 코드 추가
 
@@ -123,17 +205,17 @@ onInitDone() {
 
 * 실행 결과
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_143612.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_143612.png)
 
 #### FlaxLayout 전용 기능
 
 * FlexLayout 컴포넌트에서 마우스 우클릭 -> Flex Layout Property
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_113534.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_113534.png)
 
 * 기능
 
-![](https://wikidocs.net/images/page/24874/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_113709.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_113709.png)
 
 | 속성      | 설명                                                     |
 | ------- | ------------------------------------------------------ |

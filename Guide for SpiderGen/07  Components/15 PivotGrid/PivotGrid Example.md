@@ -11,11 +11,11 @@
 
 > \[ 순위, 빈 칸 ] 을 테이블 명으로 설정
 
-![](https://wikidocs.net/images/page/276292/pivot_lay.png)
+![](../../../.gitbook/assets/pivot_lay.png)
 
 PivotGrid를 우클릭하면 아래 사진과 같은 메뉴가 나옴
 
-![](https://wikidocs.net/images/page/276292/pivot_set.png)
+![](../../../.gitbook/assets/pivot_set.png)
 
 * **Data Properties**: 스크롤이 될 테이블 설정 창
 * **Pivot Data Properties**: 고정될 테이블 설정 창
@@ -83,4 +83,4 @@ this.grid.setData(pivotData, scrollData);
 > ⚠️ 좌우 스크롤은 모바일 환경에서만 가능하므로\
 > DevTool을 활성화한 후 모바일 환경에서 테스트 가능
 
-![](https://wikidocs.net/images/page/276292/pivot_res.png)
+![](../../../.gitbook/assets/pivot_res.png)

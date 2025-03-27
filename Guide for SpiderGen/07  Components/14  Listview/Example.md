@@ -10,14 +10,14 @@
 
 > ex ) 게시글 목록
 
-![](https://wikidocs.net/images/page/276280/board.png)
+![](../../../.gitbook/assets/board.png)
 
 **< 🔼 사진 -** [**스파이더젠 홈페이지 > 커뮤니티 > 질의응답**](https://www.spidergen.org:3003/?pid=T030200) **>**
 
 해당 페이지 내 게시판을 만들기 위해 리스트 뷰를 사용\
 아래는 해당 페이지를 레이아웃으로 구성한 사진
 
-![](https://wikidocs.net/images/page/276280/board_lay.png)
+![](../../../.gitbook/assets/board_lay.png)
 
 **< 🔼 사진 - 홈페이지 게시판을 구현한 레이아웃 >**
 
@@ -43,13 +43,13 @@ this.listView.addItem('Source/리스트 뷰 아이템.lay',  this.Data);
 
 해당 리스트 뷰에 아래 사진과 같은 아이템을 추가해 게시판을 구현
 
-![](https://wikidocs.net/images/page/276280/listview_item.png)
+![](../../../.gitbook/assets/listview_item.png)
 
 **< 🔼 사진 -** [**스파이더젠 홈페이지 > 커뮤니티 > 질의응답**](https://www.spidergen.org:3003/?pid=T030200) **내의 게시글 >**
 
 마찬가지로 아래와 같이 레이아웃 구성
 
-![](https://wikidocs.net/images/page/276280/listview_item_lay.png)
+![](../../../.gitbook/assets/listview_item_lay.png)
 
 **< 🔼 사진 - 홈페이지 게시글을 구현한 레이아웃 >**
 
@@ -71,7 +71,7 @@ setData(data)  {
 
 🔽 시뮬레이터로 완성된 화면을 확인
 
-![](https://wikidocs.net/images/page/276280/board_res.png)
+![](<../../../.gitbook/assets/board_res (2).png>)
 
 #### 자동 데이터 바인딩
 

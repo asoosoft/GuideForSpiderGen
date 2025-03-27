@@ -1,6 +1,6 @@
-# 16  WebView
+# WebView
 
-![](https://wikidocs.net/images/page/24839/webview-comp-00.png)
+![](../../.gitbook/assets/webview-comp-00.png)
 
 HTML, CSS, JavaScript로 작성된 웹 콘텐츠를 로드하고 표시할 수 있는 **웹뷰 컴포넌트.**
 
@@ -20,7 +20,7 @@ HTML, CSS, JavaScript로 작성된 웹 콘텐츠를 로드하고 표시할 수 �
 
 **1-1. WebView 컴포넌트 추가 후, `Load Url`에 URI 를 입력**
 
-![](https://wikidocs.net/images/page/24839/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_163212_NBeJcU0.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_163212.png)
 
 #### 2. 코드로 추가하는 방법
 

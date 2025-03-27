@@ -1,6 +1,6 @@
 # RadioGroup
 
-![](https://wikidocs.net/images/page/24830/radiogroup-comp-00.png)
+![](../../.gitbook/assets/radiogroup-comp-00.png)
 
 **라디오그룹(ARadioGroup)** 은 여러 개의 라디오 버튼을 그룹화하여 그 중 하나만 선택할 수 있도록 관리하는 컴포넌트입니다.\
 
@@ -10,7 +10,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24830/rg.png)
+![](../../.gitbook/assets/rg.png)
 
 **Data**
 

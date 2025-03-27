@@ -1,6 +1,6 @@
-# 21 CalendarPicker
+# CalendarPicker
 
-![](https://wikidocs.net/images/page/274106/cp.png)
+![](../../.gitbook/assets/cp.png)
 
 **캘린더 피커(ACalendarPicker)** 는 날짜를 선택하고 표시할 수 있는 컴포넌트입니다.\
 
@@ -14,7 +14,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/274106/cp_Attribute.png)
+![](../../.gitbook/assets/cp_Attribute.png)
 
 **Data**
 

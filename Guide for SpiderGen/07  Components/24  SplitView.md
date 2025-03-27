@@ -1,6 +1,6 @@
-# 24  SplitView
+# SplitView
 
-![](https://wikidocs.net/images/page/24877/splitView.png)
+![](../../.gitbook/assets/splitView.png)
 
 
 
@@ -34,7 +34,7 @@ constructor()
 | ---------- | --------- |
 | ASplitView | splitView |
 
-![](https://wikidocs.net/images/page/24877/split_view.png)
+![](../../.gitbook/assets/split_view.png)
 
 **5. MainView.js 에 스플릿 생성**
 
@@ -71,7 +71,7 @@ onInitDone()
 | AButton    | btnSend  | send             |                   |
 | AButton    | btnGet   | get              |                   |
 
-![](https://wikidocs.net/images/page/24877/split_left.png)
+![](../../.gitbook/assets/split_left.png)
 
 **7. RightView.lay 컴포넌트 배치**
 
@@ -82,7 +82,7 @@ onInitDone()
 | AButton    | btnSend  | send            |                   |
 | AButton    | btnGet   | get             |                   |
 
-![](https://wikidocs.net/images/page/24877/split_right.png)
+![](../../.gitbook/assets/split_right.png)
 
 **8. LeftView.js 멤버변수 설정**
 
@@ -243,8 +243,6 @@ onBtnGetClick(comp, info, e)
 **16. 프로젝트 실행**
 
 * 좌우측에 텍스트 필드에 각각 내용을 입력하고 send 버튼을 클릭
-* 서로 상대편의 레이블에 내용이 잘 출력되는 확인![](https://wikidocs.net/images/page/24878/splitview-ex-009.png)
+* 서로 상대편의 레이블에 내용이 잘 출력되는 확인
 * 이번에는 각 뷰의 get 버튼을 클릭
-*   서로 상대편의 텍스트 필드 내용을 잘 가져오는지 확인
-
-    ![](https://wikidocs.net/images/page/24878/splitview-ex-006.png)
+* 서로 상대편의 텍스트 필드 내용을 잘 가져오는지 확인

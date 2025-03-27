@@ -1,6 +1,6 @@
-# 32 Tree
+# Tree
 
-![](https://wikidocs.net/images/page/274094/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_104143.png)\
+![](../../.gitbook/assets/스크린샷_2025-01-24_104143.png)\
 계층 구조를 시각적으로 표현하는 데 사용되는 **트리 컴포넌트**
 
 > 아이템을 추가하거나 삭제할 수 있으며, 특정 아이템을 선택하거나 선택 해제 가능.
@@ -13,7 +13,7 @@
 
 #### 컴포넌트에서 추가하여 배치하는 경우
 
-![](https://wikidocs.net/images/page/274094/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_105432.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_105432.png)
 
 > Tree ID = `myTreeId`
 
@@ -88,4 +88,4 @@ this.myTreeId.setOption({
 
 **4. 결과 확인**
 
-![](https://wikidocs.net/images/page/274094/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_104143.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_104143.png)

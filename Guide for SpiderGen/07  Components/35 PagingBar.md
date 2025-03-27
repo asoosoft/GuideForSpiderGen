@@ -1,6 +1,6 @@
-# 35 PagingBar
+# PagingBar
 
-![](https://wikidocs.net/images/page/274096/pagingbar.png)
+![](../../.gitbook/assets/pagingbar.png)
 
 **페이징 바(APagingBar)** 는 데이터를 페이지 단위로 나누어 표시할 때 사용되는 컴포넌트입니다.\
 
@@ -30,16 +30,18 @@ PagingBar 컴포넌트와 ListView 컴포넌트를 활용한 예제입니다.\
 
 **1️⃣ 컴포넌트 배치**
 
-**MainView에 PagingBar와 ListView를 배치합니다.**![](https://wikidocs.net/images/page/274096/pagingbar_ex.png)
+**MainView에 PagingBar와 ListView를 배치합니다.**
+
+![](../../.gitbook/assets/pagingbar_ex.png)
 
 > ⚠️ 빌드 시 PagingBar 컴포넌트가 깨져보인다면
 >
-> ![](https://wikidocs.net/images/page/274096/afc.png)\
+> ![](../../.gitbook/assets/afc.png)\
 >
 >
 > Framework 폴더 내 afc에서 우클릭 후 사진과 같은 항목을 클릭
 >
-> ![](https://wikidocs.net/images/page/274096/compex.png)\
+> ![](../../.gitbook/assets/compex.png)\
 > compEx.css 항목을 클릭해서 로딩설정을 저장합니다.
 
 **2️⃣ 코드 작성**
@@ -113,7 +115,7 @@ pagingBindData(comp, info)
 
 **subview1에 아래와 같이 label (id: number), label (id: title)을 배치합니다.**
 
-![](https://wikidocs.net/images/page/274096/pagingbar_sublay.png)
+![](../../.gitbook/assets/pagingbar_sublay.png)
 
 **5️⃣ 데이터 받기**
 
@@ -132,5 +134,5 @@ setData(data)
 
 **6️⃣ 결과확인**
 
-![](https://wikidocs.net/images/page/274096/pagingbar_res.png)\
+![](../../.gitbook/assets/pagingbar_res.png)\
 페이징 바를 클릭해 결과를 확인해봅니다.

@@ -1,6 +1,6 @@
-# 27  Accordion
+# Accordion
 
-![](https://wikidocs.net/images/page/274090/accor.png)
+![](../../.gitbook/assets/accor.png)
 
 **아코디언(Accordion)** 는 여러 개의 패널을 포함하여 각 패널을 확장하거나 축소할 수 있는 인터페이스를 제공하는 컴포넌트입니다.\
 
@@ -12,7 +12,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/274090/ac_Attribute.png)
+![](../../.gitbook/assets/ac_Attribute.png)
 
 **1️⃣ Items**
 
@@ -54,7 +54,7 @@ AAccordion 컴포넌트는 사용자가 많은 정보를 효율적으로 탐색�
 
 **1️⃣-1️⃣ 레이아웃에서 아이템을 추가한 경우**
 
-![](https://wikidocs.net/images/page/274090/ac_add.png)
+![](../../.gitbook/assets/ac_add.png)
 
 **<사진 Accordion 컴포넌트의 속성에서 레이아웃 추가 >**
 
@@ -145,4 +145,4 @@ createAccordion()
 
 **결과화면**
 
-![](https://wikidocs.net/images/page/274090/ac_res.png)
+![](../../.gitbook/assets/ac_res.png)

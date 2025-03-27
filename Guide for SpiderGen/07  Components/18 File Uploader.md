@@ -1,6 +1,6 @@
-# 18 File Uploader
+# File Uploader
 
-![](https://wikidocs.net/images/page/274105/fu.png)
+![](../../.gitbook/assets/fu.png)
 
 **파일 업로더(AFileUploader)** 는 사용자가 파일을 업로드할 수 있도록 지원하는 컴포넌트입니다.\
 
@@ -9,7 +9,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/274105/fu_Attribute_re.png)
+![](../../.gitbook/assets/fu_Attribute_re.png)
 
 **1️⃣ Info**
 
@@ -65,7 +65,7 @@ this.fileUploader.setMultiple(true)
 
 **FileUploader 컴포넌트 생성 및 Button 컴포넌트를 생성합니다.**
 
-![](https://wikidocs.net/images/page/274105/fu_ex.png)
+![](../../.gitbook/assets/fu_ex.png)
 
 **2️⃣ ID 지정 및 이벤트**\
 
@@ -105,4 +105,4 @@ onFileReadClick(comp, info, e)
 
 **FileUploader 컴포넌트를 통해 파일을 올린 후 결과를 확인합니다.**
 
-![](https://wikidocs.net/images/page/274105/fu_ex_result.png)
+![](../../.gitbook/assets/fu_ex_result.png)

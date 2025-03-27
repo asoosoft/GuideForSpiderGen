@@ -1,6 +1,6 @@
-# 14  Listview
+# Listview
 
-![](https://wikidocs.net/images/page/24833/listView.png)
+![](../../.gitbook/assets/listView.png)
 
 
 
@@ -16,7 +16,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24833/listview_attribute.png)
+![](../../.gitbook/assets/listview_attribute.png)
 
 **Item**
 
@@ -59,7 +59,7 @@
 | AButton   | btnAdd   | Add    |
 | AButton   | btnDel   | Delete |
 
-![](https://wikidocs.net/images/page/24833/listview_view.png)
+![](../../.gitbook/assets/listview_view.png)
 
 **2. 리스트뷰에 추가할 데이터 작성**
 
@@ -120,7 +120,7 @@ onInitDone()
 | ALabel    | lbl001 |      | background: transparent |
 | AButton   | btn001 |      | Delete                  |
 
-![](https://wikidocs.net/images/page/24833/listview_ItemView.png)
+![](../../.gitbook/assets/listview_ItemView.png)
 
 **5. setData 메소드를 추가**
 
@@ -143,7 +143,7 @@ setData(data)
 
 **6. 프로젝트 실행**
 
-![](https://wikidocs.net/images/page/24833/listview_exam.png)
+![](../../.gitbook/assets/listview_exam.png)
 
 **7. Add 버튼 Click 이벤트를 추가**
 
@@ -167,16 +167,16 @@ onBtnAddClick(comp, info, e)
 
 **8. 프로젝트 실행**
 
-![](https://wikidocs.net/images/page/24833/listView_add.png)
+![](../../.gitbook/assets/listView_add.png)
 
 **9. 아이템 선택 시 스타일 적용**
 
 * 프로젝트 트리 Template 폴더에서 오른쪽 클릭 > 메뉴에서 Add new 클릭
 * Style 파일을 생성 > Name 은 listView 로 설정 >listView.stl 오른쪽 클릭 후 오픈
 * 오픈 된 Styler 메뉴 중에 상단 오른쪽 끝 + 버튼을 클릭\
-  ![](https://wikidocs.net/images/page/24833/listview_tpl.png)
+  ![](../../.gitbook/assets/listview_tpl.png)
 
-![](https://wikidocs.net/images/page/24833/listView_style.png)
+![](../../.gitbook/assets/listView_style.png)
 
 * 추가된 스타일 이름을 selected\_item 이라 설정
 * 스타일 css 를 아래처럼 설정
@@ -189,15 +189,15 @@ onBtnAddClick(comp, info, e)
 }
 ```
 
-![](https://wikidocs.net/images/page/24833/listview_style_select.png)
+![](../../.gitbook/assets/listview_style_select.png)
 
 * MainView.lay에 listView 클릭 > Appearance > Style > select item 속성 더블클릭 > show all 버튼 누르고 selected\_item 추가 > 적용
 
-![](https://wikidocs.net/images/page/24833/listVeiw_Appear.png)
+![](../../.gitbook/assets/listVeiw_Appear.png)
 
 * listView > Class > select 더블 클릭 후 생성
 * F5 누르고 프로젝트를 빌드하고 실행
-* 실행된 화면에서 리스트의 아이템을 선택하고 스타일이 적용되는걸 확인![](https://wikidocs.net/images/page/24833/listView_check.png)
+* 실행된 화면에서 리스트의 아이템을 선택하고 스타일이 적용되는걸 확인![](../../.gitbook/assets/listView_check.png)
 
 **10. 리스트 아이템 선택 및 삭제**
 

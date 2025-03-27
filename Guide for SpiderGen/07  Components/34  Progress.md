@@ -1,6 +1,6 @@
-# 34  Progress
+# Progress
 
-![](https://wikidocs.net/images/page/24858/progress.png)
+![](../../.gitbook/assets/progress.png)
 
 **프로그래스(AProgress)** 는 진행 상황을 시각적으로 표시하는 데 사용되는 컴포넌트입니다.\
 
@@ -16,7 +16,7 @@ AProgress 컴포넌트는 파일 업로드, 다운로드 진행 상황, 작업 �
 
 **1️⃣ 레이아웃에서 생성**
 
-![](https://wikidocs.net/images/page/24858/pg_res1.png)
+![](../../.gitbook/assets/pg_res1.png)
 
 ```js
 class  MainView  extends  AView
@@ -53,7 +53,7 @@ class  MainView  extends  AView
 
 **2️⃣ 코드에서 생성**
 
-![](https://wikidocs.net/images/page/24858/pg_res2.png)
+![](../../.gitbook/assets/pg_res2.png)
 
 ```javascript
 

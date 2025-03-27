@@ -1,6 +1,6 @@
-# 26  TabView
+# TabView
 
-![](https://wikidocs.net/images/page/24836/tabview-comp-00.png)
+![](../../.gitbook/assets/tabview-comp-00.png)
 
 **탭뷰(TabView)** 는 사용자가 여러 개의 탭을 통해 다양한 콘텐츠를 표시할 수 있는 UI 컴포넌트입니다.
 
@@ -8,7 +8,7 @@
 
 ### Appearance
 
-![](https://wikidocs.net/images/page/24836/tabview-comp-01.png)
+![](../../.gitbook/assets/tabview-comp-01.png)
 
 **Tab**
 
@@ -24,7 +24,7 @@
 * **del** 선택한 탭을 삭제합니다.
 * **add** 탭뷰를 추가하는 속성입니다.
 
-![](https://wikidocs.net/images/page/24836/tabview-ex-02.png)
+![](../../.gitbook/assets/tabview-ex-02.png)
 
 > * **ID** 탭을 구분하기 위한 ID 입니다.
 
@@ -44,7 +44,7 @@
 * 새로운 폴더를 생성해서 화면을 추가합니다
 * Views 폴더에 tView1, tView2, tView3 이름으로 3개의 뷰를 추가합니다.
 
-![](https://wikidocs.net/images/page/24836/tabview-comp-07.png)
+![](../../.gitbook/assets/tabview-comp-07.png)
 
 **3. 배경색을 변경합니다.**
 
@@ -52,7 +52,7 @@
 * MainView의 tabView 컴포넌트 Appearance > Items에 위에서 생성한 tView를 추가하고 Select에 tab1을 추가합니다.
 * Url은 CopyUrl 을 사용해서 복사할 수 있습니다.
 
-![](https://wikidocs.net/images/page/24836/d886c56b-0525-4ff6-8ee2-8830f8950b39.png)
+![](../../.gitbook/assets/d886c56b-0525-4ff6-8ee2-8830f8950b39.png)
 
 | id   | name | url                     |
 | ---- | ---- | ----------------------- |
@@ -77,13 +77,13 @@
     } 
 ```
 
-![](https://wikidocs.net/images/page/24836/tabview-ex-03.png)
+![](../../.gitbook/assets/tabview-ex-03.png)
 
 **4.빌드를 실행 합니다.**
 
 * 상단에 있는 TAB UI를 클릭해서 탭을 이동합니다.
 
-![](https://wikidocs.net/images/page/24836/tabview-comp-04.png) ![](https://wikidocs.net/images/page/24836/tabview-comp-05.png) ![](https://wikidocs.net/images/page/24836/tabview-comp-06.png)
+![](../../.gitbook/assets/tabview-comp-04.png) ![](../../.gitbook/assets/tabview-comp-05.png) ![](../../.gitbook/assets/tabview-comp-06.png)
 
 ### 다음 예제는 JavaScript를 사용하여 탭뷰(TabView)를 만듭니다.
 
@@ -93,14 +93,14 @@
 
 > 컴포넌트를 코드로 추가할 때는 컴포넌트(componet)와 이벤트(event)를 둘 다 추가해야 합니다.
 
-![](https://wikidocs.net/images/page/24836/tabview-comp-08.png)
+![](../../.gitbook/assets/tabview-comp-08.png)
 
 **2. 폴더를 생성합니다.**
 
 * 새로운 폴더를 생성해서 화면을 추가합니다
 * Views 폴더에 tView1, tView2, tView3 이름으로 3개의 뷰를 추가합니다.
 
-![](https://wikidocs.net/images/page/24836/tabview-comp-07.png)
+![](<../../.gitbook/assets/tabview-comp-07 (1).png>)
 
 **3. 배경색을 변경합니다.**
 
@@ -136,4 +136,4 @@ onInitDone() {
 
 **5.빌드를 실행 합니다.**
 
-![](https://wikidocs.net/images/page/24836/tabview-comp-04.png) ![](https://wikidocs.net/images/page/24836/tabview-comp-05.png) ![](https://wikidocs.net/images/page/24836/tabview-comp-06.png)
+![](../../.gitbook/assets/tabview-comp-04.png) ![](../../.gitbook/assets/tabview-comp-05.png) ![](../../.gitbook/assets/tabview-comp-06.png)

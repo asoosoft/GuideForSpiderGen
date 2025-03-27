@@ -1,6 +1,6 @@
-# 36 FlowOneLine
+# FlowOneLine
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_132216.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_132216.png)
 
 직선을 그리는 컴포넌트.
 
@@ -23,9 +23,9 @@
 | horizon   | 직선을 수평 방향으로 설정 |
 | vertical  | 직선을 수직 방향으로 설정 |
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_133326.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_133326.png)
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_133407.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_133407.png)
 
 #### Arrow
 
@@ -36,7 +36,7 @@
 | end   | 직선의 끝 부분에 화살표를 추가하는 기능.          |
 | both  | 직선의 양 끝에 화살표를 추가하는 기능.           |
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_134046.png) ![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_134055.png) ![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_134105.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_134046.png) ![](../../.gitbook/assets/스크린샷_2025-01-24_134055.png) ![](../../.gitbook/assets/스크린샷_2025-01-24_134105.png)
 
 #### Stroke Width
 
@@ -45,27 +45,27 @@
 | Stroke Width | 직선의 두께를 설정하는 기능을 제공. |
 | Line Color   | 직선의 색상을 설정.          |
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_134635.png) ![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_134719.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_134635.png) ![](../../.gitbook/assets/스크린샷_2025-01-24_134719.png)
 
 ### Example
 
 #### 1. 화면에 컴포넌트 생성
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_164833.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_164833.png)
 
 #### 코드로 컴포넌트 및 이벤트 생성
 
 * Practice > Framework > afc > Default Load Settings
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_150347.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_150347.png)
 
 * AFlowOneLine.js + AFlowOneLineEvent.js + compEx.css 선택
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_150424.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_150424.png)
 
 * 창닫기 > 변경된 정보를 저장하시겠습니까? Yes
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_150533.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_150533.png)
 
 * js에 코드 생성
 
@@ -108,4 +108,4 @@ onInitDone() {
 
 * 실행 결과
 
-![](https://wikidocs.net/images/page/274097/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_150247.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_150247.png)

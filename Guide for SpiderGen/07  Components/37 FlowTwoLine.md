@@ -1,6 +1,6 @@
-# 37 FlowTwoLine
+# FlowTwoLine
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_135229.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_135229.png)
 
 꺾인 선을 그리는 컴포넌트. 다양한 속성과 메서드를 통해 선의 스타일과 방향을 설정.
 
@@ -29,15 +29,15 @@
 
 **0° 예시화면**
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142028.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142028.png)
 
 **90° 예시화면**
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142048.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142048.png)
 
 **180° 예시화면**
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142101.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142109.png)
 
 **270° 예시화면**
 
@@ -53,49 +53,49 @@
 
 * start 예시화면
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142541.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142541.png)
 
 * end 예시화면
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142552.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142552.png)
 
 * both 예시화면
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142600.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142600.png)
 
 #### 3. Stroke Width
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142641.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142641.png)
 
 #### 4. Extra Line
 
 * 30% 적용 예시
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142650.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142650.png)
 
 * 50% 적용 예시
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142701.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142701.png)
 
 * 70% 적용 예시
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_142712.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_142712.png)
 
 ### Example
 
 #### 화면에 컴포넌트 생성
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_171001.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_171001.png)
 
 #### 코드로 컴포넌트 생성
 
 * Practice > Framework > afc > Default Load Settings
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_154447.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_154447.png)
 
 * AFlowTwoLine.js + compEx.css 선택
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_132418.png)
+![](../../.gitbook/assets/스크린샷_2025-02-03_132418.png)
 
 * 생성 코드
 
@@ -125,4 +125,4 @@
 
 * 실행 화면
 
-![](https://wikidocs.net/images/page/274098/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_155121.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_155121.png)

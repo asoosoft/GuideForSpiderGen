@@ -1,6 +1,6 @@
-# 30 Canvas
+# Canvas
 
-![](https://wikidocs.net/images/page/274093/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_175042.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_175042.png)
 
 그래픽을 그리거나 다양한 시각적 요소를 렌더링할 수 있는 기능을 제공 하는 **캔버스 컴포넌트**
 
@@ -44,7 +44,7 @@ ctx.bezierCurveTo(85,  25,  75,  37,  75,  40);
 ctx.fill();
 ```
 
-![](https://wikidocs.net/images/page/274093/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-23_175042.png)
+![](../../.gitbook/assets/스크린샷_2025-01-23_175042.png)
 
 `결과 화면`
 

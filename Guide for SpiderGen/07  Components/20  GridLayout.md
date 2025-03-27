@@ -1,6 +1,6 @@
-# 20  GridLayout
+# GridLayout
 
-![](https://wikidocs.net/images/page/24866/gridlayout-comp-00.png)
+![](../../.gitbook/assets/gridlayout-comp-00.png)
 
 GridLayout은 화면의 영역을 구분하기 위해 사용되는 그리드 기반의 레이아웃 컴포넌트.
 
@@ -53,19 +53,19 @@ GridLayout은 화면의 영역을 구분하기 위해 사용되는 그리드 기
 * Component ui를 사용해서 GridLayout 컴포넌트를 화면에 추가함.
 * GridLayout 컴포넌트를 선택한 후 오른쪽 클릭 → Grid Layout Property를 선택함.
 
-![](https://wikidocs.net/images/page/24866/GridLayout001.png)
+![](../../.gitbook/assets/GridLayout001.png)
 
 * Cell Height & Width를 동일하게 설정함
 * GridLayout Property 다이얼로그에서 다음과 같이 속성을 설정Rows: 3, Cols: 2
 * 맨 위에 있는 붙어있는 두 셀을 선택한 뒤 우클릭 후 Merge선택 (병합)
 * 맨 아래에 있는 붙어있는 두 셀을 선택한 뒤 우클릭 후 Merge선택 (병합)
 
-![](https://wikidocs.net/images/page/24866/GridLayout04.png) ![](https://wikidocs.net/images/page/24866/GridLayout06.png)
+![](../../.gitbook/assets/GridLayout04.png) ![](../../.gitbook/assets/GridLayout06.png)
 
 * AView 컴포넌트를 화면에 추가 후 각각 다른 색상을 설정
 * GridLayout에 AView를 드래그앤드롭으로 추가함
 
-![](https://wikidocs.net/images/page/24866/GridLayout07.png)
+![](../../.gitbook/assets/GridLayout07.png)
 
 #### 2. 프로젝트 실행
 

@@ -1,6 +1,6 @@
-# 33 Scrollbar
+# Scrollbar
 
-![](https://wikidocs.net/images/page/274095/scrollBar.png)
+![](../../.gitbook/assets/scrollBar.png)
 
 
 
@@ -16,11 +16,15 @@ _**Framework > afc > AScrollBar.js 추가**_
 
 * listView ID는 listview, ScrollBar ID는 scrollbar
 
-![](https://wikidocs.net/images/page/274095/scorll_first.png)
+![](../../.gitbook/assets/scorll_first.png)
 
 **2. item.lay 생성**
 
-* ALabel 컴포넌트 추가 & ID는 txtLbl로 설정![](https://wikidocs.net/images/page/274095/scorll_list.png)
+* ALabel 컴포넌트 추가 & ID는 txtLbl로 설정
+
+![](../../.gitbook/assets/scorll_list.png)
+
+
 
 **3. item.js 아래 코드 입력**
 
@@ -72,7 +76,7 @@ onInitDone()
 ...
 ```
 
-![](https://wikidocs.net/images/page/274095/scroll_result.png)
+![](../../.gitbook/assets/scroll_result.png)
 
 #### 코드로 ScrollBar 생성
 
@@ -136,4 +140,4 @@ onInitDone()
 ...
 ```
 
-![](https://wikidocs.net/images/page/274095/scroll_view2.png)
+![](../../.gitbook/assets/scroll_view2.png)

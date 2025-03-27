@@ -1,10 +1,10 @@
-# 28 DataGrid
+# DataGrid
 
 데이터를 테이블 형식으로 표시하고 조작할 수 있는 컴포넌트
 
 ### Appearance
 
-![](https://wikidocs.net/images/page/274091/dataGrid_apper.png)
+![](../../.gitbook/assets/dataGrid_apper.png)
 
 #### Style
 
@@ -21,7 +21,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/274091/dataGrid_attri.png)
+![](../../.gitbook/assets/dataGrid_attri.png)
 
 #### Option
 
@@ -63,7 +63,7 @@
 
 * 그리드의 id를 datagrid 로 설정
 
-![](https://wikidocs.net/images/page/274091/datagrid_new.png)
+![](../../.gitbook/assets/datagrid_new.png)
 
 **2. 코드로 데이터 추가**
 
@@ -88,7 +88,7 @@ onInitDone()
 
 _**Framework > afc > DnDManager.js & ADataMask.js 추가**_
 
-![](https://wikidocs.net/images/page/274091/datagrid_plus.png)
+![](../../.gitbook/assets/datagrid_plus.png)
 
 **4. 코드로 DataGrid 추가**
 
@@ -124,4 +124,4 @@ onInitDone()
 
 **5. 프로젝트 실행**
 
-![](https://wikidocs.net/images/page/274091/dg_new2.png)
+![](../../.gitbook/assets/dg_new2.png)

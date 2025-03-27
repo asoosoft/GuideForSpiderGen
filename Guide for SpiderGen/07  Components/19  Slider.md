@@ -1,6 +1,6 @@
-# 19  Slider
+# Slider
 
-![](https://wikidocs.net/images/page/24861/slider.png)
+![](../../.gitbook/assets/slider.png)
 
 **슬라이더(ASlider)** 는 사용자가 값을 조정할 수 있는 슬라이더를 제공하는 컴포넌트입니다.\
 
@@ -10,7 +10,7 @@
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/24861/slider_Attribute.png)
+![](../../.gitbook/assets/slider_Attribute.png)
 
 **Data**
 
@@ -39,7 +39,7 @@
 | ASlider   | slider   |      | value:25, min:0, max:100, step:5 |
 | ALabel    | label    | 현재값  |                                  |
 
-![](https://wikidocs.net/images/page/24861/slider_ex.png)
+![](../../.gitbook/assets/slider_ex.png)
 
 **2️⃣ 함수 추가**
 
@@ -77,4 +77,4 @@ onSliderChange(comp, info, e)
 * 슬라이더에 바를 움직여 값을 조정해 봅니다.
 * 조정된 값에 따라 프로그래스 바가 변경되는걸 확인합니다.
 
-![](https://wikidocs.net/images/page/24861/slider_ex_result.png)
+![](../../.gitbook/assets/slider_ex_result.png)
