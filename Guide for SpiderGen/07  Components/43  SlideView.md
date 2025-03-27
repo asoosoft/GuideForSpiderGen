@@ -1,11 +1,11 @@
-# 43. SlideView
+# SlideView
 
 여러 개의 뷰를 슬라이드 형태로 전환하여 표시할 수 있는 컴포넌트\
 사용자가 좌우 또는 상하로 스와이프하여 콘텐츠를 탐색할 수 있도록 도와줌.
 
 ## Attribute
 
-![](https://wikidocs.net/images/page/276271/slide_attribute.png)
+![](../../.gitbook/assets/slide_attribute.png)
 
 #### Direction
 
@@ -22,11 +22,11 @@
 
 id 는 slideView 로 설정
 
-![](https://wikidocs.net/images/page/276271/slide_setting.png)
+![](../../.gitbook/assets/slide_setting.png)
 
 #### 2. Source > New Folder > views 생성 > SubView 생성
 
-![](https://wikidocs.net/images/page/276271/slide_subview.png)
+![](../../.gitbook/assets/slide_subview.png)
 
 #### 3. 각 Subview 설정
 
@@ -34,19 +34,19 @@ id 는 slideView 로 설정
   * Label 추가 ( text: SubView 1)
   * **`background-color`** : rgb(143, 182, 143)
 
-![](https://wikidocs.net/images/page/276271/Subview1.png)
+![](../../.gitbook/assets/Subview1.png)
 
 * **SubView2.lay**
   * Label 추가 ( text: SubView 2)
   * **`background-color`** : rgb(155, 155, 118)
 
-![](https://wikidocs.net/images/page/276271/Subview2.png)
+![](../../.gitbook/assets/Subview2.png)
 
 * **SubView3.lay**
   * Label 추가 ( text: SubView 3)
   * **`background-color`** : rgb(199, 166, 166)
 
-![](https://wikidocs.net/images/page/276271/Subview3.png)
+![](../../.gitbook/assets/Subview3.png)
 
 #### 4. MainView.js 수정
 
@@ -74,7 +74,7 @@ onInitDone()
   * **text** : 다음
   * **id** : nextBtn
 
-![](https://wikidocs.net/images/page/276271/slide_btn.png)
+![](../../.gitbook/assets/slide_btn.png)
 
 #### 2. Button에 click 이벤트 설정
 
@@ -104,7 +104,7 @@ onNextBtnClick(comp, info, e)
 * **Button**
   * **text** : '1', '2', '3'
 
-![](https://wikidocs.net/images/page/276271/slide_page.png)
+![](../../.gitbook/assets/slide_page.png)
 
 #### 2. MainView.js 수정
 
@@ -122,10 +122,9 @@ onInitDone()
 
 #### 1. SelectBox 컴포넌트 배치
 
-![](https://wikidocs.net/images/page/276271/slide_select.png)
+![](../../.gitbook/assets/slide_select.png)
 
 #### 2. Attribute의 Default Data 수정
 
-![](https://wikidocs.net/images/page/276271/slide_selectData.png)
+![](../../.gitbook/assets/slide_selectData.png)
 
-#### 3. 프로젝트 실행

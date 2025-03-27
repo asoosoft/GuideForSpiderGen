@@ -1,6 +1,6 @@
-# 42  Grid
+# Grid
 
-![](https://wikidocs.net/images/page/274109/Grid-01.png)
+![](../../.gitbook/assets/Grid-01.png)
 
 **그리드(Grid)** 는 컴포넌트는 데이터를 테이블 형식으로 표시하고 관리할 수 있는 도구입니다.
 
@@ -8,7 +8,7 @@
 
 ### Attributes
 
-![](https://wikidocs.net/images/page/274109/Grid-02.png)
+![](../../.gitbook/assets/Grid-02.png)
 
 * **Hide Heade** 헤더 숨김 여부를 설정합니다.
 * **Hide Footer** 푸터 숨김 여부를 설정합니다.
@@ -36,7 +36,7 @@
 
 * 그리드(Grid)의 id를 simpleGrid로 설정합니다.
 
-![](https://wikidocs.net/images/page/274109/Grid-06.png)
+![](../../.gitbook/assets/Grid-06.png)
 
 **2.코드를 추가합니다.**
 
@@ -67,13 +67,13 @@
 
 * select를 눌러 Function Namefme 를 onSimpleGridSelect로 설정 합니다.
 
-![](https://wikidocs.net/images/page/274109/Grid-07.png)
+![](../../.gitbook/assets/Grid-07.png)
 
 **4.빌드를 실행 합니다.**
 
 > 셀을 선택하면 이벤트가 발생합니다.
 
-![](https://wikidocs.net/images/page/274109/Grid-03.png) ![](https://wikidocs.net/images/page/274109/Grid-05.png)
+![](https://wikidocs.net/images/page/274109/Grid-03.png) ![](../../.gitbook/assets/Grid-05.png)
 
 ### 다음 예제는 JavaScript를 사용하여 그리드(Grid)를 추가합니다.
 
@@ -81,7 +81,7 @@
 
 * Framework의 afc에서 AGrid/AGeidEvent를 추가합니다.
 
-![](https://wikidocs.net/images/page/274109/Grid-04.png)
+![](../../.gitbook/assets/Grid-04.png)
 
 **2. 코드를 추가합니다.**
 
@@ -136,4 +136,4 @@
 
 * 셀을 선택하면 이벤트가 발생합니다.
 
-![](https://wikidocs.net/images/page/274109/Grid-03.png) ![](https://wikidocs.net/images/page/274109/Grid-05.png)
+![](../../.gitbook/assets/Grid-03.png) ![](../../.gitbook/assets/Grid-05.png)

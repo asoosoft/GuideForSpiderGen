@@ -1,19 +1,19 @@
-# 40 Horizontal
+# Horizontal
 
-![](https://wikidocs.net/images/page/274101/horizontal.png)
+![](../../.gitbook/assets/horizontal.png)
 
 **호리젠탈(AHorizontal)** 은 컴포넌트의 배치 방향이 가로로 설정된 컴포넌트입니다.\
 
 
 > AFlexLayout 컴포넌트의 flex-direction 속성이 row로 고정된 컴포넌트 입니다.
 
-![](https://wikidocs.net/images/page/274101/horizontal2.png)
+![](../../.gitbook/assets/horizontal2.png)
 
 **<사진 - Horizontal 컴포넌트 안에 여러 컴포넌트를 넣은 모습>**
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/274100/vertical_Attribute.png)
+![](../../.gitbook/assets/vertical_Attribute.png)
 
 **Data**
 

@@ -1,6 +1,6 @@
-# 38 FlowThreeLine
+# FlowThreeLine
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144506.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144506.png)
 
 두 번 꺾인 선을 그리는 컴포넌트이며 다양한 선의 속성을 설정할 수 있는 기능을 제공.
 
@@ -21,69 +21,69 @@
 
 **0° 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144722.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144722.png)
 
 **90° 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144735.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144735.png)
 
 **180° 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144744.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144744.png)
 
 **270° 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144755.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144755.png)
 
 #### 2. Arrow
 
 **start 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144808.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144808.png)
 
 **both 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144826.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144826.png)
 
 **end 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144817.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144817.png)
 
 #### 3. Stroke Width
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144930.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144930.png)
 
 #### 4. Leaning
 
 **10% 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144955.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144955.png)
 
 **50% 예시화면**
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_144940.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_144940.png)
 
 #### head / tail
 
 * 반대 방향으로 전환
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_145006.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_145006.png)
 
 ### Example
 
 #### 화면에 컴포넌트 생성.
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-01-24_171458.png)
+![](../../.gitbook/assets/스크린샷_2025-01-24_171458.png)
 
 #### 코드로 컴포넌트 생성.
 
 * Project > Framework > afc > Default Load Settings
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_160427.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_160427.png)
 
 * AFlowThreeLine.js + compEx.css 선택
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-03_132805.png)
+![](../../.gitbook/assets/스크린샷_2025-02-03_132805.png)
 
 * 생성 코드
 
@@ -114,4 +114,4 @@
 
 * 실행 결과
 
-![](https://wikidocs.net/images/page/274099/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2025-02-18_160516.png)
+![](../../.gitbook/assets/스크린샷_2025-02-18_160516.png)

@@ -1,6 +1,6 @@
-# 41 Spacer
+# Spacer
 
-![](https://wikidocs.net/images/page/274102/spacer.png)
+![](../../.gitbook/assets/spacer.png)
 
 **스페이서(ASpacer)** 주로 레이아웃에서 공간을 확보하거나 다른 컴포넌트 간의 간격을 조정하는 데 사용됩니다.\
 
@@ -49,6 +49,6 @@ onInitDone()
 
 ```
 
-![](https://wikidocs.net/images/page/274102/spacer2.png)
+![](../../.gitbook/assets/spacer2.png)
 
 **<사진 - flexLayout 내부에 spacer 컴포넌트를 사용한 예시>**

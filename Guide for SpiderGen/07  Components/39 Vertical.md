@@ -1,19 +1,19 @@
-# 39 Vertical
+# Vertical
 
-![](https://wikidocs.net/images/page/274100/vertical.png)
+![](../../.gitbook/assets/vertical.png)
 
 **버티컬(AVertical)** 은 컴포넌트의 배치 방향이 세로로 설정된 컴포넌트입니다.\
 
 
 > AFlexLayout 컴포넌트의 flex-direction 속성이 column으로 고정된 컴포넌트 입니다.
 
-![](https://wikidocs.net/images/page/274100/vertical2.png)
+![](../../.gitbook/assets/vertical2.png)
 
 **<사진 - vertical 컴포넌트 안에 여러 컴포넌트를 넣은 모습>**
 
 ### Attribute
 
-![](https://wikidocs.net/images/page/274100/vertical_Attribute.png)
+![](../../.gitbook/assets/vertical_Attribute.png)
 
 **Data**
 
