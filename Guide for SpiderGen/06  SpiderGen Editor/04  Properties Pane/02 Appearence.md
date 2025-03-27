@@ -1,4 +1,4 @@
-# 02 Appearence
+# 02. Appearence
 
 ### Appearance Pane
 
@@ -13,15 +13,20 @@
 **Appearance Pane**을 사용하면 코드 작성 없이도 드래그 앤 드롭 방식으로 UI 요소의 스타일을 직관적으로 변경할 수 있어,\
 개발자가 디자인을 보다 효율적으로 관리할 수 있습니다.
 
-![](https://wikidocs.net/images/page/22791/appearance.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 105323.png>)\
+
+
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 112355.png>)\
 ⬅️ **Appearance Pane** 에 속한 요소들
+
+
 
 \
 
 
 ### Style
 
-![](https://wikidocs.net/images/page/22791/ap_style.png)
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 105323.png>)
 
 Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니다.
 
@@ -36,36 +41,36 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 1️⃣ 우선 스타일들을 모아둘 stl파일을 만듭니다.
 
-![](https://wikidocs.net/images/page/22791/stl1.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 105605.png>)\
 &#xNAN;**<사진 - stl 파일 생성 위치>**
 
-![](https://wikidocs.net/images/page/22791/stl2.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 105626.png>)\
 &#xNAN;**<사진 - stl 파일 생성>**
 
 ***
 
 2️⃣ 생성한 stl 파일을 열어 스타일을 작성해줍니다.
 
-![](https://wikidocs.net/images/page/22791/stl3.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 105655.png>)\
 &#xNAN;**<사진 - 생성한 stl 파일 초기화면 >**
 
 ***
 
 3️⃣ 아래와 같이 예시로 버튼 스타일을 생성했습니다.
 
-![](https://wikidocs.net/images/page/22791/stl4.png)
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 110029.png>)
 
 ***
 
 4️⃣ + 버튼을 눌러 마우스 오버 상태인 스타일을 추가합니다.
 
-![](https://wikidocs.net/images/page/22791/stl5.png)
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 110251.png>)
 
 ***
 
 5️⃣ 아래와 같이 예시로 버튼 마우스 오버 스타일을 생성했습니다.
 
-![](https://wikidocs.net/images/page/22791/stl6.png)
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 110413.png>)
 
 ***
 
@@ -73,20 +78,18 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 > ⚠️각 컴포넌트마다 가지고 있는 스타일 영역이 다릅니다.
 
-![](https://wikidocs.net/images/page/22791/stl.gif)
-
 ***
 
 7️⃣ F5를 눌러 결과를 확인합니다.
 
-![](https://wikidocs.net/images/page/22791/stl_res.gif)
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 110719.png>)
 
-\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 110734.png>)\
 
 
 ### Display
 
-![](https://wikidocs.net/images/page/22791/ap_display.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 110947.png>)\
 
 
 **Display는 컴포넌트의 가시성과 상호작용을 제어하는데 사용됩니다.**
@@ -149,7 +152,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 ### Background
 
-![](https://wikidocs.net/images/page/22791/ap_background.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 111105.png>)\
 
 
 컴포넌트의 배경색이나 배경 이미지를 설정할 수 있는 영역입니다.
@@ -203,10 +206,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 \
 
 
-### Font
-
-![](https://wikidocs.net/images/page/22791/ap_font.png)\
-
+### Font 
 
 컴포넌트의 **텍스트 스타일을 설정**하는 부분입니다.\
 
@@ -267,7 +267,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 ### Border
 
-![](https://wikidocs.net/images/page/22791/ap_border.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 111355.png>)\
 
 
 **컴포넌트의 테두리 속성을 설정**하는 부분입니다.\
@@ -314,7 +314,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 ### BoxShadow
 
-![](https://wikidocs.net/images/page/22791/ap_boxShadow.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 111442.png>)\
 
 
 **컴포넌트에 그림자 효과를 추가**하는 데 사용됩니다.\
@@ -345,7 +345,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 ### TextShadow
 
-![](https://wikidocs.net/images/page/22791/ap_textShadow.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 111600.png>)\
 
 
 컴포넌트의 **텍스트에 그림자 효과를 추가**하는 데 사용됩니다.\
@@ -376,7 +376,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 ### Transform
 
-![](https://wikidocs.net/images/page/22791/ap_transform.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 111824.png>)\
 
 
 **컴포넌트의 변형 속성을 설정**하는 부분입니다.\
@@ -422,7 +422,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
 
 ### Animation
 
-![](https://wikidocs.net/images/page/22791/ap_animation.png)\
+![](<../../../.gitbook/assets/스크린샷 2025-03-27 112102.png>)\
 
 
 **컴포넌트에 애니메이션 효과를 추가**하고 관리하는 데 사용됩니다.
@@ -435,7 +435,7 @@ Style 영역에서는 **사용자 정의 스타일**을 설정할 수 있습니�
     키프레임은 애니메이션의 특정 시점에서의 상태를 정의하며,\
     이를 통해 복잡한 애니메이션 효과를 구현할 수 있습니다.
 
-    ![](https://wikidocs.net/images/page/22791/ani_maker.png)\
+    ![](<../../../.gitbook/assets/스크린샷 2025-03-27 112000.png>)\
     &#xNAN;**<사진 - Edit Keyframe 버튼 클릭 시 나타나는 keyframe Maker>**
 
     ***
