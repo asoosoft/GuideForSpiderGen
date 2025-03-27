@@ -19,7 +19,7 @@
 &#x20; ✅ 각 탭의 대해 별도의 URL을 설정하여, 탭이 선택될 때 해당 URL의 뷰를 로드 가능\
 &#x20; ✅ 여러 화면을 하나의 인터페이스 내에서 효율적으로 관리
 
-**📂** [**ATabView 문서참조**](<../07  Components/26  TabView.md>)
+**📂** [**TabView 문서참조**](<../07  Components/26  TabView.md>)
 
 ![](../../.gitbook/assets/tabView.png)
 
@@ -30,7 +30,7 @@
 &#x20; ✅ 다양한 UI 요소를 담아 화면을 구성하는데 사용되며, 모든 컴포넌트의 부모 역할\
 &#x20; ✅ 화면을 표현하는 시작 지점이 되기도 하고, 부분적으로 화면 폼을 구성하는 역할
 
-**📂** [**AView 문서참조**](<../07  Components/11  View.md>)
+**📂** [**View 문서참조**](<../07  Components/11  View.md>)
 
 ![](../../.gitbook/assets/Aview.png)
 
@@ -40,7 +40,7 @@
 &#x20; ✅ 수평 또는 수직 방향으로 자식 요소를 슬라이드할 수 있도록 설정 가능\
 &#x20; ✅ 여러 개의 뷰를 순차적으로 보여주고, 사용자가 버튼 클릭이나 스와이프 제스처를 통해 뷰를 전환하게 할 수 있음
 
-**📂** [**ASlideView 문서참조**](<../07  Components/43  SlideView.md>)
+**📂** [**SlideView 문서참조**](<../07  Components/43  SlideView.md>)
 
 ![](../../.gitbook/assets/SlideView.png)
 
@@ -50,7 +50,7 @@
 &#x20; ✅ 사용자가 지정한 크기와 방향에 따라 화면을 분할하여, 각 영역에 다른 뷰를 배치할 수 있도록 도와줌\
 &#x20; ✅ 대시보드, 데이터 분석 도구, 복잡한 애플리케이션 레이아웃 등에서 효과적으로 활용 가능
 
-**📂** [**ASplitView 문서참조**](<../07  Components/24  SplitView.md>)
+**📂** [**SplitView 문서참조**](<../07  Components/24  SplitView.md>)
 
 ![](../../.gitbook/assets/splitview2.png)
 
@@ -60,6 +60,6 @@
 &#x20; ✅ 여러 개의 아이템을 포함할 수 있으며, 각 아이템은 클릭 시 확장되거나 축소되어 내용을 표시하거나 숨길 수 있음\
 &#x20; ✅ 여러 섹션의 콘텐츠를 한 화면에서 관리할 수 있도록 도와주며, 공간을 효율적으로 활용 가능
 
-**📂** [**AAccordion 문서참조**](<../07  Components/27  Accordion.md>)
+**📂** [**Accordion 문서참조**](<../07  Components/27  Accordion.md>)
 
 ![](../../.gitbook/assets/AAccordion.png)
