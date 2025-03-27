@@ -125,8 +125,6 @@ BookMark 이 비활성화(Hide) 되어 있을 경우 활성화(Show) 합니다.
 
 > 뷰에서 사용되고 있는 모든 쿼리를 관리하고 확인할 수 있는 패널입니다. 이어떤 쿼리가 사용되고 있는지를 한눈에 파악할 수 있도록 도와줍니다.
 
-참조 [All Query in View](https://wikidocs.net/24913)
-
 ![](../../../.gitbook/assets/menu_view08.png)
 
 ### SpiderGPT
@@ -145,4 +143,4 @@ FigmaToLay를 비활성화(Hide) 되어 있을 경우 활성화(Show) 합니다.
 
 ![](../../../.gitbook/assets/menu_view12.png)
 
-### [a. Pane Docking](<C  View/a  Pane Docking.md>)
+### [Pane Docking](<C  View/a  Pane Docking.md>)

@@ -63,7 +63,7 @@
     * [A. File](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/A  File.md>)
     * [B. Edit](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/B  Edit.md>)
     * [C. View](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/C  View.md>)
-      * [a. Pane Docking](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/C  View/a  Pane Docking.md>)
+      * [Pane Docking](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/C  View/a  Pane Docking.md>)
     * [D. Search](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/D  Search.md>)
     * [E. Build](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/E  Build.md>)
     * [F. Help](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/F  Help.md>)
