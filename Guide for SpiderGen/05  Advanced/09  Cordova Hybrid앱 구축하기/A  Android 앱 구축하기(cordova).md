@@ -82,7 +82,7 @@ Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\android` 를
 > 처음 Android Studio 를 설치하면\
 > sdk파일이 없어서 빌드가 안되는 경우가 있을수있습니다. **menu - tools - sdk managersdk tools**에서 사용할 버전을 찾아 설치하고 다시 빌드합니다.
 
-![](../../../.gitbook/assets/sdk_tools.png)
+![](<../../../.gitbook/assets/sdk_tools (1).png>)
 
 **04. Cordova 설정**
 

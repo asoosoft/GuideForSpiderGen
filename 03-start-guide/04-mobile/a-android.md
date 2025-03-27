@@ -1,4 +1,4 @@
-# A  Android 앱 구축하기
+# A. Android 앱 구축하기
 
 ## 1. 환경 설정
 
@@ -50,7 +50,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 export 합니다.
 
-![](https://wikidocs.net/images/page/278959/SpiderGen_cordova_export.png)
+![](../../.gitbook/assets/SpiderGen_cordova_export.png)
 
 ### 5. JAVA JDK 설치
 
@@ -64,9 +64,9 @@ windows-x64.exe 다운로드 및 설치를 합니다.
 * 시스템변수 새로만들기: JAVA\_HOME / 설치한 JDK 경로 추가
 * 시스템변수 Path: "%JAVA\_HOME%\bin" 추가
 
-![](https://wikidocs.net/images/page/277125/%EC%BA%A1%EC%B2%98.PNG)
+![](../../.gitbook/assets/prjsettings.png)
 
-![](https://wikidocs.net/images/page/277125/%EC%BA%A1%EC%B2%982.PNG)
+![](../../.gitbook/assets/prjsettings2.png)
 
 ### 7. Gradle설치, 환경변수 등록
 
@@ -76,9 +76,9 @@ windows-x64.exe 다운로드 및 설치를 합니다.
 * 특정 폴더에 넣고 그 폴더경로를 환경변수에 등록
 * 커맨드창 껏다 켜야 적용
 
-![](https://wikidocs.net/images/page/277125/%EC%BA%A1%EC%B2%98_kj05zSj.PNG)
+![](../../.gitbook/assets/prjsettings3.png)
 
-![](https://wikidocs.net/images/page/277125/%EC%BA%A1%EC%B2%981.PNG)
+![](../../.gitbook/assets/prjsettings4.png)
 
 ## 2. SpiderGen 프로젝트 만들기
 
@@ -122,18 +122,18 @@ Android Studio의 Menu에 진입 후 File -> Open 생성해두었던 `MyApp\plat
 > 처음 Android Studio 를 설치하면\
 > sdk파일이 없어서 빌드가 안되는 경우가 있을수있습니다.**menu - tools - sdk managersdk tools**에서 사용할 버전을 찾아 설치하고 다시 빌드합니다.
 
-![](https://wikidocs.net/images/page/278959/sdk_tools.png)
+![](../../.gitbook/assets/sdk_tools.png)
 
 ### 3. Android Studio에서 프로젝트를 실행합니다.
 
 디바이스를 직접 연결 하거나 가상 디바이스를 설정해야 합니다.\
 가상 디바이스는 **Menu - Tools -Device Manager** 에서 설정할 수 있습니다.
 
-![](https://wikidocs.net/images/page/278959/Android01.png)
+![](../../.gitbook/assets/Android_01.png)
 
 ### 4. 버튼을 눌러 정상 동작을 확인합니다.
 
-![](https://wikidocs.net/images/page/278959/Android02.png)
+![](../../.gitbook/assets/Android_02.png)
 
 ### 5. APK 파일 생성
 

@@ -1,4 +1,4 @@
-# B  iOS 앱 구축하기
+# B. iOS 앱 구축하기
 
 ## 1. 환경 설정
 
@@ -46,7 +46,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 export 합니다.
 
-![](https://wikidocs.net/images/page/277125/02.png)
+![](../../.gitbook/assets/asset_settings.png)
 
 ## 2. SpiderGen 프로젝트 만들기
 
@@ -77,7 +77,7 @@ cordova build ios
 cordova emulate ios
 ```
 
-![](https://wikidocs.net/images/page/277125/04.png)
+![](../../.gitbook/assets/MyAppSettings.png)
 
 Staging 폴더의 www 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 bin 폴더안에 있는 파일을 **export** 합니다.
 
@@ -92,11 +92,11 @@ IOS는 파일프로토콜을 기본 지원하지 않으므로 localhost로 동�
 
 ### 3. Xcode에서 프로젝트를 실행합니다.
 
-![](https://wikidocs.net/images/page/277125/01.png)
+![](../../.gitbook/assets/androidwhite1.png)
 
 ### 4. 버튼을 눌러 정상 동작을 확인합니다.
 
-![](https://wikidocs.net/images/page/277125/03.png)
+![](../../.gitbook/assets/androidwhite2.png)
 
 ### 5. app 파일 생성
 
