@@ -15,8 +15,6 @@ cmd 창에서 프로젝트 경로에 진입 후 cordova Plugin을 설치합니�
 
 `cordova plugin add cordova-plugin-screen-orientation`
 
-![](../../../.gitbook/assets/cordova.png)
-
 > [cordova 공식 홈페이지](https://cordova.apache.org/plugins/)
 
 ### 3. 예제 코드 추가
@@ -24,8 +22,6 @@ cmd 창에서 프로젝트 경로에 진입 후 cordova Plugin을 설치합니�
 **01. 이밴트 생성**
 
 스파이더젠 프로젝트에서 버튼을 생성해서 클릭 이벤트함수에 아래와 같이 작성합니다.
-
-🔽cordova.exec 함수가 cordova를 통해 모바일로 기능을 요청합니다.
 
 ```
 MainView = class MainView extends AView {
@@ -57,11 +53,12 @@ MainView = class MainView extends AView {
         this.isLandscape = !this.isLandscape;
     }
 }
+
 ```
 
 `MyApp\platforms`
 
-위 경로에 있는 android 폴더를 스파이더젠의 Assets 폴더에 export 합니다.
+위 경로에 있는 android 폴더를 스파이더젠의 Assets 폴더에 복사합니다.
 
 ![](../../../.gitbook/assets/assets.png)
 
@@ -71,9 +68,11 @@ F7을 눌러 빌드하고 bin파일을 생성합니다.
 
 (open folder 기능을 이용해서 프로젝트 폴더로 쉽게 이동할 수 있습니다.)![](../../../.gitbook/assets/build.png)
 
-`MyApp\platforms\android\app\src\main\assets\www`
+> `MyApp\platforms\android\app\src\main\assets\www`
 
-위 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 **bin** 폴더안에 있는 파일을 **export** 합니다.
+
+
+위 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 **bin** 폴더안에 있는 파일을 복사사합니다.
 
 **03. Android Studio 실행**
 
