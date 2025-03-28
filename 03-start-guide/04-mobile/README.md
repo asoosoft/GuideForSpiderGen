@@ -15,7 +15,7 @@ Cordova는 SpiderGen으로 만든 프로젝트를 실제 모바일 환경에서 
 
 즉, SpiderGen 프로젝트를 **모바일 앱처럼 실행하고 네이티브 기능을 활용**하려면 Cordova는 필수 도구입니다.
 
-### 목차
+## 목차
 
 ## [A. Android 앱 구축하기](a-android.md)
 
