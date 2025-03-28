@@ -5,7 +5,7 @@
 Android 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 아래의 환경 설정을 참고해서 진행 해주세요.
 
-[환경설정 가이드](<A  Android 앱 구축하기(cordova).md>)
+[환경설정 가이드](../../../03-start-guide/04-mobile/a-android.md)
 
 ### 2. 스파이더젠에서 cordova 플러그인 사용법
 
