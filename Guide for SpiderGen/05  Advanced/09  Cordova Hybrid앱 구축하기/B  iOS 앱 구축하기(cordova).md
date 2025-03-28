@@ -10,11 +10,10 @@ iOS 앱을 개발하기 위해서는 환경설정이 필요합니다. 아래의 
 
 **Cordova Plugin 설치**
 
-cmd 창에서 프로젝트 경로에 진입 후 Plugin을 설치합니다
+cmd 창에서 프로젝트 경로에 진입 후 Plugin을 설치합니다\
+경로예시 `MyApp/`
 
 `cordova plugin add cordova-plugin-screen-orientation`
-
-![](../../../.gitbook/assets/cordova.png)
 
 > [cordova 공식 홈페이지](https://cordova.apache.org/plugins/)
 
@@ -24,42 +23,33 @@ cmd 창에서 프로젝트 경로에 진입 후 Plugin을 설치합니다
 
 스파이더젠 프로젝트에서 버튼을 생성해서 클릭 이벤트함수에 아래와 같이 작성합니다.
 
-🔽cordova.exec 함수가 cordova를 통해 모바일로 기능을 요청합니다.
+
 
 ```
 
-    onButtonClick(comp, info, e)
-    {
 
-       if (!this.isClicked) {
-            this.isClicked = false; // 초기값 설정
-        }
+        let newColor = "#FF5733"; // 변경할 상태바 색상
 
-        if (this.isClicked) {
-            this.box.setText("다시 한번 버튼을 눌러보세요!");
-        } else {
-            this.box.setText("버튼이 정상 동작 합니다.");
-        }
-
-        this.isClicked = !this.isClicked;
-
-
-    }
-```
-
-🔽 cordova.exec 의 각 파라미터 입니다.
+        // Cordova exec를 사용하여 네이티브 기능을 호출합니다.
+        cordova.exec(
+            function () {
+                alert("상태 표시줄 색상이 " + newColor + "로 변경되었습니다.");
+            },
+            function (error) {
+                alert("오류 발생: " + error);
+            },
+            "StatusBar",                  // 플러그인 이름
+            "backgroundColorByHexString", // 호출할 네이티브 메서드
+            [newColor]                    // 전달할 인자 값
+        );
 
 ```
-cordova.exec(
-        <성공 시 함수>, 
-        <실패 시 함수>, 
-        <플러그인 이름>, <행동 이름>, [<인수>]
-    );
-```
+
+
 
 `MyApp\platforms`
 
-위 경로에 있는 ios 폴더를 스파이더젠의 Assets 폴더에 export 합니다.
+위 경로에 있는 ios 폴더를 스파이더젠의 Assets 폴더에  복합니다.
 
 ![](../../../.gitbook/assets/002.png)
 
@@ -71,21 +61,32 @@ F7을 눌러 빌드하고 bin파일을 생성합니다.
 
 ![](<../../../.gitbook/assets/build (1).png>)
 
-`MyApp\platforms\ios\app\src\main\assets\www`
+> `MyApp/platforms/ios/www`
+
+
 
 위 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 bin 폴더안에 있는 파일을 export 합니다.
 
 **03. Xcode 실행**
 
-Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\ios` 를 선택하여 파일을 오픈합니다.
+Menu에 진입 후 File -> Open 생성해두었던`MyApp/platforms/ios` 경로를 를 선택하여 파일을 오픈합니다..
 
 **04. Cordova 설정**
 
-`내용 수정필요`
+Staging 폴더의 www 경로에 있는 index.html 파일에 아래 내용을 추가합니다.
 
-위 경로에 있는 index.html 파일에 아래 내용을 추가합니다.
+`//코르도바를 호출합니다`
 
-`내용 수정필요`
+`//상태바가 웹뷰 위에 겹치는 것을 막고, 웹뷰를 아래로 내려서 상태바 영역을 피하도록 만듭니다.`
+
+\
+&#x20;       `document.addEventListener("deviceready", function () {`\
+&#x20;           `if (window.StatusBar) {`\
+&#x20;               `StatusBar.overlaysWebView(false);`\
+&#x20;           `}`\
+&#x20;       `}, false);`
+
+<figure><img src="../../../.gitbook/assets/ioscordova.png" alt=""><figcaption></figcaption></figure>
 
 **05. Xcode에서 프로젝트를 실행합니다.**
 
@@ -100,3 +101,7 @@ IOS는 파일프로토콜을 기본 지원하지 않으므로 localhost로 동�
 ```
 
 **06. 버튼을 눌러 정상 동작을 확인합니다.**
+
+
+
+<div><figure><img src="../../../.gitbook/assets/ios01.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/ios02.png" alt=""><figcaption></figcaption></figure></div>
