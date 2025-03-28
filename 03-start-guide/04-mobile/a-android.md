@@ -58,6 +58,8 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 windows-x64.exe 다운로드 및 설치를 합니다.
 
+Cordova는 Java JDK 8 이상부터 동작하지만, 사용하는 Android Studio 버전에 따라 호환되는 JDK 버전이 다를 수 있습니다. 따라서 Android Studio의 권장 사양을 함께 확인하여 적절한 JDK 버전을 설치하는 것이 좋습니다.
+
 ### 6. JAVA\_HOME 환경변수 등록
 
 * 환경변수 설정: "고급 시스템 설정" 실행 -> 고급탭(환경 변수)
@@ -66,7 +68,7 @@ windows-x64.exe 다운로드 및 설치를 합니다.
 
 ![](../../.gitbook/assets/prjsettings.png)
 
-![](../../.gitbook/assets/prjsettings2.png)
+<figure><img src="../../.gitbook/assets/001.png" alt=""><figcaption></figcaption></figure>
 
 ### 7. Gradle설치, 환경변수 등록
 
@@ -86,7 +88,7 @@ windows-x64.exe 다운로드 및 설치를 합니다.
 
 ### 1. 예제 코드 추가
 
-SpiderGen 프로젝트의 js파일에 예제 코드를 추가합니다. 예를 들어 Button 컴포넌트와 id가TextBox01인 TextBox 컴포넌트 추가 후 Button의 click Event 설정에 예제 코드를 추가합니다.
+SpiderGen 프로젝트의 js파일에 예제 코드를 추가합니다. 예를 들어 Button 컴포넌트와 id가box인 TextBox 컴포넌트 추가 후 Button의 click Event 설정에 예제 코드를 추가합니다.
 
 ```
 
@@ -119,8 +121,9 @@ Android Studio를 실행합니다.
 
 Android Studio의 Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\android` 를 선택하여 파일을 오픈합니다.
 
-> 처음 Android Studio 를 설치하면\
-> sdk파일이 없어서 빌드가 안되는 경우가 있을수있습니다.**menu - tools - sdk managersdk tools**에서 사용할 버전을 찾아 설치하고 다시 빌드합니다.
+> 처음 Android Studio 를 설치하면 sdk파일이 없어서 빌드가 안되는 경우가 있을수있습니다. **menu - tools - sdk manager** **sdk tools**에서 사용할 버전을 찾아 설치하고 다시 빌드합니다.
+>
+> 사용하는 Android Studio 버전에 따라 호환되는 JDK 버전이 다를 수 있습니다. 따라서 Android Studio의 권장 사양을 함께 확인하여 적절한 JDK 버전을 설치하는 것이 좋습니다.
 
 ![](../../.gitbook/assets/sdk_tools.png)
 
@@ -154,4 +157,4 @@ Android Studio의 Menu에 진입 후 File -> Open 생성해두었던 `MyApp\plat
 
 필요한 플러그인이 있다면 [cordova 공식 페이지](https://cordova.apache.org/)에서 찾아볼 수 있습니다.
 
-[스파이더젠 프로젝트 안드로이드 앱 코르도바 플러그인 사용방법](broken-reference)
+[스파이더젠 프로젝트 안드로이드 앱 코르도바 플러그인 사용방법](<../../Guide for SpiderGen/05  Advanced/09  Cordova Hybrid앱 구축하기/A  Android 앱 구축하기(cordova).md>)
