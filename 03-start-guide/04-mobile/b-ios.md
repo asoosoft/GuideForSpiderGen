@@ -44,7 +44,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 ### 4. SpiderGen cordova export
 
-경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 복사사합니다.
+경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 복사합니다.
 
 ![](../../.gitbook/assets/asset_settings.png)
 
@@ -71,11 +71,6 @@ SpiderGen 프로젝트의 js파일에 예제 코드를 추가합니다. 예를 �
 ### 2. Cordova 앱 빌드 및 실행
 
 iOS 앱을 빌드하고 실행합니다. 이 단계에서는 **Xcode가** 필요합니다.
-
-```
-cordova build ios
-cordova emulate ios
-```
 
 ![](../../.gitbook/assets/MyAppSettings.png)
 
