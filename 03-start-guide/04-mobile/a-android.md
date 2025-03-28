@@ -10,7 +10,7 @@
 
 Android Studio 는 Android 앱 개발을 위한 공식 IDE입니다.
 
-> [Android Studio 공식 홈페이지](../../Guide%20for%20SpiderGen/03%20%20Start%20Guide/04%20%20%EB%B9%8C%EB%93%9C%20%EB%B0%8F%20%EC%8B%A4%ED%96%89\(Mobile\)/\[https:/developer.android.com/studio)
+> [Android Studio 공식 홈페이지](https://developer.android.com/studio?hl=ko)
 
 (직접 디바이스를 연결 하거나 가상 디바이스로 앱을 실행할 수 있습니다.)
 
@@ -44,7 +44,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 (Cordova 프로젝트에 android 플랫폼을 추가합니다.)
 
-> [코르도바 공식 홈페이지](../../Guide%20for%20SpiderGen/03%20%20Start%20Guide/04%20%20%EB%B9%8C%EB%93%9C%20%EB%B0%8F%20%EC%8B%A4%ED%96%89\(Mobile\)/cordova.apache.org#getstarted)
+> [코르도바 공식 홈페이지](https://cordova.apache.org/)
 
 ### 4. SpiderGen cordova export
 
