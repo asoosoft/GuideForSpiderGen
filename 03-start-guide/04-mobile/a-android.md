@@ -14,9 +14,9 @@ Android Studio 는 Android 앱 개발을 위한 공식 IDE입니다.
 
 (직접 디바이스를 연결 하거나 가상 디바이스로 앱을 실행할 수 있습니다.)
 
-### 2. node js 설치
+### 2. Node js 설치
 
-node js 를 설치합니다.
+Node js 를 설치합니다.
 
 > [node js 공식 홈페이지](https://nodejs.org/en/)
 
@@ -48,7 +48,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 ### 4. SpiderGen cordova export
 
-경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 export 합니다.
+경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 복사사합니다.
 
 ![](../../.gitbook/assets/SpiderGen_cordova_export.png)
 
@@ -115,7 +115,7 @@ SpiderGen 프로젝트의 js파일에 예제 코드를 추가합니다. 예를 �
 
 ### 2. Cordova 앱 빌드 및 실행
 
-`MyApp\platforms\android\app\src\main\assets\www` 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 bin 폴더안에 있는 파일을 **export** 합니다.
+`MyApp\platforms\android\app\src\main\assets\www` 위 경로에 SpiderGen 프로젝트 bin 폴더안에 있는 파일을 복사합니다.
 
 Android Studio를 실행합니다.
 

@@ -12,9 +12,9 @@ iOS 앱 개발을 위해 Xcode가 필요합니다. Xcode는 macOS에서만 사�
 
 > `Mac App Store를 열고 Xcode를 검색하여 설치합니다`.
 
-### 2. node js 설치
+### 2. Node js 설치
 
-node js 를 설치합니다.
+Node js 를 설치합니다.
 
 > [node js 공식 홈페이지](https://nodejs.org/en/)
 
@@ -44,7 +44,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 ### 4. SpiderGen cordova export
 
-경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 export 합니다.
+경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 복사사합니다.
 
 ![](../../.gitbook/assets/asset_settings.png)
 
@@ -79,7 +79,7 @@ cordova emulate ios
 
 ![](../../.gitbook/assets/MyAppSettings.png)
 
-Staging 폴더의 www 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 bin 폴더안에 있는 파일을 **export** 합니다.
+Staging 폴더의 www 경로에 SpiderGen 프로젝트에서 만든 bin 폴더안에 있는 파일을 복사합니다. (기존www 경로의 index 파일은 삭제합니다)
 
 IOS는 파일프로토콜을 기본 지원하지 않으므로 localhost로 동작하도록 해야합니다.\
 그러므로 Staging/config.xml 파일에 아래 옵션을 추가해줘야 동작합니다.
