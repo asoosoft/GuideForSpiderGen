@@ -57,7 +57,6 @@
   * [09. Cordova Hybrid앱 구축하기](05-advanced-1/09-cordova-hybrid-1/README.md)
     * [A. Android 앱 구축하기(cordova)](<Guide for SpiderGen/05  Advanced/09  Cordova Hybrid앱 구축하기/A  Android 앱 구축하기(cordova).md>)
     * [B. iOS 앱 구축하기(cordova)](<Guide for SpiderGen/05  Advanced/09  Cordova Hybrid앱 구축하기/B  iOS 앱 구축하기(cordova).md>)
-  * [10. GitLab CI/CD Build PipeLine](<Guide for SpiderGen/05  Advanced/10  GitLab CI CD Build PipeLine.md>)
 * [06. SpiderGen Editor](<Guide for SpiderGen/06  SpiderGen Editor.md>)
   * [01. Main Menu](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu.md>)
     * [A. File](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/A  File.md>)
