@@ -129,22 +129,14 @@ Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\android` 를
 
 ![](<../../../.gitbook/assets/sdk_tools (1).png>)
 
-**04. Cordova 설정**
-
-`MyApp\platforms\android\app\src\main\assets\www\`
-
-위 경로에 있는 index.html 파일에 아래 내용을 추가합니다.
-
-`<script defer src="./Assets/android/app/src/main/assets/www/cordova.js"></script>`
-
-**05. Android Studio에서 프로젝트를 실행합니다.**
+**04. Android Studio에서 프로젝트를 실행합니다.**
 
 > 디바이스를 직접 연결 하거나 가상 디바이스를 설정해야 합니다.\
 > 가상 디바이스는 **Menu - Tools -Device Manager** 에서 설정할 수 있습니다.
 
 ![](../../../.gitbook/assets/Android001.png)
 
-**06. 버튼을 눌러 정상 동작을 확인합니다.**
+**05. 버튼을 눌러 정상 동작을 확인합니다.**
 
 ![](../../../.gitbook/assets/Android002.png)
 
