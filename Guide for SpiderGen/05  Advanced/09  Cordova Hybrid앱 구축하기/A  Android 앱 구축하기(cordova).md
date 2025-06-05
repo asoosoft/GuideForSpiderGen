@@ -17,23 +17,75 @@ cmd 창에서 프로젝트 경로에 진입 후 cordova Plugin을 설치합니�
 
 > [cordova 공식 홈페이지](https://cordova.apache.org/plugins/)
 
+## &#x20;<mark style="color:red;background-color:red;">지원 디바이스에 따른 설정방법</mark>&#x20;
+
+> 지원해야 하는 디바이스에 따라 설정방법이 차이가 있습니다.
+>
+> <mark style="color:red;">**사용자는 디바이스에 따라 아래 2가지 방법 중 한 가지 방법**</mark>으로 설정해야 합니다.
+
+### 3.1. 네이티브 전용
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( cordova 상태 )</p></figcaption></figure>
+
+네이티브 전용으로 제작하려면 스파이더젠의 File > Properties에서 Native Bridge를
+
+&#x20;<mark style="color:red;background-color:red;">**cordova**</mark> 로 설정해야 합니다.
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>생성된 Bridge 폴더</p></figcaption></figure>
+
+위에서 cordova로 설정을 완료했다면 위 사진처럼 Bridge 폴더와 그 하위 폴더들이 자동으로 생성되어 있습니다.
+
+각 폴더에 들어있는 cordova.js / cordova\_plugins.js는 시각적으론 보이나 실제론 해당 파일이 각 폴더에 실제로 존재해 있지 않기에 각 폴더에 js를 찾아서 넣어줘야 합니다.
+
+**`MyApp\platforms\android\platform_www`**&#x20;
+
+위 경로에 있는 파일들을 스파이더젠의 위 사진의 android 폴더에 붙여넣습니다.
+
+![붙혀넣은 후 Assets 파일 구조](../../../.gitbook/assets/fileTree.png)
+
+**안드로이드앱을 구축하기 위해 ios 폴더는 삭제해줍니다.**&#x20;
+
+### 3.2. 네이티브 & 웹
+
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( 기본 none 상태 )</p></figcaption></figure>
+
+네이티브 & 웹 전용으로 제작하려면 스파이더젠의 File > Properties에서 Native Bridge를
+
+&#x20;<mark style="color:red;background-color:red;">none (기본값)</mark> 로 설정해야 합니다.\
+
+
+`MyApp\platforms\android\platform_www`&#x20;
+
+위 경로에 있는 파일들을 스파이더젠의 Assets 폴더에 붙여넣습니다.
+
+![붙혀넣은 후 Assets 파일 구조](../../../.gitbook/assets/fileTree.png)
+
+Assets 폴더 내에 파일들은 자동으로 로드하지 않으므로 해당 cordova.js를 코드 내에서 읽어줘야 합니다.
+
+아래와 같이 `afc.loadScript('Assets/android/cordova.js');` 를 theApp.js 코드 최상단에 작성해줍니다.
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>스파이더젠 프로젝트 theApp.js 내 최상단에 위치한 loadScript 코드</p></figcaption></figure>
+
 ### 3. 예제 코드 추가
 
-**01. 이밴트 생성**
+**01. 이벤트 생성**
 
 스파이더젠 프로젝트에서 버튼을 생성해서 클릭 이벤트함수에 아래와 같이 작성합니다.
 
 ```
-MainView = class MainView extends AView {
-    constructor() {
+class MainView extends AView 
+{
+    constructor() 
+    {
         super()
+        
          // 현재 상태를 저장할 변수
         this.isLandscape = false;
     }
 
 
-   onButtonClick(comp, info, e) {
-
+   onButtonClick(comp, info, e) 
+   {
         // landscape ↔ portrait 토글
         let orientation = this.isLandscape ? "portrait" : "landscape";
 
@@ -56,12 +108,6 @@ MainView = class MainView extends AView {
 
 ```
 
-`MyApp\platforms`
-
-위 경로에 있는 android 폴더를 스파이더젠의 Assets 폴더에 복사합니다.
-
-![](../../../.gitbook/assets/assets.png)
-
 **02. bin파일 생성**
 
 F7을 눌러 빌드하고 bin파일을 생성합니다.
@@ -70,9 +116,9 @@ F7을 눌러 빌드하고 bin파일을 생성합니다.
 
 > `MyApp\platforms\android\app\src\main\assets\www`
 
+위 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 **bin** 폴더안에 있는 파일을 붙여넣습니다.
 
 
-위 경로에 있는 파일을 삭제 후 스파이더젠 프로젝트 **bin** 폴더안에 있는 파일을 복사사합니다.
 
 **03. Android Studio 실행**
 
