@@ -46,13 +46,7 @@ cmd 에서 아래의 단계를 순서대로 진행합니다.
 
 > [코르도바 공식 홈페이지](https://cordova.apache.org/)
 
-### 4. SpiderGen cordova export
-
-경로에 생성된 Android 폴더를 스파이더젠 프로젝트 Assets 폴더에 복사사합니다.
-
-![](../../.gitbook/assets/SpiderGen_cordova_export.png)
-
-### 5. JAVA JDK 설치
+### 4. JAVA JDK 설치
 
 > [JAVA 공식 홈페이지](https://www.oracle.com/java/technologies/downloads/?er=221886)
 
@@ -60,7 +54,7 @@ windows-x64.exe 다운로드 및 설치를 합니다.
 
 Cordova는 Java JDK 8 이상부터 동작하지만, 사용하는 Android Studio 버전에 따라 호환되는 JDK 버전이 다를 수 있습니다. 따라서 Android Studio의 권장 사양을 함께 확인하여 적절한 JDK 버전을 설치하는 것이 좋습니다.
 
-### 6. JAVA\_HOME 환경변수 등록
+### 5. JAVA\_HOME 환경변수 등록
 
 * 환경변수 설정: "고급 시스템 설정" 실행 -> 고급탭(환경 변수)
 * 시스템변수 새로만들기: JAVA\_HOME / 설치한 JDK 경로 추가
@@ -70,7 +64,7 @@ Cordova는 Java JDK 8 이상부터 동작하지만, 사용하는 Android Studio 
 
 <figure><img src="../../.gitbook/assets/001.png" alt=""><figcaption></figcaption></figure>
 
-### 7. Gradle설치, 환경변수 등록
+### 6. Gradle설치, 환경변수 등록
 
 > [Gradle 공식 홈페이지](https://gradle.org/install/)
 
