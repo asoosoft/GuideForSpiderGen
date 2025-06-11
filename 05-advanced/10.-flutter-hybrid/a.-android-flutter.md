@@ -11,7 +11,7 @@ Android 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 
 ### 2. flutter SDK설치
 
-> [flutter 공식 홈페이지](https://cordova.apache.org/plugins/)
+> [flutter 공식 홈페이지](https://docs.flutter.dev/get-started/install)
 
 플러터 공식 메뉴얼에 따라 설치를 진행해주세요.
 
