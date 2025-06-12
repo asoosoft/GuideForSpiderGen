@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # B. Android 앱 구축하기 가상 도메인 맵핑(flutter)
 
 ### 1. Android 사용 환경 설정
