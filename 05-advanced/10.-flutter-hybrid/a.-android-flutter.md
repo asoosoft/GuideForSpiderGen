@@ -1,54 +1,97 @@
-# A. Android 앱 구축하기(flutter)
+# A. Android 앱 구축하기 로컬 서버 배포(flutter)
 
-### 1. Android 사용 환경 설정
+### 1. flutter SDK 설치
 
-Android 앱을 개발하기 위해서는 환경설정이 필요합니다.\
-아래의 환경 설정 가이드의  <sub>Android Studio 설치, JAVA JDK 설치, JAVA\_HOME 환경변수 등록, Gradle설치, 환경변수 등록</sub> 항목을 참고해 환경을 설정해주세요.
+이 가이드에서는 Visual Studio Code를 이용해서 flutter 프로젝트를 설치 및 생성합니다.
 
-[환경설정 가이드](../../03-start-guide/04-mobile/a-android.md)
+> Use VS code to install 항목을 참고하실 수 있습니다.
+>
+> [flutter 공식 설치 메뉴얼](https://docs.flutter.dev/get-started/install)
 
+#### 1.1 Visual Studio Code 설치 및 extension 설치
 
+자신의 운영체제와  원하는 설치 방법을 선택해 설치합니다
 
-### 2. flutter SDK설치
+> [Visual Studio Code 공식 다운로드 페이지](https://code.visualstudio.com/Download)
 
-> [flutter 공식 홈페이지](https://docs.flutter.dev/get-started/install)
+<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-플러터 공식 메뉴얼에 따라 설치를 진행해주세요.
+Visual Studio Code를 실행하고 좌측 사이드 메뉴에서 Extension 항목을 찾거나 (ctrl+shift+X)로 항목을 전환하고 익스텐션 마켓플레이스에서 Flutter를 찾아 설치합니다.
 
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+익스텐션이 설치된 후 최 상단 명령 팔레트를 선택하거나 (ctrl+shift+P)로 팔레트를 열고 `>Flutter: New Project` 명령을 찾아 선택하면 flutter SDK가 없을 경우 설치 안내 팝업이 우하단에 출력됩니다.
 
-### 3. flutter SDK 환경변수 설정
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+이후  팝업모달 안내에따라 Clone Flutter 를 눌러 SDK 설치 위치를 선택하고 설치합니다.
+
+#### 1.2 flutter SDK 설치 확인
+
+정상적으로 SDK가 설치되고 환경변수까지 등록했다면\
+명령 프롬프트를 열어 아래의 명령어를 입력하여 정상적으로 설치되었는지 확인할  수 있습니다.
+
+```powershell
+flutter --version
+```
+
+만약 아래와 같이 출력되지 않는다면 직접 sdk를 환경변수에 설정할 수 있습니다.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt="" width="563"><figcaption></figcaption></figure>
+
+#### 1.3 flutter SDK 수동 설치 및  확인
+
+정상적으로 SDK가 설치되지 않았다면 아래의 링크에서 다운로드 후 직접 환경변수를 설정해야합니다.
+
+> [flutter 공식 설치 메뉴얼](https://docs.flutter.dev/get-started/install)
+>
+> 운영체제를 선택한뒤 Download and install 항목에서 직접 설치할 수 있습니다.
 
 * 환경변수 설정: "고급 시스템 설정" 실행 -> 고급탭 (환경 변수)
 * 시스템변수 Path 편집
-* 새로  만들기 "C:\flutter\bin" 추가 (flutter SDK를 설치한 경로에  맞게 수정)
+* 새로  만들기 "C:\flutter\bin" 추가 (flutter SDK 설치 경로 하위  "bin" 디렉토리)
 
-<figure><img src="../../.gitbook/assets/image.png" alt="환경변수-시스템변수-Path편집"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt="환경변수-시스템변수-Path편집"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-명령 프롬프트를 열어 flutter doctor 명령어를 실행하고 추가로 필요한 조건을 확인합니다.
+### 2. 안드로이드스튜디오 설치
 
-```powershell
+> [Android Studio 공식 홈페이지](https://developer.android.com/studio?hl=ko)
+
+공식 홈페이지에서 안드로이드 스튜디오를 설치후 Android Studio를 실행합니다\
+좌측 상단 main menu 버튼을 누르고 Tools - **SDK manager** 를 열어 아래 항목을 선택 후 설치합니다.
+
+* Android SDK Platform, API 35
+* Android SDK Command-line Tools
+* Android SDK Build-Tools
+* Android SDK Platform-Tools
+* Android Emulator
+
+
+
+### 3. flutter 사용 환경 설정 확인
+
+아래 명령어를 실행해서 현재 flutter를 사용할 수 있는지 최종 확인합니다.
+
+```
 flutter doctor
 ```
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+정상적으로 설정이 완료되었다면 아래와 같이 출력 됩니다.\
+만약 필요한 설정이 있다면 안내대로 추가 설정을 진행해주세요.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>chrom과visual studio는 다른애플리케이션을 만들기 위해 필요한 것이므로 무시하여도 됩니다.</p></figcaption></figure>
 
 
 
-### 4. flutter 프로젝트 생성
+### 4. flutter 프로젝트 생성 및 플러그인 설치
 
-안드로이드 스튜디오의 New Flutter Project...\
-또는 명령 프롬프트에서 flutter 명령어로 프로젝트를 생성합니다.
+Visual Studio Code에서 최 상단 명령 팔레트를 선택하거나 (ctrl+shift+P)로 팔레트를 열고 `>Flutter: New Project` - `Application`명령을 선택하면 이전과 달리 정상적으로 flutter 프로젝트를 생성할 수 있습니다.
 
-```powershell
-flutter create 프로젝트명
-```
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
-
-
-### 5. flutter 플러그인 설치
+이후 스파이더젠을 간편하게 웹뷰로 등록할 수 있도록 몇 가지 플러그인을 설치할 수 있습니다.
 
 > 플러터 플러그인을 활용하여 기본 제공되는 기능 외 추가적인 기능을 쉽게 구현할 수  있습니다.
 >
@@ -57,43 +100,48 @@ flutter create 프로젝트명
 ```powershell
 cd 프로젝트명
 flutter pub add flutter_inappwebview
-#스파이더젠을 출력하기 위해 필요한기능이 확장된 웹뷰 플러그인
+#스파이더젠을 출력하기 위해 필요한 기능이 확장된 웹뷰 플러그인
 flutter pub add asset_fill
 #빌드된 스파이더젠 정적 리소스를 쉽게 에셋에 등록하기 위한 플러그인
 flutter pub get
 #pubspec에 add 명령으로 등록된 플러그인 설치
 ```
 
+추가적으로 flutter\_inappwebview를 android os에서 사용하기 위해서는\
+android ndk버전이 "27.0.12077973" 이상이어야 합니다.
 
+경고 발생시 `프로젝트이름\android\app\build.gradle.kts` 를 열어 아래와 같이 버전을 수정해주세요
 
-### 6. 스파이더젠 웹페이지 등록
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-> flutter에서 정적 리소스를 사용할때 리소스를 프로젝트 루트 assets  디렉터리에 위치하고\
-> pubspec.yaml에 등록해야 빌드 결과물에 포함됩니다.
+### 5. 스파이더젠 웹페이지 등록
 
 생성한 flutter 프로젝트의 최 상위 루트에 assets 폴더를 생성합니다.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+> flutter에서 정적 리소스를 사용할때 리소스를 프로젝트 루트 assets 디렉터리에 위치하고\
+> pubspec.yaml에 등록해야 빌드 결과물에 포함됩니다.
 
-스파이더젠에서 Build Project 기능으로 미리 빌드한 bin 폴더의 자료를 붙여 넣습니다.
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>www 디렉터리는 웹뷰 관레일 뿐 필요에따라 사용하지 않아도 됩니다.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+생성한 디렉터리에 스파이더젠을 빌드한(Build Project F7) 파일을 assets디렉토리로 옮깁니다.
 
-pubspec.yaml을 열어 assets 하위의  필요한 디렉터리 및 파일을 직접 등록할 수 있습니다.
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+이후 pubspec.yaml을 열어 assets 하위의  필요한 디렉터리 및 파일을 직접 등록할 수 있습니다.
 
 ```yaml
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/ #flutter는 명시된 디렉토리의 1-depth까지만 인식합니다.
+    - assets/www/ # flutter는 명시된 디렉토리의 1-depth까지만 인식합니다.
 ```
 
 또는 설치해두었던 "asset\_fill" 플러그인을 명령 프롬프트에서  실행하여\
 자동으로 assets의 하위 디렉터리를 추가할 수 있습니다.
 
 ```powershell
-flutter pub run asset_fill
-#플러그인을 실행하면 assets를 제외 이하의 디렉토리가 자동으로 pubspec.yaml에 포함됩니다.
+dart pub run asset_fill
+# 플러그인을 실행하면 assets를 제외 이하의 디렉토리가 자동으로 pubspec.yaml에 포함됩니다.
 ```
 
 #### **최종적으로 아래와 같이 pubspec.yaml의 assets 항목이 작성됩니다.**
@@ -101,83 +149,75 @@ flutter pub run asset_fill
 ```yaml
 flutter:
   assets:
-    - assets/ #asset_fill 플러그인은 assets/을 추가하지 않으므로 필요한경우직접 추가해야 합니다.
-    - assets/Assets/
-    - assets/Framework/
-    - assets/Framework/afc/
-    - assets/Framework/afc/asset/
-    - assets/Framework/afc/component/
-    - assets/Framework/afc/default/
-    - assets/Framework/afc/event/
-    - assets/Framework/afc/image/
-    - assets/Framework/afc/layout/
-    - assets/Framework/afc/library/
-    - assets/Framework/afc/style/
-    - assets/Library/
-    - assets/Query/
-    - assets/Source/
-    - assets/Source/page/
-    - assets/Template/
-    - assets/Template/Theme/
+    - assets/www/
+    - assets/www/Assets/
+    - assets/www/Framework/
+    - assets/www/Framework/afc/
+    - assets/www/Framework/afc/asset/
+    - assets/www/Framework/afc/component/
+    - assets/www/Framework/afc/default/
+    - assets/www/Framework/afc/event/
+    - assets/www/Framework/afc/image/
+    - assets/www/Framework/afc/layout/
+    - assets/www/Framework/afc/library/
+    - assets/www/Framework/afc/style/
+    - assets/www/Library/
+    - assets/www/Query/
+    - assets/www/Source/
+    - assets/www/Source/page/
+    - assets/www/Template/
+    - assets/www/Template/Theme/
 ```
 
+### 6. flutter에 웹뷰 위젯 추가 및 로컬 서버 추가
 
+`프로젝트이름/lib/main.dar` 에서 InAppLocalhostServer를 생성해 로컬서버를 배포하고 원하는 위젯의 위치에 설치했던 플러그인 "InAppWebView" 위젯을 추가합니다.
 
-### 7. flutter에 웹뷰 위젯 추가
+<pre class="language-dart"><code class="lang-dart"><strong>/// lib\main.dart
+</strong>import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-원하는 위젯의 위치에 설치했던 플러그인 "InAppWebView" 위젯을 추가합니다.
+//로컬 서버를 생성하기 위해 InAppLocalhostServer객체를 생성하고
+//pubspec.yaml의 assets에 등록한 'assets/www'을 루트로 인식하게 합니다.
+final InAppLocalhostServer localhostServer = InAppLocalhostServer(
+  documentRoot: 'assets/www',
+); 
 
-```dart
-class WebViewExample extends StatefulWidget {
-  const WebViewExample({super.key});
-
-  @override
-  State<WebViewExample> createState() => _WebViewExampleState();
+Future&#x3C;void> main() async {//InAppLocalhostServer가 시작될때까지 기다리기위해 Future를 사용합니다
+  // main()이 비동기로 실행될때 함께 동작하는 네이티브 코드들의 실행 타이밍이 예상과 다르게 될 수 있으므로
+  // 이를 방지하기 위해 반드시 ensureInitialized()로 초기화해야 합니다.
+  WidgetsFlutterBinding.ensureInitialized();
+  await localhostServer.start();//로컬 서버 시작
+  runApp(MaterialApp(home: const MyApp()));
 }
 
-class _WebViewExampleState extends State<WebViewExample> {
-final webViewKey = GlobalKey();
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+  @override
+  State&#x3C;MyApp> createState() => _MyAppState();
+}
 
-  final settings = InAppWebViewSettings(
-    webViewAssetLoader: WebViewAssetLoader(//WebViewAssetLoader로 정적 웹페이지를 로드합니다.
-      //CORS정책을 우회하기 위해 file 프로토콜 대신 가상 도메인으로 매핑합니다.
-      domain: "my.custom.domain.com",//웹뷰를 여러개 사용시 도메인을 분리하여 사용할 수 있습니다.
-      pathHandlers: [
-        // 웹뷰에서 정적 리소스를 불러올 수 있도록 '/assets/' 경로를 매핑합니다.
-        AssetsPathHandler(path: '/assets/'),
-      ],
-    ),
-  );
-
+class _MyAppState extends State&#x3C;MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('InAppWebView Example')),
-      body: SafeArea(
-        child: InAppWebView(//InAppWebView 위젯을 생성합니다.
-          key: webViewKey,
-          initialUrlRequest: URLRequest(
-            url: WebUri(
-                'https://my.custom.domain.com/assets/flutter_assets/assets/index.html'),
-          ),
-          ///flutter는 빌드후 assets에 포함된 리소스는 "/assets/flutter_assets"에 위치합니다.
-          ///스파이더젠의 index.html은 "assets/index.html"에 위치하므로
-          ///최종위치는"/assets/flutter_assets/assets/index.html"에 존재합니다.
-          ///InAppWebViewSettings의 domain을 수정했다면 그에 맞게 수정해야 합니다.
-          initialSettings: settings,
-        ),
+      appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
+      body: InAppWebView( //InAppWebView를 생성하고 로컬서버를 출력
+        initialUrlRequest: URLRequest(
+          url: WebUri("http://localhost:8080/index.html"),
+        )
       ),
     );
   }
 }
-```
+</code></pre>
 
 
 
-### 8. Android 실행 및 확인
+### 7. Android 실행 및 확인
 
-안드로이드 스튜디오에서 Run 'main.dart' 기능을  이용하거나\
-명령 프롬프트에서 flutter 명령어로 앱을 실행합니다.
+안드로이드 에뮬레이터가 실행된 상태거나 실제 안드로이드 디바이스를 pc와 연결한 상태에서 Visual Studio Code의 `프로젝트이름/lib/main.dart` 를 열고 Run and Debug의 Run (F5)을 눌러 실행하거나\
+명령프롬프트 창에서 프로젝트 디렉터리로 이동해 아래와 같은 명령어를 입력하면 디버깅 모드로 플러터앱이 실행됩니다.
 
 ```powershell
 flutter run
@@ -185,9 +225,15 @@ flutter run
 
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
+### 9. APK 빌드
 
+앱 개발을 마치고 실제 APK를 생성하고 싶다면 명령 프롬프트 창에서 프로젝트 디렉터리로 이동해 아래와 같은 명령어를 입력하면 `\build\app\outputs\flutter-apk\app-release.apk` 위치에 apk가 생성됩니다.
 
-### 9. (추가) 예제코드
+```powershell
+flutter build apk
+```
+
+### 8. (추가) 통신 예제 코드
 
 ### addJavaScriptHandler
 
@@ -197,23 +243,28 @@ InAppWebView 위젯은 controller객체의 `addJavaScriptHandler` 메서드를  
 아래와 같이 웹뷰가 flutter InAppWebView의  콜백을 호출할 수 있습니다.
 
 <pre class="language-dart"><code class="lang-dart"><strong>///flutter
-</strong>InAppWebView(
-  key: webViewKey,
-  initialUrlRequest: URLRequest(
-    url: WebUri(
-      'https://my.custom.domain.com/assets/flutter_assets/assets/index.html'),
-    ),
-    onWebViewCreated: (controller) {
-      controller.addJavaScriptHandler(
-          handlerName: 'myHandler',//웹뷰에서 myHandler이름으로 호출하면
-          callback: (args) {
-            print(args);
-            return {'result': '플러터에서 응답'};//{result:값}이라는 json객체를 반환함
-          },
-        );
-      },
-    initialSettings: settings,
- ),
+</strong>class _MyAppState extends State&#x3C;MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
+      body: InAppWebView(
+        initialUrlRequest: URLRequest(
+          url: WebUri("http://localhost:8080/index.html"),
+        ),
+        onWebViewCreated: (controller) {
+          controller.addJavaScriptHandler(
+            handlerName: "myHandler",
+            callback: (args) {
+              return {'result': '플러터에서 응답 $args'};
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
 </code></pre>
 
 자바스크립트에서는 window객체를 통해 flutter InAppWebView가 전달한\
@@ -228,8 +279,7 @@ InAppWebView 위젯은 controller객체의 `addJavaScriptHandler` 메서드를  
         if (!window.flutter_inappwebview) return;
         window.flutter_inappwebview.callHandler('myHandler', inputText)//handlerName
         .then(function(response) {
-            console.log("플러터 콜백 호출 성공"+response.result)//반환값{result:값}
-            resultTextBox.setText(response.result)
+            resultTextBox.setText(response.result) //예상값 플러터에서 응답 [args]
         });
 }
 </code></pre>
@@ -242,38 +292,43 @@ InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용
 아래와 같이 flutter가 웹뷰에게 메세지 이벤트를 트리거 할  수 있습니다.
 
 <pre class="language-dart"><code class="lang-dart"><strong>///flutter
-</strong>class _WebViewExampleState extends State&#x3C;WebViewExample> {
-  InAppWebViewController? webViewController;
-  final webViewKey = GlobalKey();
-  final settings = InAppWebViewSettings(
-    //생략
-  );
+</strong>class _MyAppState extends State&#x3C;MyApp> {
+  late InAppWebViewController _inAppWebViewController;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('InAppWebView Example')),
-      body: Column(children: &#x3C;Widget>[
-        InAppWebView(
-          key: webViewKey,
-          initialUrlRequest: URLRequest(
-            url: WebUri(
-                'https://my.custom.domain.com/assets/flutter_assets/assets/index.html'),
+      appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
+      body: Column(
+        children: &#x3C;Widget>[
+          Expanded(
+            child: InAppWebView(
+              initialUrlRequest: URLRequest(
+                url: WebUri("http://localhost:8080/index.html"),
+              ),
+              onWebViewCreated: (controller) {
+                _inAppWebViewController = controller;//콜백외부에서 사용할 수 있도록 controller 저장
+                controller.addJavaScriptHandler(
+                  handlerName: "myHandler",
+                  callback: (args) {
+                    print(args);
+                    return {'result': '플러터에서 응답 $args'};
+                  },
+                );
+              },
+            ),
           ),
-          onWebViewCreated: (controller) {
-            webViewController = controller;
-          },
-          initialSettings: settings,
-        ),
-        TextButton(
-          onPressed: () {
-            webViewController?.postWebMessage(//postWebMessage 호출
-                message:
-                    WebMessage(data: "InAppWebView가 제공하는 postWebMessage 호출"));
-          },
-          child: const Text("InAppWebView가 제공하는 postWebMessage 호출"),
-        ),
-      ]),
+          TextButton(
+            onPressed: () {
+              _inAppWebViewController.postWebMessage(
+                //postWebMessage 호출
+                message: WebMessage(data: "postWebMessage 호출됨!"),
+              );
+            },
+            child: Text("postWebMessage 호출"),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -304,19 +359,21 @@ InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용
 	onMessageHandler=(event)=>
 	{
 	        this.resultTextBox.setText(event.data);
-		//예상 값 "InAppWebView가 제공하는 postWebMessage 호출"
+		//예상 값 "postWebMessage 호출됨"
 	}
 
 	onActiveDone(isFirst)
 	{
 		super.onActiveDone(isFirst)
         	window.addEventListener("message", this.onMessageHandler);
+        	//윈도우 객체에 이벤트 등록
 	}
 
     	onDeactiveDone()
     	{
         	super.onDeactiveDone()
         	window.removeEventListener("message",this.onMessageHandler);
+        	//이벤트 클린업
     	}
 
 }
@@ -324,7 +381,7 @@ InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용
 
 </code></pre>
 
-### evaluateJavaScript
+### evaluateJavaScript<sub>(runJavaScript, runJavaScriptReturningResult 등...)</sub>
 
 <figure><img src="../../.gitbook/assets/image (18).png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -332,48 +389,46 @@ InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  �
 아래와 같이 flutter가 웹뷰 자바스크립트를 직접 호출할 수 있습니다.
 
 <pre class="language-dart"><code class="lang-dart"><strong>///flutter
-</strong>class _WebViewExampleState extends State&#x3C;WebViewExample> {
-  InAppWebViewController? webViewController;
-  final webViewKey = GlobalKey();
-  final settings = InAppWebViewSettings(
-    //생략
-  );
+</strong>class _MyAppState extends State&#x3C;MyApp> {
+  late InAppWebViewController _inAppWebViewController;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('InAppWebView Example')),
-      body: Column(children: &#x3C;Widget>[
-        InAppWebView(
-          key: webViewKey,
-          initialUrlRequest: URLRequest(
-            url: WebUri(
-                'https://my.custom.domain.com/assets/flutter_assets/assets/index.html'),
+      appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
+      body: Column(
+        children: &#x3C;Widget>[
+          Expanded(
+            child: InAppWebView(
+              initialUrlRequest: URLRequest(
+                url: WebUri("http://localhost:8080/index.html"),
+              ),
+              onWebViewCreated: (controller) {
+                _inAppWebViewController = controller;
+              },
+            ),
           ),
-          onWebViewCreated: (controller) {
-            webViewController = controller;
-          },
-          initialSettings: settings,
-        ),
-        TextButton(
-          onPressed: () {
-            webViewController?.evaluateJavascript(
-              source: "window.postMessage('플러터에서 직접 웹뷰 이벤트 호출')");
-            },//js기본 messege 이벤트를 활용
-            child: const Text("플러터에서 직접 이벤트 호출"),
+          TextButton(
+            onPressed: () {
+              _inAppWebViewController.evaluateJavascript(
+                source: "window.postMessage('플러터에서 직접 웹뷰 이벤트 호출')",
+              );
+            },
+            child: Text("직접 웹뷰 이벤트 호출"),
           ),
-        TextButton(
-          onPressed: () {
-            webViewController?.evaluateJavascript(
-              source: "webFunction('플러터에서 직접 웹뷰 함수 호출')");
-            },//웹뷰에서 미리 정의한 전역함수 webFunction
-            child: const Text("플러터에서 직접 웹뷰 함수 호출"),
+          TextButton(
+            onPressed: () {
+              _inAppWebViewController.evaluateJavascript(
+                source: "webFunction('플러터에서 직접 웹뷰 함수 호출')",
+              );
+            },
+            child: Text("직접 웹뷰 함수 호출"),
           ),
-      ]),
+        ],
+      ),
     );
   }
 }
-
 </code></pre>
 
 직접 flutter가 자바스크립트 코드를 실행해서 웹뷰의 함수나 이벤트를 호출 하지만 \
@@ -429,11 +484,11 @@ InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  �
 
 <figure><img src="../../.gitbook/assets/image (19).png" alt="" width="375"><figcaption></figcaption></figure>
 
-`android\app\src\main\kotlin\생성시_작성한_패키지_이름\MainActivity.kt`\
+`android\app\src\main\kotlin\프로젝트_이름\MainActivity.kt`\
 위치에 MainActivty.kt에서  `configureFlutterEngine`를 재정의하여\
 네이티브 모듈을 직접 작성할 수  있습니다.
 
-<pre class="language-kotlin"><code class="lang-kotlin"><strong>///android\app\src\main\kotlin\com\example\firstapp\MainActivity.kt
+<pre class="language-kotlin"><code class="lang-kotlin"><strong>///android\app\src\main\kotlin\com\example\프로젝트_이름\MainActivity.kt
 </strong>package com.example.firstapp
 
 import io.flutter.embedding.android.FlutterActivity
@@ -476,28 +531,38 @@ MainActivity.kt에서 정의한 패키지 이름과  메서드 이름을 이용�
     }
   }
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: &#x3C;Widget>[
-            TextButton(
-              onPressed: getNativeMessage,
-              child: const Text("플러터에서 네이티브 호출"),
+      appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
+      body: Column(
+        children: &#x3C;Widget>[
+          Expanded(
+            child: InAppWebView(
+              initialUrlRequest: URLRequest(
+                url: WebUri("http://localhost:8080/index.html"),
+              ),
+              onWebViewCreated: (controller) {
+                _inAppWebViewController = controller;
+                controller.addJavaScriptHandler(
+                  handlerName: "myHandler",
+                  callback: (args) {
+                    print(args);
+                    return {'result': '플러터에서 응답 $args'};
+                  },
+                );
+              },
             ),
-          ],
-        ),
+          ),
+          TextButton(
+            onPressed: getNativeMessage,
+            child: const Text("플러터에서 네이티브 호출"),
+          ),
+        ],
       ),
     );
   }
 }
 </code></pre>
-
-
 
