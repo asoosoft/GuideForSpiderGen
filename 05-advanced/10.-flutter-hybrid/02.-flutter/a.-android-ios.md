@@ -67,11 +67,13 @@ class _MyAppState extends State&#x3C;MyApp> {
 >
 > ```xml
 > <manifest xmlns:android="http://schemas.android.com/apk/res/android">
->     <uses-permission android:name="android.permission.INTERNET"/><!-- 인터넷 연결 허용 -->
+>     <!-- 인터넷 연결을 허용합니다 -->
+>     <uses-permission android:name="android.permission.INTERNET"/>
 >     ... 생략 ...
 >     <application
 >         ... 생략 ...
->         android:usesCleartextTraffic="true"> <!-- http 접근을 허용합니다 -->
+>         <!-- http 접근을 허용합니다 -->
+>         android:usesCleartextTraffic="true"> 
 >         ... 생략 ...
 > ```
 

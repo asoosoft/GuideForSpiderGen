@@ -29,7 +29,7 @@ class _WebViewExampleState extends State<WebViewExample> {
 final webViewKey = GlobalKey();
 
   final settings = InAppWebViewSettings(
-    webViewAssetLoader: WebViewAssetLoader(//WebViewAssetLoader로 정적 웹페이지를 로드합니다.
+    webViewAssetLoader: WebViewAssetLoader(//WebViewAssetLoader로 로컬 웹페이지를 로드합니다.
       //CORS정책을 우회하기 위해 file 프로토콜 대신 가상 도메인으로 매핑합니다.
       domain: "my.custom.domain.com",//웹뷰를 여러개 사용시 도메인을 분리하여 사용할 수 있습니다.
       pathHandlers: [
