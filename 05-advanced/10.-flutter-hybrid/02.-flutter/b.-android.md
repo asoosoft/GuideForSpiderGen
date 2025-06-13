@@ -48,7 +48,7 @@ final webViewKey = GlobalKey();
           key: webViewKey,
           initialUrlRequest: URLRequest(
             url: WebUri(
-                ''https://my.custom.domain.com/assets/flutter_assets/assets/www/index.html''),
+                'https://my.custom.domain.com/assets/flutter_assets/assets/www/index.html'),
           ),
           ///flutter는 빌드후 assets에 포함된 리소스는 "/assets/flutter_assets"에 위치합니다.
           ///스파이더젠의 index.html은 "assets/www/index.html"에 위치하므로

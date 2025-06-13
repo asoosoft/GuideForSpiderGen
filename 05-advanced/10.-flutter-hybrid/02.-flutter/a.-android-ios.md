@@ -47,7 +47,7 @@ class _MyAppState extends State&#x3C;MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
-      body: InAppWebView( //InAppWebView를 생성하고 로컬서버를 출력
+      body: InAppWebView( //InAppWebView를 생성
         initialUrlRequest: URLRequest(
           url: WebUri("http://localhost:8080/index.html"),
         )
@@ -59,7 +59,7 @@ class _MyAppState extends State&#x3C;MyApp> {
 
 
 
-### 3. 네이티브권한 허가
+### 3. 네이티브 권한 허가
 
 로컬 서버를 띄워서 페이지를 배포하고 웹뷰에 웹페이지를 출력하는 경우 권한이 필요합니다.
 
@@ -68,7 +68,7 @@ class _MyAppState extends State&#x3C;MyApp> {
 > ```xml
 > <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 >     <application
->         ... 
+>         ... 생략 ...
 >         android:usesCleartextTraffic="true"> <!-- http 접근을 허용합니다 -->
 >         ... 생략 ...
 > ```
