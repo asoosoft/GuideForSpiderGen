@@ -196,9 +196,9 @@ InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  �
 }
 </code></pre>
 
-직접 flutter가 자바스크립트 코드를 실행해서 웹뷰의 함수나 이벤트를 호출 하지만 \
+직접 flutter의 InAppWebView가 자바스크립트 코드를 실행해서 웹뷰의 함수나 이벤트를 호출 하지만 \
 스파이더젠 생명주기와는 별도의 컨텍스트에서 동작하므로 \
-전역 함수나 window객체에 이벤트를 등록해야만 실행할  수 있습니다.
+전역 함수나 window객체에 이벤트를 등록해야만 실행할 수 있습니다.
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>///웹뷰(스파이더젠)
 </strong>class TestView extends AView
