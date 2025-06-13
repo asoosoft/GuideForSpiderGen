@@ -29,7 +29,7 @@ Android 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 
 <figure><img src="../../.gitbook/assets/image (13).png" alt="환경변수-시스템변수-Path편집"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 명령 프롬프트를 열어 flutter doctor 명령어를 실행하고 추가로 필요한 조건을 확인합니다.
 
@@ -77,11 +77,11 @@ flutter pub get
 
 생성한 flutter 프로젝트의 최 상위 루트에 assets 폴더를 생성합니다.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 스파이더젠에서 Build Project 기능으로 미리 빌드한 bin 폴더의 자료를 붙여 넣습니다.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 pubspec.yaml을 열어 assets 하위의  필요한 디렉터리 및 파일을 직접 등록할 수 있습니다.
 

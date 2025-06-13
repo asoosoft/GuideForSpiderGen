@@ -1,8 +1,8 @@
-# 2. Flutter<-->WebView 통신하기
+# 03. Flutter<-->WebView 통신하기
 
 ### 1.addJavaScriptHandler
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption></figcaption></figure>
 
 InAppWebView 위젯은 controller객체의 `addJavaScriptHandler` 메서드를  이용하여\
 아래와 같이 웹뷰가 flutter InAppWebView의  콜백을 호출할 수 있습니다.
@@ -51,7 +51,7 @@ InAppWebView 위젯은 controller객체의 `addJavaScriptHandler` 메서드를  
 
 ### 2.postWebMessage
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt="" width="375"><figcaption></figcaption></figure>
 
 InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용하여\
 아래와 같이 flutter가 웹뷰에게 메세지 이벤트를 트리거 할  수 있습니다.
@@ -148,7 +148,7 @@ InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용
 
 ### 3.evaluateJavaScript<sub>(runJavaScript, runJavaScriptReturningResult 등...)</sub>
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt="" width="375"><figcaption></figcaption></figure>
 
 InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  이용하여\
 아래와 같이 flutter가 웹뷰 자바스크립트를 직접 사용할 수 있습니다.
@@ -247,11 +247,9 @@ InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  �
 
 ### 4. Flutter <--> Naitive
 
-> 빌드하고 싶은 플랫폼 운영체제에따라\
-> 하위 페이지 링크에서 네이티브 코드로 통신하는 방법을 알아보세요
+> 빌드하고 싶은 플랫폼에따라\
+> 하위 페이지 링크에서 네이티브와 통신하는 방법을 추가로알아보세요
 >
-> > [A. 웹뷰 로컬 서버 배포(Android/IOS)](../1.-flutter/a.-android-ios.md)
+> > [A. Flutter<-->Android 통신하기](a.-flutter-less-than-greater-than-android.md)
 >
->
->
-> > [B. 웹뷰 가상 도메인 맵핑(Android)](../1.-flutter/b.-android.md)
+> > [B. Flutter<-->IOS통신하기](b.-flutter-less-than-greater-than-ios.md)

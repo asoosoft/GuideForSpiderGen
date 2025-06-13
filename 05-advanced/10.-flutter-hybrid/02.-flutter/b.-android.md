@@ -1,15 +1,15 @@
 # B. 웹뷰 가상 도메인 맵핑(Android)
 
 {% hint style="warning" %}
-이 방법은 Android만 사용할 수 있습니다.
+이 방법은 Android에서만 사용할 수 있습니다.
 {% endhint %}
 
-### 1. Android 개발 환경 구축
+### 1. flutter 개발 환경 구축
 
-&#x20;앱을 개발하기 위해서는 환경설정이 필요합니다.\
+flutter 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 아래의 환경 설정을 참고해서 진행 해주세요.
 
-[환경설정 가이드](./)
+[환경설정 가이드](../01.-flutter.md)
 
 
 
@@ -61,3 +61,14 @@ final webViewKey = GlobalKey();
   }
 }
 ```
+
+
+
+### 3. Flutter<-->WebView 통신하기
+
+> 빌드하고 싶은 플랫폼 운영체제와 방법에따라\
+> 하위 페이지 링크에서 웹뷰와  통신하는 방법을 알아보세요
+>
+> > [03. Flutter<-->WebView 통신하기](../03.-flutter-less-than-greater-than-webview/)
+>
+> > [A. Flutter<-->Android 통신하기](../03.-flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)

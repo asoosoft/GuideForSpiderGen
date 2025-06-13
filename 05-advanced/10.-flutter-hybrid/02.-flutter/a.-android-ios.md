@@ -1,15 +1,17 @@
 # A. 웹뷰 로컬 서버 배포(Android/IOS)
 
-{% hint style="warning" %}
+{% hint style="success" %}
 이 방법은 Android/IOS 모두 사용할 수 있습니다.
 {% endhint %}
 
-### 1. Android 개발 환경 구축
+### 1. flutter 개발 환경 구축
 
-Android 앱을 개발하기 위해서는 환경설정이 필요합니다.\
+flutter 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 아래의 환경 설정을 참고해서 진행 해주세요.
 
-[환경설정 가이드](./)
+[환경설정 가이드](../01.-flutter.md)
+
+
 
 ### 2. flutter에 웹뷰 위젯 추가 및 로컬 서버 추가
 
@@ -55,3 +57,47 @@ class _MyAppState extends State&#x3C;MyApp> {
 }
 </code></pre>
 
+
+
+### 3. 네이티브권한 허가
+
+로컬 서버를 띄워서 페이지를 배포하고 웹뷰에 웹페이지를 출력하는 경우 권한이 필요합니다.
+
+> **Android의 경우** `android\app\src\main\AndroidManifest.xml`를 열어 아래와 같이 추가합니다
+>
+> ```xml
+> <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+>     <application
+>         ... 
+>         android:usesCleartextTraffic="true"> <!-- http 접근을 허용합니다 -->
+>         ... 생략 ...
+> ```
+
+> **IOS의 경우** `ios\Runner\info.plist`를 열어 아래와 같이 추가합니다
+>
+> ```xml
+> <?xml version="1.0" encoding="UTF-8"?>
+> <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+> <plist version="1.0">
+>     <dict>
+>         <!-- 웹뷰에서 http 접근을 허용합니다 -->
+>         <key>NSAppTransportSecurity</key>
+>         <dict>
+>             <key>NSAllowsArbitraryLoadsInWebContent</key>
+>             <true />
+>         </dict>
+>         ... 생략 ...
+> ```
+
+
+
+### 4. Flutter<-->WebView 통신하기
+
+> 빌드하고 싶은 플랫폼 운영체제와 방법에 따라\
+> 하위 페이지 링크에서 웹뷰와  통신하는 방법을 알아보세요
+>
+> > [03. Flutter<-->WebView 통신하기](../03.-flutter-less-than-greater-than-webview/)
+>
+> > [A. Flutter<-->Android 통신하기](../03.-flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
+>
+> > [B. Flutter<-->IOS통신하기](../03.-flutter-less-than-greater-than-webview/b.-flutter-less-than-greater-than-ios.md)
