@@ -1,4 +1,8 @@
-# A. Android 앱 구축하기 로컬 서버 배포(flutter)
+# A. 웹뷰 로컬 서버 배포(Android/IOS)
+
+{% hint style="warning" %}
+이 방법은 Android/IOS 모두 사용할 수 있습니다.
+{% endhint %}
 
 ### 1. Android 개발 환경 구축
 
@@ -9,7 +13,8 @@ Android 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 
 ### 2. flutter에 웹뷰 위젯 추가 및 로컬 서버 추가
 
-`프로젝트이름/lib/main.dar` 에서 InAppLocalhostServer를 생성해 로컬서버를 배포하고 원하는 위젯의 위치에 설치했던 플러그인 "InAppWebView" 위젯을 추가합니다.
+`프로젝트이름/lib/main.dart` 에서 InAppLocalhostServer를 생성해 로컬 서버를 배포하고\
+원하는 위젯의 위치에 설치했던 플러그인 "InAppWebView" 위젯을 추가합니다.
 
 <pre class="language-dart"><code class="lang-dart"><strong>/// lib\main.dart
 </strong>import 'package:flutter/material.dart';

@@ -1,4 +1,8 @@
-# B. Android 앱 구축하기 가상 도메인 맵핑(flutter)
+# B. 웹뷰 가상 도메인 맵핑(Android)
+
+{% hint style="warning" %}
+이 방법은 Android만 사용할 수 있습니다.
+{% endhint %}
 
 ### 1. Android 개발 환경 구축
 

@@ -1,4 +1,4 @@
-# Android 앱 구축하기(flutter)
+# 1. flutter 앱 구축하기
 
 ### 1. flutter SDK 설치
 
@@ -96,7 +96,7 @@ Visual Studio Code에서 최 상단 명령 팔레트를 선택하거나 (ctrl+sh
 > [flutter 공식 패키지 저장소](https://pub.dev/)
 
 ```powershell
-cd 프로젝트명
+cd 프로젝트이름
 flutter pub add flutter_inappwebview
 #스파이더젠을 출력하기 위해 필요한 기능이 확장된 웹뷰 플러그인
 flutter pub add asset_fill
@@ -167,7 +167,18 @@ flutter:
     - assets/www/Template/Theme/
 ```
 
-### 6. Android 실행 및 확인
+### 6. flutter에 웹뷰 위젯 추가
+
+> 빌드하고 싶은 플랫폼 운영체제와 방법에따라\
+> 하위 페이지 링크에서 스파이더 웹뷰를 추가하고 설정하는 방법을 알아보세요
+>
+> > [A. 웹뷰 로컬 서버 배포(Android/IOS)](a.-android-ios.md)
+>
+>
+>
+> > [B. 웹뷰 가상 도메인 맵핑(Android)](b.-android.md)
+
+### 7. Android 실행 및 확인
 
 안드로이드 에뮬레이터가 실행된 상태거나 실제 안드로이드 디바이스를 pc와 연결한 상태에서 Visual Studio Code의 `프로젝트이름/lib/main.dart` 를 열고 Run and Debug의 Run (F5)을 눌러 실행하거나\
 명령 프롬프트 창에서 프로젝트 디렉터리로 이동해 아래와 같은 명령어를 입력하면 디버깅 모드로 플러터앱이 실행됩니다.
@@ -178,7 +189,7 @@ flutter run
 
 <figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-### 7. APK 빌드
+### 8. APK 빌드
 
 앱 개발을 마치고 실제 APK를 생성하고 싶다면 명령 프롬프트 창에서 프로젝트 디렉터리로 이동해 아래와 같은 명령어를 입력하면 `\build\app\outputs\flutter-apk\app-release.apk` 위치에 apk가 생성됩니다.
 

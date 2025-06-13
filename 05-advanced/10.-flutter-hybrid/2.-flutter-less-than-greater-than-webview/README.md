@@ -1,4 +1,4 @@
-# Flutter<-->WebView 통신하기
+# 2. Flutter<-->WebView 통신하기
 
 ### 1.addJavaScriptHandler
 
@@ -244,3 +244,14 @@ InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  �
 
 }
 </code></pre>
+
+### 4. Flutter <--> Naitive
+
+> 빌드하고 싶은 플랫폼 운영체제에따라\
+> 하위 페이지 링크에서 네이티브 코드로 통신하는 방법을 알아보세요
+>
+> > [A. 웹뷰 로컬 서버 배포(Android/IOS)](../1.-flutter/a.-android-ios.md)
+>
+>
+>
+> > [B. 웹뷰 가상 도메인 맵핑(Android)](../1.-flutter/b.-android.md)
