@@ -1,5 +1,9 @@
 # 03. Flutter<-->WebView 통신하기
 
+> 이  가이드에서는 플러터와 웹뷰 간 통신하는 방법 3가지를 소개합니다.
+>
+> 웹뷰 구현 방식(로컬  서버  배포/웹뷰 가상 도메인 매핑)에 **상관없이** 필요한 방식 중 하나를 골라 웹뷰와 플러터 간 통신을 구현해보세요
+
 ### 1.addJavaScriptHandler
 
 <figure><img src="../../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption></figcaption></figure>
