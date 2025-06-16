@@ -11,7 +11,7 @@ Android 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 
 **Cordova Plugin 설치**
 
-cmd 창에서 프로젝트 경로에 진입 후 cordova Plugin을 설치합니다
+cmd 창에서 <mark style="background-color:red;">cordova 프로젝트 경로</mark>에 진입 후 cordova Plugin을 설치합니다
 
 `cordova plugin add cordova-plugin-screen-orientation`
 
@@ -39,7 +39,7 @@ cmd 창에서 프로젝트 경로에 진입 후 cordova Plugin을 설치합니�
 
 **`MyApp\platforms\android\platform_www`**&#x20;
 
-위 경로에 있는 파일들을 스파이더젠의 위 사진의 android 폴더에 붙여넣습니다.
+위 경로에 있는 <mark style="color:red;background-color:red;">폴더와 파일들을</mark> 스파이더젠의 위 사진의 android 폴더에 붙여넣습니다.
 
 ![붙혀넣은 후 Assets 파일 구조](../../../.gitbook/assets/fileTree.png)
 
@@ -149,6 +149,7 @@ TestMobileApp extends AApplication
         // TestMyApp은 
         if (theApp.userAgent.indexOf('TestMyApp') > -1) {
             afc.loadScript('Assets/android/cordova.js');
+            return true;
         } else {
             return false;
         }
