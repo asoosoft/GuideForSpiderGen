@@ -18,10 +18,10 @@ import io.flutter.plugin.common.MethodChannel
 class MainActivity: FlutterActivity(){
     private val CHANNEL = "samples.flutter.dev/native" //호출할 MethodChannel 이름
     
-    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
-        super.configureFlutterEngine(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL)
-            .setMethodCallHandler { call, result ->
+<strong>    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+</strong>        super.configureFlutterEngine(flutterEngine)
+<strong>        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL)
+</strong>            .setMethodCallHandler { call, result ->
                 if (call.method == "getMessage") { //호출할 method 이름
                     val args = call.arguments as? Map&#x3C;String, Any> ?: ""
                     result.success("Hello from Android Native!"+args)
@@ -39,14 +39,12 @@ MainActivity.kt에서 정의한 채널 이름과 메서드 이름을 MethodChann
 </strong>class _MyHomePageState extends State&#x3C;MyHomePage> {
 
   Future&#x3C;void> getNativeMessage() async {
-    const platform = MethodChannel('samples.flutter.dev/native');
-    try {
+<strong>    const platform = MethodChannel('samples.flutter.dev/native');
+</strong>    try {
       final args = {'key': 'value'}; // 네이티브로 전달할 인자 (Map 형태)
       final result = await platform.invokeMethod('getMessage', args);
-      log(result.toString()); // "Hello from Android Native!{key: value}" 출력 예상
-      print(result);
-    } on PlatformException catch (e) {
-      log("Failed to get message: '${e.message}'.");
+<strong>      print(result);// "Hello from Android Native!{key: value}" 출력 예상
+</strong>    } on PlatformException catch (e) {
       print(e.message);
     }
   }

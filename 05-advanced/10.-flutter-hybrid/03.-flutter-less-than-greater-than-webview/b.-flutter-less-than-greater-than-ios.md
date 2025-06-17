@@ -13,8 +13,8 @@ import UIKit
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
+<strong>  override func application(
+</strong>    _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     let controller: FlutterViewController = window?.rootViewController as! FlutterViewController
@@ -47,12 +47,12 @@ AppDelegate.swift에서 정의한 채널 이름과 메서드 이름을 MethodCha
 
 <pre class="language-dart"><code class="lang-dart"><strong>///flutter
 </strong>class _MyHomePageState extends State&#x3C;MyHomePage> {
-  static const MethodChannel platform = MethodChannel('samples.flutter.dev/message');
-  
+<strong>  static const MethodChannel platform = MethodChannel('samples.flutter.dev/message');
+</strong>  
   Future&#x3C;void> sendMessage() async {
     try {
-      final String response = await platform.invokeMethod('printMessage', "Hello from Flutter!");
-      print("Received from iOS: $response");
+<strong>      final String response = await platform.invokeMethod('printMessage', "Hello from Flutter!");
+</strong>      print("Received from iOS: $response");
     } on PlatformException catch (e) {
       print("Error: ${e.message}");
     }

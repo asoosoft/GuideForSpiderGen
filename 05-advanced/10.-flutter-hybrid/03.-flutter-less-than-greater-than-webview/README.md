@@ -1,8 +1,8 @@
 # 03. Flutter<-->WebView 통신하기
 
-> 이  가이드에서는 플러터와 웹뷰 간 통신하는 방법 3가지를 소개합니다.
+> 이  가이드에서는 **플러터와 웹뷰(스파이더) 간 통신**하는 방법 3가지를 소개합니다.
 >
-> 웹뷰 구현 방식(로컬  서버  배포/웹뷰 가상 도메인 매핑)에 **상관없이** 필요한 방식 중 하나를 골라 웹뷰와 플러터 간 통신을 구현해보세요
+> 웹뷰 구현 방식(로컬  서버  배포/웹뷰 가상 도메인 매핑)에 **상관없이** 필요한 방식 중 하나를 선택해 웹뷰와 플러터 간 통신을 구현해보세요.
 
 ### 1.addJavaScriptHandler
 
@@ -21,15 +21,15 @@ InAppWebView 위젯은 controller객체의 `addJavaScriptHandler` 메서드를  
         initialUrlRequest: URLRequest(
           url: WebUri("http://localhost:8080/index.html"),
         ),
-        onWebViewCreated: (controller) {
-          controller.addJavaScriptHandler(
-            handlerName: "myHandler",
-            callback: (args) {
-              return {'result': '플러터에서 응답 $args'};
-            },
-          );
-        },
-      ),
+<strong>        onWebViewCreated: (controller) {
+</strong><strong>          controller.addJavaScriptHandler(
+</strong><strong>            handlerName: "myHandler",
+</strong><strong>            callback: (args) {
+</strong><strong>              return {'result': '플러터에서 응답 $args'};
+</strong><strong>            },
+</strong><strong>          );
+</strong><strong>        },
+</strong>      ),
     );
   }
 }
@@ -62,8 +62,8 @@ InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용
 
 <pre class="language-dart"><code class="lang-dart"><strong>///flutter
 </strong>class _MyAppState extends State&#x3C;MyApp> {
-  late InAppWebViewController _inAppWebViewController;
-
+<strong>  late InAppWebViewController _inAppWebViewController;
+</strong>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,25 +75,18 @@ InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용
               initialUrlRequest: URLRequest(
                 url: WebUri("http://localhost:8080/index.html"),
               ),
-              onWebViewCreated: (controller) {
-                _inAppWebViewController = controller;//콜백외부에서 사용할 수 있도록 controller 저장
-                controller.addJavaScriptHandler(
-                  handlerName: "myHandler",
-                  callback: (args) {
-                    print(args);
-                    return {'result': '플러터에서 응답 $args'};
-                  },
-                );
-              },
-            ),
+<strong>              onWebViewCreated: (controller) {
+</strong><strong>                _inAppWebViewController = controller;//콜백외부에서 사용할 수 있도록 controller 저장
+</strong><strong>              },
+</strong>            ),
           ),
           TextButton(
             onPressed: () {
-              _inAppWebViewController.postWebMessage(
-                //postWebMessage 호출
-                message: WebMessage(data: "postWebMessage 호출됨!"),
-              );
-            },
+<strong>              _inAppWebViewController.postWebMessage(
+</strong><strong>                //postWebMessage 호출
+</strong><strong>                message: WebMessage(data: "postWebMessage 호출됨!"),
+</strong><strong>              );
+</strong>            },
             child: Text("postWebMessage 호출"),
           ),
         ],
@@ -172,24 +165,24 @@ InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  �
               initialUrlRequest: URLRequest(
                 url: WebUri("http://localhost:8080/index.html"),
               ),
-              onWebViewCreated: (controller) {
-                _inAppWebViewController = controller;
-              },
-            ),
+<strong>              onWebViewCreated: (controller) {
+</strong><strong>                _inAppWebViewController = controller;
+</strong><strong>              },
+</strong>            ),
           ),
           TextButton(
             onPressed: () {
-              _inAppWebViewController.evaluateJavascript(
-                source: "window.postMessage('플러터에서 직접 웹뷰 이벤트 호출')",
-              );
-            },
+<strong>              _inAppWebViewController.evaluateJavascript(
+</strong><strong>                source: "window.postMessage('플러터에서 직접 웹뷰 이벤트 호출')",
+</strong><strong>              );
+</strong>            },
             child: Text("직접 웹뷰 이벤트 호출"),
           ),
           TextButton(
             onPressed: () {
-              _inAppWebViewController.evaluateJavascript(
-                source: "webFunction('플러터에서 직접 웹뷰 함수 호출')",
-              );
+<strong>              _inAppWebViewController.evaluateJavascript(
+</strong><strong>                source: "webFunction('플러터에서 직접 웹뷰 함수 호출')",
+</strong>              );
             },
             child: Text("직접 웹뷰 함수 호출"),
           ),

@@ -65,33 +65,30 @@ class _MyAppState extends State&#x3C;MyApp> {
 
 > **Android의 경우** `android\app\src\main\AndroidManifest.xml`를 열어 아래와 같이 추가합니다
 >
-> ```xml
-> <manifest xmlns:android="http://schemas.android.com/apk/res/android">
->     <!-- 인터넷 연결을 허용합니다 -->
->     <uses-permission android:name="android.permission.INTERNET"/>
->     ... 생략 ...
->     <application
+> <pre class="language-xml"><code class="lang-xml">&#x3C;manifest xmlns:android="http://schemas.android.com/apk/res/android">
+>     &#x3C;!-- 인터넷 연결을 허용합니다 -->
+> <strong>    &#x3C;uses-permission android:name="android.permission.INTERNET"/>
+> </strong>    ... 생략 ...
+>     &#x3C;application
 >         ... 생략 ...
->         <!-- http 접근을 허용합니다 -->
->         android:usesCleartextTraffic="true"> 
->         ... 생략 ...
-> ```
+> <strong>        android:usesCleartextTraffic="true"> &#x3C;!-- http 접근을 허용합니다 -->
+> </strong>        ... 생략 ...
+> </code></pre>
 
 > **IOS의 경우** `ios\Runner\info.plist`를 열어 아래와 같이 추가합니다
 >
-> ```xml
-> <?xml version="1.0" encoding="UTF-8"?>
-> <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-> <plist version="1.0">
->     <dict>
->         <!-- 웹뷰에서 http 접근을 허용합니다 -->
->         <key>NSAppTransportSecurity</key>
->         <dict>
->             <key>NSAllowsArbitraryLoadsInWebContent</key>
->             <true />
->         </dict>
->         ... 생략 ...
-> ```
+> <pre class="language-xml"><code class="lang-xml">&#x3C;?xml version="1.0" encoding="UTF-8"?>
+> &#x3C;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+> &#x3C;plist version="1.0">
+>     &#x3C;dict>
+>         &#x3C;!-- 웹뷰에서 http 접근을 허용합니다 -->
+> <strong>        &#x3C;key>NSAppTransportSecurity&#x3C;/key>
+> </strong><strong>        &#x3C;dict>
+> </strong><strong>            &#x3C;key>NSAllowsArbitraryLoadsInWebContent&#x3C;/key>
+> </strong><strong>            &#x3C;true />
+> </strong><strong>        &#x3C;/dict>
+> </strong>        ... 생략 ...
+> </code></pre>
 
 
 
