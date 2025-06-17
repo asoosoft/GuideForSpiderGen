@@ -125,7 +125,7 @@
   * [SlideView](<Guide for SpiderGen/07  Components/43  SlideView.md>)
 * [08. Mobile App](08.-mobile-app/README.md)
   * [01. Cordova Hybrid앱 구축하기](08.-mobile-app/09-cordova-hybrid/README.md)
-    * [A. Android 앱 구축하기(cordova)](08.-mobile-app/09-cordova-hybrid/a-android-cordova.md)
+    * [A. Android 앱 구축하기](08.-mobile-app/09-cordova-hybrid/a-android-cordova.md)
     * [B. iOS 앱 구축하기(cordova)](08.-mobile-app/09-cordova-hybrid/b-ios-cordova.md)
   * [02. Flutter Hybrid앱 구축하기](08.-mobile-app/02.-flutter-hybrid/README.md)
     * [01. flutter 앱 구축하기](08.-mobile-app/02.-flutter-hybrid/01.-flutter.md)
