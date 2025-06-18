@@ -242,7 +242,7 @@ InAppWebView 위젯은 controller객체의 `evaluateJavaScript` 메서드를  �
 }
 </code></pre>
 
-### 4. Flutter <--> Naitive
+### 4. Flutter <--> Native
 
 > 빌드하고 싶은 플랫폼에따라\
 > 하위 페이지 링크에서 네이티브와 통신하는 방법을 추가로알아보세요
