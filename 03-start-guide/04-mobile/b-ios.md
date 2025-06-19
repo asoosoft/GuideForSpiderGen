@@ -1,6 +1,6 @@
 # B. iOS 앱 구축하기
 
-## 1. 환경 설정.
+## 1. 환경 설정
 
 ***
 
@@ -9,8 +9,10 @@
 ### 1. Xcode 설치
 
 * **Xcode**는 macOS에서만 사용할 수 있는 iOS 앱 개발을 위한 공식 IDE입니다.\
-  -iOS 앱을 테스트하거나 배포하려면 Apple Developer 계정이 필요합니다.)-
-* **Mac App Store**를 열고 `Xcode`를 검색하여 설치합니다.
+  -iOS 앱을 테스트하거나 배포하려면 Apple Developer 계정이 필요합니다.
+* **App Store**를 열고 **Xcode**를 검색하여 설치합니다.
+
+
 
 ### 2. Node js 설치
 
@@ -18,11 +20,15 @@
 
 > [node js 공식 홈페이지](https://nodejs.org/en/)
 
+
+
 ### 3. Cordova 설치
 
 **- 터미널 에서 아래의 단계를 순서대로 진행합니다.**
 
-> `npm i -g cordova`&#x20;
+```
+npm i -g cordova
+```
 
 * **Cordova**를 전역 설치합니다.
 
@@ -36,28 +42,40 @@
 sudo는 관리자 권한으로 실행한다는 의미입니다. 실행 후 비밀번호를 입력하라는 메시지가 나올 수 있습니다.
 {% endhint %}
 
-> `cordova -v`
+```
+cordova -v
+```
 
 * **cordova 버전**을 **확인**합니다. \
   설치가 정상적으로 완료되면 Cordova의 버전이 출력됩니다.
 
-> `cordova create MyApp`
+```
+cordova create MyApp
+```
 
 * **MyApp**이라는 새로운 **Cordova 프로젝트** 폴더를 **생성**합니다.
 
-> `cd MyApp`
+```
+cd MyApp
+```
 
 * 생성된 프로젝트 폴더인 **MyApp으로 이동**합니다.
 
-> `cordova platform add ios`
+```
+cordova platform add ios
+```
 
 * Cordova 프로젝트에 **iOS 플랫폼을 추가**합니다.
+
+
 
 ### 4. SpiderGen cordova export
 
 `myApp/platforms/ios/platform_www` 경로에 생성된 **cordova.js**파일을  **SpiderGen 프로젝트** **Assets** **폴더**에 복사합니다.
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+
+
 
 ## 2. SpiderGen 프로젝트 만들기
 
@@ -68,8 +86,7 @@ sudo는 관리자 권한으로 실행한다는 의미입니다. 실행 후 비�
 * **SpiderGen** 프로젝트 **MainView.lay**에 `Button`  컴포넌트와 **ID**가 **textBox**인 `TextBox` 컴포넌트를 추가합니다.
 * 추가한 `Button`  컴포넌트의 **클릭이벤트 핸들러를 설정**합니다.
 
-```
-
+```javascript
 	//MainView.js
 
 	onButtonClick(comp, info, e)
@@ -93,18 +110,20 @@ sudo는 관리자 권한으로 실행한다는 의미입니다. 실행 후 비�
 * **SpiderGen프로젝트**에서  빌드후 생성된 **bin폴더**의 폴더와 파일들을 **Cordova프로젝트의** `Staging/www`  폴더로 복사합니다.\
   \- 기존의 www 하위의 파일 및 폴더는 삭제합니다.
 
-![](../../.gitbook/assets/MyAppSettings.png)
+<figure><img src="../../.gitbook/assets/image (33).png" alt="" width="194"><figcaption></figcaption></figure>
 
 * iOS는 기본적으로 `file://` 프로토콜을 지원하지 않으므로, `localhost` 방식으로 설정합니다.
-* `Staging/config.xml`에 **아래 항목을 추가**합니다:
+* `Staging/config.xml`에 **아래 항목을 추가**합니다.
 
-```
+```xml
 <preference name="WKWebViewOnly" value="true" />
 <preference name="scheme" value="app" />
 <preference name="hostname" value="localhost" />
 ```
 
-### 2. Xcode에서 프로젝트를 실행합니다.
+
+
+### 2. Xcode에서 프로젝트를 실행
 
 * **Xcode**의 상단에서 **HelloCordova프로젝트**를 **선택**하고 **실제 디바이스 또는 시뮬레이터 선택후** ▶ 버튼을 눌러 실행합니다.
 
@@ -112,9 +131,7 @@ sudo는 관리자 권한으로 실행한다는 의미입니다. 실행 후 비�
 
 * 앱실행 후 **버튼**을 눌러 "기능이 동작합니다" **텍스트가 출력**되는지 **확인**합니다.
 
-![](../../.gitbook/assets/androidwhite1.png)
-
-![](../../.gitbook/assets/androidwhite2.png)
+<div align="center"><img src="../../.gitbook/assets/androidwhite1.png" alt="" width="195"> <figure><img src="../../.gitbook/assets/image (37).png" alt="" width="196"><figcaption></figcaption></figure></div>
 
 ### 3. app 파일 생성
 
@@ -125,6 +142,8 @@ MyApp/platforms/ios/build/emulator/MyApp.app
 ```
 
 * 생성된 `.app` 파일은 **Xcode**를 이용해 `.ipa` 파일로 변환할 수 있습니다.
+
+
 
 ## 4. Cordova Plugin 연동
 

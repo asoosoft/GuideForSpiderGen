@@ -8,6 +8,8 @@
 
 [환경설정 가이드](../../03-start-guide/04-mobile/b-ios.md)
 
+
+
 ## 2. Cordova 플러그인 사용하여 SpiderGen 프로젝트 만들기
 
 ***
@@ -23,7 +25,8 @@ cordova plugin add cordova-plugin-statusbar
 
 > [cordova 공식 홈페이지](https://cordova.apache.org/plugins/)
 
-* `myApp/platforms/ios/platform_www` 경로에 생성된 **cordova.js, cordova\_plugins.js파일**과 **plugins** **폴더**를 **SpiderGen 프로젝트** **Assets** **폴더**에 복사합니다.
+* `myApp/platforms/ios/platform_www` 경로에 생성된 \
+  **cordova.js, cordova\_plugins.js파일**과 **plugins** **폴더**를 **SpiderGen 프로젝트** **Assets** **폴더**에 복사합니다.
 
 <figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
@@ -55,6 +58,8 @@ onButtonClick(comp, info, e){
 
 * **F7**을 눌러 **빌드**합니다. - **`open folder`** 버튼을 이용해서 프로젝트 폴더로 쉽게 이동할 수 있습니다.
 
+
+
 ## 3. 프로젝트 실행
 
 ***
@@ -66,6 +71,17 @@ onButtonClick(comp, info, e){
   \- 기존의 www 하위의 파일 및 폴더는 삭제합니다.
 
 <figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+
+* iOS는 기본적으로 `file://` 프로토콜을 지원하지 않으므로, `localhost` 방식으로 설정합니다.
+* `Staging/config.xml`에 **아래 항목을 추가**합니다
+
+```xml
+<preference name="WKWebViewOnly" value="true" />
+<preference name="scheme" value="app" />
+<preference name="hostname" value="localhost" />
+```
+
+
 
 ### **2. Cordova 설정**
 
@@ -94,6 +110,6 @@ onButtonClick(comp, info, e){
 
 <figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
-* 앱실행후 **버튼**을 눌러 상단 바의 **색상이 변하는지 확인**합니다.
+* 앱실행후 **버튼**을 눌러 **상태바**의 **색상이 변하는지 확인**합니다.
 
-<div><figure><img src="../../.gitbook/assets/ios01.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/ios02.png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/ios01.png" alt="" width="194"><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/ios02.png" alt="" width="194"><figcaption></figcaption></figure></div>
