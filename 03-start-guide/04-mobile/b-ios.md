@@ -65,13 +65,11 @@ cd MyApp
 cordova platform add ios
 ```
 
-* Cordova 프로젝트에 **iOS 플랫폼을 추가**합니다.
+* **Cordova** 프로젝트에 **iOS 플랫폼을 추가**합니다.
 
 
 
-### 4. SpiderGen cordova export
-
-`myApp/platforms/ios/platform_www` 경로에 생성된 **cordova.js**파일을  **SpiderGen 프로젝트** **Assets** **폴더**에 복사합니다.
+* `myApp/platforms/ios/platform_www` 경로에 생성된 **cordova.js**파일을  **SpiderGen 프로젝트** **Assets** **폴더**에 복사합니다.
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
@@ -110,7 +108,7 @@ cordova platform add ios
 * **SpiderGen프로젝트**에서  빌드후 생성된 **bin폴더**의 폴더와 파일들을 **Cordova프로젝트의** `Staging/www`  폴더로 복사합니다.\
   \- 기존의 www 하위의 파일 및 폴더는 삭제합니다.
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt="" width="194"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (38).png" alt="" width="206"><figcaption></figcaption></figure>
 
 * iOS는 기본적으로 `file://` 프로토콜을 지원하지 않으므로, `localhost` 방식으로 설정합니다.
 * `Staging/config.xml`에 **아래 항목을 추가**합니다.

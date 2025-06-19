@@ -70,7 +70,7 @@ onButtonClick(comp, info, e){
 * **SpiderGen프로젝트**에서 빌드후 생성된 **bin폴더**의 폴더와 파일들을 **Cordova프로젝트의** `Staging/www` 폴더로 복사합니다. \
   \- 기존의 www 하위의 파일 및 폴더는 삭제합니다.
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39).png" alt="" width="206"><figcaption></figcaption></figure>
 
 * iOS는 기본적으로 `file://` 프로토콜을 지원하지 않으므로, `localhost` 방식으로 설정합니다.
 * `Staging/config.xml`에 **아래 항목을 추가**합니다
