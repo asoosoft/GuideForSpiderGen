@@ -1,4 +1,4 @@
-# A. 웹뷰 로컬 서버 배포(Android/IOS)
+# A. 로컬 서버로 웹뷰 연결(Android/IOS)
 
 {% hint style="success" %}
 이 방법은 Android/IOS 모두 사용할 수 있습니다.
@@ -9,7 +9,7 @@
 flutter 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 아래의 환경 설정을 참고해서 진행 해주세요.
 
-[환경설정 가이드](../01.-flutter.md)
+[환경설정 가이드](../01..md)
 
 
 
@@ -97,8 +97,8 @@ class _MyAppState extends State&#x3C;MyApp> {
 > 빌드하고 싶은 플랫폼 운영체제와 방법에 따라\
 > 하위 페이지 링크에서 웹뷰와  통신하는 방법을 알아보세요
 >
-> > [03. Flutter<-->WebView 통신하기](../03.-flutter-less-than-greater-than-webview/)
+> > [03. Flutter<-->WebView 통신하기](../04.-flutter-less-than-greater-than-webview/)
 >
-> > [A. Flutter<-->Android 통신하기](../03.-flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
+> > [A. Flutter<-->Android 통신하기](../04.-flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
 >
-> > [B. Flutter<-->IOS통신하기](../03.-flutter-less-than-greater-than-webview/b.-flutter-less-than-greater-than-ios.md)
+> > [B. Flutter<-->IOS통신하기](../04.-flutter-less-than-greater-than-webview/b.-flutter-less-than-greater-than-ios.md)

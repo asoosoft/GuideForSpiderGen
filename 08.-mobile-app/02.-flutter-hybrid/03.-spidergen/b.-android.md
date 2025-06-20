@@ -1,4 +1,4 @@
-# B. 웹뷰 가상 도메인 맵핑(Android)
+# B. 가상 도메인 맵핑으로 웹뷰 연결(Android)
 
 {% hint style="warning" %}
 이 방법은 Android에서만 사용할 수 있습니다.
@@ -17,15 +17,17 @@ flutter 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 
 원하는 위젯의 위치에 설치했던 플러그인 "InAppWebView" 위젯을 추가합니다.
 
-```dart
+<pre class="language-dart"><code class="lang-dart"><strong>/// lib\main.dart
+</strong>import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+
 class WebViewExample extends StatefulWidget {
   const WebViewExample({super.key});
 
   @override
-  State<WebViewExample> createState() => _WebViewExampleState();
+  State&#x3C;WebViewExample> createState() => _WebViewExampleState();
 }
 
-class _WebViewExampleState extends State<WebViewExample> {
+class _WebViewExampleState extends State&#x3C;WebViewExample> {
 final webViewKey = GlobalKey();
 
   final settings = InAppWebViewSettings(
@@ -60,7 +62,7 @@ final webViewKey = GlobalKey();
     );
   }
 }
-```
+</code></pre>
 
 
 
@@ -69,6 +71,6 @@ final webViewKey = GlobalKey();
 > 빌드하고 싶은 플랫폼 운영체제와 방법에따라\
 > 하위 페이지 링크에서 웹뷰와  통신하는 방법을 알아보세요
 >
-> > [03. Flutter<-->WebView 통신하기](../03.-flutter-less-than-greater-than-webview/)
+> > [03. Flutter<-->WebView 통신하기](../04.-flutter-less-than-greater-than-webview/)
 >
-> > [A. Flutter<-->Android 통신하기](../03.-flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
+> > [A. Flutter<-->Android 통신하기](../04.-flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
