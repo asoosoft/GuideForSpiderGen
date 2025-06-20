@@ -97,8 +97,8 @@ class _MyAppState extends State&#x3C;MyApp> {
 > 빌드하고 싶은 플랫폼 운영체제와 방법에 따라\
 > 하위 페이지 링크에서 웹뷰와  통신하는 방법을 알아보세요
 >
-> > [03. Flutter<-->WebView 통신하기](../04.-flutter-less-than-greater-than-webview/)
->
-> > [A. Flutter<-->Android 통신하기](../04.-flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
->
-> > [B. Flutter<-->IOS통신하기](../04.-flutter-less-than-greater-than-webview/b.-flutter-less-than-greater-than-ios.md)
+> > [(활용) Flutter<-->WebView 통신하기](../flutter-less-than-greater-than-webview/)
+> >
+> > > [A. Flutter<-->Android 통신하기](../flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
+> >
+> > > [B. Flutter<-->IOS통신하기](../flutter-less-than-greater-than-webview/b.-flutter-less-than-greater-than-ios.md)
