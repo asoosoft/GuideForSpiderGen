@@ -1,135 +1,139 @@
 # ExHogaGrid
 
-**ExHogaGrid**는 실시간으로 매수/매도 호가 데이터를 시각화하는 그리드 컴포넌트입니다. 업비트 WebSocket 데이터를 기반으로 시장의 호가 상태를 직관적으로 보여주며, 매도/매수 잔량과 가격 변동을 실시간으로 표시합니다.
+ExHogaGrid는 호가 데이터를 배열 또는 객체 형태로 입력하여 매도/매수 호가를 시각화하는 그리드 컴포넌트입니다.
 
 ***
 
-### Key Features
+### Attribute
 
-* 실시간 호가 데이터 수신
-* 매도/매수 데이터 시각화
-* 가격 및 잔량 표시
-* 가격 스케일링 및 호가 레벨 조정 지원
-* 특정 가격 선택 및 하이라이트 기능
-* 사용자 인터랙션 지원 (클릭 시 주문 가능)
+#### 배열 형태 예시
 
-***
-
-### UI Components
-
-| Component      | Description            |
-| -------------- | ---------------------- |
-| Ask Price Grid | 상단 영역, 매도 가격과 매도 잔량 표시 |
-| Current Price  | 현재 거래가 표시              |
-| Bid Price Grid | 하단 영역, 매수 가격과 매수 잔량 표시 |
-| Price Column   | 각 호가의 가격               |
-| Volume Column  | 각 호가의 잔량 (바 그래프 가능)    |
-
-***
-
-### Data Structure
-
-#### WebSocket Orderbook Data Example
-
-```json
-{
-  "type": "orderbook",
-  "code": "KRW-BTC",
-  "orderbook_units": [
-    {
-      "ask_price": 45600000,
-      "bid_price": 45550000,
-      "ask_size": 1.25,
-      "bid_size": 0.85
-    }
-  ],
-  "timestamp": 1656789123456
-}
+```javascript
+this.hogaGrd.setData([[
+    461679, 62000, null,      // 상단 최상위 매도 호가
+    197778, 61900, 
+    108156, 61800, 
+    112935, 61700, 
+    113625, 61600, 
+    333086, 61500, 
+    286942, 61400, 
+    210827, 61300, 
+    253941, 61200, 
+    243625, 61100, 
+    // null,61050,null,        // 중간가 (옵션)
+    null, 61000, 26216,       // 현재가
+    60900, 191373,            // 매수 호가 시작
+    60800, 48972,
+    60700, 72411,
+    60600, 101422,
+    60500, 108568,
+    60400, 146241,
+    60300, 277847,
+    60200, 230109,
+    60100, 205014,
+    2322594, null, 1408173     // 총 매도 잔량, 중앙값, 총 매수 잔량
+]])
 ```
 
-| Field      | Description |
-| ---------- | ----------- |
-| ask\_price | 매도 호가 가격    |
-| bid\_price | 매수 호가 가격    |
-| ask\_size  | 매도 잔량       |
-| bid\_size  | 매수 잔량       |
-| timestamp  | 데이터 수신 시간   |
+#### 구성 설명
+
+```
+[매도잔량, 매도호가, null], ... [null, 현재가, 매수잔량], ... [매수호가, 매수잔량] ...
+```
+
+| 구분      | 설명                          |
+| ------- | --------------------------- |
+| 매도 호가   | 상단 → 하단으로 가격 낮아짐            |
+| 현재가     | 중앙에 표시                      |
+| 매수 호가   | 하단 → 상단으로 가격 높아짐            |
+| null 위치 | 가격 칸과 잔량 칸을 구분              |
+| 마지막 3칸  | 총 매도 잔량, 기준값(null), 총 매수 잔량 |
 
 ***
 
-### UI Layout Example
+### 객체 형태로 변경 가능
+
+#### 예시 구조
+
+```javascript
+const hogaData = {
+    ask: [
+        { price: 62000, volume: 461679 },
+        { price: 61900, volume: 197778 },
+        { price: 61800, volume: 108156 },
+        ...
+    ],
+    bid: [
+        { price: 60900, volume: 191373 },
+        { price: 60800, volume: 48972 },
+        ...
+    ],
+    currentPrice: 61000,
+    basePrice: 60200,
+    totalAskVolume: 2322594,
+    totalBidVolume: 1408173
+};
+
+this.hogaGrd.setData(hogaData);
+this.hogaGrd.setBasePrice(60200);
+this.hogaGrd.setCurrentPrice(61000);
+```
+
+***
+
+### 필수 값 설정
+
+* `setData()`\
+  호가 데이터 입력
+* `setBasePrice(basePrice)`\
+  기준 가격 설정 (예: 전일 종가)
+* `setCurrentPrice(price)`\
+  현재 거래 가격 설정
+
+***
+
+### Example
 
 ```
 ┌───────────────────────────────┐
-│          매도 호가 (상단)       │
+│        매도호가 (상단)         │
 │-------------------------------│
-│   가격   |   매도 잔량          │
-│   가격   |   매도 잔량          │
-│   가격   |   매도 잔량          │
-├───────────────────────────────┤
-│          현재가                │
-├───────────────────────────────┤
-│          매수 호가 (하단)       │
+│   62000 | 461,679              │
+│   61900 | 197,778              │
+│   61800 | 108,156              │
 │-------------------------------│
-│   가격   |   매수 잔량          │
-│   가격   |   매수 잔량          │
-│   가격   |   매수 잔량          │
+│        현재가 61000            │
+│-------------------------------│
+│   60900 | 191,373              │
+│   60800 | 48,972               │
+│   60700 | 72,411               │
+│        매수호가 (하단)         │
 └───────────────────────────────┘
 ```
 
 ***
 
-### Events & Callbacks
+### 데이터 처리 팁
 
-| Event Name             | Description               |
-| ---------------------- | ------------------------- |
-| onPriceSelected(price) | 사용자가 특정 가격 선택 시 호출        |
-| onOrderbookUpdated()   | 새로운 orderbook 데이터 수신 시 호출 |
-
-***
-
-### Options & Settings
-
-| Option           | Description                | Default |
-| ---------------- | -------------------------- | ------- |
-| depthCount       | 표시할 호가 레벨 수 (예: 5, 10, 15) | 15      |
-| enableHighlight  | 가격 하이라이트 기능 활성화 여부         | true    |
-| showVolumeBar    | 잔량 바 그래프 표시 여부             | true    |
-| autoScrollCenter | 현재가를 중앙에 고정하여 스크롤 여부       | true    |
-| theme            | UI 테마 (Light / Dark)       | Light   |
+* 중간가가 필요한 경우 배열 안에 `null, 중간가격, null` 형태로 삽입
+* 배열과 객체 형태 모두 지원 가능
+* UI에서는 상단 매도, 중앙 현재가, 하단 매수로 자동 정렬됨
+* WebSocket 데이터 수신 후 가공하여 setData에 바로 넣는 형태로 구현 가능
 
 ***
 
-### Example Usage
+### 오류 처리
 
-```javascript
-const hogaGrid = new ExHogaGrid();
-
-hogaGrid.setMarket('KRW-BTC');
-hogaGrid.subscribe();
-
-// 특정 가격 하이라이트
-hogaGrid.highlightPrice(45500000);
-
-// 현재 선택된 가격 가져오기
-const price = hogaGrid.getSelectedPrice();
-console.log('선택된 가격:', price);
-```
+* 데이터 포맷이 맞지 않는 경우 그리드가 비워지거나 오류 표시
+* 기준 가격(basePrice) 또는 현재가(currentPrice)가 없으면 색상 기준이 정상적으로 동작하지 않을 수 있음
+* 주문 단위와 가격 스케일에 따라 자동으로 그리드가 맞춰짐
 
 ***
 
-### Error Handling
+### Lifecycle
 
-* WebSocket 연결 실패 시 자동으로 재접속 시도
-* 수신 데이터가 비정상인 경우 내부적으로 `reset()` 처리
-* `onError()` 메서드를 통해 콘솔 출력 및 사용자 알림 제공
-
-***
-
-### Initialization & Lifecycle
-
-1. `setMarket()`로 조회할 종목 설정
-2. `subscribe()` 호출 → WebSocket 연결 및 실시간 데이터 수신 시작
-3. 실시간 데이터에 따라 UI 자동 갱신
-4. 필요 시 `unsubscribe()` 호출로 연결 해제 및 종료 처리
+1. `setBasePrice()`로 기준 가격 설정
+2. `setData()`로 매도/매수 데이터 입력
+3. `setCurrentPrice()`로 현재가 표시
+4. 실시간 데이터 수신 시 데이터 갱신
 
