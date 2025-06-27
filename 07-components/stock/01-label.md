@@ -60,7 +60,7 @@ onInitDone()
 
 <figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
-**5. 코드로 라벨 생성**
+**5. 코드로 EXBong 생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
