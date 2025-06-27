@@ -19,4 +19,4 @@
 
 ### Example
 
-#### [Radio Button 탭 확인](<05  Radio Button.md>)
+#### [Radio Button 탭 확인](05-radio-button.md)

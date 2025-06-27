@@ -16,7 +16,7 @@
 
 **✅ 화면 크기, 테마 변경, 반응형 디자인 등 다양한 환경에 맞춰 유연하게 관리할 때 사용**
 
-> 자세한 구현은 링크 참조[ View](<../07  Components/11  View.md>)
+> 자세한 구현은 링크 참조[ View](../../07-components/afc/11-view.md)
 
 ### GridLayout
 
@@ -38,7 +38,7 @@
 
 **✅ 복잡한 UI를 만들 때 사용**
 
-> 자세한 구현은 링크 참조 [GridLayout](<../07  Components/20  GridLayout.md>)
+> 자세한 구현은 링크 참조 [GridLayout](../../07-components/afc/20-gridlayout.md)
 
 ### FlexLayout
 
@@ -60,7 +60,7 @@
 
 **✅ 버튼 그룹, 네비게이션 바, 카드 레이아웃 등을 만들 때 사용**
 
-> 자세한 구현은 링크 참조 [FlexLayout](<../07  Components/23  FlexLayout.md>)
+> 자세한 구현은 링크 참조 [FlexLayout](../../07-components/afc/23-flexlayout.md)
 
 ### Vertical
 

@@ -5,6 +5,6 @@ WebView\
 
 WebView를 사용하면 웹 페이지를 애플리케이션의 일부로 통합할 수 있으며, 다양한 웹 콘텐츠를 표시.
 
-자세한 구현은 [링크](<../07  Components/16  WebView.md>) 참조
+자세한 구현은 [링크](../../07-components/afc/16-webview.md) 참조
 
 ![](../../.gitbook/assets/스크린샷_2025-02-14_163242.png) ![](../../.gitbook/assets/스크린샷_2025-02-14_163152.png)
