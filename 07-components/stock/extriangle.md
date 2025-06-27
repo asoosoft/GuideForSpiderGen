@@ -1,7 +1,5 @@
 # ExTriangle
 
-### 개요
-
 ExTriangle은 업비트의 REST API와 WebSocket을 활용하여 종목 데이터, 캔들, 호가 등 다양한 데이터를 실시간으로 수집 및 표시하는 프레임워크입니다. 본 메뉴얼은 `SpiderWTSApp`, `MainView`, `TestView`의 코드 구조를 기반으로 작성되었습니다.
 
 ***
