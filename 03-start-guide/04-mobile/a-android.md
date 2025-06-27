@@ -151,4 +151,4 @@ Android Studio의 Menu에 진입 후 File -> Open 생성해두었던 `MyApp\plat
 
 필요한 플러그인이 있다면 [cordova 공식 페이지](https://cordova.apache.org/)에서 찾아볼 수 있습니다.
 
-[스파이더젠 프로젝트 안드로이드 앱 코르도바 플러그인 사용방법](../../09.-mobile-app/09-cordova-hybrid/a-android-cordova.md)
+[스파이더젠 프로젝트 안드로이드 앱 코르도바 플러그인 사용방법](../../08.-mobile-app/09-cordova-hybrid/a-android-cordova.md)

@@ -159,4 +159,4 @@ MyApp/platforms/ios/build/emulator/MyApp.app
 * 필요한 기능은 [Cordova Plugin 공식 페이지](https://cordova.apache.org/plugins/)에서 검색하여 확인할 수 있습니다.
 * SpiderGen에서 Cordova 플러그인을 사용하려면 **Cordova 명령어로 플러그인을 추가**한 후, **JavaScript에서 호출**하면 됩니다.
 
-[스파이더젠 프로젝트 iOS 코르도바 플러그인 사용방법](../../09.-mobile-app/09-cordova-hybrid/b-ios-cordova.md)
+[스파이더젠 프로젝트 iOS 코르도바 플러그인 사용방법](../../08.-mobile-app/09-cordova-hybrid/b-ios-cordova.md)

@@ -70,11 +70,11 @@ Assets 폴더 내에 파일들은 자동으로 로드하지 않으므로 해당 
 
 &#x20;\platforms\android\app\src\main\res\xml 위치에 존재하는 config.xml에 코드를 추가해야합니다.
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 사진과 같이 config.xml을 코드 창으로 연 후
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 아래 코드를 복사 후 붙여넣기 해주세요.
 
