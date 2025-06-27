@@ -12,7 +12,7 @@
 
 ***
 
-### 📂 프로젝트 구조
+### 프로젝트 구조
 
 ```
 /Framework
@@ -33,9 +33,9 @@
 
 ***
 
-### 🏗️ 앱 구조 및 라이프사이클
+### 앱 구조 및 라이프사이클
 
-#### ✅ `SpiderWTSApp` (AApplication 상속)
+#### `SpiderWTSApp` (AApplication 상속)
 
 * **초기화 메서드**
   * `onReady()` : 앱 시작 시 서버 연결 및 설정
@@ -54,7 +54,7 @@
 
 ### 🔌 서버 연결 (REST & WebSocket)
 
-#### ✅ REST 서버 연결
+#### REST 서버 연결
 
 ```javascript
 this.qmRest = new RestQueryManager('REST');
@@ -66,7 +66,7 @@ this.qmRest.setTimeout(Define.TIMEOUT_SEC);
 * QueryManager를 통해 서버와 통신
 * `UBREST01`, `UBREST02` 등 프로세스 이름으로 호출
 
-#### ✅ WebSocket 연결
+#### WebSocket 연결
 
 ```javascript
 this.qmReal = new RealQueryManager();
@@ -81,15 +81,13 @@ this.qmReal.startManager(Define.SERVER_ADDR_WEBSOCKET);
 
 ***
 
-### 🗺️ MainView 동작
-
-#### ✅ 주요 동작 흐름
+#### 주요 동작 흐름
 
 1. 종목 리스트 조회 (`UBREST01`)
 2. 위젯 로드
 3. 더미 데이터 모드 및 다크모드 지원
 
-#### ✅ 종목 리스트 조회 예제
+#### 종목 리스트 조회 예제
 
 ```javascript
 send_UBREST01() {
@@ -109,7 +107,7 @@ send_UBREST01() {
 }
 ```
 
-#### ✅ 위젯 로드
+#### 위젯 로드
 
 ```javascript
 loadWidget() {
@@ -122,7 +120,7 @@ loadWidget() {
 }
 ```
 
-#### ✅ 프레임 방식으로 위젯 다중 오픈
+#### 프레임 방식으로 위젯 다중 오픈
 
 ```javascript
 openTradesAsFrame() {
@@ -143,9 +141,9 @@ openTradesAsFrame() {
 
 ***
 
-### 🔍 TestView 예제
+### TestView 예제
 
-#### ✅ REST API 호출 예시
+#### REST API 호출 예시
 
 * **종목 조회 (UBREST01)**
 
@@ -192,9 +190,9 @@ onAButton2Click() {
 
 ***
 
-### 🌙 다크모드 및 더미 데이터 모드
+### 다크모드 및 더미 데이터 모드
 
-#### ✅ 다크모드 전환
+#### 다크모드 전환
 
 ```javascript
 onAModeChange(comp) {
@@ -211,7 +209,7 @@ onAModeChange(comp) {
 }
 ```
 
-#### ✅ 더미 데이터 모드
+#### 더미 데이터 모드
 
 * **onDummyChange()** 호출 시 더미 데이터 시작/종료
 
@@ -229,7 +227,7 @@ if (val) {
 
 ***
 
-### 🔧 위젯 시스템
+### 위젯 시스템
 
 * 각 화면은 독립적인 위젯으로 구성
 * `WidgetManager`를 통해 동적으로 로드 및 제어
@@ -243,7 +241,7 @@ theApp.widgetManager.loadWidget('Chart', this.ChartView);
 
 ***
 
-### 🏁 결론
+### 결론
 
 * REST와 WebSocket을 동시에 활용한 하이브리드 구조
 * 위젯 단위 모듈화로 확장성 높음
