@@ -131,6 +131,7 @@
     * [ExCenterPivotView](07-components/stock/excenterpivotview.md)
     * [ExMiniHoga](07-components/stock/exminihoga.md)
     * [ExHogaGrid](07-components/stock/exhogagrid.md)
+    * [ExHogaView](07-components/stock/exhogaview.md)
 * [09. Mobile App](08.-mobile-app/README.md)
   * [01. Cordova Hybrid앱 구축하기](08.-mobile-app/09-cordova-hybrid/README.md)
     * [A. Android 앱 구축하기](08.-mobile-app/09-cordova-hybrid/a-android-cordova.md)
