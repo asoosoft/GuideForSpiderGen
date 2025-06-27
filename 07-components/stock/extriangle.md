@@ -2,13 +2,13 @@
 
 ### 목차
 
-1. [프로젝트 구조](https://chatgpt.com/c/685e1e8b-90a4-8004-9db3-6406b21dd43c#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0)
-2. [앱 구조 및 라이프사이클](https://chatgpt.com/c/685e1e8b-90a4-8004-9db3-6406b21dd43c#%EC%95%B1-%EA%B5%AC%EC%A1%B0-%EB%B0%8F-%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4)
-3. [서버 연결 (REST & WebSocket)](https://chatgpt.com/c/685e1e8b-90a4-8004-9db3-6406b21dd43c#%EC%84%9C%EB%B2%84-%EC%97%B0%EA%B2%B0-rest--websocket)
-4. [MainView 동작](https://chatgpt.com/c/685e1e8b-90a4-8004-9db3-6406b21dd43c#mainview-%EB%8F%99%EC%9E%91)
-5. [TestView 예제](https://chatgpt.com/c/685e1e8b-90a4-8004-9db3-6406b21dd43c#testview-%EC%98%88%EC%A0%9C)
-6. [다크모드 및 더미 데이터 모드](https://chatgpt.com/c/685e1e8b-90a4-8004-9db3-6406b21dd43c#%EB%8B%A4%ED%81%AC%EB%AA%A8%EB%93%9C-%EB%B0%8F-%EB%8D%94%EB%AF%B8-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%93%9C)
-7. [위젯 시스템](https://chatgpt.com/c/685e1e8b-90a4-8004-9db3-6406b21dd43c#%EC%9C%84%EC%A0%AF-%EC%8B%9C%EC%8A%A4%ED%85%9C)
+1. 프로젝트 구조
+2. 앱 구조 및 라이프사이클
+3. 서버 연결 (REST & WebSocket)
+4. MainView 동작
+5. TestView 예제
+6. 다크모드 및 더미 데이터 모드
+7. 위젯 시스템
 
 ***
 
