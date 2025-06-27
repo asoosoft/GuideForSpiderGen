@@ -40,7 +40,7 @@
 &#x20; ✅ 수평 또는 수직 방향으로 자식 요소를 슬라이드할 수 있도록 설정 가능\
 &#x20; ✅ 여러 개의 뷰를 순차적으로 보여주고, 사용자가 버튼 클릭이나 스와이프 제스처를 통해 뷰를 전환하게 할 수 있음
 
-**📂** [**SlideView 문서참조**](<../07  Components/43  SlideView.md>)
+**📂** [**SlideView 문서참조**](../../07-components/afc/43-slideview.md)
 
 ![](../../.gitbook/assets/SlideView.png)
 

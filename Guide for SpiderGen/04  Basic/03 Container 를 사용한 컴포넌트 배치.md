@@ -84,7 +84,7 @@
 
 **✅ 카드형 UI를 가로로 배치할 때 사용**
 
-> 자세한 구현은 링크 참조 [Vertical](<../07  Components/39 Vertical.md>)
+> 자세한 구현은 링크 참조 [Vertical](../../07-components/afc/39-vertical.md)
 
 ### Horizontal
 
@@ -108,4 +108,4 @@
 
 \*\*✅ 플렉스 컨테이너 안에서 텍스트 또는 아이콘을 세로로 정렬할 때 \*\*
 
-> 자세한 구현은 링크 참조 [Horizontal](<../07  Components/40 Horizontal.md>)
+> 자세한 구현은 링크 참조 [Horizontal](../../07-components/afc/40-horizontal.md)
