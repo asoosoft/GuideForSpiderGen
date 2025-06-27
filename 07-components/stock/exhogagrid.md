@@ -1,5 +1,7 @@
 # ExHogaGrid
 
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164531.png" alt=""><figcaption></figcaption></figure>
+
 ExHogaGrid는 호가 데이터를 배열 또는 객체 형태로 입력하여 매도/매수 호가를 시각화하는 그리드 컴포넌트입니다.
 
 ***

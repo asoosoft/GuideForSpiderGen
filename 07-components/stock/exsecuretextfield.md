@@ -1,5 +1,7 @@
 # ExSecureTextField
 
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164147.png" alt=""><figcaption></figcaption></figure>
+
 **ExSecureTextField**는 비밀번호, API 키, 시크릿 키 등 민감한 정보를 안전하게 입력받을 수 있도록 설계된 보안 입력 컴포넌트입니다.
 
 일반 텍스트 필드와 동일한 입력 기능을 가지면서도 다음과 같은 보안 기능을 제공합니다.
