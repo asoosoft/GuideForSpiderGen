@@ -1,13 +1,5 @@
 # ExCenterPivotView
 
-아래는 주신 내용을 기반으로 메서드 설명을 제외하고 정리한 **ExCenterPivotView 매뉴얼**입니다.
-
-***
-
-## ExCenterPivotView Manual
-
-### Overview
-
 **ExCenterPivotView**는 트레이딩 화면의 중심에 위치하는 주요 UI 컴포넌트입니다. 현재 선택된 종목의 핵심 정보(현재가, 변동률, 거래량 등)를 표시하며, 타 위젯들과 상태를 연동하여 트레이딩 화면의 중심 역할을 합니다.
 
 ***
