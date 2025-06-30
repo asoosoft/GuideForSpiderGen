@@ -1,7 +1,5 @@
 # ExBong
 
-<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption><p>&#x3C; EXBong 컴포넌트 ></p></figcaption></figure>
-
 EXBong 컴포넌트는 봉 차트를 표현하는 컴포넌트
 
 주로 금융 데이터에서 시가, 고가, 저가, 종가와 같은 정보를 시각적으로 표현하는 데 사용
@@ -58,7 +56,7 @@ onInitDone()
 
 * 설정한 데이터에 맞춰서 상승인지 하락인지에 따라 봉 생성
 
-<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<div data-full-width="false"><figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption><p>ex) [1000, 2000, 900, 1400]</p></figcaption></figure> <figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption><p>ex) [1500, 2000, 700, 900]</p></figcaption></figure></div>
 
 **5. 코드로 EXBong 생성**
 
@@ -86,14 +84,14 @@ onInitDone()
         exBong.setDirection(true);
 
         // 시가, 고가, 저가, 종가 데이터 설정
-        var valueArr = [55, 100, 0, 25];
-        var prdyvrss = 5; // 전일 대비 값 예시
+        let valueArr = [55, 100, 0, 25];
+        let prdyvrss = 5; // 전일대비 등락구분값 예시
         exBong.setData(valueArr, prdyvrss);
 
         // 생성된 EXBong 컴포넌트를 원하는 위치에 추가
         this.addComponent(exBong); // 레이아웃에 EXBong 추가
-	exBong.setPos(100,100); // 원하는 위치에 배치 setPost(x: any, y: any)
+	exBong.setPos(100,100); // 원하는 위치에 배치
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<div><figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption><p>[55, 100, 0, 25]</p></figcaption></figure> <figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption><p>[55, 100, 0, 75]</p></figcaption></figure></div>
