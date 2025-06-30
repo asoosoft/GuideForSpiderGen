@@ -141,15 +141,20 @@ onInitDone()
 {
         super.onInitDone();
         
+        // EXHogaGrid 인스턴스 생성 및 초기화
         const hogaGrid = new EXHogaGrid();
         hogaGrid.init();
         
+        // 컨테이너에 hogaGrid 추가
         this.getContainer().addComponent(hogaGrid);
+        
+        //예시 데이터 정의 및 설정
         const dataObj = {...생략...}
-        hogaGrid.setData([dataObj]);        //데이터 설정정
+        hogaGrid.setData([dataObj]);        //데이터 설정
         hogaGrid.setBasePrice(60400);        //기준가 설정
         hogaGrid.setCurrentPrice(60100);        //현재가 설정
         
+        //이벤트 리스너 및 델리게이터 설정
         hogaGrid.addEventListener('select', this, 'onGridSelect');        //AGrid와 동일한 방식으로 select 이벤트 등록 가능
         hogaGrid.setDelegator(this);        //hogaGrid의 이벤트를 this객체에 위임(quoteCount또는 bottomRowCount를 변경하면 onRowCountChange 이벤트가 트리거됨)
 }
