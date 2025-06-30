@@ -22,7 +22,7 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 
 ### Example
 
-> ExHogaGrid는 AGrid를 상속받아 호가창에 적합한 형태의 고정된 크기의 그리드를 생성합니다.
+> ExHogaGrid는 AGrid를 확장하여 호가창에 적합한 형태의 그리드를 생성합니다.
 
 
 
