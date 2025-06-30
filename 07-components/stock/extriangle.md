@@ -4,113 +4,61 @@
 
 
 
-**ExTriangle**은 업비트의 REST API와 WebSocket을 활용하여 종목 데이터, 캔들, 호가 등 다양한 데이터를 실시간으로 수집 및 표시하는 프레임워크입니다.
-
-이 매뉴얼은 주요 클래스인 `SpiderWTSApp`, `MainView`, `TestView`의 구조와 동작을 기반으로 작성되었습니다.
+업비트의 REST API와 WebSocket을 활용하여 종목 데이터, 캔들, 호가 등 다양한 데이터를 실시간으로 수집 및 표시하는 프레임워크.
 
 ***
 
-### SpiderWTSApp
+### Appearance
 
-#### Role
+공통 Appearance 는 [**6. Global Properties**](<../../Guide for SpiderGen/06  SpiderGen Editor/04  Properties Pane/02 Appearence.md>) 속성을 참고
 
-* 애플리케이션 초기화
-* 업비트 REST API 및 WebSocket 서버 연결
-* 종목 정보 관리
-* 메인 페이지 로드 및 오류 처리
-* 서버 연결 상태 관리 및 재접속 처리
+### Attribute
 
-***
+EXTriangle 속성
 
-### MainView
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 085048.png" alt=""><figcaption></figcaption></figure>
 
-#### Role
+**Data**
 
-* 초기 종목 데이터 조회 및 로드
-* 화면 UI 구성 및 위젯 초기화
-* 다크 모드, 더미 데이터(Speed Booster) 모드 지원
-* 사용자 인터랙션에 따라 위젯 동적 생성 및 제거
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td></td></tr><tr><td><code>Up Color</code></td><td>상승색 설정</td></tr><tr><td><code>Down Color</code></td><td>하락색 설정</td></tr><tr><td><code>Direction</code></td><td> 화살표의 방향, 굵기 설정</td></tr></tbody></table>
 
-#### Features
+### Example
 
-* 종목 리스트 조회 및 현재 종목 선택
-* 주요 거래 위젯 로드 (ItemInfo, ItemList, Chart, Hoga, Order, Trades)
-* 다크 모드 토글
-* 더미 데이터 모드 지원
-* Trades, ItemList를 다중 프레임으로 띄우기 및 종료 기능
+**1. 프로젝트 생성**
 
-***
+* 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
+* MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXTriangle 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
+* Class 에서 ID를triangle로 입력
 
-### TestView
+**2. 데이터 설정**
 
-#### Role
+* 먼저 MainView.js 파일을 오픈
+* 상단의 파일탭에서 MainView.lay 탭을 더블 클릭하거나 우측의 프로젝트 트리에서 MainView.js 파일을 더블 클릭
+* 모든 화면뷰는 onInitDone() 함수가 존재하며 이 함수는 화면이 생성될 때 딱 한번 실행
+* onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
 
-* REST API 테스트 기능 제공
-* 종목 조회, 캔들 조회, 체결 조회, 호가 조회, 현재가 조회 등의 기능 수행
-* 데이터 확인 및 콘솔 로그 출력용 뷰
-* 추가 테스트 기능 확장 가능
+```javascript
+onInitDone()
+{
+	super.onInitDone()
 
-***
-
-### Status & Mode
-
-#### Speed Booster (Dummy Data Mode)
-
-* 서버로부터 실제 데이터를 수신하지 않고 가상의 더미 데이터를 생성하여 UI 동작을 테스트합니다.
-* TradesView와 ItemListView에서 애니메이션 프레임 적용 가능
-* 다중 창 모드와 연동 가능
-
-#### Night Mode (다크 모드)
-
-* 화면 테마를 어두운 모드로 전환합니다.
-* `body` 태그에 `dark` 클래스가 추가되어 동작합니다.
-
-***
-
-### File & Class Structure
-
-```
-/Source/
-    Define.js
-    Widget/
-        WidgetManager.js
-        ItemInfo/
-        ItemList/
-        Chart/
-        Hoga/
-        Order/
-        Trades/
-    MainView.lay
-    MainView.js
-    TestView.js
-
-/Framework/
-    afc/
-        component/
-            AIndicator.js
-    stock/
-        component/
-            EXItemView.js
+}
 ```
 
-***
+**3. 프로젝트 실행**
 
-### Error Handling
+* 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
 
-* `onError()` 메서드를 통해 전역 오류를 감지합니다.
-* 오류 발생 시 콘솔 로그 출력 및 사용자에게 오류 표시
-* 네트워크 오류 발생 시 설정된 최대 재접속 횟수까지 자동 재연결 시도
+**5. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
 
-***
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
 
-### Initialization & Execution Flow
+```javascript
+onInitDone()
+{
+	super.onInitDone()
+	
 
-1. **SpiderWTSApp.onReady()**\
-   → REST 서버와 WebSocket 서버 연결 시도
-2. **connectSocketServer()**\
-   → 서버 연결 성공 시 **displayMainPage()** 호출
-3. **MainView**\
-   → 종목 리스트 조회 후 초기 종목 설정 및 주요 거래 위젯 로드
-4. **실시간 데이터 반영**\
-   → WebSocket을 통한 실시간 데이터 수신 및 UI 업데이트
-
+}
+```

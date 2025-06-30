@@ -2,140 +2,71 @@
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164531.png" alt=""><figcaption></figcaption></figure>
 
-ExHogaGrid는 호가 데이터를 배열 또는 객체 형태로 입력하여 매도/매수 호가를 시각화하는 그리드 컴포넌트입니다.
+호가 데이터를 배열 또는 객체 형태로 입력하여 매도/매수 호가를 시각화하는 그리드 컴포넌트.
 
 ***
+
+### Appearance
+
+공통 Appearance 는 [**6. Global Properties**](<../../Guide for SpiderGen/06  SpiderGen Editor/04  Properties Pane/02 Appearence.md>) 속성을 참고
 
 ### Attribute
 
-#### 배열 형태 예시
+EXHogaGrid 속성
 
-```javascript
-this.hogaGrd.setData([[
-    461679, 62000, null,      // 상단 최상위 매도 호가
-    197778, 61900, 
-    108156, 61800, 
-    112935, 61700, 
-    113625, 61600, 
-    333086, 61500, 
-    286942, 61400, 
-    210827, 61300, 
-    253941, 61200, 
-    243625, 61100, 
-    // null,61050,null,        // 중간가 (옵션)
-    null, 61000, 26216,       // 현재가
-    60900, 191373,            // 매수 호가 시작
-    60800, 48972,
-    60700, 72411,
-    60600, 101422,
-    60500, 108568,
-    60400, 146241,
-    60300, 277847,
-    60200, 230109,
-    60100, 205014,
-    2322594, null, 1408173     // 총 매도 잔량, 중앙값, 총 매수 잔량
-]])
-```
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 082052.png" alt=""><figcaption></figcaption></figure>
 
-#### 구성 설명
+**Data**
 
-```
-[매도잔량, 매도호가, null], ... [null, 현재가, 매수잔량], ... [매수호가, 매수잔량] ...
-```
-
-| 구분      | 설명                          |
-| ------- | --------------------------- |
-| 매도 호가   | 상단 → 하단으로 가격 낮아짐            |
-| 현재가     | 중앙에 표시                      |
-| 매수 호가   | 하단 → 상단으로 가격 높아짐            |
-| null 위치 | 가격 칸과 잔량 칸을 구분              |
-| 마지막 3칸  | 총 매도 잔량, 기준값(null), 총 매수 잔량 |
-
-***
-
-### 객체 형태로 변경 가능
-
-#### 예시 구조
-
-```javascript
-const hogaData = {
-    ask: [
-        { price: 62000, volume: 461679 },
-        { price: 61900, volume: 197778 },
-        { price: 61800, volume: 108156 },
-        ...
-    ],
-    bid: [
-        { price: 60900, volume: 191373 },
-        { price: 60800, volume: 48972 },
-        ...
-    ],
-    currentPrice: 61000,
-    basePrice: 60200,
-    totalAskVolume: 2322594,
-    totalBidVolume: 1408173
-};
-
-this.hogaGrd.setData(hogaData);
-this.hogaGrd.setBasePrice(60200);
-this.hogaGrd.setCurrentPrice(61000);
-```
-
-***
-
-### 필수 값 설정
-
-* `setData()`\
-  호가 데이터 입력
-* `setBasePrice(basePrice)`\
-  기준 가격 설정 (예: 전일 종가)
-* `setCurrentPrice(price)`\
-  현재 거래 가격 설정
-
-***
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Current Price</code></td><td>매핑된 쿼리파일의 현재값의 필드명을 입력</td></tr><tr><td><code>Base Price</code></td><td>매핑된 쿼리파일의 기본값의 필드명을 입력</td></tr><tr><td><code>Bottom Row</code></td><td>호가를 하단에 표현될 로우의 개수를 지정</td></tr><tr><td><code>Quote Count</code></td><td>호가의 단계 설정</td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Up</code></td><td>호가 상승색 설정</td></tr><tr><td><code>Down</code></td><td>호가 하락색 설정</td></tr><tr><td><code>Steady</code></td><td>호가 보합색 설정</td></tr><tr><td><strong>바 스타일</strong></td><td></td></tr><tr><td><code>Size</code></td><td>호가 잔량을 표현하는 바의 높이를 지정</td></tr><tr><td><code>Ask Position</code></td><td>매도 잔량바의 위치를 지정</td></tr><tr><td><code>Bid Position</code></td><td>매수 잔량바의 위치를 지정</td></tr><tr><td><code>Ask Color</code></td><td>매도 잔량바의 색을 지정</td></tr><tr><td><code>Bid Color</code></td><td>매수 잔량바의 색을 지정</td></tr><tr><td><strong>옵션</strong></td><td></td></tr><tr><td><code>Hide Header</code></td><td>헤더 숨김 여부 옵션</td></tr><tr><td><code>Single Select</code></td><td>Ctrl 키를 누르고 선택해도 하나만 선택되는 옵션</td></tr><tr><td><code>Fullrow Select</code></td><td>특정 셀을 클릭해도 그 행 전체가 선택되는 옵션</td></tr><tr><td><code>Selectable</code></td><td>선택 가능 여부 옵션 플래그</td></tr><tr><td><code>Flexable Row</code></td><td>TR의 높이를 TABLE 높이에 풀로 맞추는 옵션</td></tr></tbody></table>
 
 ### Example
 
+**1. 프로젝트 생성**
+
+* 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
+* MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXHogaGrid 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
+* Class 에서 ID를hogagrid로 입력
+
+
+
+**2. 데이터 설정**
+
+* 먼저 MainView.js 파일을 오픈
+* 상단의 파일탭에서 MainView.lay 탭을 더블 클릭하거나 우측의 프로젝트 트리에서 MainView.js 파일을 더블 클릭
+* 모든 화면뷰는 onInitDone() 함수가 존재하며 이 함수는 화면이 생성될 때 딱 한번 실행
+* onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
+
+```javascript
+onInitDone()
+{
+
+}
 ```
-┌───────────────────────────────┐
-│        매도호가 (상단)         │
-│-------------------------------│
-│   62000 | 461,679              │
-│   61900 | 197,778              │
-│   61800 | 108,156              │
-│-------------------------------│
-│        현재가 61000            │
-│-------------------------------│
-│   60900 | 191,373              │
-│   60800 | 48,972               │
-│   60700 | 72,411               │
-│        매수호가 (하단)         │
-└───────────────────────────────┘
+
+**3. 프로젝트 실행**
+
+* 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
+
+**5. 코드로** EXHogaGrid **생성**
+
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
+
+```javascript
+onInitDone()
+{
+	super.onInitDone()
+	
+
+}
 ```
 
-***
+{% hint style="info" %}
+<mark style="color:red;">**Build 에러 발생 시**</mark>
 
-### 데이터 처리 팁
+_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXHogaGrid.js 체크**_
 
-* 중간가가 필요한 경우 배열 안에 `null, 중간가격, null` 형태로 삽입
-* 배열과 객체 형태 모두 지원 가능
-* UI에서는 상단 매도, 중앙 현재가, 하단 매수로 자동 정렬됨
-* WebSocket 데이터 수신 후 가공하여 setData에 바로 넣는 형태로 구현 가능
-
-***
-
-### 오류 처리
-
-* 데이터 포맷이 맞지 않는 경우 그리드가 비워지거나 오류 표시
-* 기준 가격(basePrice) 또는 현재가(currentPrice)가 없으면 색상 기준이 정상적으로 동작하지 않을 수 있음
-* 주문 단위와 가격 스케일에 따라 자동으로 그리드가 맞춰짐
-
-***
-
-### Lifecycle
-
-1. `setBasePrice()`로 기준 가격 설정
-2. `setData()`로 매도/매수 데이터 입력
-3. `setCurrentPrice()`로 현재가 표시
-4. 실시간 데이터 수신 시 데이터 갱신
+<img src="../../.gitbook/assets/스크린샷 2025-06-30 084359.png" alt="" data-size="original">
+{% endhint %}
 

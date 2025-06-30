@@ -4,141 +4,70 @@
 
 
 
-**ExCenterPivotView**는 트레이딩 화면의 중심에 위치하는 주요 UI 컴포넌트입니다. 현재 선택된 종목의 핵심 정보(현재가, 변동률, 거래량 등)를 표시하며, 타 위젯들과 상태를 연동하여 트레이딩 화면의 중심 역할을 합니다.
+트레이딩 화면의 중심에 위치하는 주요 UI 컴포넌트.&#x20;
+
+
+
+현재 선택된 종목의 핵심 정보(현재가, 변동률, 거래량 등)를 표시하며, 타 위젯들과 상태를 연동하여 트레이딩 화면의 중심 역할.
 
 ***
 
-### Key Features
+### Appearance
 
-* 현재 선택 종목의 주요 정보 표시
-* 실시간 시세 갱신
-* 종목 변경 및 검색 기능 지원
-* 타 위젯과의 상태 동기화
-* 다크/라이트 테마 변경 지원
+공통 Appearance 는 [**6. Global Properties**](<../../Guide for SpiderGen/06  SpiderGen Editor/04  Properties Pane/02 Appearence.md>) 속성을 참고
 
-***
+### Attribute
 
-### UI Components
+EXHogaGrid 속성
 
-| Component        | Description          |
-| ---------------- | -------------------- |
-| Market Name      | 현재 선택된 종목명           |
-| Current Price    | 현재 거래 가격             |
-| Change Info      | 전일 대비 금액 및 등락률       |
-| Opening Price    | 시가                   |
-| High Price       | 고가                   |
-| Low Price        | 저가                   |
-| Volume           | 24시간 거래량             |
-| Search Box       | 종목 검색 및 변경           |
-| Status Indicator | 연결 상태 및 데이터 수신 상태 표시 |
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 092002.png" alt=""><figcaption></figcaption></figure>
 
-***
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>Option</strong></td><td></td></tr><tr><td><code>Hide Header</code></td><td></td></tr><tr><td><code>Hide Footer</code></td><td></td></tr><tr><td><code>Fullrow Select</code></td><td></td></tr><tr><td><code>Single Select</code></td><td></td></tr><tr><td><code>Flexible Row</code></td><td></td></tr><tr><td><code>Selectable</code></td><td></td></tr><tr><td><code>Clear Row Template</code></td><td></td></tr><tr><td><code>Sortable</code></td><td></td></tr><tr><td><strong>Column Resize</strong></td><td></td></tr><tr><td>Column Resize</td><td></td></tr><tr><td>Width Changable</td><td></td></tr></tbody></table>
 
-### Data Structure
+### Example
 
-#### WebSocket Ticker Data Example
+**1. 프로젝트 생성**
 
-```json
+* 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
+* MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXCenterPivotView 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
+* Class 에서 ID를centerpivotview로 입력
+
+
+
+**2. 데이터 설정**
+
+* 먼저 MainView.js 파일을 오픈
+* 상단의 파일탭에서 MainView.lay 탭을 더블 클릭하거나 우측의 프로젝트 트리에서 MainView.js 파일을 더블 클릭
+* 모든 화면뷰는 onInitDone() 함수가 존재하며 이 함수는 화면이 생성될 때 딱 한번 실행
+* onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
+
+```javascript
+onInitDone()
 {
-  "type": "ticker",
-  "code": "KRW-BTC",
-  "trade_price": 45500000,
-  "change_rate": 0.0215,
-  "change_price": 960000,
-  "signed_change_price": 960000,
-  "acc_trade_volume_24h": 25.32,
-  "high_price": 47000000,
-  "low_price": 45000000,
-  "opening_price": 45200000,
-  "timestamp": 1656789123456
+
 }
 ```
 
-| Field                   | Description |
-| ----------------------- | ----------- |
-| code                    | 종목 코드       |
-| trade\_price            | 현재가         |
-| change\_rate            | 전일 대비 등락률   |
-| change\_price           | 전일 대비 금액    |
-| signed\_change\_price   | 절대 변화 금액    |
-| acc\_trade\_volume\_24h | 24시간 거래량    |
-| high\_price             | 고가          |
-| low\_price              | 저가          |
-| opening\_price          | 시가          |
-| timestamp               | 데이터 수신 시간   |
+**3. 프로젝트 실행**
 
-***
+* 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
 
-### UI Layout Example
+**5. 코드로** EXCenterPivotView **생성**
 
-```
-┌─────────────────────────────────────┐
-│   [ 종목명 ]  KRW-BTC                │
-│─────────────────────────────────────│
-│   현재가      45,500,000 KRW         │
-│   전일대비    +960,000 (+2.15%)      │
-│─────────────────────────────────────│
-│   시가   45,200,000                  │
-│   고가   47,000,000                  │
-│   저가   45,000,000                  │
-│─────────────────────────────────────│
-│   거래량  25.32 BTC                  │
-│─────────────────────────────────────│
-│   [ 검색 ] BTC 입력 시 자동완성      │
-└─────────────────────────────────────┘
-```
-
-***
-
-### Events & Callbacks
-
-| Event Name              | Description              |
-| ----------------------- | ------------------------ |
-| onMarketChanged(market) | 종목이 변경될 때 호출             |
-| onTickerUpdated(ticker) | 실시간 현재가 데이터 수신 시 호출      |
-| onSummaryUpdated(data)  | 거래량, 시가, 고가, 저가 데이터 갱신 시 |
-
-***
-
-### Options & Settings
-
-| Option        | Description            | Default |
-| ------------- | ---------------------- | ------- |
-| autoHighlight | 가격 변동 시 하이라이트 효과 적용 여부 | true    |
-| enableSearch  | 종목 검색 기능 활성화 여부        | true    |
-| showSummary   | 시가, 고가, 저가, 거래량 표시 여부  | true    |
-| theme         | UI 테마 (light / dark)   | light   |
-
-***
-
-### Example Usage
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
-const pivot = new ExCenterPivotView();
+onInitDone()
+{
 
-pivot.setMarket('KRW-BTC');
-pivot.subscribe();
-
-// 다크 테마 적용
-pivot.applyTheme('dark');
-
-// 현재가 하이라이트 효과
-pivot.highlight();
+}
 ```
 
-***
+{% hint style="info" %}
+<mark style="color:red;">**Build 에러 발생 시**</mark>
 
-### Error Handling
+_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXHogaGrid.js 체크**_
 
-* WebSocket 데이터 미수신 시 자동으로 `reset()` 처리 가능
-* 종목 코드 오류 시 내부적으로 `onMarketChanged()` 재호출
-* 네트워크 장애 발생 시 자동 재연결 로직 포함
-
-***
-
-### Initialization & Lifecycle
-
-1. `setMarket()` 호출 → 종목 설정
-2. `subscribe()` 호출 → 실시간 데이터 수신 시작
-3. 종목 및 가격 변동에 따라 UI 자동 업데이트
-4. 종료 시 `unsubscribe()` 호출로 데이터 수신 종
+<img src="../../.gitbook/assets/스크린샷 2025-06-30 092905.png" alt="" data-size="original">
+{% endhint %}

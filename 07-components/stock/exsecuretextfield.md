@@ -2,114 +2,74 @@
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164147.png" alt=""><figcaption></figcaption></figure>
 
-**ExSecureTextField**는 비밀번호, API 키, 시크릿 키 등 민감한 정보를 안전하게 입력받을 수 있도록 설계된 보안 입력 컴포넌트입니다.
+비밀번호, API 키, 시크릿 키 등 민감한 정보를 안전하게 입력받을 수 있도록 설계된 보안 입력 컴포넌트.
 
-일반 텍스트 필드와 동일한 입력 기능을 가지면서도 다음과 같은 보안 기능을 제공합니다.
 
-* 입력값 마스킹 (••••• 형태)
-* 표시/숨김 토글 버튼 제공
-* 클립보드 복사 차단
-* 자동 완성 및 자동 저장 차단
-* 입력 값 암호화 및 복호화 지원 (옵션)
 
-***
+### Appearance
 
-### Key Features
+공통 Appearance 는 [**6. Global Properties**](<../../Guide for SpiderGen/06  SpiderGen Editor/04  Properties Pane/02 Appearence.md>) 속성을 참고
 
-* 입력 텍스트 마스킹
-* 입력값 표시/숨김 토글 버튼 제공
-* 클립보드 복사/붙여넣기 차단
-* 브라우저 자동 완성 및 저장 차단
-* 선택적으로 입력 값 암호화 지원
+### Attribute
 
-***
+EXSecureTextField 속성
 
-### UI Components
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 093412.png" alt=""><figcaption></figcaption></figure>
 
-| Component        | Description                |
-| ---------------- | -------------------------- |
-| Input Field      | 텍스트 입력 영역 (마스킹 상태로 표시)     |
-| Toggle Button    | 👁️ 아이콘. 클릭 시 입력값 표시/숨김 전환 |
-| Placeholder Text | 입력 안내 문구                   |
-| Error Message    | 유효성 검사 실패 시 오류 표시          |
+**Data**
 
-***
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>매핑된 쿼리파일의 현재값의 필드명을 입력</td></tr><tr><td><code>Placeholder</code></td><td>매핑된 쿼리파일의 기본값의 필드명을 입력</td></tr><tr><td><code>Align</code></td><td>호가를 하단에 표현될 로우의 개수를 지정</td></tr><tr><td><code>Pad Title</code></td><td>호가의 단계 설정</td></tr><tr><td><code>Data Type</code></td><td>호가 상승색 설정</td></tr><tr><td><code>Return Type</code></td><td>호가 하락색 설정</td></tr><tr><td><code>MinLength</code></td><td>호가 보합색 설정</td></tr><tr><td><code>MaxLength</code></td><td>호가 잔량을 표현하는 바의 높이를 지정</td></tr></tbody></table>
 
-### Events
+### Example
 
-| Event Name                  | Description         |
-| --------------------------- | ------------------- |
-| onTextChanged(value)        | 입력값 변경 시 호출         |
-| onEnterPressed()            | 엔터 키 입력 시 호출        |
-| onVisibilityToggled(isShow) | 표시/숨김 토글 버튼 클릭 시 호출 |
+**1. 프로젝트 생성**
 
-***
+* 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
+* MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
+* Class 에서 ID를securetextfield 로 입력
 
-### Properties & Settings
 
-| Property                | Description                   | Default |
-| ----------------------- | ----------------------------- | ------- |
-| maskCharacter           | 마스킹 문자                        | •       |
-| enableClipboardBlock    | 클립보드 복사 및 붙여넣기 차단 여부          | true    |
-| enableAutoCompleteBlock | 자동 완성 및 브라우저 저장 차단 여부         | true    |
-| showToggleButton        | 표시/숨김 토글 버튼 사용 여부             | true    |
-| encryptionKey           | 입력 데이터 암호화 키 (설정 시 내부적으로 암호화) | 없음      |
 
-***
+**2. 데이터 설정**
 
-### UI Example
-
-```
-┌───────────────────────────────┐
-│ [•••••••••••••••] [👁️]         │
-│  비밀번호를 입력하세요          │
-└───────────────────────────────┘
-
-- 👁️ 아이콘 클릭 → 마스킹 해제/적용
-```
-
-***
-
-### Example Usage
+* 먼저 MainView.js 파일을 오픈
+* 상단의 파일탭에서 MainView.lay 탭을 더블 클릭하거나 우측의 프로젝트 트리에서 MainView.js 파일을 더블 클릭
+* 모든 화면뷰는 onInitDone() 함수가 존재하며 이 함수는 화면이 생성될 때 딱 한번 실행
+* onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
 
 ```javascript
-const secureField = new ExSecureTextField();
+onInitDone()
+{
+	super.onInitDone()
 
-// 플레이스홀더 설정
-secureField.setPlaceholder('API Secret Key');
-
-// 값 설정
-secureField.setValue('mysecret123');
-
-// 값 가져오기
-const val = secureField.getValue();
-console.log('입력값:', val);
-
-// 표시 상태 토글
-secureField.togglePassword();
-
-// 오류 메시지 표시
-secureField.setError('입력값이 올바르지 않습니다.');
-
-// 클립보드 차단 활성화
-secureField.enableClipboardBlock(true);
+}
 ```
 
-***
+**3. 프로젝트 실행**
 
-### Error Handling
+* 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
 
-* 입력값이 비어있거나 유효하지 않은 경우 오류 메시지 표시
-* 암호화 키가 불일치하는 경우 복호화 실패
-* 클립보드 차단 기능이 지원되지 않는 브라우저는 내부 경고 출력
+**5. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
 
-***
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
 
-### Initialization & Lifecycle
+```javascript
+onInitDone()
+{
+	super.onInitDone()
+	
 
-1. 컴포넌트 인스턴스 생성
-2. 플레이스홀더 및 필요한 속성 설정
-3. 입력값 처리
-4. 필요 시 값 초기화
-5. 종료 시 별도 정리 불필요
+}
+```
+
+{% hint style="info" %}
+<mark style="color:red;">**Build 에러 발생 시**</mark>
+
+_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크**_
+
+<img src="../../.gitbook/assets/스크린샷 2025-06-30 093825.png" alt="" data-size="original">
+{% endhint %}
+
+
 
