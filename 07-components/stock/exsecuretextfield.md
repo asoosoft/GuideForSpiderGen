@@ -27,7 +27,7 @@ EXSecureTextField 속성
 * 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
 * Class 에서 ID를&#x20;
-* securetextfield 로 입력
+* secureField로 입력
 
 
 
