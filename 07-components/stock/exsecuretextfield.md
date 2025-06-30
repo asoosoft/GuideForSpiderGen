@@ -1,7 +1,5 @@
 # ExSecureTextField
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164147.png" alt=""><figcaption></figcaption></figure>
-
 비밀번호, API 키, 시크릿 키 등 민감한 정보를 안전하게 입력받을 수 있도록 설계된 보안 입력 컴포넌트.
 
 
@@ -94,10 +92,10 @@ onInitDone() {
         container.addComponent(secureField);
         secureField.init();
 
-        // 설정
-        secureField.setHint('비밀번호 입력');
-        secureField.setText('');
+        // ✅ placeholder 설정
+        secureField.$ele.attr('placeholder', '비밀번호 입력');
 
+        // ✅ pad 옵션 설정
         secureField.padOption = {
             title: '비밀번호 입력',
             padType: 'char',
@@ -106,18 +104,26 @@ onInitDone() {
             maxLength: 20
         };
 
+        // ✅ 텍스트 초기화
+        secureField.setText('');
+
+        // ✅ 위치 설정
         secureField.setPos(100, 100);
 
-        secureField.setEventListener({
-            onTextChange: (comp) => {
-                console.log('입력값:', comp.getText());
-                console.log('암호화 데이터:', comp.getCipherData());
-            }
+        // ✅ 입력 이벤트
+        secureField.$ele.on('change', () => {
+            console.log('입력값:', secureField.getText());
+            console.log('암호화 데이터:', secureField.getCipherData());
+            console.log('입력 길이:', secureField.getPwLength());
         });
+
+        // ✅ 전역 변수로 저장 (필요 시)
+        this.secureField = secureField;
     }
+
     ```
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 110253.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 134027.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 <mark style="color:red;">**Build 에러 발생 시**</mark>
