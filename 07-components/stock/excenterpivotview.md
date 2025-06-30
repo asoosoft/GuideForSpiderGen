@@ -36,9 +36,35 @@ Example
 * onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
 
 ```javascript
-onInitDone()
-{
+onInitDone() {
+    super.onInitDone();
 
+    // 배치한 컴포넌트 이름 기준 (ex: pivotView)
+    // 만약 컴포넌트 이름이 다르면 수정하세요.
+
+    // 🔸 왼쪽 그리드 데이터
+    this.pivotView.leftGrid.setData([
+        ['왼쪽1', '왼쪽2', '왼쪽3'], // 👉 헤더
+        ['L100', 'L200', 'L300'],    // 👉 데이터
+        ['L101', 'L201', 'L301']
+    ]);
+
+    // 🔸 피벗(중앙) 그리드 데이터
+    this.pivotView.pivotGrid.setData([
+        ['중심'],      // 👉 헤더
+        ['Center-1'], // 👉 데이터
+        ['Center-2']
+    ]);
+
+    // 🔸 오른쪽 그리드 데이터
+    this.pivotView.rightGrid.setData([
+        ['오른쪽1', '오른쪽2', '오른쪽3'], // 👉 헤더
+        ['R100', 'R200', 'R300'],         // 👉 데이터
+        ['R101', 'R201', 'R301']
+    ]);
+
+    // 🔸 스크롤 초기화 (왼쪽 기준 정렬)
+    this.pivotView.scrollViewLeft();
 }
 ```
 
@@ -46,50 +72,60 @@ onInitDone()
 
 * 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
 
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 132530.png" alt=""><figcaption></figcaption></figure>
+
 **4. 코드로** EXCenterPivotView **생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
-```javascript
+```
 onInitDone() {
     super.onInitDone();
 
-    const pivotView = new EXCenterPivotView();
+    const pivot = new EXCenterPivotView();
+    pivot.createElement();
+    this.addComponent(pivot);
+    pivot.init();
 
-    // ✅ DOM 생성
-    pivotView.createElement();
+    // 🔸 왼쪽 그리드
+    pivot.leftGrid.setData([
+        ['왼쪽1', '왼쪽2', '왼쪽3'],   // 헤더
+        ['L100', 'L200', 'L300'],      // 데이터
+        ['L101', 'L201', 'L301']
+    ]);
 
-    // ✅ 화면에 추가 (이게 있어야 내부 스크롤 영역도 생성됨)
-    this.addComponent(pivotView);
+    // 🔸 중앙 피벗 그리드
+    pivot.pivotGrid.setData([
+        ['중심'], 
+        ['Center1'], 
+        ['Center2']
+    ]);
 
-    // ✅ 초기화
-    pivotView.init();
+    // 🔸 오른쪽 그리드
+    pivot.rightGrid.setData([
+        ['오른쪽1', '오른쪽2', '오른쪽3'],
+        ['R100', 'R200', 'R300'],
+        ['R101', 'R201', 'R301']
+    ]);
 
-    // ✅ 그리드 헤더 설정
-    pivotView.leftGrid.setHeader(['Left1', 'Left2', 'Left3']);
-    pivotView.pivotGrid.setHeader(['Pivot']);
-    pivotView.rightGrid.setHeader(['Right1', 'Right2', 'Right3']);
+    pivot.setPos(100, 100);
+    pivot.scrollViewLeft();
 
-    // ✅ 데이터 추가
-    pivotView.addRow(
-        ['100', '200', '300'],
-        ['Center'],
-        ['400', '500', '600']
-    );
-
-    // ✅ 스크롤 동기화
-    pivotView.scrollViewLeft();
+    this.pivotView = pivot;
 }
-
 ```
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 110253.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 131431.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
 <mark style="color:red;">**Build 에러 발생 시**</mark>
 
-_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > ExCenterPivotView.js 체크**_
+1. _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > AGrid.js + AGridEvent.js 체크**_
 
-<img src="../../.gitbook/assets/스크린샷 2025-06-30 092905.png" alt="" data-size="original">
-{% endhint %}
+<img src="../../.gitbook/assets/스크린샷 2025-06-30 131803.png" alt="" data-size="original">
+
+
+
+2. _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > ExCenterPivotView.js + EXCenterPivotViewEvent.js 체크**_
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 132154.png" alt=""><figcaption></figcaption></figure>
