@@ -150,8 +150,8 @@ onInitDone()
         hogaGrid.setBasePrice(60400);        //기준가 설정
         hogaGrid.setCurrentPrice(60100);        //현재가 설정
         
-        grid.addEventListener('select', this, 'onGridSelect');        //AGrid와 동일한 방식으로 select 이벤트 등록 가능
-        grid.setDelegator(this);        //grid의 이벤트를 this객체에 위임(quoteCount또는 bottomRowCount를 변경하면 onRowCountChange 이벤트가 트리거됨)
+        hogaGrid.addEventListener('select', this, 'onGridSelect');        //AGrid와 동일한 방식으로 select 이벤트 등록 가능
+        hogaGrid.setDelegator(this);        //hogaGrid의 이벤트를 this객체에 위임(quoteCount또는 bottomRowCount를 변경하면 onRowCountChange 이벤트가 트리거됨)
 }
 
 onGridSelect(comp, _info, _e) 
