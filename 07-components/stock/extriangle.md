@@ -49,16 +49,34 @@ onInitDone()
 
 * 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
 
-**5. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
+**5. 코드로** EXTriangle **생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
-onInitDone()
-{
-	super.onInitDone()
-	
+onInitDone() {
+    super.onInitDone();
 
+    const exTriangle = new EXTriangle();
+
+    // 초기화
+    exTriangle.init();
+
+    // 색상 설정
+    exTriangle.setUpColor("#ff0000");    // 상승 시 빨간색
+    exTriangle.setDownColor("#0000ff");  // 하락 시 파란색
+
+    // 방향 설정
+    // 예: 상승 (2), 하락 (5), 보합 (0)
+    exTriangle.setDirection(2); 
+
+    // StockColor 사용 여부
+    exTriangle.useStockColor(false); // true면 시스템 컬러 적용
+
+    // 레이아웃에 추가
+    this.addComponent(exTriangle);
+    exTriangle.setPos(100, 100);
 }
+
 ```

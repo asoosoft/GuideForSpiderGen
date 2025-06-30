@@ -16,15 +16,9 @@
 
 공통 Appearance 는 [**6. Global Properties**](<../../Guide for SpiderGen/06  SpiderGen Editor/04  Properties Pane/02 Appearence.md>) 속성을 참고
 
-### Attribute
 
-EXHogaGrid 속성
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 092002.png" alt=""><figcaption></figcaption></figure>
-
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>Option</strong></td><td></td></tr><tr><td><code>Hide Header</code></td><td></td></tr><tr><td><code>Hide Footer</code></td><td></td></tr><tr><td><code>Fullrow Select</code></td><td></td></tr><tr><td><code>Single Select</code></td><td></td></tr><tr><td><code>Flexible Row</code></td><td></td></tr><tr><td><code>Selectable</code></td><td></td></tr><tr><td><code>Clear Row Template</code></td><td></td></tr><tr><td><code>Sortable</code></td><td></td></tr><tr><td><strong>Column Resize</strong></td><td></td></tr><tr><td>Column Resize</td><td></td></tr><tr><td>Width Changable</td><td></td></tr></tbody></table>
-
-### Example
+Example
 
 **1. 프로젝트 생성**
 
@@ -58,16 +52,35 @@ onInitDone()
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
-onInitDone()
-{
+onInitDone() {
+    super.onInitDone();
 
+    const exCenterPivot = new EXCenterPivotView();
+
+    exCenterPivot.init();
+
+    // 기준가 설정
+    exCenterPivot.setBasePrice(3200);
+
+    // 현재가 설정
+    exCenterPivot.setCurrentPrice(3300);
+
+    // 상승/하락/보합 색상 설정
+    exCenterPivot.setUpColor("#ff0000");     // 빨간색
+    exCenterPivot.setDownColor("#0000ff");   // 파란색
+    exCenterPivot.setSteadyColor("#00ff00"); // 초록색
+
+    // 레이아웃에 추가
+    this.addComponent(exCenterPivot);
+    exCenterPivot.setPos(100, 200);
 }
+
 ```
 
 {% hint style="info" %}
 <mark style="color:red;">**Build 에러 발생 시**</mark>
 
-_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXHogaGrid.js 체크**_
+_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > ExCenterPivotView.js 체크**_
 
 <img src="../../.gitbook/assets/스크린샷 2025-06-30 092905.png" alt="" data-size="original">
 {% endhint %}

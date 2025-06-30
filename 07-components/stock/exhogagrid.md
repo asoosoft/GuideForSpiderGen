@@ -54,12 +54,38 @@ onInitDone()
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
-onInitDone()
-{
-	super.onInitDone()
-	
+onInitDone() {
+    super.onInitDone();
 
+    const exHogaGrid = new EXHogaGrid();
+
+    exHogaGrid.init();
+
+    // 기준가 및 현재가 설정
+    exHogaGrid.setBasePrice(3200);
+    exHogaGrid.setCurrentPrice(3100);
+
+    // 데이터 설정
+    const hogaData = [
+        { askSize: 1000, askPrice: 4000, bidPrice: '', bidSize: '' },
+        { askSize: 900,  askPrice: 3900, bidPrice: '', bidSize: '' },
+        ...
+        { askSize: '', askPrice: '', bidPrice: 3100, bidSize: 1200 },
+        { askSize: '', askPrice: '', bidPrice: 3000, bidSize: 1300 },
+    ];
+
+    exHogaGrid.setData(hogaData);
+
+    // 색상 설정
+    exHogaGrid.setUpColor("#ff0000");     // 빨강
+    exHogaGrid.setDownColor("#0000ff");   // 파랑
+    exHogaGrid.setSteadyColor("#00ff00"); // 초록
+
+    // 레이아웃에 추가
+    this.addComponent(exHogaGrid);
+    exHogaGrid.setPos(100, 300);
 }
+
 ```
 
 {% hint style="info" %}

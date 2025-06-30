@@ -55,11 +55,32 @@ onInitDone()
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
-onInitDone()
-{
-	super.onInitDone()
-	
+onInitDone() {
+    super.onInitDone();
 
+    const exSecureText = new EXSecureTextField();
+
+    exSecureText.init();
+
+    // 플레이스홀더 설정
+    exSecureText.setHint('비밀번호를 입력하세요');
+
+    // 입력값 마스킹 여부
+    exSecureText.setSecure(true); // true → ●●●● 형태로 표시
+
+    // 기본값 세팅 가능
+    exSecureText.setText('');
+
+    // 텍스트 변경 이벤트 리스너
+    exSecureText.setEventListener({
+        onTextChange: (comp, info) => {
+            console.log('입력값:', comp.getText());
+        }
+    });
+
+    // 레이아웃에 추가
+    this.addComponent(exSecureText);
+    exSecureText.setPos(100, 400);
 }
 ```
 
