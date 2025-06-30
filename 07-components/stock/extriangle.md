@@ -20,7 +20,7 @@ EXTriangle 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td></td></tr><tr><td><code>Up Color</code></td><td>상승색 설정</td></tr><tr><td><code>Down Color</code></td><td>하락색 설정</td></tr><tr><td><code>Direction</code></td><td> 화살표의 방향, 굵기 설정</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td>주식 시스템의 테마 색상을 결정</td></tr><tr><td><code>Up Color</code></td><td>상승색 설정</td></tr><tr><td><code>Down Color</code></td><td>하락색 설정</td></tr><tr><td><code>Direction</code></td><td> 화살표의 방향, 굵기 설정</td></tr></tbody></table>
 
 ### Example
 
@@ -38,16 +38,34 @@ EXTriangle 속성
 * onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
 
 ```javascript
-onInitDone()
-{
-	super.onInitDone()
+onInitDone() {
+    super.onInitDone();
 
+    const triangle = new EXTriangle();
+    triangle.createElement();
+    this.addComponent(triangle);
+    triangle.init();
+
+    // 🔺 모양 변경 테스트
+    triangle.setData(7); // 큰 상승 삼각형
+    // triangle.setData(9); // 큰 하락 삼각형
+    // triangle.setData(6); // 대각 상승
+    // triangle.setData(8); // 대각 하락
+    // triangle.setData(4); // 작은 하락
+    // triangle.setData(1); // 작은 상승
+
+    triangle.setUpDownColor('#00FF00', '#FF00FF'); // 상승 초록, 하락 핑크
+    triangle.option.useStockColor = false;
+
+    triangle.setPos(100, 100);
 }
 ```
 
 **3. 프로젝트 실행**
 
 * 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 104023.png" alt=""><figcaption></figcaption></figure>
 
 **5. 코드로** EXTriangle **생성**
 
@@ -59,24 +77,22 @@ onInitDone() {
     super.onInitDone();
 
     const exTriangle = new EXTriangle();
-
-    // 초기화
+    exTriangle.createElement();
     exTriangle.init();
 
     // 색상 설정
-    exTriangle.setUpColor("#ff0000");    // 상승 시 빨간색
-    exTriangle.setDownColor("#0000ff");  // 하락 시 파란색
+    exTriangle.setUpDownColor('#ff0000', '#0000ff');
+
+    // 시스템 컬러 사용할지 여부는 data-use-stockcolor 속성
+    exTriangle.setAttr('data-use-stockcolor', false);
 
     // 방향 설정
-    // 예: 상승 (2), 하락 (5), 보합 (0)
-    exTriangle.setDirection(2); 
+    exTriangle.setDirection(2); // 상승
 
-    // StockColor 사용 여부
-    exTriangle.useStockColor(false); // true면 시스템 컬러 적용
-
-    // 레이아웃에 추가
     this.addComponent(exTriangle);
     exTriangle.setPos(100, 100);
 }
 
 ```
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 103519.png" alt=""><figcaption></figcaption></figure>

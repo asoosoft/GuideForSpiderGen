@@ -55,24 +55,31 @@ onInitDone()
 onInitDone() {
     super.onInitDone();
 
-    const exCenterPivot = new EXCenterPivotView();
+    const pivotView = new EXCenterPivotView();
 
-    exCenterPivot.init();
+    // ✅ DOM 생성
+    pivotView.createElement();
 
-    // 기준가 설정
-    exCenterPivot.setBasePrice(3200);
+    // ✅ 화면에 추가 (이게 있어야 내부 스크롤 영역도 생성됨)
+    this.addComponent(pivotView);
 
-    // 현재가 설정
-    exCenterPivot.setCurrentPrice(3300);
+    // ✅ 초기화
+    pivotView.init();
 
-    // 상승/하락/보합 색상 설정
-    exCenterPivot.setUpColor("#ff0000");     // 빨간색
-    exCenterPivot.setDownColor("#0000ff");   // 파란색
-    exCenterPivot.setSteadyColor("#00ff00"); // 초록색
+    // ✅ 그리드 헤더 설정
+    pivotView.leftGrid.setHeader(['Left1', 'Left2', 'Left3']);
+    pivotView.pivotGrid.setHeader(['Pivot']);
+    pivotView.rightGrid.setHeader(['Right1', 'Right2', 'Right3']);
 
-    // 레이아웃에 추가
-    this.addComponent(exCenterPivot);
-    exCenterPivot.setPos(100, 200);
+    // ✅ 데이터 추가
+    pivotView.addRow(
+        ['100', '200', '300'],
+        ['Center'],
+        ['400', '500', '600']
+    );
+
+    // ✅ 스크롤 동기화
+    pivotView.scrollViewLeft();
 }
 
 ```
