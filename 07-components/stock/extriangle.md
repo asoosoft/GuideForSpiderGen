@@ -67,7 +67,7 @@ onInitDone() {
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 104023.png" alt=""><figcaption></figcaption></figure>
 
-**5. 코드로** EXTriangle **생성**
+**4. 코드로** EXTriangle **생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력

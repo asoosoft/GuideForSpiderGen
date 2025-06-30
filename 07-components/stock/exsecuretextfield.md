@@ -18,7 +18,7 @@ EXSecureTextField 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>매핑된 쿼리파일의 현재값의 필드명을 입력</td></tr><tr><td><code>Placeholder</code></td><td>매핑된 쿼리파일의 기본값의 필드명을 입력</td></tr><tr><td><code>Align</code></td><td>호가를 하단에 표현될 로우의 개수를 지정</td></tr><tr><td><code>Pad Title</code></td><td>호가의 단계 설정</td></tr><tr><td><code>Data Type</code></td><td>호가 상승색 설정</td></tr><tr><td><code>Return Type</code></td><td>호가 하락색 설정</td></tr><tr><td><code>MinLength</code></td><td>호가 보합색 설정</td></tr><tr><td><code>MaxLength</code></td><td>호가 잔량을 표현하는 바의 높이를 지정</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>초기값</td></tr><tr><td><code>Placeholder</code></td><td>입력 전 양식</td></tr><tr><td><code>Align</code></td><td>텍스트 정렬(left, center, right)</td></tr><tr><td><code>Pad Title</code></td><td>키패드가 열릴 때 상단 제목</td></tr><tr><td><code>Data Type</code></td><td>키패드 입력 방식</td></tr><tr><td><code>Return Type</code></td><td>결과 반환 방식</td></tr><tr><td><code>MinLength</code></td><td>최소 입력 길이</td></tr><tr><td><code>MaxLength</code></td><td>최대 입력 길이</td></tr></tbody></table>
 
 ### Example
 
@@ -26,7 +26,8 @@ EXSecureTextField 속성
 
 * 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
-* Class 에서 ID를securetextfield 로 입력
+* Class 에서 ID를&#x20;
+* securetextfield 로 입력
 
 
 
@@ -38,10 +39,32 @@ EXSecureTextField 속성
 * onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
 
 ```javascript
-onInitDone()
-{
-	super.onInitDone()
+onInitDone() {
+    super.onInitDone();
 
+    // ✅ Placeholder 설정
+    this.secureField.setPlaceholder('비밀번호 입력하세요');
+
+    // ✅ Pad 설정
+    this.secureField.padOption = {
+        title: '비밀번호 입력',
+        padType: 'char',
+        returnType: '1',   // Hash 반환
+        minLength: 4,
+        maxLength: 20
+    };
+
+    // ✅ 값 초기화
+    this.secureField.setText('');
+
+    // ✅ jQuery 방식으로 이벤트 연결
+    this.secureField.$ele.on('change', () => {
+        console.log('암호화:', this.secureField.getCipherData());
+        console.log('입력된 길이:', this.secureField.getPwLength());
+    });
+
+    // ✅ 위치
+    this.secureField.setPos(100, 100);
 }
 ```
 
@@ -49,40 +72,52 @@ onInitDone()
 
 * 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
 
-**5. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 111554.png" alt=""><figcaption></figcaption></figure>
+
+**4. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
+*
 
-```javascript
-onInitDone() {
-    super.onInitDone();
+    ```javascript
+    onInitDone() {
+        super.onInitDone();
 
-    const exSecureText = new EXSecureTextField();
+        const container = new AView();
+        container.createElement();
+        this.addComponent(container);
+        container.init();
 
-    exSecureText.init();
+        const secureField = new EXSecureTextField();
+        secureField.createElement();
+        container.addComponent(secureField);
+        secureField.init();
 
-    // 플레이스홀더 설정
-    exSecureText.setHint('비밀번호를 입력하세요');
+        // 설정
+        secureField.setHint('비밀번호 입력');
+        secureField.setText('');
 
-    // 입력값 마스킹 여부
-    exSecureText.setSecure(true); // true → ●●●● 형태로 표시
+        secureField.padOption = {
+            title: '비밀번호 입력',
+            padType: 'char',
+            returnType: '1',
+            minLength: 4,
+            maxLength: 20
+        };
 
-    // 기본값 세팅 가능
-    exSecureText.setText('');
+        secureField.setPos(100, 100);
 
-    // 텍스트 변경 이벤트 리스너
-    exSecureText.setEventListener({
-        onTextChange: (comp, info) => {
-            console.log('입력값:', comp.getText());
-        }
-    });
+        secureField.setEventListener({
+            onTextChange: (comp) => {
+                console.log('입력값:', comp.getText());
+                console.log('암호화 데이터:', comp.getCipherData());
+            }
+        });
+    }
+    ```
 
-    // 레이아웃에 추가
-    this.addComponent(exSecureText);
-    exSecureText.setPos(100, 400);
-}
-```
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 110253.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 <mark style="color:red;">**Build 에러 발생 시**</mark>
