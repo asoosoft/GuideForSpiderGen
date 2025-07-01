@@ -1,49 +1,27 @@
 ---
-description: ket API를 통해 종목의 매도/매수 호가 데이터를 실시간으로 받아 사용자에게 직관적으로 보여줍니다.
+description: >-
+  호가창을 출력하는 ExHogaGrid 컴포넌트와 추가적인 UI 요소나 기능을 포함할 수 있는 공간을 제공하는 AView를 포함하여 레이아웃을
+  관리하는 역할을 하는 컨테이너 컴포넌트
 ---
 
 # ExHogaView
 
-주식 및 가상자산 거래 시스템에서 실시간 호가 정보를 시각적으로 표시하는 컴포넌트.
+> 이 컴포넌트가 담고 있는\
+> [ExHogaGrid 예제 보러가기](exhogagrid.md)
 
-\
-업비트와 같은 거래소의 REST API 및 WebSocket API를 통해 종목의 매도/매수 호가 데이터를 실시간으로 받아 사용자에게 직관적으로 보여줌.
+<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 ### Appearance
 
-* 공통 Appearance는\
-  **6. Global Properties** 속성을 참고.
+공통 Appearance 는 [**6. Global Properties**](https://asoosoft.gitbook.io/guideforspidergen/06-spidergen-editor/04-properties-pane/02-appearence) 속성을 참고
 
 ### Attribute
 
-| Data          | 설명 |
-| ------------- | -- |
-| Current Price |    |
-| Base Price    |    |
-| Bottom Row    |    |
-| Quote Count   |    |
+**Info**
 
-| Price Color | 설명 |
-| ----------- | -- |
-| Up          |    |
-| Down        |    |
-| Steady      |    |
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Show Count</code></td><td>보여줄 호가 셀 만큼의 호가 뷰 높이 설정</td></tr></tbody></table>
 
-| Bar Style    | 설명 |
-| ------------ | -- |
-| Size         |    |
-| Ask Position |    |
-| Bid Position |    |
-| Ask Color    |    |
-| Bid Color    |    |
-
-| Option         | 설명 |
-| -------------- | -- |
-| Hide Header    |    |
-| Single Select  |    |
-| Fullrow Select |    |
-| Selectable     |    |
-| Flexable Row   |    |
+***
 
 ### Example
 
@@ -55,44 +33,27 @@ description: ket API를 통해 종목의 매도/매수 호가 데이터를 실�
 
 ***
 
-#### 2. 데이터 설정
-
-MainView.js 파일을 열고 onInitDone() 함수에 아래와 같이 작성.
+#### 2. 보여줄 호가 갯수 설정
 
 ```javascript
-onInitDone() {
-    super.onInitDone();
-
-    const hogaView = new EXHogaView();
-    hogaView.createElement();
-    this.addComponent(hogaView);
-    hogaView.init();
-
-    // 표시할 호가 단계 수 설정
-    hogaView.setShowCount(10);
-
-    // 자동 리사이즈 여부 설정
-    hogaView.setAutoResizeChildren(true);
-
-    // 위치 설정
-    hogaView.setPos(100, 100);
-
-    // 크기 설정 (필요시)
-    hogaView.setSize(400, 500);
+onInitDone()
+{
+	super.onInitDone()
+	
+	hogaView.setShowCount(8);	//보여줄 호가 셀 갯수
+    	hogaView.scrollToQuoteCenter();	//스크롤 중앙 정렬
 }
 ```
 
-***
+<figure><img src="../../.gitbook/assets/image (61).png" alt="" width="375"><figcaption></figcaption></figure>
 
-#### 3. 프로젝트 실행
+3\. 자식 AView를 활용한 ui 사용
 
-* 설정한 호가 데이터에 따라 실시간으로 호가 정보가 표시.
-* 업비트의 WebSocket API와 연동하여 실시간으로 매도/매수 잔량이 업데이트.
-* 중앙 정렬 기능과 자동 크기 조절 기능이 적용.
+<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-#### 4. 코드로 EXHogaView 생성
+### 코드로 EXHogaView 생성
 
 MainView.js 파일 내에서 아래와 같이 작성.
 
@@ -103,9 +64,6 @@ onInitDone() {
     const exHogaView = new EXHogaView();
     exHogaView.createElement();
     exHogaView.init();
-
-    // 호가 단계 설정
-    exHogaView.setShowCount(15);
 
     // 자동 리사이즈 비활성화
     exHogaView.setAutoResizeChildren(false);
@@ -119,3 +77,20 @@ onInitDone() {
 ```
 
 ***
+
+### Method
+
+<details>
+
+<summary>주요메서드</summary>
+
+1. `updatePosition(pWidth, pHeight)` : 사이즈가 변경될 때 호출되는 함수로, 부모 뷰의 넓이와 높이를 인자로 받아 뷰 컴포넌트의 위치나 사이즈를 갱신합니다
+2. `setShowCount(cnt)` : 현재 뷰에서 보여줄 호가의 개수를 지정합니다.
+3. `scrollToQuoteCenter()` : 호가가 중간에 위치하도록 스크롤 위치를 변경합니다.
+4. `getShowCount()` : 현재 뷰에서 보여줄 호가의 개수를 반환합니다.
+5. `setAutoResizeChildren(isAuto)` : 자식들의 위치와 높이를 자동으로 변경할지 여부를 지정합니다.
+6. `getAutoResizeChildren()` : 자식들의 위치와 높이 자동 변경 여부를 반환합니다.
+7. `onRowCountChange()` : 호가 그리드의 행 개수가 변경될 때 호출되는 함수입니다.
+
+</details>
+
