@@ -117,6 +117,6 @@ onInitDone() {
 <mark style="color:red;">**Build 에러 발생 시**</mark>
 
 1. _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > AGrid.js + AGridEvent.js 체크**_
-2. _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > ExCenterPivotView.js + EXCenterPivotViewEvent.js 체크**_
+2. _**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > ExCenterPivotView.js + EXCenterPivotViewEvent.js 체크**_
 
 <div><figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 132154.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 131803.png" alt=""><figcaption></figcaption></figure></div>

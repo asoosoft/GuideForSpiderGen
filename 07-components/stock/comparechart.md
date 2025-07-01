@@ -39,58 +39,239 @@ CompareChart 속성
 onInitDone() {
     super.onInitDone();
 
+    const baseData = [
+        ['20250701', 100, 110, 95, 105, 1000, 105000],
+        ['20250702', 105, 115, 102, 110, 1200, 132000],
+        ['20250703', 110, 120, 108, 115, 1500, 172500],
+        ['20250704', 115, 125, 112, 118, 1700, 200600],
+        ['20250705', 118, 130, 117, 128, 1900, 243200],
+    ];
 
+    const mapping = [0, 1, 2, 3, 4, 5, 6];
+
+    // ✅ 기본 데이터 세팅
+    this.CompareChart.setData([baseData], mapping);
+
+    // ✅ 비교 데이터는 종가만 배열로
+    const compareData = [205, 210, 215, 218, 228];
+
+    // ✅ 비교 종목 추가
+    this.CompareChart.addCompareData(['비교종목', compareData]);
+
+    // ✅ 위치 및 크기 (옵션)
+    this.CompareChart.setPos(50, 50);
+    this.CompareChart.setSize(640, 400);
 }
 ```
 
 **3. 프로젝트 실행**
 
-* 설정한 데이터에 맞춰서 상승, 하향 화살표가 표시
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 094504.png" alt=""><figcaption></figcaption></figure>
 
-**4. 코드로** EXTriangle **생성**
+* 설정한 데이터에 맞춰서 캔들 차트와 비교선의 레이아웃 생성
+
+**4. 코드로 CompareChart 생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
+
+
+
+* **예제 1**
+
+```
+    onInitDone() 
+    {
+        super.onInitDone();
+
+        // CompareChart DOM 생성 (라이브러리에서 요구하는 구조)
+        const chartDiv = $(CompareChart.CONTEXT.tag)
+            .attr('id', 'CompareChart')
+            .css({
+                width: "100%",
+                height: "500px"
+            });
+
+        chartDiv.appendTo(this.$ele);
+
+        // CompareChart 인스턴스 생성 및 초기화
+        const chart = new CompareChart();
+        chart.init(chartDiv[0]);
+
+        // 메인 데이터 세팅
+        const mainData = [
+            [
+                ["20240701", 100, 110, 95, 105, 10000, 105],
+                ["20240702", 105, 115, 100, 112, 15000, 112],
+                ["20240703", 112, 118, 108, 115, 12000, 115],
+                ["20240704", 115, 125, 110, 120, 17000, 120],
+                ["20240705", 120, 130, 115, 128, 19000, 128],
+                ["20240706", 128, 135, 120, 130, 16000, 130],
+                ["20240707", 130, 140, 125, 138, 20000, 138]
+            ],
+            [105, 112, 115, 120, 128, 130, 138]
+        ];
+
+        chart.setData(mainData);
+
+        // 비교 데이터 추가
+        chart.addCompareData(["NAVER", [102, 108, 113, 119, 125, 127, 135]]);
+        chart.addCompareData(["KAKAO", [98, 105, 110, 117, 123, 126, 132]]);
+        chart.addCompareData(["SAMSUNG", [100, 107, 114, 118, 124, 129, 137]]);
+
+        // 포지션 업데이트
+        const width = chart.getElement().clientWidth;
+        const height = chart.getElement().clientHeight;
+        chart.updatePosition(width, height);
+
+        chart.updateGraph();
+
+        // 객체 저장
+        this.chart = chart;
+    }
+```
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 100532.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+* **예제 2**
 
 ```javascript
 onInitDone() {
     super.onInitDone();
 
-    // 1. CompareChart 객체 생성
+    // [1] 차트용 DOM 생성
+    const chartDiv = $(CompareChart.CONTEXT.tag).css({
+        width: "100%",
+        height: "500px",
+        border: "1px solid #ccc"
+    });
+
+    chartDiv.appendTo(this.$ele); // 현재 화면에 붙이기
+
+    // [2] CompareChart 인스턴스 생성
     this.compareChart = new CompareChart();
 
-    // 2. 차트를 붙일 부모 DOM 엘리먼트 선택 (예: id가 'chartArea'인 div)
-    const parentDiv = document.getElementById('chartArea');
+    // [3] 차트 초기화
+    this.compareChart.init(chartDiv[0]);
 
-    // 3. 차트 초기화
-    this.compareChart.init(parentDiv, null);
-
-    // 4. 데이터 세팅
+    // [4] 메인 데이터 세팅
     const mainData = [
-        // 날짜, 시가, 고가, 저가, 종가, 거래량, 체결가
-        ["20250101", 100, 110, 95, 105, 1000, 105],
-        ["20250102", 105, 115, 102, 110, 1500, 110],
-        ["20250103", 110, 120, 108, 115, 1800, 115],
-        ["20250104", 115, 125, 112, 120, 2000, 120],
-        ["20250105", 120, 130, 118, 125, 2200, 125],
-        ["20250106", 125, 135, 122, 130, 2500, 130],
+        [
+            ["20240101", 100, 110, 90, 105, 10000, 105],
+            ["20240102", 105, 115, 95, 110, 15000, 110],
+            ["20240103", 110, 120, 100, 115, 13000, 115],
+            ["20240104", 115, 125, 105, 120, 14000, 120],
+            ["20240105", 120, 130, 110, 125, 16000, 125],
+            ["20240106", 125, 135, 115, 130, 17000, 130],
+            ["20240107", 130, 140, 120, 135, 18000, 135]
+        ],
+        [105, 110, 115, 120, 125, 130, 135]
     ];
 
-    // 5. 메인 데이터 세팅
-    this.compareChart.setData([mainData]);
+    this.compareChart.setData(mainData);
 
-    // 6. 비교 데이터 추가 (optional)
-    const compareData = [
-        95,  // 날짜 기준 동일
-        [105, 110, 115, 118, 122, 127], // 예시 종가 데이터
-    ];
+    // [5] 비교 데이터 세팅
+    const compareData = ["비교종목", [100, 107, 112, 118, 123, 128, 133]];
     this.compareChart.addCompareData(compareData);
 
-    // 필요시 확대/축소 등 추가 설정 가능
-    // this.compareChart.zoomInOut();
+    // [6] 포지션 업데이트
+    const width = chartDiv.width();
+    const height = chartDiv.height();
+    this.compareChart.updatePosition(width, height);
 
-    console.log("CompareChart 초기화 완료");
+    // [7] === 상호작용 기능 추가 ===
+
+    // (1) 윈도우 크기 변경 시 리사이즈 대응
+    $(window).on('resize', () => {
+        const w = chartDiv.width();
+        const h = chartDiv.height();
+        this.compareChart.updatePosition(w, h);
+    });
+
+    // (2) 종목 추가 버튼
+    const addBtn = $('<button>종목 추가</button>').css({
+        position: 'absolute',
+        top: '10px',
+        left: '10px',
+        zIndex: 1000
+    }).appendTo(this.$ele);
+
+    addBtn.on('click', () => {
+        const randomData = [
+            "비교" + (this.compareChart.lineData.length),
+            Array.from({ length: 7 }, (_, i) => 90 + Math.random() * 50)
+        ];
+        this.compareChart.addCompareData(randomData);
+    });
+
+    // (3) 스크롤 버튼
+    const scrollLeftBtn = $('<button>← Left</button>').css({
+        position: 'absolute',
+        top: '50px',
+        left: '10px',
+        zIndex: 1000
+    }).appendTo(this.$ele);
+
+    scrollLeftBtn.on('click', () => {
+        this.compareChart.scrollRToL(1);
+    });
+
+    const scrollRightBtn = $('<button>Right →</button>').css({
+        position: 'absolute',
+        top: '90px',
+        left: '10px',
+        zIndex: 1000
+    }).appendTo(this.$ele);
+
+    scrollRightBtn.on('click', () => {
+        this.compareChart.scrollLToR(1);
+    });
+
+    // (4) 줌 인 / 줌 아웃 버튼
+    const zoomInBtn = $('<button>Zoom +</button>').css({
+        position: 'absolute',
+        top: '130px',
+        left: '10px',
+        zIndex: 1000
+    }).appendTo(this.$ele);
+
+    zoomInBtn.on('click', () => {
+        this.compareChart.rateVal += 0.1;
+        this.compareChart.zoomState = 1;
+        this.compareChart.zoomInOut();
+    });
+
+    const zoomOutBtn = $('<button>Zoom -</button>').css({
+        position: 'absolute',
+        top: '170px',
+        left: '10px',
+        zIndex: 1000
+    }).appendTo(this.$ele);
+
+    zoomOutBtn.on('click', () => {
+        this.compareChart.rateVal -= 0.1;
+        this.compareChart.zoomState = 2;
+        this.compareChart.zoomInOut();
+    });
+
+    // === 초기 그리기 ===
+    this.compareChart.updateGraph();
 }
-
-
 ```
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 100646.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+<mark style="color:red;">**Build 에러 발생 시**</mark>
+
+1. _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > library + Component > ADataMask.js + AToast.js 체크**_
+2. _**프로젝트 트리뷰에서 Framework > stock우클릭 > Default Load Settings.. > Component > CompareChart.js 체크**_
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 084622.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 084631.png" alt=""><figcaption></figcaption></figure></div>
