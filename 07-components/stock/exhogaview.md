@@ -9,7 +9,7 @@ description: >-
 > 이 컴포넌트가 담고 있는\
 > [ExHogaGrid 예제 보러가기](exhogagrid.md)
 
-<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62).png" alt="" width="516"><figcaption></figcaption></figure>
 
 ### Appearance
 
@@ -17,9 +17,7 @@ description: >-
 
 ### Attribute
 
-**Info**
-
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Show Count</code></td><td>보여줄 호가 셀 만큼의 호가 뷰 높이 설정</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>정보 속성</strong></td><td></td></tr><tr><td><code>Show Count</code></td><td>보여줄 호가 셀 만큼의 호가 뷰 높이 설정</td></tr></tbody></table>
 
 ***
 
@@ -55,14 +53,14 @@ onInitDone()
 
 ### 코드로 EXHogaView 생성
 
-MainView.js 파일 내에서 아래와 같이 작성.
+onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
 onInitDone() {
     super.onInitDone();
 
+    //EXHogaView 생성
     const exHogaView = new EXHogaView();
-    exHogaView.createElement();
     exHogaView.init();
 
     // 자동 리사이즈 비활성화
@@ -75,6 +73,14 @@ onInitDone() {
     this.addComponent(exHogaView);
 }
 ```
+
+{% hint style="info" %}
+**코드로 생성시 직접 컴포넌트 모듈을 불러와야 합니다.**
+
+프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **ExHogaView**, **ExHogaGrid** 선택(이벤트 사용시 **EXHogaGridEvent**와 **EXHogaViewEvent**도 선택)
+
+![](<../../.gitbook/assets/image (72).png>)
+{% endhint %}
 
 ***
 

@@ -4,7 +4,7 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 
 # ExHogaGrid
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164531.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164531.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Appearance
 
@@ -14,9 +14,7 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 082052.png" alt=""><figcaption></figcaption></figure>
 
-**Data**
-
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Current Price</code></td><td>현재가 입력</td></tr><tr><td><code>Base Price</code></td><td>기준가 입력</td></tr><tr><td><code>Bottom Row</code></td><td>호가를 하단에 표현될 로우의 개수를 지정</td></tr><tr><td><code>Quote Count</code></td><td>호가의 단계 설정</td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Up</code></td><td>호가 상승색 설정</td></tr><tr><td><code>Down</code></td><td>호가 하락색 설정</td></tr><tr><td><code>Steady</code></td><td>호가 보합색 설정</td></tr><tr><td><strong>바 스타일</strong></td><td></td></tr><tr><td><code>Size</code></td><td>호가 잔량을 표현하는 바 크기 지정</td></tr><tr><td><code>Ask Position</code></td><td>매도 잔량바의 위치를 지정</td></tr><tr><td><code>Bid Position</code></td><td>매수 잔량바의 위치를 지정</td></tr><tr><td><code>Ask Color</code></td><td>매도 잔량바의 색을 지정</td></tr><tr><td><code>Bid Color</code></td><td>매수 잔량바의 색을 지정</td></tr><tr><td><strong>옵션</strong></td><td></td></tr><tr><td><code>Hide Header</code></td><td>헤더 숨김 여부 옵션</td></tr><tr><td><code>Single Select</code></td><td>Ctrl 키를 누르고 선택해도 하나만 선택되는 옵션</td></tr><tr><td><code>Fullrow Select</code></td><td>특정 셀을 클릭해도 그 행 전체가 선택되는 옵션</td></tr><tr><td><code>Selectable</code></td><td>선택 가능 여부 옵션 플래그</td></tr><tr><td><code>Flexable Row</code></td><td>TR의 높이를 TABLE 높이에 풀로 맞추는 옵션</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>데이터</strong> <strong>속성</strong></td><td></td></tr><tr><td><code>Current Price</code></td><td>현재가 입력</td></tr><tr><td><code>Base Price</code></td><td>기준가 입력</td></tr><tr><td><code>Bottom Row</code></td><td>호가를 하단에 표현될 로우의 개수를 지정</td></tr><tr><td><code>Quote Count</code></td><td>호가의 단계 설정</td></tr><tr><td><strong>가격 색상 속성</strong></td><td></td></tr><tr><td><code>Up</code></td><td>호가 상승색 설정</td></tr><tr><td><code>Down</code></td><td>호가 하락색 설정</td></tr><tr><td><code>Steady</code></td><td>호가 보합색 설정</td></tr><tr><td><strong>바 스타일</strong></td><td></td></tr><tr><td><code>Size</code></td><td>호가 잔량을 표현하는 바 크기 지정</td></tr><tr><td><code>Ask Position</code></td><td>매도 잔량바의 위치를 지정</td></tr><tr><td><code>Bid Position</code></td><td>매수 잔량바의 위치를 지정</td></tr><tr><td><code>Ask Color</code></td><td>매도 잔량바의 색을 지정</td></tr><tr><td><code>Bid Color</code></td><td>매수 잔량바의 색을 지정</td></tr><tr><td><strong>옵션</strong></td><td></td></tr><tr><td><code>Hide Header</code></td><td>헤더 숨김 여부 옵션</td></tr><tr><td><code>Single Select</code></td><td>Ctrl 키를 누르고 선택해도 하나만 선택되는 옵션</td></tr><tr><td><code>Fullrow Select</code></td><td>특정 셀을 클릭해도 그 행 전체가 선택되는 옵션</td></tr><tr><td><code>Selectable</code></td><td>선택 가능 여부 옵션 플래그</td></tr><tr><td><code>Flexable Row</code></td><td>TR의 높이를 TABLE 높이에 풀로 맞추는 옵션</td></tr></tbody></table>
 
 
 
@@ -148,6 +146,8 @@ this.hogagrid.setBasePrice(61100)
 
 ### 코드로 ExHogaGrid  생성
 
+onInitDone() 함수에서 아래와 같이 코드를 입력
+
 ```javascript
 onInitDone() 
 {
@@ -182,7 +182,13 @@ onRowCountChange()        //setDelegator로 이벤트를 위임받은 상태에�
 }
 ```
 
+{% hint style="info" %}
+**코드로 생성시 직접 컴포넌트 모듈을 불러와야 합니다.**
 
+프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **ExHogaGrid** 선택 (이벤트 사용시  **EXHogaGridEvent** 선택)
+
+![](<../../.gitbook/assets/image (73).png>)
+{% endhint %}
 
 ### Method
 
