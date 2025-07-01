@@ -18,7 +18,7 @@ CompareChart 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td></td></tr><tr><td><code>Divide Line</code></td><td></td></tr><tr><td><code>Up</code></td><td></td></tr><tr><td><code>Down</code></td><td> </td></tr><tr><td><code>Dot</code></td><td></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>차트 내 텍스트(레이블, 축 값, 날짜 등)에 적용되는 색상</td></tr><tr><td><code>Divide Line</code></td><td>메인 영역과 오른쪽 값 영역을 구분하는 기준선의 색상</td></tr><tr><td><code>Up</code></td><td>상승 시 표시되는 색상</td></tr><tr><td><code>Down</code></td><td>하락시 표시되는 색상</td></tr><tr><td><code>Dot</code></td><td>배경 점선(Grid Line)에 적용되는 색상</td></tr></tbody></table>
 
 ### Example
 
@@ -69,6 +69,8 @@ onInitDone() {
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 094504.png" alt=""><figcaption></figcaption></figure>
 
 * 설정한 데이터에 맞춰서 캔들 차트와 비교선의 레이아웃 생성
+
+
 
 **4. 코드로 CompareChart 생성**
 
