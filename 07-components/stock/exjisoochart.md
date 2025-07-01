@@ -30,6 +30,9 @@ description: 지수를 표현하는 차트 컴포넌트로, 주식 시장에서 
 
 **2.데이터 설정**
 
+각 배열 아이템은 다른 stock 컴포넌트와 마찬가지로 `['Date', 'Start Price', 'High Price', 'Low Price', 'End Price', 'Trade Qty', 'Trade Price']`형태의 배열로 이루어져 있으나\
+0번 Date와 4번 End Price 값을 이용해 그래프를 출력합니다.
+
 ```javascript
 onInitDone() {
     super.onInitDone();
@@ -59,13 +62,57 @@ onInitDone() {
 
 <figure><img src="../../.gitbook/assets/image (71).png" alt="" width="563"><figcaption></figcaption></figure>
 
-### 코드로 EXHogaView 생성
+### 코드로 EXJisooView 생성
 
 onInitDone() 함수에서 아래와 같이 코드를 입력
 
+```javascript
+onInitDone() 
+{
+        super.onInitDone();
+        
+        //컴포넌트 생성
+        const jisoo = new EXJisooChart();
+        jisoo.init();
+        
+        //데이터 설정
+        const baseData = [...생략...];
+        jisoo.setData(baseData);
+        
+        //이벤트 위임
+        jisoo.setDelegator(this);//EXJisooChart의 callNextData메서드는 값이 변경/추가되거나 컴포넌트의 크기변경, 스크롤위치에 따라 트리거 됩니다
+        
+        this.addComponent(jisoo)//컴포넌트 삽입
+}
 
+async callNextData(nextIqryDate)//위임받은 callNextData를 재정의합니다
+{
+        try 
+        {
+                // 예시: 서버로부터 추가 데이터를 비동기적으로 가져오는 코드
+                const response = await fetch(https://api.asoosoft.com/data?date=${nextIqryDate});
+                const newData = await response.json();
 
+                // 가져온 데이터를 차트에 추가
+                if (newData && newData.length > 0) 
+                {
+                    this.jisoo.addNewData(newData);
+                }
+        } 
+        catch (error) 
+        {
+                console.error("Error fetching additional data:", error);
+        }
+}
+```
 
+{% hint style="info" %}
+**코드로 생성시 직접 컴포넌트 모듈을 불러와야 합니다.**
+
+프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **ExJiSooChart** 선택(이벤트 사용시 **ExJiSooChartEvent** 선택)
+
+![](<../../.gitbook/assets/image (1).png>)
+{% endhint %}
 
 ### Method
 

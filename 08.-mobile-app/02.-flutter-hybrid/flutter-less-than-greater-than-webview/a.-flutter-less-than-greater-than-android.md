@@ -2,7 +2,7 @@
 
 ### 직접 네이티브 코드 작성
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 `android\app\src\main\kotlin\프로젝트_이름\MainActivity.kt`\
 위치에 MainActivty.kt에서  configureFlutterEngine 메서드를 재정의하여\
