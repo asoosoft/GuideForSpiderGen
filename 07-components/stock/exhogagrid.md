@@ -168,7 +168,7 @@ onInitDone()
         
         //이벤트 리스너 및 델리게이터 설정
         hogaGrid.addEventListener('select', this, 'onGridSelect');        //AGrid와 동일한 방식으로 select 이벤트 등록 가능
-        hogaGrid.setDelegator(this);        //hogaGrid의 이벤트를 this객체에 위임(quoteCount또는 bottomRowCount를 변경하면 onRowCountChange 이벤트가 트리거됨)
+        hogaGrid.setDelegator(this);        //hogaGrid의 메서드를 this객체에 위임(quoteCount또는 bottomRowCount를 변경하면 onRowCountChange 메서드가 호됨)
 }
 
 onGridSelect(comp, _info, _e) 
@@ -176,7 +176,7 @@ onGridSelect(comp, _info, _e)
         comp.setQuoteCount(comp.getQuoteCount()-1);        //QuoteCount 값을 변경
 }
 
-onRowCountChange()        //setDelegator로 이벤트를 위임받은 상태에서 QuoteCount이 변경됬으므로 "onRowCountChange"이 호출됨
+onRowCountChange()        //setDelegator로 메서드를 위임받은 상태에서 QuoteCount이 변경되면 "onRowCountChange"이 호출됨
 {
         console.log("QuoteCount 갯수: ", this.hogaGrid.getQuoteCount());
 }
@@ -268,7 +268,7 @@ onRowCountChange()        //setDelegator로 이벤트를 위임받은 상태에�
 
 30\. `getQuoteCount()`: 호가의 단계를 반환합니다.
 
-31\. `setDelegator(delegator)`:  이벤트 위임 객체를 지정합니다.(quoteCount, bottomRowCount 변경시  change이벤트발생)
+31\. `setDelegator(delegator)`:   메서드 위임 객체를 지정합니다.(quoteCount, bottomRowCount 변경시 onRowCountChange메서드호출됨)
 
 32\. `toggleRateMode()`: 호가 우측에 등락률을 표현하거나 제거합니다.
 

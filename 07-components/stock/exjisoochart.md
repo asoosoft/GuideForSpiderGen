@@ -79,7 +79,7 @@ onInitDone()
         const baseData = [...생략...];
         jisoo.setData(baseData);
         
-        //이벤트 위임
+        //메서드 위임
         jisoo.setDelegator(this);//EXJisooChart의 callNextData메서드는 값이 변경/추가되거나 컴포넌트의 크기변경, 스크롤위치에 따라 트리거 됩니다
         
         this.addComponent(jisoo)//컴포넌트 삽입
@@ -124,7 +124,7 @@ async callNextData(nextIqryDate)//위임받은 callNextData를 재정의합니�
 2. `resetData()` : 기존의 데이터를 제거하고 차트를 초기 상태로 되돌립니다.
 3. `setColors(colors)` :  colors 객체를 통해 텍스트, 라인, 그라데이션 등의 색상을 지정할 수 있습니다.
 4. `setData()` :  차트에 데이터를 설정하는 메서드 입니다.
-5. `setDelegator(delegator)` : 차트의 delegator를 설정하는 메서드입니다. 데이터의 끝에 도달했을 때 추가 요청 이벤트를 받을 객체를 지정합니다.
+5. `setDelegator(delegator)` : 차트의 delegator를 설정하는 메서드입니다. 데이터의 끝에 도달했을 때 추가 요청 메서드를 받을 객체를 지정합니다.
 6. `setDivisionVal(divisionVal)` : 지수 차트 데이터를 나눗셈할 값을 설정하는 메서드입니다. 차트의 데이터 스케일을 조정할 때 사용됩니다.
 7. `upDatePosition(pWidth, pHeight)` : 차트의 너비 및 높이를 업데이트하는 메서드입니다. 차트의 크기를 조정할 때 사용됩니다.
 8. `setZoomEvent()` : 줌 이벤트를 설정하는 메서드입니다. 차트의 확대 및 축소 동작을 처리합니다.
