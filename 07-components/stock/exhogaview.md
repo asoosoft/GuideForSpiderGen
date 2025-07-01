@@ -23,7 +23,7 @@ description: >-
 
 ### Example
 
-#### 1. 프로젝트 생성
+**1. 프로젝트 생성**
 
 * 프로젝트 트리뷰에서 `Source > MainView.lay` 파일을 클릭.
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 **EXHogaView** 컴포넌트를 선택하고 드래그하여 레이아웃에 배치.
@@ -31,7 +31,7 @@ description: >-
 
 ***
 
-#### 2. 보여줄 호가 갯수 설정
+**2. 보여줄 호가 갯수 설정**
 
 ```javascript
 onInitDone()
@@ -45,9 +45,33 @@ onInitDone()
 
 <figure><img src="../../.gitbook/assets/image (61).png" alt="" width="375"><figcaption></figcaption></figure>
 
-3\. 자식 AView를 활용한 ui 사용
+***
 
-<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+**3. 자식 요소를 활용한 ui 사용**
+
+> 내부 자식요소 askGrid, bidGrid, hogaGrid, rView,lView에 접근하여 활용할 수 있습니다.
+>
+> ```javascript
+> onInitDone()
+> {
+> 	super.onInitDone();
+> 	
+> 	const dataObj = {...생략...};
+> 	hogaView.hogaGrid.setData([dataObj]);
+> }
+> ```
+
+{% columns %}
+{% column %}
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+{% endcolumn %}
+
+{% column %}
+<div data-full-width="false"><figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure></div>
+
+
+{% endcolumn %}
+{% endcolumns %}
 
 ***
 

@@ -25,13 +25,13 @@ cmd 창에서 <mark style="background-color:red;">cordova 프로젝트 경로</m
 
 ### 3.1. 네이티브 전용
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( cordova 상태 )</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( cordova 상태 )</p></figcaption></figure>
 
 네이티브 전용으로 제작하려면 스파이더젠의 File > Properties에서 Native Bridge를
 
 &#x20;<mark style="color:red;background-color:red;">**cordova**</mark> 로 설정해야 합니다.
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>생성된 Bridge 폴더</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>생성된 Bridge 폴더</p></figcaption></figure>
 
 위에서 cordova로 설정을 완료했다면 위 사진처럼 Bridge 폴더와 그 하위 폴더들이 자동으로 생성되어 있습니다.
 
@@ -47,7 +47,7 @@ cmd 창에서 <mark style="background-color:red;">cordova 프로젝트 경로</m
 
 ### 3.2. 네이티브 & 웹
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( 기본 none 상태 )</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( 기본 none 상태 )</p></figcaption></figure>
 
 네이티브 & 웹 전용으로 제작하려면 스파이더젠의 File > Properties에서 Native Bridge를
 
