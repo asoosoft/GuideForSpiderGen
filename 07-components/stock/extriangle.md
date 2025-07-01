@@ -22,6 +22,16 @@ EXTriangle 속성
 
 <table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td>주식 시스템의 테마 색상을 결정</td></tr><tr><td><code>Up Color</code></td><td>상승색 설정</td></tr><tr><td><code>Down Color</code></td><td>하락색 설정</td></tr><tr><td><code>Direction</code></td><td> 화살표의 방향, 굵기 설정</td></tr></tbody></table>
 
+
+
+* Direction
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 084535.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 084611.png" alt=""><figcaption></figcaption></figure></div>
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 084618 (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 084625.png" alt=""><figcaption></figcaption></figure></div>
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 084633.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 084642.png" alt=""><figcaption></figcaption></figure></div>
+
 ### Example
 
 **1. 프로젝트 생성**
