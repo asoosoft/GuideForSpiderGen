@@ -68,7 +68,7 @@ onInitDone() {
 
 * 설정한 데이터에 맞춰서 각 가격과 거래량, 평균가, 현재가가 표시
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 132530.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-02 083213.gif" alt=""><figcaption></figcaption></figure>
 
 **4. 코드로** EXCenterPivotView **생성**
 
@@ -112,7 +112,7 @@ onInitDone() {
 }
 ```
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 131431.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-02 083607.gif" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:red;">**Build 에러 발생 시**</mark>
 
