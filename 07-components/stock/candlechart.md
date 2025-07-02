@@ -6,7 +6,9 @@
 
 **시가(Open), 고가(High), 저가(Low), 종가(Close)** 네 가지 가격 정보를 시각적으로 보여주는  역할.
 
-각 캔들 하나는 특정 시간 구간(일, 주, 월, 분, 틱)을 나타냄.
+각 캔들은 선택한 시간 단위(일, 주, 월, 분, 틱) 동안의 가격 변동을 시각적으로 제공.
+
+일봉 차트에서는 하나의 캔들이 하루 동안의 시가(Open), 고가(High), 저가(Low), 종가(Close)를 의미.
 
 ### Appearance
 
@@ -20,21 +22,81 @@ CandleChart 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Mode</code></td><td>차트 타입 선택</td></tr><tr><td><code>Intervals</code></td><td><p>설정한 데이터에 맞춰, 캔들 하나가 시간 단위(월, 주, 일, 분, 틱)별로 그룹화되어 표시</p><ul><li><code>CandleChart.INTERVALS_*</code> 값과 매칭</li></ul></td></tr><tr><td><code>Indicator</code></td><td><p>하단 보조 지표 선택 </p><ul><li><code>CandleChart.INDICATOR_*</code> 값 활용</li></ul></td></tr><tr><td><code>updateRefVal</code></td><td><p><strong>실시간 데이터 갱신 주기</strong>를 설정하는 값</p><ul><li>단위는 밀리초(ms)</li></ul><ul><li>예를 들어 <code>1000</code>을 넣으면 <strong>1초마다 데이터 갱신</strong>을 의미.</li><li><code>Intervals</code>가 <code>Minute</code>나 <code>Tick</code>일 때만 유효.</li></ul></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Mode</code></td><td>차트 타입 선택(Candle, Line)</td></tr><tr><td><code>Intervals</code></td><td><p>데이터가 집계되는 시간 단위</p><ul><li><code>CandleChart.INTERVALS_MONTH</code> — 월봉</li><li><code>CandleChart.INTERVALS_WEEK</code> — 주봉</li><li><code>CandleChart.INTERVALS_DAY</code> — 일봉</li><li><code>CandleChart.INTERVALS_MINUTE</code> — 분봉</li><li><code>CandleChart.INTERVALS_TICK</code> — 틱 차트 (거래 단위)</li></ul><p></p><ul><li>ex) candleChart.setIntervals(CandleChart.INTERVALS_DAY); // 일봉 차트</li></ul></td></tr><tr><td><code>Indicator</code></td><td><p>차트 하단에 보조 지표 표시</p><ul><li><code>CandleChart.INDICATOR_VOLUME</code> — 거래량</li><li><code>CandleChart.INDICATOR_OBV</code> — OBV</li><li><code>CandleChart.INDICATOR_MACD</code> — MACD</li><li><code>CandleChart.INDICATOR_SLOW</code> — Slow Stochastic</li><li><code>CandleChart.INDICATOR_FAST</code> — Fast Stochastic</li><li><code>CandleChart.INDICATOR_DISPARITY</code> — 이격도</li><li><code>CandleChart.INDICATOR_RSI</code> — RSI</li><li><code>CandleChart.INDICATOR_EMPTY</code> — 보조 지표 없음</li></ul><p></p><ul><li>ex) candleChart.setIndicator(CandleChart.INDICATOR_MACD); // MACD 보조지표 표시</li></ul></td></tr><tr><td><code>updateRefVal</code></td><td><p><strong>실시간 데이터 갱신 주기</strong>를 설정하는 값</p><ul><li>단위는 밀리초(ms)</li></ul><ul><li>예를 들어 <code>1000</code>을 넣으면 <strong>1초마다 데이터 갱신</strong>을 의미.</li><li><code>Intervals</code>가 <code>Minute</code>나 <code>Tick</code>일 때만 유효.</li></ul></td></tr></tbody></table>
 
 
 
-* Mode(좌측부터 Candle, Line)
+**Mode**
 
-<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144426.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144434.png" alt=""><figcaption></figcaption></figure></div>
+* Candle
 
-* Intervals(좌측부터 Month, Week, Day, Minute, Tick)
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160032.png" alt=""><figcaption></figcaption></figure>
 
-<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144735.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144741.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144747.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144753.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144759.png" alt=""><figcaption></figcaption></figure></div>
+* Line
 
-* Indicator(좌측부터 Volume, OBV, MACD, Slow, Fast, Disparity, RSI, EMPTY)
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160119.png" alt=""><figcaption></figcaption></figure>
 
-<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145224.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145233.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145242.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145249.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145255.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145305.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145312.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145323.png" alt=""><figcaption></figcaption></figure></div>
+
+
+**Intervals**
+
+* Month
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160032 (1).png" alt=""><figcaption></figcaption></figure>
+
+* Week
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160218.png" alt=""><figcaption></figcaption></figure>
+
+* Day
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160305.png" alt=""><figcaption></figcaption></figure>
+
+* Minute
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160346.png" alt=""><figcaption></figcaption></figure>
+
+* Tick
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160403.png" alt=""><figcaption></figcaption></figure>
+
+
+
+**Indicator**
+
+* Volume
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 160519.png" alt=""><figcaption></figcaption></figure>
+
+* OBV
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+* MACD
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+* Slow
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+* Fast
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+* Disparity
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+* RSI
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+* EMPTY
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+
 
 **Color**
 
@@ -78,10 +140,6 @@ onInitDone() {
     candleChart.setIntervals(CandleChart.INTERVALS_DAY);      // 일봉 기준
     candleChart.setIndicator(CandleChart.INDICATOR_VOLUME);   // 거래량 보조지표
     candleChart.setMAInfo([5, 20, 60]);                        // 이동평균선 설정
-
-    // ✅ 위치와 크기 (옵션)
-    candleChart.setPos(50, 50);
-    candleChart.setSize(800, 600);
 
     // 데이터 정의
     const data = 
@@ -129,17 +187,14 @@ onInitDone() {
 	[20140220,1290000,1296000,1281000,1286000,190866,1291400,1286550,1353216.6666666667,148964.4,225345.2,239522.15]
 ];
 
-    // 매핑 배열 (데이터 순서에 맞춰야 함)
-    const mapping = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
-    candleChart.setData(data, mapping);
+    candleChart.setData(data);
 }
 ```
 
 **3. 프로젝트 실행**
 
-* 설정한 데이터에 맞춰 시가, 고가, 저가, 종가 및 거래량 정보가 캔들차트와 거래량 보조지표로 정확하게 시각화.&#x20;
-* 사용자 인터랙션(확대/축소 및 스크롤) 기능도 정상적으로 작동.
+* 설정한 데이터에 맞춰 차트가 정상적으로 렌더링
+* 사용자 인터랙션(확대/축소 및 스크롤) 기능 정상적으로 작동 확인
 
 <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-02 143229.gif" alt=""><figcaption></figcaption></figure>
 
@@ -215,22 +270,7 @@ onInitDone() {
 	[20140220,1290000,1296000,1281000,1286000,190866,1291400,1286550,1353216.6666666667,148964.4,225345.2,239522.15]
 ];
 
-    // 매핑 배열 (데이터 순서에 맞춰야 함)
-const mapping = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
-
-
-
-    // 데이터 적용
-    console.log('data:', data);
-    console.log('data type:', typeof data);
-    console.log('first row:', data[0]);
-    console.log('first row type:', typeof data[0]);
-    console.log('first date value:', data[0][0]);
-    console.log('first date type:', typeof data[0][0]);
-
-
-    candleChart.setData(data, mapping);
+    candleChart.setData(data);
 }
 
 ```

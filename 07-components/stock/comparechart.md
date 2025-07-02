@@ -1,6 +1,6 @@
 # CompareChart
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 163703.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 150719.png" alt=""><figcaption></figcaption></figure>
 
 업비트의 REST API와 WebSocket을 활용하여 종목 데이터, 캔들, 호가 등 다양한 데이터를 실시간으로 수집 및 표시하는 프레임워크.
 
