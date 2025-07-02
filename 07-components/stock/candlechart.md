@@ -217,7 +217,7 @@ onInitDone() {
     candleChart.setMode(CandleChart.MODE_CANDLE);             // 캔들 차트
     candleChart.setIntervals(CandleChart.INTERVALS_DAY);      // 일봉 기준
     candleChart.setIndicator(CandleChart.INDICATOR_VOLUME);   // 거래량 보조지표
-    candleChart.setMAInfo([5, 20, 60]);                        // 이동평균선 설정
+    candleChart.setMAInfo([3, 4, 17]);                        // 이동평균선 설정
 
     // 화면에 추가
     this.addComponent(candleChart);
