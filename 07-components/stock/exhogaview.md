@@ -1,6 +1,6 @@
 ---
 description: >-
-  호가창을 출력하는 ExHogaGrid 컴포넌트와 추가적인 UI 요소나 기능을 포함할 수 있는 공간을 제공하는 AView, 매수, 매도호가
+  호가창을 출력하는 ExHogaGrid, 컴포넌트와 추가적인 UI 요소나 기능을 포함할 수 있는 공간을 제공하는 AView, 매수/매도호가
   잔량의 증감을 표현하는 AGrid를 포함하여 레이아웃을 관리하는 역할을 하는 컨테이너 컴포넌트
 ---
 
@@ -23,7 +23,7 @@ description: >-
 
 {% hint style="warning" %}
 일부 버전에서 `Show Count` 속성이 정상적으로 적용되지 않을 수 있으므로, \
-`setShowCount()` 함수를 사용해 직접 `Show Count` 를 설정해주는 방식을  통해 적용할 수 있습니다.
+`setShowCount()` 함수를 사용해 직접 `Show Count` 를 설정해주는 방식을 통해 적용할 수 있습니다.
 {% endhint %}
 
 ***
@@ -84,6 +84,10 @@ onInitDone()
 <figure><img src="../../.gitbook/assets/image (89).png" alt=""><figcaption><p>실제 출력화면</p></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
+
+{% hint style="info" %}
+Tip.스파이더젠 Mask 기능으로 필요한 형태로 출력 정보를 가공할 수 있습니다. [Mask 메뉴얼 보러가기](<../../Guide for SpiderGen/06  SpiderGen Editor/04  Properties Pane/01  Class.md#mask>)
+{% endhint %}
 
 ***
 

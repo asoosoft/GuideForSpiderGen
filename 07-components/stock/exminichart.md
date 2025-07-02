@@ -83,7 +83,7 @@ onInitDone()
 
 {% hint style="warning" %}
 일부 버전에서 그래프가 정상적으로 위치하지 않을 수 있으므로,\
-`updatePosition()` 함수를 사용해 직접 그래프 위치를 재계산하도록 할 수 있습니다.
+`updatePosition()` 함수를 사용해 직접 그래프 위치를 재 계산하도록 할 수 있습니다.
 {% endhint %}
 
 **3.결과 확인**
