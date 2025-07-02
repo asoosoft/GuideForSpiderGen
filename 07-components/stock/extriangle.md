@@ -51,19 +51,15 @@ EXTriangle 속성
 onInitDone() {
     super.onInitDone();
 
-    const triangle = new EXTriangle();
-    triangle.init();
-    this.addComponent(triangle);
-
-    triangle.setUpDownColor('# FF0000', '#0000FF'); // 상승 초록, 하락 핑크
+    this.triangle.setUpDownColor('#FF0000', '#0000FF');
     triangle.setData(1); // 상한
     // 🔺 모양 변경 테스트
     // triangle.setData(2); // 상승
     // triangle.setData(3); // 보합
     // triangle.setData(4); // 하한
     // triangle.setData(5); // 하락
-
-    triangle.setPos(100, 100);
+    
+    this.triangle.setPos(100, 100);
 }
 ```
 
