@@ -51,6 +51,7 @@ onInitDone()
             ];
             //setData(데이터 배열, 기준 값)
             this.mini.setData(dataArr,'400');
+            this.mini.updatePosition();
 }
 ```
 {% endcolumn %}
@@ -72,12 +73,18 @@ onInitDone()
             ];
             //setKeys(키 이름, 값 이름)
             this.mini.setKeys('time', 'value');
-            //setData(데이터 객체, 기준가
+            //setData(데이터 객체, 기준가)
             this.mini.setData(dataObj,'400');
+            this.mini.updatePosition();
 }
 ```
 {% endcolumn %}
 {% endcolumns %}
+
+{% hint style="warning" %}
+일부 버전에서 그래프가 정상적으로 위치하지 않을 수 있으므로,\
+`updatePosition()` 함수를 사용해 직접 그래프 위치를 재계산하도록 할 수 있습니다.
+{% endhint %}
 
 **3.결과 확인**
 
@@ -132,7 +139,7 @@ onInitDone()
 
 ***
 
-### Method
+## Method
 
 <details>
 
