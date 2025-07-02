@@ -4,7 +4,10 @@
 
 
 
-업비트의 REST API와 WebSocket을 활용하여 종목 데이터, 캔들, 호가 등 다양한 데이터를 실시간으로 수집 및 표시하는 프레임워크.
+**상한, 상승, 보합, 하한, 하락 상태를 시각적으로 표시하는 컴포넌트.**
+
+\
+업비트의 REST API 및 WebSocket을 활용하여 종목 데이터를 실시간으로 수집하고, 해당 상태를 그래픽으로 직관적으로 보여주는역할.
 
 ***
 
@@ -20,7 +23,7 @@ EXTriangle 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td>주식 시스템의 테마 색상을 결정</td></tr><tr><td><code>Up Color</code></td><td>상승색 설정</td></tr><tr><td><code>Down Color</code></td><td>하락색 설정</td></tr><tr><td><code>Direction</code></td><td> 화살표의 방향, 굵기 설정</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td>stock 프레임워크의 기본 색상 사용 (<code>StockColor.UP_COLOR</code>, <code>StockColor.DOWN_COLOR</code>)</td></tr><tr><td><code>Up Color</code></td><td>상승 시 색상</td></tr><tr><td><code>Down Color</code></td><td>하락 시 색상</td></tr><tr><td><code>Direction</code></td><td>화살표 방향만 설정 가능. <strong>굵기 설정은 없음</strong></td></tr></tbody></table>
 
 
 
@@ -52,20 +55,16 @@ onInitDone() {
     super.onInitDone();
 
     const triangle = new EXTriangle();
-    triangle.createElement();
-    this.addComponent(triangle);
     triangle.init();
+    this.addComponent(triangle);
 
+    triangle.setUpDownColor('# FF0000', '#0000FF'); // 상승 초록, 하락 핑크
+    triangle.setData(1); // 상한
     // 🔺 모양 변경 테스트
-    triangle.setData(7); // 큰 상승 삼각형
-    // triangle.setData(9); // 큰 하락 삼각형
-    // triangle.setData(6); // 대각 상승
-    // triangle.setData(8); // 대각 하락
-    // triangle.setData(4); // 작은 하락
-    // triangle.setData(1); // 작은 상승
-
-    triangle.setUpDownColor('#00FF00', '#FF00FF'); // 상승 초록, 하락 핑크
-    triangle.option.useStockColor = false;
+    // triangle.setData(2); // 상승
+    // triangle.setData(3); // 보합
+    // triangle.setData(4); // 하한
+    // triangle.setData(5); // 하락
 
     triangle.setPos(100, 100);
 }
@@ -73,9 +72,15 @@ onInitDone() {
 
 **3. 프로젝트 실행**
 
-* 설정한 데이터에 맞춰서 상승, 하향 화살표가 표시
+* 설정한 데이터에 맞춰서 **상한, 상승, 보합, 하한, 하락 상태**가 화면에 표시.
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 104023.png" alt=""><figcaption></figcaption></figure>
+
+
+* 왼쪽부터 상한-상승-보합-하한-하락
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094257.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094341.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094712.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094757.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094830.png" alt=""><figcaption></figcaption></figure></div>
+
+
 
 **4. 코드로** EXTriangle **생성**
 
@@ -87,22 +92,25 @@ onInitDone() {
     super.onInitDone();
 
     const exTriangle = new EXTriangle();
-    exTriangle.createElement();
     exTriangle.init();
 
     // 색상 설정
     exTriangle.setUpDownColor('#ff0000', '#0000ff');
-
-    // 시스템 컬러 사용할지 여부는 data-use-stockcolor 속성
-    exTriangle.setAttr('data-use-stockcolor', false);
-
     // 방향 설정
-    exTriangle.setDirection(2); // 상승
+    exTriangle.setData(1); // 상한
+    // exTriangle.setData(2); // 상승
+    // exTriangle.setData(3); // 보합
+    // exTriangle.setData(4); // 하한
+    // exTriangle.setData(5); // 하락
 
     this.addComponent(exTriangle);
     exTriangle.setPos(100, 100);
 }
-
 ```
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 103519.png" alt=""><figcaption></figcaption></figure>
+
+
+* 왼쪽부터 상한-상승-보합-하한-하락
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094257 (2).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094341 (2).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094712 (2).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094757 (2).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 094830 (2).png" alt=""><figcaption></figcaption></figure></div>
+
