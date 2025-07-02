@@ -16,13 +16,25 @@
 
 CandleChart 속성
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 112736.png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144258.png" alt=""><figcaption></figcaption></figure>
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Mode</code></td><td>차트 타입 선택</td></tr><tr><td><code>Intervals</code></td><td><p>데이터의 시간 간격 선택</p><p> <code>CandleChart.INTERVALS_*</code> 값과 매칭</p></td></tr><tr><td><code>Indicator</code></td><td><p>하단 보조 지표 선택 </p><p><code>CandleChart.INDICATOR_*</code> 값 활용</p></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Mode</code></td><td>차트 타입 선택</td></tr><tr><td><code>Intervals</code></td><td><p>설정한 데이터에 맞춰, 캔들 하나가 시간 단위(월, 주, 일, 분, 틱)별로 그룹화되어 표시</p><ul><li><code>CandleChart.INTERVALS_*</code> 값과 매칭</li></ul></td></tr><tr><td><code>Indicator</code></td><td><p>하단 보조 지표 선택 </p><ul><li><code>CandleChart.INDICATOR_*</code> 값 활용</li></ul></td></tr><tr><td><code>updateRefVal</code></td><td><p><strong>실시간 데이터 갱신 주기</strong>를 설정하는 값</p><ul><li>단위는 밀리초(ms)</li></ul><ul><li>예를 들어 <code>1000</code>을 넣으면 <strong>1초마다 데이터 갱신</strong>을 의미.</li><li><code>Intervals</code>가 <code>Minute</code>나 <code>Tick</code>일 때만 유효.</li></ul></td></tr></tbody></table>
+
+
+
+* Mode(좌측부터 Candle, Line)
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144426.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144434.png" alt=""><figcaption></figcaption></figure></div>
+
+* Intervals(좌측부터 Month, Week, Day, Minute, Tick)
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144735.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144741.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144747.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144753.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 144759.png" alt=""><figcaption></figcaption></figure></div>
+
+* Indicator(좌측부터 Volume, OBV, MACD, Slow, Fast, Disparity, RSI, EMPTY)
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145224.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145233.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145242.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145249.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145255.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145305.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145312.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 145323.png" alt=""><figcaption></figcaption></figure></div>
 
 **Color**
 
