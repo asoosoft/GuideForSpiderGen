@@ -2,8 +2,6 @@
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 100558.png" alt=""><figcaption></figcaption></figure>
 
-업비트의 REST API와 WebSocket을 활용하여 종목 데이터, 캔들, 호가 등 다양한 데이터를 실시간으로 수집 및 표시하는 프레임워크.
-
 상한, 상승, 보합, 하한, 하락을 표시하는 컴포넌트
 
 ***
@@ -20,7 +18,7 @@ EXTriangle 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td>stock 프레임워크의 기본 색상 사용 (<code>StockColor.UP_COLOR</code>, <code>StockColor.DOWN_COLOR</code>)</td></tr><tr><td><code>Up Color</code></td><td>상승 시 색상</td></tr><tr><td><code>Down Color</code></td><td>하락 시 색상</td></tr><tr><td><code>Direction</code></td><td>화살표 방향만 설정 가능. <strong>굵기 설정은 없음</strong></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>색상 속성</strong></td><td></td></tr><tr><td><code>Use StockColor</code></td><td>stock 프레임워크의 기본 색상 사용 (<code>StockColor.UP_COLOR</code>, <code>StockColor.DOWN_COLOR</code>)</td></tr><tr><td><code>Up Color</code></td><td>상승 시 색상</td></tr><tr><td><code>Down Color</code></td><td>하락 시 색상</td></tr><tr><td><code>Direction</code></td><td>화살표 방향만 설정 가능</td></tr></tbody></table>
 
 
 
