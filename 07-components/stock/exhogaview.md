@@ -70,8 +70,8 @@ onInitDone()
 	
 	const dataObj = {...생략...};
 	hogaView.hogaGrid.setData([dataObj]);	//hogaGrid의 setData호출
-    hogaView.askGrid.setData([[0,12,0,46,0,0,0,0,0,0]]);	//askGrid의 setData호출
-    hogaView.bidGrid.setData([[0,12,0,46,0,0,0,0,0,0]]);	//bidGrid의 setData호출
+        hogaView.askGrid.setData([[0,12,0,46,0,0,0,0,0,0]]);	//askGrid의 setData호출
+        hogaView.bidGrid.setData([[0,12,0,46,0,0,0,0,0,0]]);	//bidGrid의 setData호출
 }
 ```
 
