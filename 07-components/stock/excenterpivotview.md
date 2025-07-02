@@ -37,14 +37,10 @@ Example
 onInitDone() {
     super.onInitDone();
 
-    // 👉 pivotView는 레이아웃에 배치되어 있는 컴포넌트 기준
-
-    // 🔸 헤더 추가 (addRow는 데이터 행만 추가하므로 수동으로 셋팅)
     this.pivotView.leftGrid.addRow(['왼쪽1', '왼쪽2', '왼쪽3']);
     this.pivotView.pivotGrid.addRow(['중심']);
     this.pivotView.rightGrid.addRow(['오른쪽1', '오른쪽2', '오른쪽3']);
 
-    // 🔸 본문 데이터 추가
     this.pivotView.addRow(['L100', 'L200', 'L300'], ['Center-1'], ['R100', 'R200', 'R300']);
     this.pivotView.addRow(['L101', 'L201', 'L301'], ['Center-2'], ['R101', 'R201', 'R301']);
     this.pivotView.addRow(['L102', 'L202', 'L302'], ['Center-3'], ['R102', 'R202', 'R302']);
@@ -52,7 +48,6 @@ onInitDone() {
     this.pivotView.addRow(['L104', 'L204', 'L304'], ['Center-5'], ['R104', 'R204', 'R304']);
     this.pivotView.addRow(['L105', 'L205', 'L305'], ['Center-6'], ['R105', 'R205', 'R305']);
 
-    // 🔸 스크롤 초기화 (왼쪽 기준 정렬)
     this.pivotView.scrollViewLeft();
 }
 
@@ -65,15 +60,11 @@ onInitDone() {
 ```
 onInitDone() {
 super.onInitDone();
-
-    // 👉 pivotView는 레이아웃에 배치된 컴포넌트 기준
     
-    // 🔸 헤더 추가 (헤더는 일반 행과 동일하게 넣어야 함)
     this.pivotView.leftGrid.prependRow(['왼쪽1', '왼쪽2', '왼쪽3']);
     this.pivotView.pivotGrid.prependRow(['중심']);
     this.pivotView.rightGrid.prependRow(['오른쪽1', '오른쪽2', '오른쪽3']);
     
-    // 🔸 데이터 앞쪽부터 추가 (prependRow)
     this.pivotView.prependRow(['L105', 'L205', 'L305'], ['Center-6'], ['R105', 'R205', 'R305']);
     this.pivotView.prependRow(['L104', 'L204', 'L304'], ['Center-5'], ['R104', 'R204', 'R304']);
     this.pivotView.prependRow(['L103', 'L203', 'L303'], ['Center-4'], ['R103', 'R203', 'R303']);
@@ -81,7 +72,6 @@ super.onInitDone();
     this.pivotView.prependRow(['L101', 'L201', 'L301'], ['Center-2'], ['R101', 'R201', 'R301']);
     this.pivotView.prependRow(['L100', 'L200', 'L300'], ['Center-1'], ['R100', 'R200', 'R300']);
     
-    // 🔸 스크롤 초기화 (왼쪽 기준 정렬)
     this.pivotView.scrollViewLeft();
 
 }
@@ -115,7 +105,6 @@ onInitDone() {
     this.addComponent(pivot);
     pivot.init();
 
-    // 👉 데이터 추가 (addRow 사용)
     pivot.addRow(['L100', 'L200', 'L300'], ['Center1'], ['R100', 'R200', 'R300']);
     pivot.addRow(['L101', 'L201', 'L301'], ['Center2'], ['R101', 'R201', 'R301']);
     pivot.addRow(['L102', 'L202', 'L302'], ['Center3'], ['R102', 'R202', 'R302']);
@@ -123,7 +112,6 @@ onInitDone() {
     pivot.addRow(['L104', 'L204', 'L304'], ['Center5'], ['R104', 'R204', 'R304']);
     pivot.addRow(['L105', 'L205', 'L305'], ['Center6'], ['R105', 'R205', 'R305']);
 
-    // 👉 위치 및 스크롤
     pivot.setPos(100, 100);
     pivot.scrollViewLeft();
 
@@ -146,7 +134,6 @@ onInitDone() {
     this.addComponent(pivot);
     pivot.init();
     
-    // 👉 데이터 앞쪽부터 추가 (prependRow)
     pivot.prependRow(['L105', 'L205', 'L305'], ['Center6'], ['R105', 'R205', 'R305']);
     pivot.prependRow(['L104', 'L204', 'L304'], ['Center5'], ['R104', 'R204', 'R304']);
     pivot.prependRow(['L103', 'L203', 'L303'], ['Center4'], ['R103', 'R203', 'R303']);
@@ -154,7 +141,6 @@ onInitDone() {
     pivot.prependRow(['L101', 'L201', 'L301'], ['Center2'], ['R101', 'R201', 'R301']);
     pivot.prependRow(['L100', 'L200', 'L300'], ['Center1'], ['R100', 'R200', 'R300']);
     
-    // 👉 위치 및 스크롤
     pivot.setPos(100, 100);
     pivot.scrollViewLeft();
     
