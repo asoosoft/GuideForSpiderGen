@@ -33,7 +33,7 @@ description: 지수를 표현하는 차트 컴포넌트로, 주식 시장에서 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
-> setData 함수를 통해 설정할 배열의 아이템 구조는 다른 stock 컴포넌트와 마찬가지로 `['Date', 'Start Price', 'High Price', 'Low Price', 'End Price', 'Trade Qty', 'Trade Price']`형태로 이루어져 있으나 실제로는0번 Date와 4번 End Price 값을 이용해 그래프를 출력합니다.
+> setData 함수를 통해 설정할 배열의 아이템 구조는  `[날짜, 시가, 고가, 저가, 종가, 거래량, 거래대금]`형태로 이루어져 있고 `날짜, 종가` 값을 이용해 그래프를 출력하며 longtab시 `시가, 고가, 저가, 종가`를  이용해 롱탭 모달을 출력합니다.
 
 ```javascript
 onInitDone() {
@@ -83,7 +83,7 @@ onInitDone()
         jisoo.setData(baseData);
         
         //메서드 위임
-        jisoo.setDelegator(this);//EXJisooChart의 callNextData메서드는 값이 변경/추가되거나 컴포넌트의 크기변경, 스크롤위치에 따라 트리거 됩니다
+        jisoo.setDelegator(this);//EXJisooChart의 callNextData는 화면에서 세팅된 데이터의 끝까지 확인한 경우에 다음 데이터 추가를 위해 호출됩니다
         
         this.addComponent(jisoo)//컴포넌트 삽입
 }
@@ -93,7 +93,7 @@ async callNextData(nextIqryDate)//위임받은 callNextData를 재정의합니�
         try 
         {
                 // 예시: 서버로부터 추가 데이터를 비동기적으로 가져오는 코드
-                const response = await fetch(https://api.asoosoft.com/data?date=${nextIqryDate});
+                const response = await fetch(`https://api.asoosoft.com/data?date=${nextIqryDate`});
                 const newData = await response.json();
 
                 // 가져온 데이터를 차트에 추가
@@ -112,9 +112,9 @@ async callNextData(nextIqryDate)//위임받은 callNextData를 재정의합니�
 {% hint style="info" %}
 **코드로 생성시 직접 컴포넌트 모듈을 불러와야 합니다.**
 
-프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **ExJiSooChart** 선택(이벤트 사용시 **ExJiSooChartEvent** 선택)
+프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **EXJiSooChart** 선택(이벤트 사용시 **EXJiSooChartEvent** 선택)
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 {% endhint %}
 
 ***

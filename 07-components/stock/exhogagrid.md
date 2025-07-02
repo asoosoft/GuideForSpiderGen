@@ -21,7 +21,7 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 ### Example
 
 > ExHogaGrid는 AGrid를 확장하여 호가창에 적합한 형태의 그리드를 생성하므로\
-> AGrid와 같은메서드를 활용할 수 있습니다.
+> AGrid와 같은 메서드를 활용할 수 있습니다.
 
 
 
@@ -46,29 +46,29 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 onInitDone()
 {
 	super.onInitDone()
-        this.hogagrid.setData([[
-            461679, 62000, null,      // 매도 잔량, 호가 시작
-            197778, 61900, 
-            108156, 61800, 
-            112935, 61700, 
-            113625, 61600, 
-            333086, 61500, 
-            286942, 61400, 
-            210827, 61300, 
-            253941, 61200, 
-            243625, 61100, 
-            null, 61000, 26216,       // 매수 호가, 잔량 시작
-            60900, 191373,
-            60800, 48972,
-            60700, 72411,
-            60600, 101422,
-            60500, 108568,
-            60400, 146241,
-            60300, 277847,
-            60200, 230109,
-            60100, 205014,
-            2322594, null, 1408173     // 총 매도 잔량, 중앙값, 총 매수 잔량
-        ]])
+    this.hogagrid.setData([[
+        461679, 62000, null,      // 매도 잔량, 호가 시작
+        197778, 61900, 
+        108156, 61800, 
+        112935, 61700, 
+        113625, 61600, 
+        333086, 61500, 
+        286942, 61400, 
+        210827, 61300, 
+        253941, 61200, 
+        243625, 61100, 
+        null, 61000, 26216,       // 매수 호가, 잔량 시작
+        60900, 191373,
+        60800, 48972,
+        60700, 72411,
+        60600, 101422,
+        60500, 108568,
+        60400, 146241,
+        60300, 277847,
+        60200, 230109,
+        60100, 205014,
+        2322594, null, 1408173     // 총 매도 잔량, 중앙값, 총 매수 잔량
+    ]])
 }
 ```
 {% endcolumn %}
@@ -116,7 +116,7 @@ onInitDone()
 {% column %}
 
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>실제 출력 화면</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>실제 출력 화면</p></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
@@ -135,7 +135,7 @@ this.hogagrid.setBasePrice(60400)
 현재가로 지정한 가격에 일치하는 가격이 있다면 셀이 하이라이트 됩니다.
 
 ```javascript
-this.hogagrid.setBasePrice(61100)
+this.hogagrid.setCurrentPrice(61100)
 ```
 
 <figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
@@ -184,7 +184,7 @@ onRowCountChange()        //setDelegator로 메서드를 위임받은 상태에�
 {% hint style="info" %}
 **코드로 생성시 직접 컴포넌트 모듈을 불러와야 합니다.**
 
-프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **ExHogaGrid** 선택 (이벤트 사용시  **EXHogaGridEvent** 선택)
+프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **EXHogaGrid** 선택 (이벤트 사용시  **EXHogaGridEvent** 선택)
 
 ![](<../../.gitbook/assets/image (73).png>)
 {% endhint %}

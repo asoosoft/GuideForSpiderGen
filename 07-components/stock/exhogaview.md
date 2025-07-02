@@ -42,7 +42,7 @@ onInitDone()
 	super.onInitDone()
 	
 	hogaView.setShowCount(8);	//보여줄 호가 셀 갯수
-    	hogaView.scrollToQuoteCenter();	//스크롤 중앙 정렬
+	hogaView.scrollToQuoteCenter();	//스크롤 중앙 정렬
 }
 ```
 
@@ -106,7 +106,7 @@ onInitDone() {
 {% hint style="info" %}
 **코드로 생성시 직접 컴포넌트 모듈을 불러와야 합니다.**
 
-프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **ExHogaView**, **ExHogaGrid** 선택(이벤트 사용시 **EXHogaGridEvent**와 **EXHogaViewEvent**도 선택)
+프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **EXHogaView**, **EXHogaGrid** 선택(이벤트 사용시 **EXHogaGridEvent**와 **EXHogaViewEvent**도 선택)
 
 ![](<../../.gitbook/assets/image (72).png>)
 {% endhint %}
