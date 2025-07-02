@@ -57,7 +57,7 @@ onInitDone() {
 
 * prependRow 예제
 
-```
+```javascript
 onInitDone() {
 super.onInitDone();
     
@@ -95,7 +95,7 @@ super.onInitDone();
 
 * addRow 예제
 
-```
+```javascript
 onInitDone() {
     super.onInitDone();
 
@@ -124,7 +124,7 @@ onInitDone() {
 
 * prependRow 예제
 
-```
+```javascript
 onInitDone() {
     super.onInitDone();
     
