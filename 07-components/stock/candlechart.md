@@ -196,9 +196,7 @@ onInitDone() {
 * 설정한 데이터에 맞춰 차트가 정상적으로 렌더링
 * 사용자 인터랙션(확대/축소 및 스크롤) 기능 정상적으로 작동 확인
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-02 143229.gif" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-02 162357.gif" alt=""><figcaption></figcaption></figure>
 
 **4. 코드로** CandleChart **생성**
 
@@ -275,7 +273,7 @@ onInitDone() {
 
 ```
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-02 141845.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-02 162525.gif" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:red;">**Build 에러 발생 시**</mark>
 
