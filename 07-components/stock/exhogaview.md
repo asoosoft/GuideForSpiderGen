@@ -1,7 +1,7 @@
 ---
 description: >-
-  호가창을 출력하는 ExHogaGrid 컴포넌트와 추가적인 UI 요소나 기능을 포함할 수 있는 공간을 제공하는 AView를 포함하여 레이아웃을
-  관리하는 역할을 하는 컨테이너 컴포넌트
+  호가창을 출력하는 ExHogaGrid 컴포넌트와 추가적인 UI 요소나 기능을 포함할 수 있는 공간을 제공하는 AView, 매수, 매도호가
+  잔량의 증감을 표현하는 AGrid를 포함하여 레이아웃을 관리하는 역할을 하는 컨테이너 컴포넌트
 ---
 
 # EXHogaView
@@ -9,7 +9,7 @@ description: >-
 > 이 컴포넌트가 담고 있는\
 > [ExHogaGrid 예제 보러가기](exhogagrid.md)
 
-<figure><img src="../../.gitbook/assets/image (62).png" alt="" width="516"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (79).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Appearance
 
@@ -17,7 +17,9 @@ description: >-
 
 ### Attribute
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>정보 속성</strong></td><td></td></tr><tr><td><code>Show Count</code></td><td>보여줄 호가 셀 만큼의 호가 뷰 높이 설정</td></tr></tbody></table>
+<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>info 속성</strong></td><td></td></tr><tr><td><code>Auto Resize Children</code></td><td>EXHogaView의 크기가 줄어들 때 자식 크기를 EXHogaView에 맞게 조정하도록 하는 설정</td></tr><tr><td><code>Show Count</code></td><td>보여줄 호가 셀 만큼의 호가 뷰 높이 설정</td></tr></tbody></table>
 
 ***
 
@@ -53,7 +55,7 @@ onInitDone()
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
-> hogaView에 생성된 자식요소 askGrid, bidGrid, hogaGrid, rView, lView에 접근하여\
+> hogaView에 생성된 자식요소 askGrid, bidGrid, hogaGrid, rView, lView를 속성으로 접근하여\
 > 활용할 수 있습니다.
 
 ```javascript
@@ -62,19 +64,19 @@ onInitDone()
 	super.onInitDone();
 	
 	const dataObj = {...생략...};
-	hogaView.hogaGrid.setData([dataObj]);
+	hogaView.hogaGrid.setData([dataObj]);	//hogaGrid의 setData호출
+        hogaView.askGrid.setData([[0,12,0,46,0,0,0,0,0,0]]);	//askGrid의 setData호출
+        hogaView.bidGrid.setData([[0,12,0,46,0,0,0,0,0,0]]);	//bidGrid의 setData호출
 }
 ```
 
 {% columns %}
 {% column %}
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 {% endcolumn %}
 
 {% column %}
-<div data-full-width="false"><figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure></div>
-
-
+<figure><img src="../../.gitbook/assets/image (89).png" alt=""><figcaption><p>실제 출력화면</p></figcaption></figure>
 {% endcolumn %}
 {% endcolumns %}
 
@@ -93,7 +95,7 @@ onInitDone() {
     exHogaView.init();
 
     // 자동 리사이즈 비활성화
-    exHogaView.setAutoResizeChildren(false);
+    //exHogaView.setAutoResizeChildren(false);
 
     // 위치 및 크기 설정
     exHogaView.setPos(50, 50);
@@ -117,7 +119,7 @@ onInitDone() {
 
 <details>
 
-<summary>주요메서드</summary>
+<summary>주요 메서드</summary>
 
 1. `updatePosition(pWidth, pHeight)` : 사이즈가 변경될 때 호출되는 함수로, 부모 뷰의 넓이와 높이를 인자로 받아 뷰 컴포넌트의 위치나 사이즈를 갱신합니다
 2. `setShowCount(cnt)` : 현재 뷰에서 보여줄 호가의 개수를 지정합니다.

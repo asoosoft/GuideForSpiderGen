@@ -12,9 +12,11 @@ description: 지수를 표현하는 차트 컴포넌트로, 주식 시장에서 
 
 ### Attribute
 
+<figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+
 <table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>data 속성</strong></td><td></td></tr><tr><td><code>Title</code></td><td>차트 중앙 상단에 출력될 제목</td></tr></tbody></table>
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>color 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>X, Y 축 눈금 라벨의 색상</td></tr><tr><td><code>Line</code></td><td>그래프의 외곽선 색상</td></tr><tr><td><code>Divide LIne</code></td><td>Y축과 그래프간 경계선 색상</td></tr><tr><td><code>LongTab Line</code></td><td>롱탭시 출력되는 크로스헤어선 색상</td></tr><tr><td><code>Start</code></td><td>그래프 그라데이션 색상 위쪽 색상</td></tr><tr><td><code>End</code></td><td>그래프 그라데이션 색상 아래 색상</td></tr><tr><td><code>Dot</code></td><td> 그래프 그리드 점선 격자 색상</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>color 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>X, Y 축 눈금 라벨의 색상</td></tr><tr><td><code>Line</code></td><td>그래프의 외곽선 색상</td></tr><tr><td><code>Divide LIne</code></td><td>Y축과 그래프간 경계선 색상</td></tr><tr><td><code>LongTab Line</code></td><td>롱탭시 출력되는 크로스헤어선 색상</td></tr><tr><td><code>Start</code></td><td>그래프 그라데이션 색상 위쪽 색상</td></tr><tr><td><code>End</code></td><td>그래프 그라데이션 색상 아래쪽 색상</td></tr><tr><td><code>Dot</code></td><td> 그래프 그리드 점선 격자 색상</td></tr></tbody></table>
 
 ***
 

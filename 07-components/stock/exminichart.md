@@ -12,6 +12,8 @@ description: 시간과 현재가 데이터를 라인 차트로 시각화하여 �
 
 ### Attribute
 
+<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+
 <table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>color 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>현재가 데이터 라벨 색상</td></tr><tr><td><code>Left Text</code></td><td>가격을 나타내는 Y축 눈금 라벨 색상</td></tr><tr><td><code>Time Text</code></td><td>시간을 나타내는 X축 눈금 라벨 및 시간 단위 색상</td></tr><tr><td><code>Base Text</code></td><td>기준가 눈금 라벨 색상</td></tr><tr><td><code>Base Line</code></td><td>기준가 눈금 기준선 색상</td></tr><tr><td><code>Up</code></td><td>기준가 보다 위쪽에 위치하는 그래프의 색상</td></tr><tr><td><code>Down</code></td><td>기준가 보다 아래쪽에 위치하는 그래프의 색상</td></tr><tr><td><code>Cont Back</code></td><td>그래프 컨테이너 배경 색상</td></tr><tr><td><code>Cont Border</code></td><td>그래프 컨테이너 테두리 색상</td></tr><tr><td><code>Divide Line</code></td><td>최대/최소 눈금 경계선 색상</td></tr></tbody></table>
 
 ***
@@ -92,6 +94,11 @@ onInitDone()
     onInitDone() {
         super.onInitDone();
 
+        //EXMiniChart 생성 및 초기화
+        const mini = new EXMiniChart();
+        mini.init();
+        
+        //데이터 설정
         const dataObj = [ 
             { time:"1050",value: 300},
             { time:"1045",value: 290},
@@ -99,16 +106,13 @@ onInitDone()
             { time:"1035",value: 500},
             { time:"1030",value: 460},
         ];
-
-        //EXMiniChart 생성 및 초기화
-        const mini = new EXMiniChart();
-        mini.init();
-        //데이터 설정
         mini.setKeys('time', 'value');
         mini.setData(dataObj ,'400');
+        
         //모드 설정 변경
-        mini.setMode("line");    //line 모드는 Y축 눈금을 제거하고 그래프만 출력합니다.
+        mini.setMode("line");    //line 모드는 라벨을 제거하고 그래프만 출력합니다.
         mini.setColorMode('white');    // 컴포넌트 테마를 white로 변경합니다.
+        
         //추가될 컴포넌트 위치 설정
         this.addComponent(mini);
 }
@@ -138,7 +142,7 @@ onInitDone()
 2. `setKeys(dateKey, valueKey)` : 객체 형태의 데이터를 사용할 때, 값을 참조할 키를 설정합니다.
 3. `setColors(colors, isDraw)` :  차트의 색상을 설정합니다. colors는 색상 정보 객체이며, isDraw는 설정한 색상을 즉시 적용할지 여부를 결정합니다.
 4. `draw()` :  차트를 그립니다. 필요한 경우 차트를 다시 그리도록 호출합니다.
-5. `updatePosition(pWidth, pHeight)` : 차트의 너비와 높이를 업데이트합니다. 이는 차트의 레이아웃이 변경될 때 호출하여 차트의 크기를 조정합니다.
+5. `updatePosition(pWidth, pHeight)` : 차트의 너비와 높이를 업데이트합니다.  차트의 레이아웃이 변경될 때 호출하여 차트의 크기를 조정합니다.
 6. `setMaxCount(maxCount)` : 차트에 표시할 데이터의 최대 개수를 설정합니다. 너무 많은 데이터가 출력되어 제한하고 싶은 경우 사용합니다.
 7. `setColorMode(colorMode)` : 차트의 색상 모드를 변경합니다. 예를 들어, 'white' 또는 'black' 모드로 설정할 수 있습니다.
 8. `addNewData(newData)` : 차트에 새로운 데이터를 추가합니다. newData는 시간과 값의 배열입니다.
