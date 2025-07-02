@@ -19,7 +19,7 @@ description: >-
 
 <figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>info 속성</strong></td><td></td></tr><tr><td><code>Auto Resize Children</code></td><td>EXHogaView의 크기가 줄어들 때 자식 크기를 EXHogaView에 맞게 조정하도록 하는 설정</td></tr><tr><td><code>Show Count</code></td><td>보여줄 호가 셀 만큼의 호가 뷰 높이 설정</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>info 속성</strong></td><td></td></tr><tr><td><code>Auto Resize Children</code></td><td>EXHogaView의 크기가 줄어들 때 자식 컴포넌트의위치, 크기를 조정하도록 하는 설정</td></tr><tr><td><code>Show Count</code></td><td>보여줄 호가 셀 만큼의 호가 뷰 높이 설정</td></tr></tbody></table>
 
 {% hint style="warning" %}
 일부 버전에서 `Show Count` 속성이 정상적으로 적용되지 않을 수 있으므로, \
