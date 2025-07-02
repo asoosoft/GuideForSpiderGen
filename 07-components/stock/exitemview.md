@@ -62,50 +62,39 @@ init(context, evtListener)
 
 <figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
-*
+* 배치한 EXItemView 의 레이아웃을 위 사진과 같이 일부 변형해서 사용
+* 위 데이터 예제와 같이 설정한 데이터에 맞춰 ALabel 컴포넌트의 아이디를 각각 name, code로 변경
+
+
+
+```javascript
+
+onOpenDrop(comp, info, e)
+{
+    // EXItemView의 openDrop 함수를 dropBtn 아이디를 가진 AButton 컴포넌트의 클릭이벤트에 설정
+    // => openDrop(itemArr)
+    this.itemView.openDrop(this.Data);
+}
+
+// EXItemView의 Change 이벤트 지정
+onItemViewChange(comp, info, e)
+{
+    // 위 openDrop으로 연 데이터 리스트에서 아이템을 선택할 시 실행할 명령 작성
+    // 아래와 같이 아이템 선택 시 각 ALabel 컴포넌트에 선택한 데이터의 코드와 이름이 들어가게함
+    this.code.setText(info[0]);
+    this.name.setText(info[1]);
+}
+```
 
 
 
 **3. 프로젝트 실행**
 
-* 설정한 데이터에 맞춰서 상승인지 하락인지에 따라 봉 생성
+* 드롭버튼을 클릭해 실행결과 확인
 
-<div data-full-width="false"><figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption><p>ex) [1000, 2000, 900, 1400]</p></figcaption></figure> <figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption><p>ex) [1500, 2000, 700, 900]</p></figcaption></figure></div>
+<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption><p>&#x3C;drop버튼 클릭 시></p></figcaption></figure>
 
-**5. 코드로 EXBong 생성**
 
-* 먼저 MainView.js 파일을 오픈
-* onInitDone() 함수에서 아래와 같이 코드를 입력
 
-```javascript
-onInitDone()
-{
-	super.onInitDone()
-	
-	// EXBong 인스턴스 생성
-        const exBong = new EXBong();
+<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption><p>&#x3C;아이템 선택 시></p></figcaption></figure>
 
-        // 컴포넌트 초기화
-        exBong.init();
-
-        // 상승 색상 설정
-        exBong.setUpColor("#ff0000"); // 예: 빨간색
-
-        // 하락 색상 설정
-        exBong.setDownColor("#0000ff"); // 예: 파란색
-
-        // 방향 설정 (세로 방향)
-        exBong.setDirection(true);
-
-        // 시가, 고가, 저가, 종가 데이터 설정
-        let valueArr = [55, 100, 0, 25];
-        let prdyvrss = 5; // 전일대비 등락구분값 예시
-        exBong.setData(valueArr, prdyvrss);
-
-        // 생성된 EXBong 컴포넌트를 원하는 위치에 추가
-        this.addComponent(exBong); // 레이아웃에 EXBong 추가
-	exBong.setPos(100,100); // 원하는 위치에 배치
-}
-```
-
-<div><figure><img src="../../.gitbook/assets/image (56).png" alt=""><figcaption><p>[55, 100, 0, 25]</p></figcaption></figure> <figure><img src="../../.gitbook/assets/image (57).png" alt=""><figcaption><p>[55, 100, 0, 75]</p></figcaption></figure></div>
