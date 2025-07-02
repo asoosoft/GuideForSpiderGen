@@ -45,30 +45,30 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 ```javascript
 onInitDone()
 {
-	super.onInitDone()
-        this.hogagrid.setData([[
-            461679, 62000, null,      // 매도 잔량, 호가 시작
-            197778, 61900, 
-            108156, 61800, 
-            112935, 61700, 
-            113625, 61600, 
-            333086, 61500, 
-            286942, 61400, 
-            210827, 61300, 
-            253941, 61200, 
-            243625, 61100, 
-            null, 61000, 26216,       // 매수 호가, 잔량 시작
-            60900, 191373,
-            60800, 48972,
-            60700, 72411,
-            60600, 101422,
-            60500, 108568,
-            60400, 146241,
-            60300, 277847,
-            60200, 230109,
-            60100, 205014,
-            2322594, null, 1408173     // 총 매도 잔량, 중앙값, 총 매수 잔량
-        ]])
+    super.onInitDone()
+    this.hogagrid.setData([[
+        461679, 62000, null, // 매도 잔량, 호가 시작
+        197778, 61900, 
+        108156, 61800, 
+        112935, 61700, 
+        113625, 61600, 
+        333086, 61500, 
+        286942, 61400, 
+        210827, 61300, 
+        253941, 61200, 
+        243625, 61100, 
+        null, 61000, 26216, // 매수 호가, 잔량 시작
+        60900, 191373,
+        60800, 48972,
+        60700, 72411,
+        60600, 101422,
+        60500, 108568,
+        60400, 146241,
+        60300, 277847,
+        60200, 230109,
+        60100, 205014,
+        2322594, null, 1408173 // 총 매도 잔량, 중앙값, 총 매수 잔량
+    ]])
 }
 ```
 {% endcolumn %}
@@ -79,30 +79,30 @@ onInitDone()
 ```javascript
 onInitDone()
 {
-        super.onInitDone()
-        this.hogagrid.setData([{
-            ask_price9: 461679, ask_remain9: 62000, null_0: null,            // 매도 잔량, 호가시작
-            ask_price8: 197778, ask_remain8: 61900,
-            ask_price7: 108156, ask_remain7: 61800,
-            ask_price6: 112935, ask_remain6: 61700,
-            ask_price5: 113625, ask_remain5: 61600,
-            ask_price4: 333086, ask_remain4: 61500,
-            ask_price3: 286942, ask_remain3: 61400,
-            ask_price2: 210827, ask_remain2: 61300,
-            ask_price1: 253941, ask_remain1: 61200,
-            ask_price0: 243625, ask_remain0: 61100,
-            null_1:null, bid_price0: 61000, bid_remain0: 26216,        // 매수 호가, 잔량 시작
-            bid_price1: 60900, bid_remain1: 191373,
-            bid_price2: 60800, bid_remain2: 48972,
-            bid_price3: 60700, bid_remain3: 72411,
-            bid_price4: 60600, bid_remain4: 101422,
-            bid_price5: 60500, bid_remain5: 108568,
-            bid_price6: 60400, bid_remain6: 146241,
-            bid_price7: 60300, bid_remain7: 277847,
-            bid_price8: 60200, bid_remain8: 230109,
-            bid_price9: 60100, bid_remain9: 205014,
-            total_ask_remain:2322594, null_2: null, total_bid_remain:1408173     // 총 매도 잔량, 중앙값, 총 매수 잔량
-        ]})
+    super.onInitDone()
+    this.hogagrid.setData([{
+        ask_price9: 461679, ask_remain9: 62000, null_0: null, // 매도 잔량, 호가시작
+        ask_price8: 197778, ask_remain8: 61900,
+        ask_price7: 108156, ask_remain7: 61800,
+        ask_price6: 112935, ask_remain6: 61700,
+        ask_price5: 113625, ask_remain5: 61600,
+        ask_price4: 333086, ask_remain4: 61500,
+        ask_price3: 286942, ask_remain3: 61400,
+        ask_price2: 210827, ask_remain2: 61300,
+        ask_price1: 253941, ask_remain1: 61200,
+        ask_price0: 243625, ask_remain0: 61100,
+        null_1:null, bid_price0: 61000, bid_remain0: 26216, // 매수 호가, 잔량 시작
+        bid_price1: 60900, bid_remain1: 191373,
+        bid_price2: 60800, bid_remain2: 48972,
+        bid_price3: 60700, bid_remain3: 72411,
+        bid_price4: 60600, bid_remain4: 101422,
+        bid_price5: 60500, bid_remain5: 108568,
+        bid_price6: 60400, bid_remain6: 146241,
+        bid_price7: 60300, bid_remain7: 277847,
+        bid_price8: 60200, bid_remain8: 230109,
+        bid_price9: 60100, bid_remain9: 205014,
+        total_ask_remain:2322594, null_2: null, total_bid_remain:1408173 // 총 매도 잔량, 중앙값, 총 매수 잔량
+    ]})
 }
 ```
 {% endcolumn %}
@@ -150,34 +150,38 @@ this.hogagrid.setCurrentPrice(61100)
 ```javascript
 onInitDone() 
 {
-        super.onInitDone();
-        
-        // EXHogaGrid 인스턴스 생성 및 초기화
-        const hogaGrid = new EXHogaGrid();
-        hogaGrid.init();
-        
-        // 컨테이너에 hogaGrid 추가
-        this.getContainer().addComponent(hogaGrid);
-        
-        //예시 데이터 정의 및 설정
-        const dataObj = {...생략...}
-        hogaGrid.setData([dataObj]);        //데이터 설정
-        hogaGrid.setBasePrice(60400);        //기준가 설정
-        hogaGrid.setCurrentPrice(60100);        //현재가 설정
-        
-        //이벤트 리스너 및 델리게이터 설정
-        hogaGrid.addEventListener('select', this, 'onGridSelect');        //AGrid와 동일한 방식으로 select 이벤트 등록 가능
-        hogaGrid.setDelegator(this);        //hogaGrid의 메서드를 this객체에 위임(quoteCount또는 bottomRowCount를 변경하면 onRowCountChange 메서드가 호됨)
+    super.onInitDone();
+    
+    // EXHogaGrid 인스턴스 생성 및 초기화
+    const hogaGrid = new EXHogaGrid();
+    hogaGrid.init();
+    
+    // 컨테이너에 hogaGrid 추가
+    this.getContainer().addComponent(hogaGrid);
+    
+    //예시 데이터 정의 및 설정
+    const dataObj = {...생략...}
+    hogaGrid.setData([dataObj]);        //데이터 설정
+    hogaGrid.setBasePrice(60400);        //기준가 설정
+    hogaGrid.setCurrentPrice(60100);        //현재가 설정
+    
+    //이벤트 리스너 및 델리게이터 설정
+    //AGrid와 동일한 방식으로 select 이벤트 등록 가능
+    hogaGrid.addEventListener('select', this, 'onGridSelect');
+    //hogaGrid의 메서드를 this객체에 위임(quoteCount또는 bottomRowCount를 변경하면 onRowCountChange 메서드가 호출됨)
+    hogaGrid.setDelegator(this);
 }
 
 onGridSelect(comp, _info, _e) 
 {
-        comp.setQuoteCount(comp.getQuoteCount()-1);        //QuoteCount 값을 변경
+    //QuoteCount 값을 변경
+    comp.setQuoteCount(comp.getQuoteCount()-1);
 }
 
-onRowCountChange()        //setDelegator로 메서드를 위임받은 상태에서 QuoteCount이 변경되면 "onRowCountChange"이 호출됨
+//setDelegator로 메서드를 위임받은 상태에서 QuoteCount이 변경되면 "onRowCountChange"이 호출됨
+onRowCountChange()
 {
-        console.log("QuoteCount 갯수: ", this.hogaGrid.getQuoteCount());
+    console.log("QuoteCount 갯수: ", this.hogaGrid.getQuoteCount());
 }
 ```
 
