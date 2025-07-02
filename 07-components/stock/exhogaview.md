@@ -4,7 +4,7 @@ description: >-
   관리하는 역할을 하는 컨테이너 컴포넌트
 ---
 
-# ExHogaView
+# EXHogaView
 
 > 이 컴포넌트가 담고 있는\
 > [ExHogaGrid 예제 보러가기](exhogagrid.md)
@@ -29,9 +29,12 @@ description: >-
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 **EXHogaView** 컴포넌트를 선택하고 드래그하여 레이아웃에 배치.
 * Class에서 ID를 **hogaView**로 입력.
 
-***
+
 
 **2. 보여줄 호가 갯수 설정**
+
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
 onInitDone()
@@ -45,21 +48,23 @@ onInitDone()
 
 <figure><img src="../../.gitbook/assets/image (61).png" alt="" width="375"><figcaption></figcaption></figure>
 
-***
-
 **3. 자식 요소를 활용한 ui 사용**
 
-> 내부 자식요소 askGrid, bidGrid, hogaGrid, rView,lView에 접근하여 활용할 수 있습니다.
->
-> ```javascript
-> onInitDone()
-> {
-> 	super.onInitDone();
-> 	
-> 	const dataObj = {...생략...};
-> 	hogaView.hogaGrid.setData([dataObj]);
-> }
-> ```
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
+
+> hogaView에 생성된 자식요소 askGrid, bidGrid, hogaGrid, rView, lView에 접근하여\
+> 활용할 수 있습니다.
+
+```javascript
+onInitDone()
+{
+	super.onInitDone();
+	
+	const dataObj = {...생략...};
+	hogaView.hogaGrid.setData([dataObj]);
+}
+```
 
 {% columns %}
 {% column %}

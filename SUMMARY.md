@@ -138,6 +138,7 @@
     * [EXSearchView](07-components/stock/exsearchview.md)
     * [EXItemView](07-components/stock/exitemview.md)
     * [EXJisooChart](07-components/stock/exjisoochart.md)
+    * [EXMiniChart](07-components/stock/exminichart-1.md)
 * [09. Mobile App](08.-mobile-app/README.md)
   * [01. Cordova Hybrid앱 구축하기](08.-mobile-app/09-cordova-hybrid/README.md)
     * [A. Android 앱 구축하기](08.-mobile-app/09-cordova-hybrid/a-android-cordova.md)

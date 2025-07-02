@@ -14,9 +14,9 @@ description: 지수를 표현하는 차트 컴포넌트로, 주식 시장에서 
 
 <table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>data 속성</strong></td><td></td></tr><tr><td><code>Title</code></td><td>차트 중앙 상단에 출력될 제목</td></tr></tbody></table>
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>color 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>X, Y 축 눈금 라벨의 색상</td></tr><tr><td><code>Line</code></td><td>그래프의 외곽선 색상</td></tr><tr><td><code>Divide LIne</code></td><td>Y축과 그래프간 경계선 색상</td></tr><tr><td><code>LongTab Line</code></td><td>-확인필요(적용안됨)-</td></tr><tr><td><code>Start</code></td><td>그래프 그라데이션 색상 위쪽 색상</td></tr><tr><td><code>End</code></td><td>그래프 그라데이션 색상 아래 색상</td></tr><tr><td><code>Dot</code></td><td> 그래프 그리드 점선 격자 색상</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>color 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>X, Y 축 눈금 라벨의 색상</td></tr><tr><td><code>Line</code></td><td>그래프의 외곽선 색상</td></tr><tr><td><code>Divide LIne</code></td><td>Y축과 그래프간 경계선 색상</td></tr><tr><td><code>LongTab Line</code></td><td>롱탭시 출력되는 크로스헤어선 색상</td></tr><tr><td><code>Start</code></td><td>그래프 그라데이션 색상 위쪽 색상</td></tr><tr><td><code>End</code></td><td>그래프 그라데이션 색상 아래 색상</td></tr><tr><td><code>Dot</code></td><td> 그래프 그리드 점선 격자 색상</td></tr></tbody></table>
 
-
+***
 
 ### Example
 
@@ -30,8 +30,10 @@ description: 지수를 표현하는 차트 컴포넌트로, 주식 시장에서 
 
 **2.데이터 설정**
 
-각 배열 아이템은 다른 stock 컴포넌트와 마찬가지로 `['Date', 'Start Price', 'High Price', 'Low Price', 'End Price', 'Trade Qty', 'Trade Price']`형태의 배열로 이루어져 있으나\
-0번 Date와 4번 End Price 값을 이용해 그래프를 출력합니다.
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
+
+> setData 함수를 통해 설정할 배열의 아이템 구조는 다른 stock 컴포넌트와 마찬가지로 `['Date', 'Start Price', 'High Price', 'Low Price', 'End Price', 'Trade Qty', 'Trade Price']`형태로 이루어져 있으나 실제로는0번 Date와 4번 End Price 값을 이용해 그래프를 출력합니다.
 
 ```javascript
 onInitDone() {
@@ -64,7 +66,8 @@ onInitDone() {
 
 ### 코드로 EXJisooView 생성
 
-onInitDone() 함수에서 아래와 같이 코드를 입력
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
 onInitDone() 
@@ -114,13 +117,15 @@ async callNextData(nextIqryDate)//위임받은 callNextData를 재정의합니�
 ![](<../../.gitbook/assets/image (1).png>)
 {% endhint %}
 
+***
+
 ### Method
 
 <details>
 
 <summary>주요 메서드</summary>
 
-1. `draw()` : 차트를 그리는 메서드입니다. 필요한 경우 호출해차트를 다시 그리도록 합니다.
+1. `draw()` : 차트를 그립니다. 필요한 경우 차트를 다시 그리도록 호출합니다.
 2. `resetData()` : 기존의 데이터를 제거하고 차트를 초기 상태로 되돌립니다.
 3. `setColors(colors)` :  colors 객체를 통해 텍스트, 라인, 그라데이션 등의 색상을 지정할 수 있습니다.
 4. `setData()` :  차트에 데이터를 설정하는 메서드 입니다.

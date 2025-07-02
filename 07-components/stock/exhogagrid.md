@@ -2,7 +2,7 @@
 description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매도/매수 호가를 시각화하는 그리드 컴포넌트
 ---
 
-# ExHogaGrid
+# EXHogaGrid
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-06-27 164531.png" alt="" width="563"><figcaption></figcaption></figure>
 
@@ -16,7 +16,7 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 
 <table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>데이터</strong> <strong>속성</strong></td><td></td></tr><tr><td><code>Current Price</code></td><td>현재가 입력</td></tr><tr><td><code>Base Price</code></td><td>기준가 입력</td></tr><tr><td><code>Bottom Row</code></td><td>호가를 하단에 표현될 로우의 개수를 지정</td></tr><tr><td><code>Quote Count</code></td><td>호가의 단계 설정</td></tr><tr><td><strong>가격 색상 속성</strong></td><td></td></tr><tr><td><code>Up</code></td><td>호가 상승색 설정</td></tr><tr><td><code>Down</code></td><td>호가 하락색 설정</td></tr><tr><td><code>Steady</code></td><td>호가 보합색 설정</td></tr><tr><td><strong>바 스타일</strong></td><td></td></tr><tr><td><code>Size</code></td><td>호가 잔량을 표현하는 바 크기 지정</td></tr><tr><td><code>Ask Position</code></td><td>매도 잔량바의 위치를 지정</td></tr><tr><td><code>Bid Position</code></td><td>매수 잔량바의 위치를 지정</td></tr><tr><td><code>Ask Color</code></td><td>매도 잔량바의 색을 지정</td></tr><tr><td><code>Bid Color</code></td><td>매수 잔량바의 색을 지정</td></tr><tr><td><strong>옵션</strong></td><td></td></tr><tr><td><code>Hide Header</code></td><td>헤더 숨김 여부 옵션</td></tr><tr><td><code>Single Select</code></td><td>Ctrl 키를 누르고 선택해도 하나만 선택되는 옵션</td></tr><tr><td><code>Fullrow Select</code></td><td>특정 셀을 클릭해도 그 행 전체가 선택되는 옵션</td></tr><tr><td><code>Selectable</code></td><td>선택 가능 여부 옵션 플래그</td></tr><tr><td><code>Flexable Row</code></td><td>TR의 높이를 TABLE 높이에 풀로 맞추는 옵션</td></tr></tbody></table>
 
-
+***
 
 ### Example
 
@@ -36,9 +36,7 @@ description: 호가 데이터를 배열 또는 객체 형태로 입력하여 매
 **2.데이터 설정**
 
 * 먼저 MainView.js 파일을 오픈
-* 상단의 파일탭에서 MainView.lay 탭을 더블 클릭하거나 우측의 프로젝트 트리에서 MainView.js 파일을 더블 클릭
-* 모든 화면뷰는 onInitDone() 함수가 존재하며 이 함수는 화면이 생성될 때 딱 한번 실행
-* onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 EXHogaGrid의 `setData` 메서드로 값을 설정합니다.
+* onInitDone() 함수에서 아래와 같이 코드를 입력
 
 {% columns %}
 {% column %}
@@ -142,11 +140,12 @@ this.hogagrid.setBasePrice(61100)
 
 <figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 
-
+***
 
 ### 코드로 ExHogaGrid  생성
 
-onInitDone() 함수에서 아래와 같이 코드를 입력
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
 
 ```javascript
 onInitDone() 
@@ -189,6 +188,8 @@ onRowCountChange()        //setDelegator로 메서드를 위임받은 상태에�
 
 ![](<../../.gitbook/assets/image (73).png>)
 {% endhint %}
+
+***
 
 ### Method
 
