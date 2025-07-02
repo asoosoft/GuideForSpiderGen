@@ -132,7 +132,6 @@
     * [EXCenterPivotView](07-components/stock/excenterpivotview.md)
     * [EXSecureTextField](07-components/stock/exsecuretextfield.md)
     * [EXTriangle](07-components/stock/extriangle.md)
-    * [ChartView](07-components/stock/chartview.md)
     * [CandleChart](07-components/stock/candlechart.md)
     * [EXMiniChart](07-components/stock/exminichart.md)
     * [CompareChart](07-components/stock/comparechart.md)
