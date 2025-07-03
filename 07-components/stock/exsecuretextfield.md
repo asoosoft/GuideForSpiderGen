@@ -130,71 +130,72 @@ onInitDone() {
 5. **SecurePadManager 예제 코드**
 
 ```javascript
-    onInitDone() {
-        super.onInitDone();
+onInitDone() {
+    super.onInitDone();
 
-        this.onSecurePadChange = function (isOpen) {
-            console.log('SecurePad 상태:', isOpen ? '열림' : '닫힘');
-        };
+    this.onSecurePadChange = function (isOpen) {
+        AToast.show(`SecurePad 상태: ${isOpen ? '열림' : '닫힘'}`, 2000);
+    };
 
-        //secureField를 담을 컨테이너 뷰 생성
-        const container = new AView();
-        container.createElement();
-        this.addComponent(container);
-        container.init();
+    const container = new AView();
+    container.createElement();
+    this.addComponent(container);
+    container.init();
 
-        //secureField 생성 및 배치
-        const secureField = new EXSecureTextField();
-        secureField.createElement();
-        container.addComponent(secureField);
-        secureField.init();
+    const secureField = new EXSecureTextField();
+    secureField.createElement();
+    container.addComponent(secureField);
+    secureField.init();
 
-        secureField.$ele.attr('placeholder', '비밀번호 입력');
-
-        // pad 옵션
-        const padOption = {
-            title: '비밀번호 입력',
-            padType: 'char',
-            returnType: '1',
-            minLength: 4,
-            maxLength: 20
-        };
-
-        secureField.padOption = padOption;
-        secureField.setText('');
-        secureField.setPos(100, 100);
-
-        // 보안 키패드 버튼 추가
-        const btn = new AButton();
-        btn.createElement();
-        container.addComponent(btn);
-        btn.init();
-        btn.setText('보안 키패드');
-        btn.setPos(100, 180);
-
-        btn.bindEvent('click', () => {
-            SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
-                if (isSuccess && result) {
-                    secureField.setCipherData(result.val);
-                    secureField.setPwLength(result.len);
-    
-                    AToast.show(`암호화된 입력값: ${result.val}\n 입력 길이: ${result.len}`, 3000);
-                } else {
-                    AToast.show('입력 취소 또는 실패', 2000);
-                }
-            }, secureField);
-        });
-
-        //입력 이벤트
-        secureField.$ele.on('change', () => {
-            console.log('입력값:', secureField.getText());
-            console.log('암호화 데이터:', secureField.getCipherData());
-            console.log('입력 길이:', secureField.getPwLength());
-        });
-
-        // 전역 참조용 저장
-        this.secureField = secureField;
+    if (afc.isIos) {
+        secureField.setDataType('text');
     }
+    secureField.setText('');
+    secureField.setCipherData('');
+    secureField.setPwLength(0);
+
+    secureField.$ele.attr('placeholder', '비밀번호 입력');
+    secureField.setPos(100, 100);
+
+    const padOption = {
+        title: '비밀번호 입력',
+        padType: 'char',
+        returnType: '1',
+        minLength: 4,
+        maxLength: 20
+    };
+
+    secureField.padOption = padOption;
+
+    const btn = new AButton();
+    btn.createElement();
+    container.addComponent(btn);
+    btn.init();
+    btn.setText('보안 키패드');
+    btn.setPos(100, 180);
+
+    btn.bindEvent('click', () => {
+        SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
+            if (isSuccess && result) {
+                secureField.setCipherData(result.val);
+                secureField.setPwLength(result.len);
+
+                AToast.show(`암호화된 입력값: ${result.val}\n 입력 길이: ${result.len}`, 3000);
+            } else {
+                AToast.show('입력 취소 또는 실패', 2000);
+            }
+        }, secureField);
+    });
+
+    secureField.$ele.on('change', () => {
+        AToast.show(
+            `입력값: ${secureField.getText()}\n 암호화 데이터: ${secureField.getCipherData()}\n 입력 길이: ${secureField.getPwLength()}`,
+            3000
+        );
+    });
+
+    this.secureField = secureField;
+}
 ```
 
 5-1. **라이브러리**
@@ -413,6 +414,10 @@ var SecurePadManager = {
 ```
 
 
+
+* 실행 결과
+
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-03 162650.gif" alt=""><figcaption></figcaption></figure>
 
 
 
