@@ -87,7 +87,7 @@ onInitDone()
         //메서드 위임
         this.jisoo.setDelegator(this);//EXJisooChart의 callNextData는 화면에서 세팅된 데이터의 끝까지 확인한 경우에 다음 데이터 추가를 위해 호출됩니다
         
-        this.addComponent(jisoo);//컴포넌트 삽입
+        this.addComponent(this.jisoo);//컴포넌트 삽입
 }
 
 callNextData(nextIqryDate)//위임받은 callNextData를 재정의합니다.

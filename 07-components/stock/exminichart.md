@@ -126,7 +126,7 @@ onInitDone() {
         mini.setData(dataObj ,'400');
         
         //모드 설정 변경
-        mini.setMode("line");    //line 모드는 라벨을 제거하고 그래프만 출력합니다.
+        mini.setMode("line");    //line 모드는 Y축 눈금 라벨을 제거하고 그래프만 출력합니다.
         mini.setColorMode('white');    // 컴포넌트 테마를 white로 변경합니다.
         mini.setColors({TEXT:'#75b02c'}, true);    //컴포넌트 글자 색을 #75b02c로 변경합니다.
         
