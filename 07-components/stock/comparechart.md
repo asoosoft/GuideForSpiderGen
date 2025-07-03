@@ -26,7 +26,7 @@ CompareChart 속성
 
 * 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 CompareChart 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
-* Class에서 ID를 CompareChart 로 입력
+* Class에서 ID를 compareChart 로 입력
 
 **2. 데이터 설정**
 
@@ -40,33 +40,54 @@ onInitDone() {
     super.onInitDone();
 
     const baseData = [
-        ['20250701', 100, 110, 95, 105, 1000, 105000],
-        ['20250702', 105, 115, 102, 110, 1200, 132000],
-        ['20250703', 110, 120, 108, 115, 1500, 172500],
-        ['20250704', 115, 125, 112, 118, 1700, 200600],
-        ['20250705', 118, 130, 117, 128, 1900, 243200],
+        ['20250701', 100, 111, 94, 105, 1000, 105000],
+        ['20250702', 107, 117, 104, 112, 1230, 137760],
+        ['20250703', 112, 124, 108, 117, 1510, 176670],
+        ['20250704', 118, 128, 115, 121, 1690, 204490],
+        ['20250705', 120, 133, 117, 130, 1930, 250900],
+        ['20250706', 131, 139, 126, 135, 2090, 282150],
+        ['20250707', 136, 145, 131, 140, 2260, 316400],
+        ['20250708', 141, 149, 136, 143, 2330, 333190],
+        ['20250709', 144, 151, 140, 146, 2420, 353320],
+        ['20250710', 147, 153, 145, 149, 2560, 381440],
+        ['20250711', 103, 113, 96, 108, 1080, 116640],
+        ['20250712', 109, 118, 105, 114, 1270, 144780],
+        ['20250713', 113, 124, 109, 118, 1560, 184080],
+        ['20250714', 119, 129, 116, 123, 1700, 209100],
+        ['20250715', 122, 134, 121, 131, 1960, 256760],
+        ['20250716', 134, 141, 129, 137, 2070, 283590],
+        ['20250717', 138, 146, 135, 142, 2190, 310980],
+        ['20250718', 143, 149, 140, 145, 2280, 330600],
+        ['20250719', 146, 152, 144, 148, 2390, 353720],
+        ['20250720', 149, 155, 147, 153, 2620, 401460],
+        ['20250721', 104, 115, 98, 109, 1120, 122080],
+        ['20250722', 110, 120, 106, 115, 1320, 151800],
+        ['20250723', 114, 125, 110, 119, 1580, 188020],
+        ['20250724', 120, 130, 117, 124, 1740, 215760],
+        ['20250725', 124, 135, 123, 132, 1990, 262680],
+        ['20250726', 135, 143, 130, 137, 2110, 289070],
+        ['20250727', 139, 147, 136, 142, 2240, 318080],
+        ['20250728', 144, 151, 141, 145, 2320, 336400],
+        ['20250729', 147, 153, 144, 148, 2430, 359640],
+        ['20250730', 150, 157, 148, 154, 2650, 408100],
     ];
 
-    const mapping = [0, 1, 2, 3, 4, 5, 6];
+    const compareData = [
+        200, 206, 213, 219, 225, 231, 236, 241, 245, 248,
+        252, 257, 261, 265, 270, 274, 278, 281, 285, 289,
+        292, 295, 298, 301, 304, 307, 309, 311, 313, 315
+    ];
 
-    // ✅ 기본 데이터 세팅
-    this.CompareChart.setData([baseData], mapping);
+    this.compareChart.setData(baseData);
+    this.compareChart.addCompareData(['삼성전자', compareData]);
 
-    // ✅ 비교 데이터는 종가만 배열로
-    const compareData = [205, 210, 215, 218, 228];
-
-    // ✅ 비교 종목 추가
-    this.CompareChart.addCompareData(['비교종목', compareData]);
-
-    // ✅ 위치 및 크기 (옵션)
-    this.CompareChart.setPos(50, 50);
-    this.CompareChart.setSize(640, 400);
+    this.compareChart.lineDataColor = ['#00cfff', '#ff8800'];
 }
 ```
 
 **3. 프로젝트 실행**
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 094504.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-03 090803.gif" alt=""><figcaption></figcaption></figure>
 
 * 설정한 데이터에 맞춰서 캔들 차트와 비교선의 레이아웃 생성
 
@@ -77,203 +98,76 @@ onInitDone() {
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
 
-
-
-* **예제 1**
-
-```
-    onInitDone() 
-    {
+```javascript
+    onInitDone() {
         super.onInitDone();
 
-        // CompareChart DOM 생성 (라이브러리에서 요구하는 구조)
-        const chartDiv = $(CompareChart.CONTEXT.tag)
-            .attr('id', 'CompareChart')
-            .css({
-                width: "100%",
-                height: "500px"
-            });
+        // CompareChart 생성 및 초기화
+        const compareChart = new CompareChart();
+        compareChart.init();
 
-        chartDiv.appendTo(this.$ele);
+        // 화면에 추가
+        this.addComponent(compareChart);
+        compareChart.setSize(800, 500);   // 크기 설정
+        compareChart.setPos(100, 100);    // 위치 설정
 
-        // CompareChart 인스턴스 생성 및 초기화
-        const chart = new CompareChart();
-        chart.init(chartDiv[0]);
-
-        // 메인 데이터 세팅
-        const mainData = [
-            [
-                ["20240701", 100, 110, 95, 105, 10000, 105],
-                ["20240702", 105, 115, 100, 112, 15000, 112],
-                ["20240703", 112, 118, 108, 115, 12000, 115],
-                ["20240704", 115, 125, 110, 120, 17000, 120],
-                ["20240705", 120, 130, 115, 128, 19000, 128],
-                ["20240706", 128, 135, 120, 130, 16000, 130],
-                ["20240707", 130, 140, 125, 138, 20000, 138]
-            ],
-            [105, 112, 115, 120, 128, 130, 138]
+        // 차트 데이터 (예시: 30일치 OHLCV 데이터)
+        const baseData = [
+            ['20250701', 100, 111, 94, 105, 1000, 105000],
+            ['20250702', 107, 117, 104, 112, 1230, 137760],
+            ['20250703', 112, 124, 108, 117, 1510, 176670],
+            ['20250704', 118, 128, 115, 121, 1690, 204490],
+            ['20250705', 120, 133, 117, 130, 1930, 250900],
+            ['20250706', 131, 139, 126, 135, 2090, 282150],
+            ['20250707', 136, 145, 131, 140, 2260, 316400],
+            ['20250708', 141, 149, 136, 143, 2330, 333190],
+            ['20250709', 144, 151, 140, 146, 2420, 353320],
+            ['20250710', 147, 153, 145, 149, 2560, 381440],
+            ['20250711', 103, 113, 96, 108, 1080, 116640],
+            ['20250712', 109, 118, 105, 114, 1270, 144780],
+            ['20250713', 113, 124, 109, 118, 1560, 184080],
+            ['20250714', 119, 129, 116, 123, 1700, 209100],
+            ['20250715', 122, 134, 121, 131, 1960, 256760],
+            ['20250716', 134, 141, 129, 137, 2070, 283590],
+            ['20250717', 138, 146, 135, 142, 2190, 310980],
+            ['20250718', 143, 149, 140, 145, 2280, 330600],
+            ['20250719', 146, 152, 144, 148, 2390, 353720],
+            ['20250720', 149, 155, 147, 153, 2620, 401460],
+            ['20250721', 104, 115, 98, 109, 1120, 122080],
+            ['20250722', 110, 120, 106, 115, 1320, 151800],
+            ['20250723', 114, 125, 110, 119, 1580, 188020],
+            ['20250724', 120, 130, 117, 124, 1740, 215760],
+            ['20250725', 124, 135, 123, 132, 1990, 262680],
+            ['20250726', 135, 143, 130, 137, 2110, 289070],
+            ['20250727', 139, 147, 136, 142, 2240, 318080],
+            ['20250728', 144, 151, 141, 145, 2320, 336400],
+            ['20250729', 147, 153, 144, 148, 2430, 359640],
+            ['20250730', 150, 157, 148, 154, 2650, 408100],
         ];
 
-        chart.setData(mainData);
+        // 비교 종목 데이터
+        const compareData = [
+            200, 206, 213, 219, 225, 231, 236, 241, 245, 248,
+            252, 257, 261, 265, 270, 274, 278, 281, 285, 289,
+            292, 295, 298, 301, 304, 307, 309, 311, 313, 315
+        ];
 
-        // 비교 데이터 추가
-        chart.addCompareData(["NAVER", [102, 108, 113, 119, 125, 127, 135]]);
-        chart.addCompareData(["KAKAO", [98, 105, 110, 117, 123, 126, 132]]);
-        chart.addCompareData(["SAMSUNG", [100, 107, 114, 118, 124, 129, 137]]);
+        // 차트 데이터 적용
+        compareChart.setData(baseData);
+        compareChart.addCompareData(['삼성전자', compareData]);
 
-        // 포지션 업데이트
-        const width = chart.getElement().clientWidth;
-        const height = chart.getElement().clientHeight;
-        chart.updatePosition(width, height);
-
-        chart.updateGraph();
-
-        // 객체 저장
-        this.chart = chart;
+        // 선 색상 설정
+        compareChart.lineDataColor = ['#00cfff', '#ff6600'];
     }
 ```
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 100532.png" alt=""><figcaption></figcaption></figure>
-
-
-
-
-
-* **예제 2**
-
-```javascript
-onInitDone() {
-    super.onInitDone();
-
-    // [1] 차트용 DOM 생성
-    const chartDiv = $(CompareChart.CONTEXT.tag).css({
-        width: "100%",
-        height: "500px",
-        border: "1px solid #ccc"
-    });
-
-    chartDiv.appendTo(this.$ele); // 현재 화면에 붙이기
-
-    // [2] CompareChart 인스턴스 생성
-    this.compareChart = new CompareChart();
-
-    // [3] 차트 초기화
-    this.compareChart.init(chartDiv[0]);
-
-    // [4] 메인 데이터 세팅
-    const mainData = [
-        [
-            ["20240101", 100, 110, 90, 105, 10000, 105],
-            ["20240102", 105, 115, 95, 110, 15000, 110],
-            ["20240103", 110, 120, 100, 115, 13000, 115],
-            ["20240104", 115, 125, 105, 120, 14000, 120],
-            ["20240105", 120, 130, 110, 125, 16000, 125],
-            ["20240106", 125, 135, 115, 130, 17000, 130],
-            ["20240107", 130, 140, 120, 135, 18000, 135]
-        ],
-        [105, 110, 115, 120, 125, 130, 135]
-    ];
-
-    this.compareChart.setData(mainData);
-
-    // [5] 비교 데이터 세팅
-    const compareData = ["비교종목", [100, 107, 112, 118, 123, 128, 133]];
-    this.compareChart.addCompareData(compareData);
-
-    // [6] 포지션 업데이트
-    const width = chartDiv.width();
-    const height = chartDiv.height();
-    this.compareChart.updatePosition(width, height);
-
-    // [7] === 상호작용 기능 추가 ===
-
-    // (1) 윈도우 크기 변경 시 리사이즈 대응
-    $(window).on('resize', () => {
-        const w = chartDiv.width();
-        const h = chartDiv.height();
-        this.compareChart.updatePosition(w, h);
-    });
-
-    // (2) 종목 추가 버튼
-    const addBtn = $('<button>종목 추가</button>').css({
-        position: 'absolute',
-        top: '10px',
-        left: '10px',
-        zIndex: 1000
-    }).appendTo(this.$ele);
-
-    addBtn.on('click', () => {
-        const randomData = [
-            "비교" + (this.compareChart.lineData.length),
-            Array.from({ length: 7 }, (_, i) => 90 + Math.random() * 50)
-        ];
-        this.compareChart.addCompareData(randomData);
-    });
-
-    // (3) 스크롤 버튼
-    const scrollLeftBtn = $('<button>← Left</button>').css({
-        position: 'absolute',
-        top: '50px',
-        left: '10px',
-        zIndex: 1000
-    }).appendTo(this.$ele);
-
-    scrollLeftBtn.on('click', () => {
-        this.compareChart.scrollRToL(1);
-    });
-
-    const scrollRightBtn = $('<button>Right →</button>').css({
-        position: 'absolute',
-        top: '90px',
-        left: '10px',
-        zIndex: 1000
-    }).appendTo(this.$ele);
-
-    scrollRightBtn.on('click', () => {
-        this.compareChart.scrollLToR(1);
-    });
-
-    // (4) 줌 인 / 줌 아웃 버튼
-    const zoomInBtn = $('<button>Zoom +</button>').css({
-        position: 'absolute',
-        top: '130px',
-        left: '10px',
-        zIndex: 1000
-    }).appendTo(this.$ele);
-
-    zoomInBtn.on('click', () => {
-        this.compareChart.rateVal += 0.1;
-        this.compareChart.zoomState = 1;
-        this.compareChart.zoomInOut();
-    });
-
-    const zoomOutBtn = $('<button>Zoom -</button>').css({
-        position: 'absolute',
-        top: '170px',
-        left: '10px',
-        zIndex: 1000
-    }).appendTo(this.$ele);
-
-    zoomOutBtn.on('click', () => {
-        this.compareChart.rateVal -= 0.1;
-        this.compareChart.zoomState = 2;
-        this.compareChart.zoomInOut();
-    });
-
-    // === 초기 그리기 ===
-    this.compareChart.updateGraph();
-}
-```
-
-<figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 100646.png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-03 094704.gif" alt=""><figcaption></figcaption></figure>
 
 
 
 <mark style="color:red;">**Build 에러 발생 시**</mark>
 
-1. _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > library + Component > ADataMask.js + AToast.js 체크**_
+1. _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > library + Component > ADataMask.js 체크**_
 2. _**프로젝트 트리뷰에서 Framework > stock우클릭 > Default Load Settings.. > Component > CompareChart.js 체크**_
 
-<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 084622.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 084631.png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-03 094853.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-03 094910.png" alt=""><figcaption></figcaption></figure></div>
