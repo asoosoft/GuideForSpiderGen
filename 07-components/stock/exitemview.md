@@ -48,7 +48,7 @@ init(context, evtListener)
 {
     super.init(context, evtListener)  
 
-    this.Data = 
+    this.dataArr = 
     [
       [ "005930", "삼성전자", "001" ], 
       [ "003550", "LG", "002" ], 
@@ -56,7 +56,7 @@ init(context, evtListener)
     ];
   
     // setItemInfo(dataArr) -> EXItemView에 데이터 설정
-    this.itemView.setItemInfo(this.Data);            
+    this.itemView.setItemInfo(this.dataArr);            
 }
 ```
 

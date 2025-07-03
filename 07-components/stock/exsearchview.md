@@ -54,7 +54,7 @@ init(context, evtListener)
 {
     super.init(context, evtListener)  
 
-    this.Data = 
+    this.dataArr = 
     [
       [ "005930", "삼성전자", "001" ], 
       [ "003550", "LG", "002" ], 
@@ -62,7 +62,7 @@ init(context, evtListener)
     ];
   
     // setData(data) -> EXSearchView에 데이터 설정
-    this.searchView.setData(this.Data);           
+    this.searchView.setData(this.dataArr);           
 }
 ```
 
