@@ -54,6 +54,7 @@
   * [06. Figma와 Spidergen 연동하기](<Guide for SpiderGen/05  Advanced/06  Figma와 Spidergen 연동하기.md>)
   * [07.  Flavor](<Guide for SpiderGen/05  Advanced/07  Flavor.md>)
   * [08. Git 연동](<Guide for SpiderGen/05  Advanced/08  Git 연동.md>)
+  * [09. WTS 개발하기](05-advanced/09.-wts.md)
 * [06. SpiderGen Editor](<Guide for SpiderGen/06  SpiderGen Editor.md>)
   * [01. Main Menu](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu.md>)
     * [A. File](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu/A  File.md>)
