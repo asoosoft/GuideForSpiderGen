@@ -57,7 +57,6 @@ onInitDone() {
     // 값 초기화
     this.secureTxf.setText('');
 
-    // 일반 키보드 입력 대응
     this.secureTxf.bindEvent('input', function () {
         const comp = this.acomp;  // 실제 EXSecureTextField 컴포넌트
         const plain = comp.getText();
@@ -86,61 +85,57 @@ onInitDone() {
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
-*
 
-    ```javascript
-    onInitDone() {
-        super.onInitDone();
+```javascript
+onInitDone() {
+    super.onInitDone();
 
-        const container = new AView();
-        container.createElement();
-        this.addComponent(container);
-        container.init();
+    const container = new AView();
+    container.createElement();
+    this.addComponent(container);
+    container.init();
 
-        const secureField = new EXSecureTextField();
-        secureField.createElement();
-        container.addComponent(secureField);
-        secureField.init();
+    const secureField = new EXSecureTextField();
+    secureField.createElement();
+    container.addComponent(secureField);
+    secureField.init();
 
-        // placeholder 설정
-        secureField.$ele.attr('placeholder', '비밀번호 입력');
+     // placeholder 설정
+    secureField.setPlaceholder('비밀번호 입력');
 
-        // pad 옵션 설정
-        secureField.padOption = {
-            title: '비밀번호 입력',
-            padType: 'char',
-            returnType: '1',
-            minLength: 4,
-            maxLength: 20
-        };
+    // pad 옵션 설정
+    secureField.padOption = {
+        title: '비밀번호 입력',
+        padType: 'char',
+        returnType: '1',
+        minLength: 4,
+        maxLength: 20
+    };
 
-        // 텍스트 초기화
-        secureField.setText('');
+    // 텍스트 초기화
+    secureField.setText('');
 
-        // 위치 설정
-        secureField.setPos(100, 100);
+    // 위치 설정
+    secureField.setPos(100, 100);
 
-        // 일반 입력 대응
-        secureField.bindEvent('input', function () {
-            const comp = this.acomp;
-            const plain = comp.getText();
-            comp.setCipherData(plain);
-            comp.setPwLength(plain.length);
-        });
+    secureField.bindEvent('input', function () {
+        const comp = this.acomp;
+        const plain = comp.getText();
+        comp.setCipherData(plain);
+        comp.setPwLength(plain.length);
+    });
 
-        // 입력 이벤트 - AToast 사용
-        secureField.bindEvent('change', (e) => {
-            const cipher = secureField.getCipherData();
-            const length = secureField.getPwLength();
+    secureField.bindEvent('change', (e) => {
+        const cipher = secureField.getCipherData();
+        const length = secureField.getPwLength();
 
-            AToast.show("암호화 값: " + cipher + "\n 입력 길이: " + length, 3000);
-        });
+        AToast.show("암호화 값: " + cipher + "\n 입력 길이: " + length, 3000);
+    });
 
-        // 전역 변수로 저장
-        this.secureField = secureField;
-    }
+    this.secureField = secureField;
+}
 
-    ```
+```
 
 <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 085550.gif" alt=""><figcaption></figcaption></figure>
 
@@ -153,7 +148,7 @@ onInitDone() {
     super.onInitDone();
 
     this.onSecurePadChange = function (isOpen) {
-        AToast.show(`SecurePad 상태: ${isOpen ? '열림' : '닫힘'}`, 2000);
+        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'), 2000);
     };
 
     const container = new AView();
@@ -169,11 +164,11 @@ onInitDone() {
     if (afc.isIos) {
         secureField.setDataType('text');
     }
+
     secureField.setText('');
     secureField.setCipherData('');
     secureField.setPwLength(0);
-
-    secureField.$ele.attr('placeholder', '비밀번호 입력');
+    secureField.setPlaceholder('비밀번호 입력');  // jQuery → 메서드로 교체 권장
     secureField.setPos(100, 100);
 
     const padOption = {
@@ -193,22 +188,21 @@ onInitDone() {
     btn.setText('보안 키패드');
     btn.setPos(100, 180);
 
-    btn.bindEvent('click', () => {
-        SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
-            if (isSuccess && result) {
-                secureField.setCipherData(result.val);
-                secureField.setPwLength(result.len);
+    // 입력 이벤트에서 암호값, 길이 미리 설정
+    secureField.bindEvent('input', function () {
+        const comp = this.acomp;
+        const val = comp.getText();
 
-                AToast.show(`암호화된 입력값: ${result.val}\n 입력 길이: ${result.len}`, 3000);
-            } else {
-                AToast.show('입력 취소 또는 실패', 2000);
-            }
-        }, secureField);
+        comp.setCipherData(val);
+        comp.setPwLength(val.length);
     });
 
-    secureField.$ele.on('change', () => {
+    // change 이벤트는 표시만
+    secureField.bindEvent('change', () => {
         AToast.show(
-            `입력값: ${secureField.getText()}\n 암호화 데이터: ${secureField.getCipherData()}\n 입력 길이: ${secureField.getPwLength()}`,
+            '입력값: ' + secureField.getText() +
+            '\n암호화 데이터: ' + secureField.getCipherData() +
+            '\n입력 길이: ' + secureField.getPwLength(),
             3000
         );
     });
@@ -436,7 +430,7 @@ var SecurePadManager = {
 
 * 실행 결과
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-03 162650.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 102548.gif" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -447,7 +441,7 @@ onInitDone() {
     super.onInitDone();
 
     this.onSecurePadChange = function (isOpen) {
-        AToast.show(`SecurePad 상태: ${isOpen ? '열림' : '닫힘'}`, 2000);
+        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'), 2000);
     };
 
     const container = new AView();
@@ -460,7 +454,7 @@ onInitDone() {
     container.addComponent(secureField);
     secureField.init();
 
-    secureField.$ele.attr('placeholder', '비밀번호 입력');
+    secureField.setPlaceholder('비밀번호 입력');
     secureField.setPos(100, 100);
 
     const padOption = {
@@ -480,24 +474,35 @@ onInitDone() {
     btn.setText('보안 키패드');
     btn.setPos(100, 180);
 
+    // 실시간 입력 처리
+    secureField.bindEvent('input', function () {
+        const comp = this.acomp;
+        const val = comp.getText();
+        comp.setCipherData(val);
+        comp.setPwLength(val.length);
+    });
+
+    // 엔터 등 변경 시 호출되며 이미 값은 input에서 처리됨
+    secureField.bindEvent('change', () => {
+        AToast.show(
+            '입력값: ' + secureField.getText() +
+            '\n암호화 데이터: ' + secureField.getCipherData() +
+            '\n입력 길이: ' + secureField.getPwLength(),
+            3000
+        );
+    });
+
     btn.bindEvent('click', () => {
         SecureWebPadManager.openWebPad(padOption, (isSuccess, result, length) => {
             if (isSuccess && result) {
                 secureField.setCipherData(result.val);
                 secureField.setPwLength(result.len);
-
-                AToast.show(`암호화된 입력값: ${result.val}\n 입력 길이: ${result.len}`, 3000);
+                secureField.setText(afc.makeDummyString(result.len));
+                secureField.reportEvent('change'); // change 트리거
             } else {
-                AToast.show('❌ 입력 취소 또는 실패', 2000);
+                AToast.show('입력 취소 또는 실패', 2000);
             }
         }, secureField);
-    });
-
-    secureField.$ele.on('change', () => {
-        AToast.show(
-            `입력값: ${secureField.getText()}\n 암호화 데이터: ${secureField.getCipherData()}\n 입력 길이: ${secureField.getPwLength()}`,
-            3000
-        );
     });
 
     this.secureField = secureField;
@@ -611,7 +616,7 @@ _**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Setti
 
 _**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > AButton.js + AButtonEvent.js + AToast.js 체크(Button 라이브러리는 5번 예제부터 필요)**_
 
-<img src="../../.gitbook/assets/스크린샷 2025-07-03 154421 (1).png" alt="" data-size="original"><img src="../../.gitbook/assets/스크린샷 2025-07-03 154435 (3).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/스크린샷 2025-07-04 103126.png" alt="" data-size="original"><img src="../../.gitbook/assets/스크린샷 2025-07-04 103134.png" alt="" data-size="original"><img src="../../.gitbook/assets/스크린샷 2025-07-04 103232.png" alt="" data-size="original">
 {% endhint %}
 
 
