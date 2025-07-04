@@ -26,8 +26,7 @@ EXSecureTextField 속성
 
 * 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
-* Class 에서 ID를&#x20;
-* secureTxf로 입력
+* Class 에서 EXSecureTextField ID를 secureBox, AButton ID를 btn으로 지정
 
 
 
@@ -40,6 +39,10 @@ EXSecureTextField 속성
 * 모든 화면뷰는 onInitDone() 함수가 존재하며 이 함수는 화면이 생성될 때 딱 한번 실행
 * onInitDone() 함수에서 레이블의 텍스트 내용을 아래와 같이 코드를 입력
 
+
+
+**2-1) OpenPad 사용 예제**
+
 ```javascript
 onInitDone() {
     super.onInitDone();
@@ -50,10 +53,10 @@ onInitDone() {
     };
 
     // SecureTextField 설정
-    const secureField = this.secureTxf;
-    secureField.setAttr('readonly', true);
-    secureField.setPlaceholder('비밀번호 입력');
-    secureField.setText('');
+    const secureTxf = this.secureBox;
+    secureTxf.setAttr('readonly', true);
+    secureTxf.setPlaceholder('비밀번호 입력');
+    secureTxf.setText('');
 
     const padOption = {
         title: '비밀번호 입력',
@@ -63,13 +66,13 @@ onInitDone() {
         maxLength: 20
     };
 
-    secureField.padOption = padOption;
+    secureTxf.padOption = padOption;
 
     // 버튼 클릭 시 보안 키패드 오픈
     this.btn.bindEvent('click', () => {
-        const el = document.getElementById(secureField.element.id);
+        const el = document.getElementById(secureTxf.element.id);
 
-        console.log('[ID 추적]', secureField.element.id);
+        console.log('[ID 추적]', secureTxf.element.id);
         console.log('[DOM 있음?]', el);
         console.log('[acomp 연결됨?]', el?.acomp);
 
@@ -80,26 +83,77 @@ onInitDone() {
 
         SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
             if (isSuccess && result) {
-                secureField.setCipherData(result.val);
-                secureField.setPwLength(result.len);
-                secureField.setText(afc.makeDummyString(result.len)); // 마스킹 처리
-                secureField.reportEvent('change');
+                secureTxf.setCipherData(result.val);
+                secureTxf.setPwLength(result.len);
+                secureTxf.setText(afc.makeDummyString(result.len)); // 마스킹 처리
+                secureTxf.reportEvent('change');
             } else {
                 AToast.show('입력 취소 또는 실패');
             }
-        }, secureField);
+        }, secureTxf);
     });
 
     // change 이벤트 핸들링
-    secureField.bindEvent('change', () => {
+    secureTxf.bindEvent('change', () => {
         AToast.show(
-            '입력값: ' + secureField.getText() +
-            '\n암호화 데이터: ' + secureField.getCipherData() +
-            '\n입력 길이: ' + secureField.getPwLength()
+            '입력값: ' + secureTxf.getText() +
+            '\n암호화 데이터: ' + secureTxf.getCipherData() +
+            '\n입력 길이: ' + secureTxf.getPwLength()
         );
     });
 }
+```
 
+**2-2) OnWebPad 사용 예제**
+
+```javascript
+onInitDone() {
+    super.onInitDone();
+
+    // 키패드 열림/닫힘 알림 콜백
+    this.onSecurePadChange = function (isOpen) {
+        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'));
+    };
+
+    const secureTxf = this.secureBox;
+    secureTxf.setAttr('readonly', true);
+    secureTxf.setPlaceholder('비밀번호 입력');
+    secureTxf.setText('');
+
+    const padOption = {
+        title: '비밀번호 입력',
+        padType: 'char',
+        returnType: '1',
+        minLength: 4,
+        maxLength: 20
+    };
+
+    secureTxf.padOption = padOption;
+
+    // 버튼 클릭 시 보안 키패드 오픈 (웹 전용 호출로 수정)
+    this.btn.bindEvent('click', () => {
+        SecureWebPadManager.openWebPad(padOption, (isSuccess, result, length) => {
+            if (isSuccess && result) {
+                secureTxf.setCipherData(result.val);
+                secureTxf.setPwLength(result.len);
+                secureTxf.setText(afc.makeDummyString(result.len));
+                secureTxf.reportEvent('change');
+            } else {
+                AToast.show('입력 취소 또는 실패');
+            }
+        }, secureTxf, this); // ← rootView (this) 추가 전달
+    });
+
+
+    // change 이벤트 핸들링
+    secureTxf.bindEvent('change', () => {
+        AToast.show(
+            '입력값: ' + secureTxf.getText() +
+            '\n암호화 데이터: ' + secureTxf.getCipherData() +
+            '\n입력 길이: ' + secureTxf.getPwLength()
+        );
+    });
+}
 ```
 
 **3. 프로젝트 실행**
@@ -125,21 +179,21 @@ onInitDone() {
     };
 
     // SecureTextField 생성 및 설정
-    let secureField = new EXSecureTextField();
+    let secureTxf = new EXSecureTextField();
 
     let id = 'secure-input-' + Date.now();
-    secureField.createElement();              // DOM 생성
-    secureField.setComponentId(id);           // 컴포넌트 ID 등록
-    secureField.init();                       // 초기화
+    secureTxf.createElement();              // DOM 생성
+    secureTxf.setComponentId(id);           // 컴포넌트 ID 등록
+    secureTxf.init();                       // 초기화
 
-    secureField.element.id = id;              // DOM에 직접 ID 지정
-    secureField.element.acomp = secureField;  // acomp 연결 (중요)
-    this.addComponent(secureField);           // 실제로 화면에 붙임
-    secureField.setText('');
+    secureTxf.element.id = id;              // DOM에 직접 ID 지정
+    secureTxf.element.acomp = secureTxf;  // acomp 연결
+    this.addComponent(secureTxf);           // 실제로 화면에 붙임
+    secureTxf.setText('');
 
-    secureField.setPlaceholder('비밀번호 입력');
-    secureField.setPos(100, 100);
-    secureField.setAttr('readonly', true);
+    secureTxf.setPlaceholder('비밀번호 입력');
+    secureTxf.setPos(100, 100);
+    secureTxf.setAttr('readonly', true);
 
     // 패드 옵션 설정
     let padOption = {
@@ -150,7 +204,7 @@ onInitDone() {
         maxLength: 20
     };
 
-    secureField.padOption = padOption;
+    secureTxf.padOption = padOption;
 
     // 버튼 생성 및 설정
     const btn = new AButton();
@@ -164,10 +218,7 @@ onInitDone() {
     // 버튼 클릭 시 SecurePad 열기
     btn.bindEvent('click', () => {
         requestAnimationFrame(() => {  // DOM이 렌더된 이후 실행
-            const el = document.getElementById(secureField.element.id);
-            console.log('[ID 추적]', secureField.element.id);
-            console.log('[DOM 있음?]', el);
-            console.log('[acomp 연결됨?]', el?.acomp);
+            const el = document.getElementById(secureTxf.element.id);
 
             if (!el || !el.acomp) {
                 AToast.show('입력 필드가 아직 렌더링되지 않았습니다.');
@@ -176,31 +227,30 @@ onInitDone() {
 
             SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
                 if (isSuccess && result) {
-                    secureField.setCipherData(result.val);
-                    secureField.setPwLength(result.len);
-                    secureField.setText(afc.makeDummyString(result.len)); // 마스킹
-                    secureField.reportEvent('change');
+                    secureTxf.setCipherData(result.val);
+                    secureTxf.setPwLength(result.len);
+                    secureTxf.setText(afc.makeDummyString(result.len)); // 마스킹
+                    secureTxf.reportEvent('change');
                 } else {
                     AToast.show('입력 취소 또는 실패');
                 }
-            }, secureField);
+            }, secureTxf);
         });
     });
 
 
     // 변경 시 알림
-    secureField.bindEvent('change', () => {
+    secureTxf.bindEvent('change', () => {
         AToast.show(
-            '입력값: ' + secureField.getText() +
-            '\n암호화 데이터: ' + secureField.getCipherData() +
-            '\n입력 길이: ' + secureField.getPwLength()
+            '입력값: ' + secureTxf.getText() +
+            '\n암호화 데이터: ' + secureTxf.getCipherData() +
+            '\n입력 길이: ' + secureTxf.getPwLength()
         );
     });
 
-    // this.secureField 저장
-    this.secureField = secureField;
+    // this.secureTxf 저장
+    this.secureTxf = secureTxf;
 }
-
 ```
 
 
@@ -283,6 +333,7 @@ window.ML4WebVKey = {
             val = val.slice(0, -1);
         } else if (key === '확인') {
             SecurePadManager.onWebKeypadClose(input.id);
+            //SecureWebPadManager.onWebKeypadClose(input.id); 2-2) openWebPad 사용 시 주석 해
             document.getElementById('vkey-container')?.remove();
             return;
         } else if (key === 'reset') {
