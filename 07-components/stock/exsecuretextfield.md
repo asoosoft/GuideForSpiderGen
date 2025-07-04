@@ -104,7 +104,7 @@ onInitDone() {
 }
 ```
 
-**2-2) OnWebPad 사용 예제**
+**2-2) OpenWebPad 사용 예제**
 
 ```javascript
 onInitDone() {
@@ -168,6 +168,10 @@ onInitDone() {
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
+
+
+
+**4-1) OpenPad 사용 예제**
 
 ```javascript
 onInitDone() {
@@ -255,18 +259,108 @@ onInitDone() {
 
 
 
+**4-2) OpenWebPad 사용 예제**
+
+```javascript
+onInitDone() {
+    super.onInitDone();
+
+    // 키패드 열림/닫힘 알림 콜백
+    this.onSecurePadChange = function (isOpen) {
+        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'));
+    };
+
+    // SecureTextField 생성 및 설정
+    const secureTxf = new EXSecureTextField();
+
+    const id = 'secure-input-' + Date.now();
+    secureTxf.createElement();              // DOM 생성
+    secureTxf.setComponentId(id);           // 컴포넌트 ID 등록
+    secureTxf.init();                       // 초기화
+
+    secureTxf.element.id = id;              // DOM에 직접 ID 지정
+    secureTxf.element.acomp = secureTxf;    // acomp 연결
+    this.addComponent(secureTxf);           // 화면에 붙임
+    secureTxf.setText('');
+
+    secureTxf.setPlaceholder('비밀번호 입력');
+    secureTxf.setPos(100, 100);
+    secureTxf.setAttr('readonly', true);
+
+    // 패드 옵션 설정
+    const padOption = {
+        title: '비밀번호 입력',
+        padType: 'char',
+        returnType: '1',
+        minLength: 4,
+        maxLength: 20
+    };
+
+    secureTxf.padOption = padOption;
+
+    // 버튼 생성 및 설정
+    const btn = new AButton();
+    btn.createElement();
+    this.addComponent(btn);
+    btn.init();
+    btn.setText('🔐 보안 키패드');
+    btn.setPos(100, 150);
+    btn.setSize(200, 40);
+
+    // 버튼 클릭 시 SecureWebPadManager 사용
+    btn.bindEvent('click', () => {
+        requestAnimationFrame(() => {
+            const el = document.getElementById(secureTxf.element.id);
+            console.log('[ID 추적]', secureTxf.element.id);
+            console.log('[DOM 있음?]', el);
+            console.log('[acomp 연결됨?]', el?.acomp);
+
+            if (!el || !el.acomp) {
+                AToast.show('입력 필드가 아직 렌더링되지 않았습니다.');
+                return;
+            }
+
+            SecureWebPadManager.openWebPad(padOption, (isSuccess, result, length) => {
+                if (isSuccess && result) {
+                    secureTxf.setCipherData(result.val);
+                    secureTxf.setPwLength(result.len);
+                    secureTxf.setText(afc.makeDummyString(result.len)); // 마스킹 처리
+                    secureTxf.reportEvent('change');
+                } else {
+                    AToast.show('입력 취소 또는 실패');
+                }
+            }, secureTxf, this);  // ← rootView로 this 전달
+        });
+    });
+
+    // 값 변경 시 이벤트
+    secureTxf.bindEvent('change', () => {
+        AToast.show(
+            '입력값: ' + secureTxf.getText() +
+            '\n암호화 데이터: ' + secureTxf.getCipherData() +
+            '\n입력 길이: ' + secureTxf.getPwLength()
+        );
+    });
+
+    // 나중에 접근할 수 있도록 저장
+    this.secureTxf = secureTxf;
+}
+```
+
+
+
 5. **라이브러리**
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-04 141522.png" alt=""><figcaption></figcaption></figure>
 
 * _**프로젝트 트리뷰에서 Framework > Library 우클릭 > Add new > Javascript**_&#x20;
 
-| 파일명                        | 설명                                                   |
-| -------------------------- | ---------------------------------------------------- |
-| **ML4WebVKeyPad.js**       | 웹 가상 키보드를 제어하고 표시하기 위한 핵심 라이브러리.                     |
-| **CryptoJS.js**            | 입력된 데이터를 간단하게 암호화하거나 복호화하는 유틸리티 함수 모음.               |
-| **SecurePadManager.js**    | 네이티브/웹 보안 키패드의 열기/닫기 및 입력 처리 전반을 관리.                 |
-| **SecureWebPadManager.js** | 웹에서만 동작하는 보안 키패드의 세부 로직을 별도로 관리. (ML4WebVKeyPad와 연동) |
+| 파일명                        | 설명                                    |
+| -------------------------- | ------------------------------------- |
+| **ML4WebVKeyPad.js**       | 웹 가상 키보드를 제어하고 표시하기 위한 핵심 라이브러리       |
+| **CryptoJS.js**            | 입력된 데이터를 간단하게 암호화하거나 복호화하는 유틸리티 함수 모음 |
+| **SecurePadManager.js**    | 네이티브/웹 보안 키패드의 열기/닫기 및 입력 처리 전반을 관리   |
+| **SecureWebPadManager.js** | 웹에서만 동작하는 보안 키패드의 세부 로직을 별도로 관리       |
 
 
 
@@ -333,7 +427,7 @@ window.ML4WebVKey = {
             val = val.slice(0, -1);
         } else if (key === '확인') {
             SecurePadManager.onWebKeypadClose(input.id);
-            //SecureWebPadManager.onWebKeypadClose(input.id); 2-2) openWebPad 사용 시 주석 해
+            //SecureWebPadManager.onWebKeypadClose(input.id); 2-2) openWebPad 사용 시 주석 해제
             document.getElementById('vkey-container')?.remove();
             return;
         } else if (key === 'reset') {
@@ -471,6 +565,8 @@ window.ML4WebVKeyPad = {
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-04 141206.png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 155629.gif" alt=""><figcaption></figcaption></figure>
+
 ```
 window.ML4WebVKeyPad = {
     setVirtualKeyboard: function(element) {
@@ -551,6 +647,7 @@ window.ML4WebVKey = {
             val = val.slice(0, -1);
         } else if (key === '확인') {
             SecurePadManager.onWebKeypadClose(input.id);
+            //SecureWebPadManager.onWebKeypadClose(input.id); 2-2) openWebPad 사용 시 주석 해제
             document.getElementById('vkey-container')?.remove();
             return;
         } else {
