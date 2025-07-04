@@ -33,6 +33,8 @@ EXSecureTextField 속성
 
 **2. 데이터 설정**
 
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 140530.gif" alt=""><figcaption></figcaption></figure>
+
 * 먼저 MainView.js 파일을 오픈
 * 상단의 파일탭에서 MainView.lay 탭을 더블 클릭하거나 우측의 프로젝트 트리에서 MainView.js 파일을 더블 클릭
 * 모든 화면뷰는 onInitDone() 함수가 존재하며 이 함수는 화면이 생성될 때 딱 한번 실행
@@ -42,134 +44,16 @@ EXSecureTextField 속성
 onInitDone() {
     super.onInitDone();
 
-    // Placeholder 설정
-    this.secureTxf.setPlaceholder('비밀번호 입력');
-
-    // Pad 설정
-    this.secureTxf.padOption = {
-        title: '비밀번호 입력',
-        padType: 'char',
-        returnType: '1',   // Hash 반환
-        minLength: 4,
-        maxLength: 20
-    };
-
-    // 값 초기화
-    this.secureTxf.setText('');
-
-    this.secureTxf.bindEvent('input', function () {
-        const comp = this.acomp;  // 실제 EXSecureTextField 컴포넌트
-        const plain = comp.getText();
-
-        comp.setCipherData(plain);
-        comp.setPwLength(plain.length);
-    });
-
-    this.secureTxf.bindEvent('change', () => {
-        const cipher = this.secureTxf.getCipherData();
-        const length = this.secureTxf.getPwLength();
-
-        AToast.show("암호화 값: " + cipher + "\n 입력 길이: " + length, 3000);
-    });
-
-}
-```
-
-**3. 프로젝트 실행**
-
-* 설정한 데이터에 맞춰서 컴포넌트와 입력 텍스트가 표시
-
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 085303.gif" alt=""><figcaption></figcaption></figure>
-
-**4. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
-
-* 먼저 MainView.js 파일을 오픈
-* onInitDone() 함수에서 아래와 같이 코드를 입력
-
-```javascript
-onInitDone() {
-    super.onInitDone();
-
-    const container = new AView();
-    container.createElement();
-    this.addComponent(container);
-    container.init();
-
-    const secureField = new EXSecureTextField();
-    secureField.createElement();
-    container.addComponent(secureField);
-    secureField.init();
-
-     // placeholder 설정
-    secureField.setPlaceholder('비밀번호 입력');
-
-    // pad 옵션 설정
-    secureField.padOption = {
-        title: '비밀번호 입력',
-        padType: 'char',
-        returnType: '1',
-        minLength: 4,
-        maxLength: 20
-    };
-
-    // 텍스트 초기화
-    secureField.setText('');
-
-    // 위치 설정
-    secureField.setPos(100, 100);
-
-    secureField.bindEvent('input', function () {
-        const comp = this.acomp;
-        const plain = comp.getText();
-        comp.setCipherData(plain);
-        comp.setPwLength(plain.length);
-    });
-
-    secureField.bindEvent('change', (e) => {
-        const cipher = secureField.getCipherData();
-        const length = secureField.getPwLength();
-
-        AToast.show("암호화 값: " + cipher + "\n 입력 길이: " + length, 3000);
-    });
-
-    this.secureField = secureField;
-}
-
-```
-
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 085550.gif" alt=""><figcaption></figcaption></figure>
-
-
-
-5. **SecurePadManager 예제 코드**
-
-```javascript
-onInitDone() {
-    super.onInitDone();
-
+    // 키패드 열림/닫힘 알림 콜백
     this.onSecurePadChange = function (isOpen) {
-        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'), 2000);
+        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'));
     };
 
-    const container = new AView();
-    container.createElement();
-    this.addComponent(container);
-    container.init();
-
-    const secureField = new EXSecureTextField();
-    secureField.createElement();
-    container.addComponent(secureField);
-    secureField.init();
-
-    if (afc.isIos) {
-        secureField.setDataType('text');
-    }
-
+    // SecureTextField 설정
+    const secureField = this.secureTxf;
+    secureField.setAttr('readonly', true);
+    secureField.setPlaceholder('비밀번호 입력');
     secureField.setText('');
-    secureField.setCipherData('');
-    secureField.setPwLength(0);
-    secureField.setPlaceholder('비밀번호 입력');  // jQuery → 메서드로 교체 권장
-    secureField.setPos(100, 100);
 
     const padOption = {
         title: '비밀번호 입력',
@@ -181,68 +65,236 @@ onInitDone() {
 
     secureField.padOption = padOption;
 
-    const btn = new AButton();
-    btn.createElement();
-    container.addComponent(btn);
-    btn.init();
-    btn.setText('보안 키패드');
-    btn.setPos(100, 180);
+    // 버튼 클릭 시 보안 키패드 오픈
+    this.btn.bindEvent('click', () => {
+        const el = document.getElementById(secureField.element.id);
 
-    // 입력 이벤트에서 암호값, 길이 미리 설정
-    secureField.bindEvent('input', function () {
-        const comp = this.acomp;
-        const val = comp.getText();
+        console.log('[ID 추적]', secureField.element.id);
+        console.log('[DOM 있음?]', el);
+        console.log('[acomp 연결됨?]', el?.acomp);
 
-        comp.setCipherData(val);
-        comp.setPwLength(val.length);
+        if (!el || !el.acomp) {
+            AToast.show('입력 필드가 아직 렌더링되지 않았습니다.');
+            return;
+        }
+
+        SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
+            if (isSuccess && result) {
+                secureField.setCipherData(result.val);
+                secureField.setPwLength(result.len);
+                secureField.setText(afc.makeDummyString(result.len)); // 마스킹 처리
+                secureField.reportEvent('change');
+            } else {
+                AToast.show('입력 취소 또는 실패');
+            }
+        }, secureField);
     });
 
-    // change 이벤트는 표시만
+    // change 이벤트 핸들링
     secureField.bindEvent('change', () => {
         AToast.show(
             '입력값: ' + secureField.getText() +
             '\n암호화 데이터: ' + secureField.getCipherData() +
-            '\n입력 길이: ' + secureField.getPwLength(),
-            3000
+            '\n입력 길이: ' + secureField.getPwLength()
+        );
+    });
+}
+
+```
+
+**3. 프로젝트 실행**
+
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 135750.gif" alt=""><figcaption></figcaption></figure>
+
+* 설정한 데이터에 맞춰서 컴포넌트와 입력 텍스트가 표시
+
+
+
+**4. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
+
+* 먼저 MainView.js 파일을 오픈
+* onInitDone() 함수에서 아래와 같이 코드를 입력
+
+```javascript
+onInitDone() {
+    super.onInitDone();
+
+    // SecurePad 열고 닫힐 때 알림
+    this.onSecurePadChange = function (isOpen) {
+        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'));
+    };
+
+    // SecureTextField 생성 및 설정
+    let secureField = new EXSecureTextField();
+
+    let id = 'secure-input-' + Date.now();
+    secureField.createElement();              // DOM 생성
+    secureField.setComponentId(id);           // 컴포넌트 ID 등록
+    secureField.init();                       // 초기화
+
+    secureField.element.id = id;              // DOM에 직접 ID 지정
+    secureField.element.acomp = secureField;  // acomp 연결 (중요)
+    this.addComponent(secureField);           // 실제로 화면에 붙임
+    secureField.setText('');
+
+    secureField.setPlaceholder('비밀번호 입력');
+    secureField.setPos(100, 100);
+    secureField.setAttr('readonly', true);
+
+    // 패드 옵션 설정
+    let padOption = {
+        title: '비밀번호 입력',
+        padType: 'char',
+        returnType: '1',
+        minLength: 4,
+        maxLength: 20
+    };
+
+    secureField.padOption = padOption;
+
+    // 버튼 생성 및 설정
+    const btn = new AButton();
+    btn.createElement();
+    this.addComponent(btn);
+    btn.init();
+    btn.setText('🔐 보안 키패드');
+    btn.setPos(100, 150);
+    btn.setSize(200, 40);
+
+    // 버튼 클릭 시 SecurePad 열기
+    btn.bindEvent('click', () => {
+        requestAnimationFrame(() => {  // DOM이 렌더된 이후 실행
+            const el = document.getElementById(secureField.element.id);
+            console.log('[ID 추적]', secureField.element.id);
+            console.log('[DOM 있음?]', el);
+            console.log('[acomp 연결됨?]', el?.acomp);
+
+            if (!el || !el.acomp) {
+                AToast.show('입력 필드가 아직 렌더링되지 않았습니다.');
+                return;
+            }
+
+            SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
+                if (isSuccess && result) {
+                    secureField.setCipherData(result.val);
+                    secureField.setPwLength(result.len);
+                    secureField.setText(afc.makeDummyString(result.len)); // 마스킹
+                    secureField.reportEvent('change');
+                } else {
+                    AToast.show('입력 취소 또는 실패');
+                }
+            }, secureField);
+        });
+    });
+
+
+    // 변경 시 알림
+    secureField.bindEvent('change', () => {
+        AToast.show(
+            '입력값: ' + secureField.getText() +
+            '\n암호화 데이터: ' + secureField.getCipherData() +
+            '\n입력 길이: ' + secureField.getPwLength()
         );
     });
 
+    // this.secureField 저장
     this.secureField = secureField;
 }
+
 ```
 
-5-1. **라이브러리**
-
-* _**프로젝트 트리뷰에서 Framework > Library 우클릭 > Add new > Javascript >**_**&#x20;ML4WebVKeyPad.js + SecurePadManager.js 생성**
-
-<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 
+5. **라이브러리**
 
-* **ML4WebVKeyPad.js**
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-04 141522.png" alt=""><figcaption></figcaption></figure>
+
+* _**프로젝트 트리뷰에서 Framework > Library 우클릭 > Add new > Javascript**_&#x20;
+
+| 파일명                        | 설명                                                   |
+| -------------------------- | ---------------------------------------------------- |
+| **ML4WebVKeyPad.js**       | 웹 가상 키보드를 제어하고 표시하기 위한 핵심 라이브러리.                     |
+| **CryptoJS.js**            | 입력된 데이터를 간단하게 암호화하거나 복호화하는 유틸리티 함수 모음.               |
+| **SecurePadManager.js**    | 네이티브/웹 보안 키패드의 열기/닫기 및 입력 처리 전반을 관리.                 |
+| **SecureWebPadManager.js** | 웹에서만 동작하는 보안 키패드의 세부 로직을 별도로 관리. (ML4WebVKeyPad와 연동) |
+
+
+
+* **CryptoJS.js**
 
 ```javascript
-// ML4WebVKeyPad (가상 키보드 설정용 Mock)
-window.ML4WebVKeyPad = {
-    setVirtualKeyboard: function(element) {
-        console.log('[Mock] ML4WebVKeyPad.setVirtualKeyboard 호출됨:', element);
+window.CryptoJS = {};
+
+CryptoJS.AES = {};
+
+CryptoJS.AES.encrypt = function (plainText, key) {
+    var result = '';
+    for (var i = 0; i < plainText.length; i++) {
+        var charCode = plainText.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+        result += String.fromCharCode(charCode);
     }
+
+    return {
+        toString: function () {
+            return btoa(result); // Base64 인코딩
+        }
+    };
 };
 
-// ML4WebVKey (키보드 동작 관련 Mock)
+CryptoJS.AES.decrypt = function (cipherText, key) {
+    var decoded = atob(cipherText); // Base64 디코딩
+    var result = '';
+    for (var i = 0; i < decoded.length; i++) {
+        var charCode = decoded.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+        result += String.fromCharCode(charCode);
+    }
+    return result;
+};
+
+```
+
+
+
+* **ML4WebVKeyPad.js (PC 버전)**
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-04 141758.png" alt=""><figcaption></figcaption></figure>
+
+```javascript
 window.ML4WebVKey = {
     showKeyboard: function(id) {
-        console.log('[Mock] 가상 키보드 표시:', id);
+        const input = document.getElementById(id);
+        if (!input) {
+            console.warn('[ML4WebVKey] 입력 필드 없음:', id);
+            return;
+        }
+        input.focus();
+    },
 
-        // 실제 입력 시뮬레이션 (3초 뒤에 입력 완료 이벤트 강제 호출)
-        setTimeout(() => {
-            const input = document.getElementById(id);
-            if (input) {
-                input.value = 'mock1234'; // 실제 사용자가 입력한 것처럼 처리
-                input.dispatchEvent(new Event('input'));  // input 이벤트 발생
-                SecurePadManager.onWebKeypadClose(id);   // 강제 close
-            }
-        }, 3000); // 3초 뒤 입력 완료 시뮬레이션
+    _onKeyClick: function(key, input) {
+        const acomp = input.acomp;
+        if (!acomp) {
+            console.warn('[ML4WebVKey] acomp 연결 안됨:', input);
+            return;
+        }
+
+        let val = input.value || '';
+
+        if (key === '←') {
+            val = val.slice(0, -1);
+        } else if (key === '확인') {
+            SecurePadManager.onWebKeypadClose(input.id);
+            document.getElementById('vkey-container')?.remove();
+            return;
+        } else if (key === 'reset') {
+            input.value = '';
+            input.dispatchEvent(new Event('input'));
+            return;
+        } else {
+            val += key;
+        }
+
+        input.value = val;
+        input.dispatchEvent(new Event('input'));
     },
 
     getDecryptedPassword: function(id) {
@@ -251,10 +303,222 @@ window.ML4WebVKey = {
     },
 
     enterKey: function() {
-        console.log('[Mock] Enter 키 눌림');
+        console.log('[ML4WebVKey] Enter 키 눌림');
     }
 };
 
+window.ML4WebVKeyPad = {
+    setVirtualKeyboard: function (element) {
+        if (document.getElementById('vkey-container')) return;
+
+        const container = document.createElement('div');
+        container.id = 'vkey-container';
+        container.style.position = 'fixed';
+        container.style.bottom = '0';
+        container.style.left = '0';
+        container.style.width = '100%';
+        container.style.background = '#f2f2f2';
+        container.style.padding = '12px';
+        container.style.zIndex = '9999';
+        container.style.boxShadow = '0 -2px 8px rgba(0,0,0,0.2)';
+        container.style.display = 'flex';
+        container.style.flexDirection = 'column';
+        container.style.alignItems = 'center';
+        container.style.gap = '12px';
+
+        // 상단 안내 텍스트
+        const infoText = document.createElement('div');
+        infoText.innerText = '59초 후에 보안세션이 만료됩니다.';
+        infoText.style.color = '#555';
+        infoText.style.fontSize = '14px';
+        infoText.style.marginBottom = '8px';
+        container.appendChild(infoText);
+
+        // 숫자 키 배열
+        const rows = [
+            ['🔒', '0', '1', '2', '3', '4'],
+            ['5', '6', '7', '🔒', '8', '9']
+        ];
+
+        rows.forEach(rowKeys => {
+            const row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.justifyContent = 'center';
+            row.style.gap = '10px';
+
+            rowKeys.forEach(key => {
+                const btn = document.createElement('button');
+                btn.innerText = key;
+                btn.style.width = '48px';
+                btn.style.height = '48px';
+                btn.style.borderRadius = '10px';
+                btn.style.border = 'none';
+                btn.style.background = '#fff';
+                btn.style.color = '#000';
+                btn.style.fontSize = '18px';
+                btn.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+                btn.style.cursor = 'pointer';
+
+                btn.onclick = () => {
+                    ML4WebVKey._onKeyClick(key, element);
+                };
+
+                row.appendChild(btn);
+            });
+
+            container.appendChild(row);
+        });
+
+        // 하단 특수 키 영역
+        const bottomRow = document.createElement('div');
+        bottomRow.style.display = 'flex';
+        bottomRow.style.justifyContent = 'center';
+        bottomRow.style.gap = '12px';
+        bottomRow.style.marginTop = '8px';
+
+        const specialKeys = [
+            { label: '↻', action: 'reset', bg: '#ccc' },
+            { label: '⌫', action: '←', bg: '#ccc' },
+            { label: '✔', action: '확인', bg: '#2196f3', color: '#fff' },
+            { label: '✖', action: '취소', bg: '#ccc' }
+        ];
+
+        specialKeys.forEach(({ label, action, bg, color }) => {
+            const btn = document.createElement('button');
+            btn.innerText = label;
+            btn.style.width = '56px';
+            btn.style.height = '48px';
+            btn.style.borderRadius = '10px';
+            btn.style.border = 'none';
+            btn.style.background = bg;
+            btn.style.color = color || '#000';
+            btn.style.fontSize = '18px';
+            btn.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+            btn.style.cursor = 'pointer';
+
+            btn.onclick = () => {
+                if (action === '취소') {
+                    document.getElementById('vkey-container')?.remove();
+                } else {
+                    ML4WebVKey._onKeyClick(action, element);
+                }
+            };
+
+            bottomRow.appendChild(btn);
+        });
+
+        container.appendChild(bottomRow);
+        document.body.appendChild(container);
+    }
+};
+
+```
+
+
+
+* **ML4WebVKeyPad.js (모바일 버전)**
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-04 141206.png" alt=""><figcaption></figcaption></figure>
+
+```
+window.ML4WebVKeyPad = {
+    setVirtualKeyboard: function(element) {
+        // 이미 열려있으면 스킵
+        if (document.getElementById('vkey-container')) return;
+
+        const container = document.createElement('div');
+        container.id = 'vkey-container';
+        container.style.position = 'fixed';
+        container.style.bottom = '0';
+        container.style.left = '0';
+        container.style.width = '100%';
+        container.style.background = '#222'; // 다크 톤
+        container.style.padding = '10px';
+        container.style.display = 'grid';
+        container.style.gridTemplateColumns = 'repeat(10, 1fr)';
+        container.style.gap = '8px';
+        container.style.zIndex = '9999';
+        container.style.boxShadow = '0 -3px 10px rgba(0,0,0,0.5)';
+
+        const keys = [
+            '1','2','3','4','5','6','7','8','9','0',
+            'Q','W','E','R','T','Y','U','I','O','P',
+            'A','S','D','F','G','H','J','K','L',
+            'Z','X','C','V','B','N','M',
+            '←','확인'
+        ];
+
+        keys.forEach(key => {
+            const btn = document.createElement('button');
+            btn.textContent = key;
+            btn.style.fontSize = '18px';
+            btn.style.padding = '16px';
+            btn.style.borderRadius = '8px';
+            btn.style.border = 'none';
+            btn.style.background = key === '확인' ? '#1e88e5' : (key === '←' ? '#555' : '#444');
+            btn.style.color = '#fff';
+            btn.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
+            btn.style.cursor = 'pointer';
+            btn.style.transition = 'background 0.2s';
+
+            btn.onmouseover = () => { btn.style.background = '#666'; };
+            btn.onmouseout = () => {
+                btn.style.background = key === '확인' ? '#1e88e5' : (key === '←' ? '#555' : '#444');
+            };
+
+            btn.onclick = () => {
+                ML4WebVKey._onKeyClick(key, element);
+            };
+
+            container.appendChild(btn);
+        });
+
+        document.body.appendChild(container);
+    }
+};
+
+window.ML4WebVKey = {
+    showKeyboard: function(id) {
+        const input = document.getElementById(id);
+        if (!input) {
+            console.warn('[ML4WebVKey] 입력 필드 없음:', id);
+            return;
+        }
+        input.focus();
+    },
+
+    _onKeyClick: function(key, input) {
+        const acomp = input.acomp;
+        if (!acomp) {
+            console.warn('[ML4WebVKey] acomp 연결 안됨:', input);
+            return;
+        }
+
+        let val = input.value || '';
+
+        if (key === '←') {
+            val = val.slice(0, -1);
+        } else if (key === '확인') {
+            SecurePadManager.onWebKeypadClose(input.id);
+            document.getElementById('vkey-container')?.remove();
+            return;
+        } else {
+            val += key;
+        }
+
+        input.value = val;
+        input.dispatchEvent(new Event('input'));
+    },
+
+    getDecryptedPassword: function(id) {
+        const input = document.getElementById(id);
+        return input ? input.value : '';
+    },
+
+    enterKey: function() {
+        console.log('[ML4WebVKey] Enter 키 눌림');
+    }
+};
 ```
 
 
@@ -428,93 +692,6 @@ var SecurePadManager = {
 
 
 
-* 실행 결과
-
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 102548.gif" alt=""><figcaption></figcaption></figure>
-
-
-
-6. **SecureWebPadManager 예제 코드**
-
-```javascript
-onInitDone() {
-    super.onInitDone();
-
-    this.onSecurePadChange = function (isOpen) {
-        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'), 2000);
-    };
-
-    const container = new AView();
-    container.createElement();
-    this.addComponent(container);
-    container.init();
-
-    const secureField = new EXSecureTextField();
-    secureField.createElement();
-    container.addComponent(secureField);
-    secureField.init();
-
-    secureField.setPlaceholder('비밀번호 입력');
-    secureField.setPos(100, 100);
-
-    const padOption = {
-        title: '비밀번호 입력',
-        padType: 'char',
-        returnType: '1',
-        minLength: 4,
-        maxLength: 20
-    };
-
-    secureField.padOption = padOption;
-
-    const btn = new AButton();
-    btn.createElement();
-    container.addComponent(btn);
-    btn.init();
-    btn.setText('보안 키패드');
-    btn.setPos(100, 180);
-
-    // 실시간 입력 처리
-    secureField.bindEvent('input', function () {
-        const comp = this.acomp;
-        const val = comp.getText();
-        comp.setCipherData(val);
-        comp.setPwLength(val.length);
-    });
-
-    // 엔터 등 변경 시 호출되며 이미 값은 input에서 처리됨
-    secureField.bindEvent('change', () => {
-        AToast.show(
-            '입력값: ' + secureField.getText() +
-            '\n암호화 데이터: ' + secureField.getCipherData() +
-            '\n입력 길이: ' + secureField.getPwLength(),
-            3000
-        );
-    });
-
-    btn.bindEvent('click', () => {
-        SecureWebPadManager.openWebPad(padOption, (isSuccess, result, length) => {
-            if (isSuccess && result) {
-                secureField.setCipherData(result.val);
-                secureField.setPwLength(result.len);
-                secureField.setText(afc.makeDummyString(result.len));
-                secureField.reportEvent('change'); // change 트리거
-            } else {
-                AToast.show('입력 취소 또는 실패', 2000);
-            }
-        }, secureField);
-    });
-
-    this.secureField = secureField;
-}
-```
-
-6-1. **라이브러리**
-
-* _**프로젝트 트리뷰에서 Framework > Library 우클릭 > Add new > Javascript >**_**&#x20;ML4WebVKeyPad.js + SecureWebPadManager.js 생성**
-
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
-
 * **SecureWebPadManager.js**
 
 ```javascript
@@ -600,14 +777,9 @@ var SecureWebPadManager = {
         if (rootView && rootView.onSecurePadChange) rootView.onSecurePadChange(false);
     }
 };
-
 ```
 
 
-
-* 실행 결과
-
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-03 160639.gif" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 <mark style="color:red;">**Build 에러 발생 시**</mark>
