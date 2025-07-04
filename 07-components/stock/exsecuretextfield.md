@@ -2,7 +2,7 @@
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-01 101344.png" alt=""><figcaption></figcaption></figure>
 
-비밀번호, API 키, 시크릿 키 등 민감한 정보를 안전하게 입력받을 수 있도록 설계된 보안 입력 컴포넌트.
+민감한 정보(비밀번호 등)를 SecurePadManager 클래스 또는 객체를 이용하여 외부 라이브러리와 손쉽게 연동하여 안전하게 입력받을 수 있는 입력 컴포넌트.
 
 
 
@@ -18,7 +18,7 @@ EXSecureTextField 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>초기값</td></tr><tr><td><code>Placeholder</code></td><td>입력 전 양식</td></tr><tr><td><code>Align</code></td><td>텍스트 정렬(left, center, right)</td></tr><tr><td><code>Pad Title</code></td><td>키패드가 열릴 때 상단 제목</td></tr><tr><td><code>Data Type</code></td><td>키패드 입력 방식</td></tr><tr><td><code>Return Type</code></td><td>결과 반환 방식</td></tr><tr><td><code>MinLength</code></td><td>최소 입력 길이</td></tr><tr><td><code>MaxLength</code></td><td>최대 입력 길이</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><strong>속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>입력값</td></tr><tr><td><code>Placeholder</code></td><td>입력 전 양식</td></tr><tr><td><code>Align</code></td><td>텍스트 정렬(left, center, right)</td></tr><tr><td><code>Pad Title</code></td><td>키패드가 열릴 때 상단 제목</td></tr><tr><td><code>Data Type</code></td><td>키패드 입력 방식</td></tr><tr><td><code>Return Type</code></td><td>결과 반환 방식</td></tr><tr><td><code>MinLength</code></td><td>최소 입력 길이</td></tr><tr><td><code>MaxLength</code></td><td>최대 입력 길이</td></tr></tbody></table>
 
 ### Example
 
@@ -27,7 +27,7 @@ EXSecureTextField 속성
 * 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
 * Class 에서 ID를&#x20;
-* secureField로 입력
+* secureTxf로 입력
 
 
 
@@ -42,11 +42,11 @@ EXSecureTextField 속성
 onInitDone() {
     super.onInitDone();
 
-    // ✅ Placeholder 설정
-    this.secureField.setPlaceholder('비밀번호 입력');
+    // Placeholder 설정
+    this.secureTxf.setPlaceholder('비밀번호 입력');
 
-    // ✅ Pad 설정
-    this.secureField.padOption = {
+    // Pad 설정
+    this.secureTxf.padOption = {
         title: '비밀번호 입력',
         padType: 'char',
         returnType: '1',   // Hash 반환
@@ -54,17 +54,25 @@ onInitDone() {
         maxLength: 20
     };
 
-    // ✅ 값 초기화
-    this.secureField.setText('');
+    // 값 초기화
+    this.secureTxf.setText('');
 
-    // ✅ jQuery 방식으로 이벤트 연결
-    this.secureField.$ele.on('change', () => {
-        console.log('암호화:', this.secureField.getCipherData());
-        console.log('입력된 길이:', this.secureField.getPwLength());
+    // 일반 키보드 입력 대응
+    this.secureTxf.bindEvent('input', function () {
+        const comp = this.acomp;  // 실제 EXSecureTextField 컴포넌트
+        const plain = comp.getText();
+
+        comp.setCipherData(plain);
+        comp.setPwLength(plain.length);
     });
 
-    // ✅ 위치
-    this.secureField.setPos(100, 100);
+    this.secureTxf.bindEvent('change', () => {
+        const cipher = this.secureTxf.getCipherData();
+        const length = this.secureTxf.getPwLength();
+
+        AToast.show("암호화 값: " + cipher + "\n 입력 길이: " + length, 3000);
+    });
+
 }
 ```
 
@@ -72,7 +80,7 @@ onInitDone() {
 
 * 설정한 데이터에 맞춰서 컴포넌트와 입력 텍스트가 표시
 
-<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 085303.gif" alt=""><figcaption></figcaption></figure>
 
 **4. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
 
@@ -94,10 +102,10 @@ onInitDone() {
         container.addComponent(secureField);
         secureField.init();
 
-        // ✅ placeholder 설정
+        // placeholder 설정
         secureField.$ele.attr('placeholder', '비밀번호 입력');
 
-        // ✅ pad 옵션 설정
+        // pad 옵션 설정
         secureField.padOption = {
             title: '비밀번호 입력',
             padType: 'char',
@@ -106,26 +114,37 @@ onInitDone() {
             maxLength: 20
         };
 
-        // ✅ 텍스트 초기화
+        // 텍스트 초기화
         secureField.setText('');
 
-        // ✅ 위치 설정
+        // 위치 설정
         secureField.setPos(100, 100);
 
-        // ✅ 입력 이벤트
-        secureField.$ele.on('change', () => {
-            console.log('입력값:', secureField.getText());
-            console.log('암호화 데이터:', secureField.getCipherData());
-            console.log('입력 길이:', secureField.getPwLength());
+        // 일반 입력 대응
+        secureField.bindEvent('input', function () {
+            const comp = this.acomp;
+            const plain = comp.getText();
+            comp.setCipherData(plain);
+            comp.setPwLength(plain.length);
         });
 
-        // ✅ 전역 변수로 저장 (필요 시)
+        // 입력 이벤트 - AToast 사용
+        secureField.bindEvent('change', (e) => {
+            const cipher = secureField.getCipherData();
+            const length = secureField.getPwLength();
+
+            AToast.show("암호화 값: " + cipher + "\n 입력 길이: " + length, 3000);
+        });
+
+        // 전역 변수로 저장
         this.secureField = secureField;
     }
 
     ```
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-06-30 134027.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-04 085550.gif" alt=""><figcaption></figcaption></figure>
+
+
 
 5. **SecurePadManager 예제 코드**
 
@@ -590,7 +609,7 @@ var SecureWebPadManager = {
 
 _**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크**_
 
-_**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > AButton.js + AButtonEvent.js + AToast.js 체크**_
+_**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > AButton.js + AButtonEvent.js + AToast.js 체크(Button 라이브러리는 5번 예제부터 필요)**_
 
 <img src="../../.gitbook/assets/스크린샷 2025-07-03 154421 (1).png" alt="" data-size="original"><img src="../../.gitbook/assets/스크린샷 2025-07-03 154435 (3).png" alt="" data-size="original">
 {% endhint %}
