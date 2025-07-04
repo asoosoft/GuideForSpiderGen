@@ -14,9 +14,9 @@ description: 지수를 표현하는 차트 컴포넌트로, 주식 시장에서 
 
 <figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>data 속성</strong></td><td></td></tr><tr><td><code>Title</code></td><td>차트 중앙 상단에 출력될 제목</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>Data 속성</strong></td><td></td></tr><tr><td><code>Title</code></td><td>차트 중앙 상단에 출력될 제목</td></tr></tbody></table>
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>color 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>X, Y 축 눈금 라벨의 색상</td></tr><tr><td><code>Line</code></td><td>그래프의 외곽선 색상</td></tr><tr><td><code>Divide LIne</code></td><td>Y축과 그래프간 경계선 색상</td></tr><tr><td><code>LongTab Line</code></td><td>롱탭시 출력되는 크로스헤어선 색상</td></tr><tr><td><code>Start</code></td><td>그래프 그라데이션 색상 위쪽 색상</td></tr><tr><td><code>End</code></td><td>그래프 그라데이션 색상 아래쪽 색상</td></tr><tr><td><code>Dot</code></td><td> 그래프 그리드 점선 격자 색상</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>Color 속성</strong></td><td></td></tr><tr><td><code>Text</code></td><td>X, Y 축 눈금 라벨의 색상</td></tr><tr><td><code>Line</code></td><td>그래프의 외곽선 색상</td></tr><tr><td><code>Divide LIne</code></td><td>Y축과 그래프간 경계선 색상</td></tr><tr><td><code>LongTab Line</code></td><td>롱탭시 출력되는 크로스헤어선 색상</td></tr><tr><td><code>Start</code></td><td>그래프 그라데이션 색상 위쪽 색상</td></tr><tr><td><code>End</code></td><td>그래프 그라데이션 색상 아래쪽 색상</td></tr><tr><td><code>Dot</code></td><td> 그래프 그리드 점선 격자 색상</td></tr></tbody></table>
 
 ***
 
@@ -66,7 +66,7 @@ onInitDone() {
 
 <figure><img src="../../.gitbook/assets/image (71).png" alt="" width="563"><figcaption></figcaption></figure>
 
-### 코드로 EXJisooView 생성
+### 코드로 EXJisooChart 생성
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
@@ -74,59 +74,58 @@ onInitDone() {
 ```javascript
 onInitDone() 
 {
-        super.onInitDone();
-        
-        //컴포넌트 생성
-        this.jisoo = new EXJisooChart();//view 내에서 호출하기 위해 멤버 변수로 참조를 저장합니다.
-        this.jisoo.init();
-        
-        //데이터 설정
-        const baseData = [...생략...];
-        this.jisoo.setData(baseData);
-        
-        //메서드 위임
-        this.jisoo.setDelegator(this);//EXJisooChart의 callNextData는 화면에서 세팅된 데이터의 끝까지 확인한 경우에 다음 데이터 추가를 위해 호출됩니다
-        
-        this.addComponent(this.jisoo);//컴포넌트 삽입
+    super.onInitDone();
+    
+    //컴포넌트 생성
+    this.jisoo = new EXJisooChart();//view 내에서 호출하기 위해 멤버 변수로 참조를 저장합니다.
+    this.jisoo.init();
+    
+    //데이터 설정
+    const baseData = [...생략...];
+    this.jisoo.setData(baseData);
+    
+    //메서드 위임
+    this.jisoo.setDelegator(this);//EXJisooChart의 callNextData는 화면에서 세팅된 데이터의 끝까지 확인한 경우에 다음 데이터 추가를 위해 호출됩니다
+    
+    this.addComponent(this.jisoo);//컴포넌트 삽입
 }
 
 callNextData(nextIqryDate)//위임받은 callNextData를 재정의합니다.
 {
-        let randomDataArr = [];
-        for(let i=1; i<100; i++) 
-            randomDataArr.push(this.createRandomDataArr(nextIqryDate));
-        //setQueryData(dataArr,kerArr) 메서드로 data 배열 뒤쪽에 추가 값을 저장합니다.(현재 스파이더젠 버전에서 권장하는 방식)
-        this.jisoo.setQueryData(randomDataArr, Object.keys(randomDataArr[0]));
-        this.jisoo.nextIqryDate = randomDataArr[0][0]-1;//다음 호출에서 사용할 nextIqryDate 저장
+    let randomDataArr = [];
+    for(let i=1; i<100; i++) 
+        randomDataArr.push(this.createRandomDataArr(nextIqryDate));
+    //setQueryData(dataArr,kerArr) 메서드로 data 배열 뒤쪽에 추가 값을 저장합니다.(현재 스파이더젠 버전에서 권장하는 방식)
+    this.jisoo.setQueryData(randomDataArr, Object.keys(randomDataArr[0]));
+    this.jisoo.nextIqryDate = randomDataArr[0][0]-1;//다음 호출에서 사용할 nextIqryDate 저장
 }
 
 //이해를 돕기 위한 랜덤 배열을 생성하는 함수입니다(실제로는 통신 값을 이용)
 createRandomDataArr(lastDate)
 {
-        return [parseInt(lastDate)-1,0,0,0,Math.floor(Math.random()*1500),0,0];
+    return [parseInt(lastDate)-1,0,0,0,Math.floor(Math.random()*1500),0,0];
 }
 
 onActiveDone(isFirst) 
 {
-        super.onActiveDone(isFirst);
+    super.onActiveDone(isFirst);
 
-        let currentDate = this.jisoo.data[0][0];
-        //새로고침 타이머
-        if (this.refreshTimer) return;
-        this.refreshTimer = setInterval(()=>
-            {
-                currentDate ++;
-                //addNewData(dataArr,keyArr)로 data 배열 앞쪽에 값을 추가합니다.
-                this.jisoo.addNewData(this.createRandomDataArr(currentDate));
-            }
-        ,1000);
+    let currentDate = this.jisoo.data[0][0];
+    //새로고침 타이머
+    if (this.refreshTimer) return;
+    this.refreshTimer = setInterval(()=>
+    {
+        currentDate ++;
+        //addNewData(dataArr,keyArr)로 data 배열 앞쪽에 값을 추가합니다.
+        this.jisoo.addNewData(this.createRandomDataArr(currentDate));
+    },1000);
 }
 
 onDeactiveDone()
 {
-        //새로고침 타이머 클린업
-        if (!this.refreshTimer) return;
-        clearInterval(this.refreshTimer);
+    //새로고침 타이머 클린업
+    if (!this.refreshTimer) return;
+    clearInterval(this.refreshTimer);
 }
 ```
 
