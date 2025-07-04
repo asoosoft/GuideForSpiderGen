@@ -2,7 +2,7 @@
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-02 150719.png" alt=""><figcaption></figcaption></figure>
 
-업비트의 REST API와 WebSocket을 활용하여 종목 데이터, 캔들, 호가 등 다양한 데이터를 실시간으로 수집 및 표시하는 프레임워크.
+여러 종목데이터를 다른 색상의 선으로 표시하여 시간에 따른 변화나 여러 항목 간의 차이를 한눈에 비교할 수 있는 컴포넌트. 주로 시간별 변화나 트렌드를 분석할 때 사용됩니다.
 
 ***
 
@@ -78,10 +78,10 @@ onInitDone() {
         292, 295, 298, 301, 304, 307, 309, 311, 313, 315
     ];
 
+    this.compareChart.lineDataColor = ['#00cfff', '#ff8800'];
+
     this.compareChart.setData(baseData);
     this.compareChart.addCompareData(['삼성전자', compareData]);
-
-    this.compareChart.lineDataColor = ['#00cfff', '#ff8800'];
 }
 ```
 
@@ -152,12 +152,12 @@ onInitDone() {
         292, 295, 298, 301, 304, 307, 309, 311, 313, 315
     ];
 
+    // 선 색상 설정
+    compareChart.lineDataColor = ['#00cfff', '#ff6600'];
+
     // 차트 데이터 적용
     compareChart.setData(baseData);
     compareChart.addCompareData(['삼성전자', compareData]);
-
-    // 선 색상 설정
-    compareChart.lineDataColor = ['#00cfff', '#ff6600'];
 }
 ```
 
