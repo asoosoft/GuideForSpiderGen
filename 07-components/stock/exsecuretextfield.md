@@ -522,6 +522,7 @@ var SecurePadManager = {
 
 ```javascript
 onInitDone() {
+
     super.onInitDone();
 
     // SecureTextField 생성 및 설정
