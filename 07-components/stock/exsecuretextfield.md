@@ -24,62 +24,27 @@ EXSecureTextField 속성
 
 1. **라이브러리**
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
 
 * _**프로젝트 트리뷰에서 Framework > Library 우클릭 > Add new > Javascript**_&#x20;
 
-| 파일명                     | 설명                                    |
-| ----------------------- | ------------------------------------- |
-| **CryptoJS.js**         | 입력된 데이터를 간단하게 암호화하거나 복호화하는 유틸리티 함수 모음 |
-| **SpiderGenKeyPad.js**  | 웹 가상 키보드를 제어하고 표시하기 위한 핵심 라이브러리       |
-| **SecurePadManager.js** | 네이티브/웹 보안 키패드의 열기/닫기 및 입력 처리 전반을 관리   |
+| 파일명                     | 설명                                  |
+| ----------------------- | ----------------------------------- |
+| **SpiderGenKeyPad.js**  | 웹 가상 키보드를 제어하고 표시하기 위한 핵심 라이브러리     |
+| **SecurePadManager.js** | 네이티브/웹 보안 키패드의 열기/닫기 및 입력 처리 전반을 관리 |
 
 
 
-* **CryptoJS.js**
-
-```javascript
-window.CryptoJS = {};
-
-CryptoJS.AES = {};
-
-CryptoJS.AES.encrypt = function (plainText, key) {
-    var result = '';
-    for (var i = 0; i < plainText.length; i++) {
-        var charCode = plainText.charCodeAt(i) ^ key.charCodeAt(i % key.length);
-        result += String.fromCharCode(charCode);
-    }
-
-    return {
-        toString: function () {
-            return btoa(unescape(encodeURIComponent(result)));
-        }
-    };
-};
-
-CryptoJS.AES.decrypt = function (cipherText, key) {
-    var decoded = decodeURIComponent(escape(atob(cipherText))); // 역변환
-    var result = '';
-    for (var i = 0; i < decoded.length; i++) {
-        var charCode = decoded.charCodeAt(i) ^ key.charCodeAt(i % key.length);
-        result += String.fromCharCode(charCode);
-    }
-    return result;
-};
-```
-
-
-
-* **SpiderGenKeyPad.js (PC 버전)**
+* **SpiderGenKeyPad.js**
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-04 141758.png" alt=""><figcaption></figcaption></figure>
 
 ```javascript
-window.SpiderGenKey = {
+window.SpiderGenKeyPad = {
     showKeyboard: function(id) {
         const input = document.getElementById(id);
         if (!input) {
-            console.warn('[SpiderGenKey] 입력 필드 없음:', id);
+            console.warn('[SpiderGenKeyPad] 입력 필드 없음:', id);
             return;
         }
         input.focus();
@@ -88,7 +53,7 @@ window.SpiderGenKey = {
     _onKeyClick: function(key, input) {
         const acomp = input.acomp;
         if (!acomp) {
-            console.warn('[SpiderGenKey] acomp 연결 안됨:', input);
+            console.warn('[SpiderGenKeyPad] acomp 연결 안됨:', input);
             return;
         }
 
@@ -97,7 +62,7 @@ window.SpiderGenKey = {
         if (key === '←') {
             val = val.slice(0, -1);
         } else if (key === '확인') {
-            SecurePadManager.onWebKeypadClose(input.id);
+            SpiderGenKeyPad.onWebKeypadClose(input.id);
             document.getElementById('vkey-container')?.remove();
             return;
         } else if (key === 'reset') {
@@ -124,11 +89,9 @@ window.SpiderGenKey = {
     },
 
     enterKey: function() {
-        console.log('[SpiderGenKey] Enter 키 눌림');
-    }
-};
+        console.log('[SpiderGenKeyPad] Enter 키 눌림');
+    },
 
-window.SpiderGenKeyPad = {
     setVirtualKeyboard: function (element) {
         if (document.getElementById('vkey-container')) return;
 
@@ -147,7 +110,6 @@ window.SpiderGenKeyPad = {
         container.style.alignItems = 'center';
         container.style.gap = '12px';
 
-        // 상단 안내 텍스트
         const infoText = document.createElement('div');
         infoText.innerText = '59초 후에 보안세션이 만료됩니다.';
         infoText.style.color = '#555';
@@ -155,7 +117,6 @@ window.SpiderGenKeyPad = {
         infoText.style.marginBottom = '8px';
         container.appendChild(infoText);
 
-        // 숫자 키 배열
         const rows = [
             ['🔒', '0', '1', '2', '3', '4'],
             ['5', '6', '7', '🔒', '8', '9']
@@ -181,7 +142,7 @@ window.SpiderGenKeyPad = {
                 btn.style.cursor = 'pointer';
 
                 btn.onclick = () => {
-                    SpiderGenKey._onKeyClick(key, element);
+                    SpiderGenKeyPad._onKeyClick(key, element);
                 };
 
                 row.appendChild(btn);
@@ -190,7 +151,6 @@ window.SpiderGenKeyPad = {
             container.appendChild(row);
         });
 
-        // 하단 특수 키
         const bottomRow = document.createElement('div');
         bottomRow.style.display = 'flex';
         bottomRow.style.justifyContent = 'center';
@@ -218,7 +178,7 @@ window.SpiderGenKeyPad = {
             btn.style.cursor = 'pointer';
 
             btn.onclick = () => {
-                SpiderGenKey._onKeyClick(action, element);
+                SpiderGenKeyPad._onKeyClick(action, element);
             };
 
             bottomRow.appendChild(btn);
@@ -228,120 +188,11 @@ window.SpiderGenKeyPad = {
         document.body.appendChild(container);
     },
 
-    showKeyboard: function(id) {
-        const input = document.getElementById(id);
-        if (!input) {
-            console.warn('[SpiderGenKeyPad] 입력 필드 없음:', id);
-            return;
+    // SecurePadManager에서 참조 시 필요
+    onWebKeypadClose: function(id) {
+        if (SecurePadManager && typeof SecurePadManager.onWebKeypadClose === 'function') {
+            SecurePadManager.onWebKeypadClose(id);
         }
-        input.focus();
-    },
-
-    getDecryptedPassword: SpiderGenKey.getDecryptedPassword
-    
-};
-```
-
-
-
-* **SpiderGenKeyPad.js (모바일 버전)**
-
-<figure><img src="../../.gitbook/assets/image (108).png" alt=""><figcaption></figcaption></figure>
-
-```
-window.SpiderGenKeyPad = {
-    setVirtualKeyboard: function(element) {
-        if (document.getElementById('vkey-container')) return;
-
-        const container = document.createElement('div');
-        container.id = 'vkey-container';
-        container.style.position = 'fixed';
-        container.style.bottom = '0';
-        container.style.left = '0';
-        container.style.width = '100%';
-        container.style.background = '#222';
-        container.style.padding = '10px';
-        container.style.display = 'grid';
-        container.style.gridTemplateColumns = 'repeat(10, 1fr)';
-        container.style.gap = '8px';
-        container.style.zIndex = '9999';
-        container.style.boxShadow = '0 -3px 10px rgba(0,0,0,0.5)';
-
-        const keys = [
-            '1','2','3','4','5','6','7','8','9','0',
-            'Q','W','E','R','T','Y','U','I','O','P',
-            'A','S','D','F','G','H','J','K','L',
-            'Z','X','C','V','B','N','M',
-            '←','확인'
-        ];
-
-        keys.forEach(key => {
-            const btn = document.createElement('button');
-            btn.textContent = key;
-            btn.style.fontSize = '18px';
-            btn.style.padding = '16px';
-            btn.style.borderRadius = '8px';
-            btn.style.border = 'none';
-            btn.style.background = key === '확인' ? '#1e88e5' : (key === '←' ? '#555' : '#444');
-            btn.style.color = '#fff';
-            btn.style.boxShadow = '0 2px 5px rgba(0,0,0,0.3)';
-            btn.style.cursor = 'pointer';
-            btn.style.transition = 'background 0.2s';
-
-            btn.onmouseover = () => { btn.style.background = '#666'; };
-            btn.onmouseout = () => {
-                btn.style.background = key === '확인' ? '#1e88e5' : (key === '←' ? '#555' : '#444');
-            };
-
-            btn.onclick = () => {
-                SpiderGenKeyPad._onKeyClick(key, element);
-            };
-
-            container.appendChild(btn);
-        });
-
-        document.body.appendChild(container);
-    },
-
-    showKeyboard: function(id) {
-        const input = document.getElementById(id);
-        if (!input) {
-            console.warn('[SpiderGenKeyPad] 입력 필드 없음:', id);
-            return;
-        }
-        input.focus();
-    },
-
-    _onKeyClick: function(key, input) {
-        const acomp = input.acomp;
-        if (!acomp) {
-            console.warn('[SpiderGenKeyPad] acomp 연결 안됨:', input);
-            return;
-        }
-
-        let val = input.value || '';
-
-        if (key === '←') {
-            val = val.slice(0, -1);
-        } else if (key === '확인') {
-            SecurePadManager.onWebKeypadClose(input.id);
-            document.getElementById('vkey-container')?.remove();
-            return;
-        } else {
-            val += key;
-        }
-
-        input.value = val;
-        input.dispatchEvent(new Event('input'));
-    },
-
-    getDecryptedPassword: function(id) {
-        const input = document.getElementById(id);
-        return input ? input.value : '';
-    },
-
-    enterKey: function() {
-        console.log('[SpiderGenKeyPad] Enter 키 눌림');
     }
 };
 ```
@@ -469,7 +320,7 @@ var SecurePadManager = {
         sxf.element.dispatchEvent(new Event('change', { bubbles: true }));
 
         SecurePadManager.callback(true, {
-            val: CryptoJS.AES.encrypt(plainText, id).toString(),
+            val: plainText,
             info: id,
             len: len
         }, len);
@@ -509,9 +360,9 @@ var SecurePadManager = {
 
 
 
-**5. 프로젝트 실행(좌측부터 PC 버전, 모바일 버전)**
+**5. 프로젝트 실행**
 
-<div><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 114627.gif" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131922.gif" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 114627.gif" alt=""><figcaption></figcaption></figure>
 
 * 설정한 데이터에 맞춰 보안 키 패드 생성
 
@@ -539,7 +390,7 @@ onInitDone() {
 }
 ```
 
-**7. 프로젝트 실행(좌측부터 PC 버전, 모바일 버전)**
+**7. 프로젝트 실행**
 
-<div><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131231.gif" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131452.gif" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131231.gif" alt=""><figcaption></figcaption></figure>
 
