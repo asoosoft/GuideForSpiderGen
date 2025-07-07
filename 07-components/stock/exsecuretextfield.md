@@ -466,7 +466,7 @@ var SecurePadManager = {
         sxf.setCipherData(plainText);
         sxf.setPwLength(len);
 
-        sxf.$ele.trigger('change');
+        sxf.element.dispatchEvent(new Event('change', { bubbles: true }));
 
         SecurePadManager.callback(true, {
             val: CryptoJS.AES.encrypt(plainText, id).toString(),
