@@ -22,15 +22,7 @@ EXSecureTextField 속성
 
 ### Example
 
-**1. 프로젝트 생성**
-
-* 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
-* MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
-* Class 에서 EXSecureTextField ID를 secureBox로 지정
-
-
-
-2. **라이브러리**
+1. **라이브러리**
 
 <figure><img src="../../.gitbook/assets/image (107).png" alt=""><figcaption></figcaption></figure>
 
@@ -495,7 +487,10 @@ var SecurePadManager = {
 };
 ```
 
+**2. 프로젝트 생성**
 
+* 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
+* MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
 
 **3. 데이터 설정**
 
@@ -504,13 +499,23 @@ var SecurePadManager = {
 * Component 목록 > stock > EXSecureTextField 생성
 * Attribute > Data > Text > 'Text' 문자열 제거하고 빈 열로 실행
 
-**3-1. 프로젝트 실행(좌측부터 PC 버전, 모바일 버전)**
+
+
+4. **Default Load Settings 설정**
+
+* _**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크 > 우측 상단  X(창닫기) 클릭 > 변경된 정보를 저장하시겠습니까> > Yes**_
+
+![](../../.gitbook/assets/image.png)
+
+
+
+**5. 프로젝트 실행(좌측부터 PC 버전, 모바일 버전)**
 
 <div><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 114627.gif" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131922.gif" alt=""><figcaption></figcaption></figure></div>
 
-* 설정한 데이터에 맞춰서 컴포넌트와 입력 텍스트가 표시
+* 설정한 데이터에 맞춰 보안 키 패드 생성
 
-**4. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
+**6. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
@@ -533,19 +538,7 @@ onInitDone() {
 }
 ```
 
-**4-1. 프로젝트 실행(왼쪽부터 PC 버전, 모바일 버전)**
+**7. 프로젝트 실행(좌측부터 PC 버전, 모바일 버전)**
 
 <div><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131231.gif" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131452.gif" alt=""><figcaption></figcaption></figure></div>
-
-{% hint style="info" %}
-<mark style="color:red;">**Build 애러 발생 시**</mark>
-
-_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크 > 우측 상단  X(창닫기) 클릭 > 변경된 정보를 저장하시겠습니까> > Yes**_
-
-
-
-![](../../.gitbook/assets/image.png)
-{% endhint %}
-
-
 
