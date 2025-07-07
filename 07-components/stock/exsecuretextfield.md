@@ -504,13 +504,11 @@ var SecurePadManager = {
 * Component 목록 > stock > EXSecureTextField 생성
 * Attribute > Data > Text > 'Text' 문자열 제거하고 빈 열로 실행
 
-**3-1). 프로젝트 실행**
+**3-1. 프로젝트 실행(좌측부터 PC 버전, 모바일 버전)**
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 114627.gif" alt=""><figcaption></figcaption></figure>
+<div><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 114627.gif" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131922.gif" alt=""><figcaption></figcaption></figure></div>
 
 * 설정한 데이터에 맞춰서 컴포넌트와 입력 텍스트가 표시
-
-
 
 **4. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
 
@@ -521,94 +519,32 @@ var SecurePadManager = {
 onInitDone() {
     super.onInitDone();
 
-    // SecurePad 열고 닫힐 때 알림
-    this.onSecurePadChange = function (isOpen) {
-        AToast.show('SecurePad 상태: ' + (isOpen ? '열림' : '닫힘'));
-    };
-
     // SecureTextField 생성 및 설정
     let secureTxf = new EXSecureTextField();
+    secureTxf.init();
 
-    let id = 'secure-input-' + Date.now();
-    secureTxf.createElement();              // DOM 생성
-    secureTxf.setComponentId(id);           // 컴포넌트 ID 등록
-    secureTxf.init();                       // 초기화
-
-    secureTxf.element.id = id;              // DOM에 직접 ID 지정
-    secureTxf.element.acomp = secureTxf;  // acomp 연결
-    this.addComponent(secureTxf);           // 실제로 화면에 붙임
+    secureTxf.element.acomp = secureTxf;
+    this.addComponent(secureTxf);
     secureTxf.setText('');
 
-    secureTxf.setPlaceholder('비밀번호 입력');
     secureTxf.setPos(100, 100);
     secureTxf.setAttr('readonly', true);
-
-    // 패드 옵션 설정
-    let padOption = {
-        title: '비밀번호 입력',
-        padType: 'char',
-        returnType: '1',
-        minLength: 4,
-        maxLength: 20
-    };
-
-    secureTxf.padOption = padOption;
-
-    // 버튼 생성 및 설정
-    const btn = new AButton();
-    btn.createElement();
-    this.addComponent(btn);
-    btn.init();
-    btn.setText('🔐 보안 키패드');
-    btn.setPos(100, 150);
-    btn.setSize(200, 40);
-
-    // 버튼 클릭 시 SecurePad 열기
-    btn.bindEvent('click', () => {
-        requestAnimationFrame(() => {  // DOM이 렌더된 이후 실행
-            const el = document.getElementById(secureTxf.element.id);
-
-            if (!el || !el.acomp) {
-                AToast.show('입력 필드가 아직 렌더링되지 않았습니다.');
-                return;
-            }
-
-            SecurePadManager.openPad(padOption, (isSuccess, result, length) => {
-                if (isSuccess && result) {
-                    secureTxf.setCipherData(result.val);
-                    secureTxf.setPwLength(result.len);
-                    secureTxf.setText(afc.makeDummyString(result.len)); // 마스킹
-                    secureTxf.reportEvent('change');
-                } else {
-                    AToast.show('입력 취소 또는 실패');
-                }
-            }, secureTxf);
-        });
-    });
-
-
-    // 변경 시 알림
-    secureTxf.bindEvent('change', () => {
-        AToast.show(
-            '입력값: ' + secureTxf.getText() +
-            '\n암호화 데이터: ' + secureTxf.getCipherData() +
-            '\n입력 길이: ' + secureTxf.getPwLength()
-        );
-    });
-
-    // this.secureTxf 저장
-    this.secureTxf = secureTxf;
+    
 }
 ```
 
+**4-1. 프로젝트 실행(왼쪽부터 PC 버전, 모바일 버전)**
+
+<div><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131231.gif" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131452.gif" alt=""><figcaption></figcaption></figure></div>
+
 {% hint style="info" %}
-<mark style="color:red;">**Build 에러 발생 시**</mark>
+<mark style="color:red;">**Build 애러 발생 시**</mark>
 
-_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크**_
+_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크 > 우측 상단  X(창닫기) 클릭 > 변경된 정보를 저장하시겠습니까> > Yes**_
 
-_**프로젝트 트리뷰에서 Framework > afc 우클릭 > Default Load Settings.. > Component > AButton.js + AButtonEvent.js + AToast.js 체크(Button 라이브러리는 5번 예제부터 필요)**_
 
-<img src="../../.gitbook/assets/스크린샷 2025-07-04 103126.png" alt="" data-size="original"><img src="../../.gitbook/assets/스크린샷 2025-07-04 103134.png" alt="" data-size="original"><img src="../../.gitbook/assets/스크린샷 2025-07-04 103232.png" alt="" data-size="original">
+
+![](../../.gitbook/assets/image.png)
 {% endhint %}
 
 

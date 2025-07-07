@@ -4,7 +4,7 @@ description: 시간과 현재가 데이터를 라인 차트로 시각화하여 �
 
 # EXMiniChart
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Appearance
 
@@ -149,7 +149,7 @@ onInitDone() {
 
 **결과 확인**
 
-<p align="center"><img src="../../.gitbook/assets/image (1).png" alt=""></p>
+<p align="center"><img src="../../.gitbook/assets/image (1) (2).png" alt=""></p>
 
 ***
 
