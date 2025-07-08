@@ -28,10 +28,41 @@ EXSecureTextField 속성
 
 * _**프로젝트 트리뷰에서 Framework > Library 우클릭 > Add new > Javascript**_&#x20;
 
-| 파일명                     | 설명                                  |
-| ----------------------- | ----------------------------------- |
-| **SpiderGenKeyPad.js**  | 웹 가상 키보드를 제어하고 표시하기 위한 핵심 라이브러리     |
-| **SecurePadManager.js** | 네이티브/웹 보안 키패드의 열기/닫기 및 입력 처리 전반을 관리 |
+
+
+| 파일명                     | 설명                                                                              |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| **SecurePadManager.js** | 보안 키패드의 열기, 닫기 및 입력 처리 관리                                                       |
+| **SpiderGenKeyPad.js**  | 가상 키보드를 제어하고 표시하기 위한 임시라이브러리<mark style="color:red;">**(실제 프로젝트 사용 금지)**</mark> |
+
+
+
+* **SecurePadManager.js**
+
+```javascript
+var SecurePadManager = {
+    isEnable: true,//afc.isNative,
+
+    //보안키패드 오픈 함수
+    openPad: function(padOption, callback, sxf)
+    {
+        this.padOption = padOption;
+        this.sxf = sxf;
+
+        sxf.clear();
+        //키패드를 띄울 때 필요한 정보는 padOption 에서 전달
+        //ex) SpiderGenKeyPad.setPadOption(padOption)
+        SpiderGenKeyPad.showKeypad(padOption, function(isClosed, encData, len) {
+            callback(isClosed, encData, len);
+        });
+    },
+
+    closePad: function()
+    {
+        SpiderGenKeyPad.closeKeypad(secureTxf.element);
+    }
+};
+```
 
 
 
@@ -39,61 +70,45 @@ EXSecureTextField 속성
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-04 141758.png" alt=""><figcaption></figcaption></figure>
 
-```javascript
-window.SpiderGenKeyPad = {
-    showKeyboard: function(id) {
-        const input = document.getElementById(id);
-        if (!input) {
-            console.warn('[SpiderGenKeyPad] 입력 필드 없음:', id);
-            return;
-        }
-        input.focus();
-    },
-
-    _onKeyClick: function(key, input) {
-        const acomp = input.acomp;
-        if (!acomp) {
-            console.warn('[SpiderGenKeyPad] acomp 연결 안됨:', input);
-            return;
-        }
-
-        let val = input.value || '';
-
-        if (key === '←') {
-            val = val.slice(0, -1);
-        } else if (key === '확인') {
-            SpiderGenKeyPad.onWebKeypadClose(input.id);
-            document.getElementById('vkey-container')?.remove();
-            return;
-        } else if (key === 'reset') {
-            input.value = '';
-            input.dispatchEvent(new Event('input'));
+<pre class="language-javascript"><code class="lang-javascript">var SpiderGenKeyPad = {
+    val: '',
+<strong>    _onKeyClick: function(key) {
+</strong>        let val = SpiderGenKeyPad.val
+        if (key === '←') val = val.slice(0, -1)
+        else if (key === 'reset') val = ''
+        else if (key === '확인') {
+            this.closeKeypad()
             return;
         } else if (key === '취소') {
-            document.getElementById('vkey-container')?.remove();
-            if (typeof SecurePadManager?.callback === 'function') {
-                SecurePadManager.callback(true, null, 0);
-            }
+            SpiderGenKeyPad.val = ''
+            this.closeKeypad()
             return;
-        } else {
-            val += key;
+        } else if (key.match(/[0-9]/)) {
+            val += key
         }
 
-        input.value = val;
-        input.dispatchEvent(new Event('input'));
+        SpiderGenKeyPad.val = val;
+        this.callback(false, null, val.length);
     },
 
-    getDecryptedPassword: function(id) {
-        const input = document.getElementById(id);
-        return input ? input.value : '';
+    closeKeypad()
+    {
+        let containerEle = document.getElementById('vkey-container')
+        if(containerEle) {
+            containerEle.remove()
+            if(this.callback) {
+                let val = SpiderGenKeyPad.val
+                this.callback(true, val?new TextEncoder().encode(val):null, val.length)
+                this.callback = null
+            }
+        }
     },
 
-    enterKey: function() {
-        console.log('[SpiderGenKeyPad] Enter 키 눌림');
-    },
+    showKeypad: function (element, callback) {
+        if (document.getElementById('vkey-container')) return
 
-    setVirtualKeyboard: function (element) {
-        if (document.getElementById('vkey-container')) return;
+        SpiderGenKeyPad.val = ''
+        this.callback = callback
 
         const container = document.createElement('div');
         container.id = 'vkey-container';
@@ -122,6 +137,16 @@ window.SpiderGenKeyPad = {
             ['5', '6', '7', '🔒', '8', '9']
         ];
 
+        //shuffle Array
+        let currentIndex = 12;
+        let randomIndex;
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [rows[parseInt(currentIndex/6)][currentIndex%6], rows[parseInt(randomIndex/6)][randomIndex%6]] = [rows[parseInt(randomIndex/6)][randomIndex%6], rows[parseInt(currentIndex/6)][currentIndex%6]]; // ES6 destructuring
+        }
+
+        this.keyBtns = [];
         rows.forEach(rowKeys => {
             const row = document.createElement('div');
             row.style.display = 'flex';
@@ -142,9 +167,10 @@ window.SpiderGenKeyPad = {
                 btn.style.cursor = 'pointer';
 
                 btn.onclick = () => {
-                    SpiderGenKeyPad._onKeyClick(key, element);
+                    SpiderGenKeyPad._onKeyClick(key);
                 };
 
+                this.keyBtns.push(btn);
                 row.appendChild(btn);
             });
 
@@ -186,187 +212,43 @@ window.SpiderGenKeyPad = {
 
         container.appendChild(bottomRow);
         document.body.appendChild(container);
-    },
-
-    // SecurePadManager에서 참조 시 필요
-    onWebKeypadClose: function(id) {
-        if (SecurePadManager && typeof SecurePadManager.onWebKeypadClose === 'function') {
-            SecurePadManager.onWebKeypadClose(id);
-        }
     }
 };
-```
+</code></pre>
 
 
-
-* **SecurePadManager.js**
-
-```javascript
-var SecurePadManager = {
-	isEnable: true,//afc.isNative,
-	callback: null,
-
-	//보안키패드 오픈 함수
-	openPad: function(padOption, callback, secureTxf)
-	{
-		var rootView = secureTxf.getRootView();
-		var thisObj = this;
-        this.padOption = padOption;
-		if(afc.isNative) { //App
-			padOption.id = secureTxf.element.id;
-			if(SecurePadManager.callback) return;
-			
-			this.coverWin = new BaseWindow();
-			this.coverWin.setOption({ isFocusLostClose: true, modalBgOption: 'none' });
-			this.coverWin.openAsDialog();
-			this.coverWin.setResultCallback(() => {
-				if(SecurePadManager.callback) {
-					cordova.exec(null, null, 'SecurePadPlugin', 'close', []);
-					callback(true, null, 0); //실패
-					SecurePadManager.callback = null;
-					if(rootView.onSecurePadChange) rootView.onSecurePadChange(false);
-				}
-
-				this.coverWin = null;
-			});
-			
-			cordova.exec(function(obj) {
-				//확인
-				callback(true, obj.encData, obj.plaintxtlength);
-				SecurePadManager.callback = null;
-				thisObj.coverWin.close();
-				if(rootView.onSecurePadChange) rootView.onSecurePadChange(false);
-				
-			}, function() {
-				//취소
-				callback(true, null, 0); //실패
-				SecurePadManager.callback = null;
-				thisObj.coverWin.close();
-				if(rootView.onSecurePadChange) rootView.onSecurePadChange(false);
-				
-			}, 'SecurePadPlugin', 'open', [padOption]);
-			
-			if (rootView && rootView.onSecurePadChange) rootView.onSecurePadChange(true);
-
-		
-		} else { //Web
-		
-			//IOS 일 때 password 인 경우 이상하게 동작하므로 text로 변경함
-			if(afc.isIos) secureTxf.setDataType('text');
-		
-			if(secureTxf.isSetVirtualKeyboard) return;
-			
-			//해당 컴포넌트는 뷰에 객체로 저장이 되어있으므로 id를 계속 변경한다.
-			//if(!secureTxf.element.id) secureTxf.setComponentId('sxf' + Date.now());
-			secureTxf.setComponentId('sxf' + Date.now());
-			
-			//console.error(padOption);
-			secureTxf.setAttr('ds-kb-type', padOption.padType=='char'?'qwerty':'number');
-			secureTxf.setAttr('ds-kb-focus', true);
-			if(!secureTxf.isSetVirtualKeyboard) {
-				SpiderGenKeyPad.setVirtualKeyboard(secureTxf.element);
-				secureTxf.setAttr('ds-kb-callback', 'SecurePadManager.onWebKeypadClose()');
-			}
-			secureTxf.isSetVirtualKeyboard = true;
-			SpiderGenKeyPad.showKeyboard(secureTxf.element.id);
-			if (rootView && rootView.onSecurePadChange) rootView.onSecurePadChange(true);
-
-			
-			if(!secureTxf.isInputEvent) {
-				secureTxf.bindEvent('input', function() {
-                    const inputVal = this.value;
-                    const len = inputVal.length;
-
-                    // 값 저장 (this.acomp는 EXSecureTextField 인스턴스)
-                    this.acomp.setCipherData(inputVal);
-                    this.acomp.setPwLength(len);
-
-                    if (thisObj.padOption.maxLength == len) {
-                        SpiderGenKeyPad[secureTxf.element.id].enterKey();
-                    }
-                });
-
-				secureTxf.isInputEvent = true;
-			}
-		}
-		
-		
-		//키패드를 누를 때도 이벤트 받아서 컴포넌트에 세팅해야하므로 콜백을 저장한다.
-		this.callback = callback;
-	},
-	
-	closePad: function(sxf)
-	{
-		if(SecurePadManager.callback) {
-			cordova.exec(null, null, 'SecurePadPlugin', 'close', []);
-			SecurePadManager.callback(true, null, 0); //실패
-			SecurePadManager.callback = null;
-			var rootView = sxf.getRootView();
-			if(rootView && rootView.onSecurePadChange) rootView.onSecurePadChange(false);
-		}
-	},
-	
-	onWebKeypadClose: function(id)
-    {
-        var sxf = document.getElementById(id).acomp;
-        
-        var plainText = SpiderGenKeyPad.getDecryptedPassword(id);
-        var len = plainText.length;
-
-        // 여기에서 직접 값 설정
-        sxf.setCipherData(plainText);
-        sxf.setPwLength(len);
-
-        sxf.element.dispatchEvent(new Event('change', { bubbles: true }));
-
-        SecurePadManager.callback(true, {
-            val: plainText,
-            info: id,
-            len: len
-        }, len);
-
-        console.error('onKeypadClose');
-        var rootView = sxf.getRootView();
-        if(rootView && rootView.onSecurePadChange) rootView.onSecurePadChange(false);
-    },
-	
-	//키패드를 누를 때 발생하는 이벤트함수
-	onKeyPadClick: function(obj)
-	{
-		if(SecurePadManager.callback) SecurePadManager.callback(false, null, obj.plaintxtlength);
-	},
-};
-```
 
 **2. 프로젝트 생성**
 
 * 프로젝트 트리뷰에서 Source > MainView.lay 파일을 클릭
 * MainView의 레이아웃 파일이 오픈되면 컴포넌트 리스트에서 EXSecureTextField 컴포넌트를 선택하고 드래그하여 레이아웃에 배치
-
-**3. 데이터 설정**
-
-* 먼저 MainView.js 파일을 오픈
-* 상단의 파일탭에서 MainView.lay 탭을 더블 클릭
-* Component 목록 > stock > EXSecureTextField 생성
-* Attribute > Data > Text > 'Text' 문자열 제거하고 빈 열로 실행
+* 배치된 컴포넌트의 id를 sxf 로 지정
+* Attribute > Data > Text > 'Text' 문자열 제거
+* 배치된 컴포넌트 마우스 오른쪽 클릭하여 Add/Remove Evnet 선택하여 change 이벤트를 추가
+* Run Project 하여 실행 확인
 
 
 
-4. **Default Load Settings 설정**
+* **MainView.js**
 
-* _**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크 > 우측 상단  X(창닫기) 클릭 > 변경된 정보를 저장하시겠습니까> > Yes**_
+```javascript
+onSxfChange(comp, info, e)
+{
+    console.log(`text: ${comp.getText()} chiperData: ${comp.getCipherData()}`);
+}
+```
 
-![](../../.gitbook/assets/image.png)
+
+
+3. **프로젝트 실행**
+
+* SecureTextField 컴포넌트 영역 클릭 후 보안키패드 동작확인
+
+<figure><img src="../../.gitbook/assets/secureTextField.gif" alt=""><figcaption></figcaption></figure>
 
 
 
-**5. 프로젝트 실행**
-
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 114627.gif" alt=""><figcaption></figcaption></figure>
-
-* 설정한 데이터에 맞춰 보안 키 패드 생성
-
-**6. 코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
+4. **코드로&#x20;**_**EXSecureTextField**_**&#x20;생성**
 
 * 먼저 MainView.js 파일을 오픈
 * onInitDone() 함수에서 아래와 같이 코드를 입력
@@ -377,20 +259,27 @@ onInitDone() {
     super.onInitDone();
 
     // SecureTextField 생성 및 설정
-    let secureTxf = new EXSecureTextField();
-    secureTxf.init();
+    let sxf = new EXSecureTextField();
+    sxf.init();
 
-    secureTxf.element.acomp = secureTxf;
-    this.addComponent(secureTxf);
-    secureTxf.setText('');
+    sxf.setText('');
+    this.addComponent(sxf);
 
-    secureTxf.setPos(100, 100);
-    secureTxf.setAttr('readonly', true);
-    
+    sxf.setPos(100, 100);
+    sxf.addEventListener('change', this, 'onCodeSxfChange');
+}
+
+onCodeSxfChange(comp, info, e)
+{
+    console.log(`codeSxf text: ${comp.getText()} chiperData: ${comp.getCipherData()}`);
 }
 ```
 
-**7. 프로젝트 실행**
+{% hint style="info" %}
+<mark style="color:red;">**Build 에러발생시**</mark>
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-07 131231.gif" alt=""><figcaption></figcaption></figure>
+_**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크 > 우측 상단  X(창닫기) 클릭 > 변경된 정보를 저장하시겠습니까> > Yes**_
+
+![](../../.gitbook/assets/image.png)
+{% endhint %}
 
