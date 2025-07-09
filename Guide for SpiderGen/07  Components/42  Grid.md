@@ -2,84 +2,77 @@
 
 ![](../../.gitbook/assets/Grid-01.png)
 
-**그리드(Grid)** 는 컴포넌트는 데이터를 테이블 형식으로 표시하고 관리할 수 있는 도구입니다.
-
-> 그리드(Grid)는 다양한 속성과 메서드를 제공하여 데이터를 효율적으로 표시하고 조작할 수 있습니다.
+컴포넌트는 데이터를 테이블 형식으로 표시하고 관리할 수 있는 도구.  다양한 속성과 메서드를 제공하여 데이터를 효율적으로 표시하고 조작.
 
 ### Attributes
 
 ![](../../.gitbook/assets/Grid-02.png)
 
-* **Hide Heade** 헤더 숨김 여부를 설정합니다.
-* **Hide Footer** 푸터 숨김 여부를 설정합니다.
-* **Fullrow Select** 특정 셀을 클릭해도 그 로우 전체가 선택되도록 설정합니다.
-* **Single Select** Ctrl 키를 누르고 선택해도 하나만 선택되도록 설정합니다.
-* **Flexible Row** TR의 높이를 TABLE 높이에 맞추는 옵션입니다.
-* **Selectable** 선택 가능 여부를 설정합니다.
-* **Clear Row Template** 그리드 초기화 후 템플릿 로우를 보존할지 여부를 설정합니다.
-* **Sortable** 헤더 선택 시 정렬 처리 여부를 설정합니다.
-* **Column Resize** 컬럼 리사이즈 여부를 설정합니다.
-* **Width Changable** 컬럼 리사이즈 시 그리드 넓이 변경 여부를 설정합니다.
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Hide Header</code></td><td>헤더 숨김 여부를 설정</td></tr><tr><td><code>Hide Footer</code></td><td>푸터 <a data-footnote-ref href="#user-content-fn-1">숨김 여부를 설정</a></td></tr><tr><td><code>Fullrow Select</code></td><td>특정 셀을 클릭해도 그 로우 전체가 선택되도록 설정</td></tr><tr><td><code>Single Select</code></td><td>Ctrl 키를 누르고 선택해도 하나만 선택되도록 설정</td></tr><tr><td><code>Flexible Row</code></td><td>TR의 높이를 TABLE 높이에 맞추는 옵션</td></tr><tr><td><code>Selectable</code></td><td>선택 가능 여부를 설정</td></tr><tr><td><code>Clear Row Template</code></td><td>그리드 초기화 후 템플릿 로우를 보존할지 여부를 설정</td></tr><tr><td><code>Sortable</code></td><td>헤더 선택 시 정렬 처리 여부를 설정</td></tr><tr><td><code>Column Resize</code></td><td>컬럼 리사이즈 여부를 설정</td></tr><tr><td><code>Width Changable</code></td><td>컬럼 리사이즈 시 그리드 넓이 변경 여부를 설정</td></tr></tbody></table>
 
-### Methods
 
-* **setCellData(rowInx, colInx, cellData, noUpdate)** 특정 셀의 데이터를 설정합니다.
-* **setData(dataArr)** 그리드에 데이터를 설정합니다.
-* **setGridData(dataArr, noUpdate)** 데이터 배열을 설정하고 렌더링 여부를 결정합니다.
-* **setRowData(rowInx, rowData, metaData, noUpdate)** 특정 로우에 데이터를 설정합니다.
-* **sortColumn(colInx)** 특정 컬럼을 정렬합니다.
-* **updateDataGrid()** 데이터 배열의 변화값을 스크롤바에 반영하고 그리드의 각 값을 갱신합니다.
 
 ### Example
 
-**1. id를 설정합니다.**
-
-* 그리드(Grid)의 id를 simpleGrid로 설정합니다.
+* Grid의 id를 simpleGrid로 설정.
 
 ![](../../.gitbook/assets/Grid-06.png)
 
-**2.코드를 추가합니다.**
 
-* 아래 코드를 추가합니다.
+
+* **MainView.js 설정**
 
 ```
-    onInitDone() {
-        super.onInitDone()
+onInitDone()
+{
+    super.onInitDone()
 
-        this.simpleGrid.setData([
-            ['Item 1', 'Description 1', 'Price 1'],
-            ['Item 2', 'Description 2', 'Price 2'],
-            ['Item 3', 'Description 3', 'Price 3']
-        ]);
+    this.simpleGrid.setData([
+        ['item 1', 'Description 1', 'Price 1'],
+        ['item 2', 'Description 2', 'Price 2'],
+        ['item 3', 'Description 3', 'Price 3'],
+        ['item 4', 'Description 4', 'Price 4'],
+        ['item 5', 'Description 5', 'Price 5'],
+    ])
 
-    }
+}
+
+onSimpleGridSelect(comp, info, e)
+{
     
-    onSimpleGridSelect(comp, info, e)
-	{
-       let cell = info[0];
-       let pos = comp.indexOfCell(cell);
-       alert("Selected cell at row: " + pos[0] + ", column: " + pos[1]);
-	}
+    let cell = info[0];
+    let pos = comp.indexOfCell(cell);
 
+    AToast.show("Selected cell at row: " + pos[0] + ", column: " + pos[1]);
+
+}
 ```
 
-**3.이벤트(Event)를 설정합니다.**
 
-* select를 눌러 Function Namefme 를 onSimpleGridSelect로 설정 합니다.
+
+<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+
+* **프로젝트 트리뷰에서 Framework > afc 우클릭 Default Load Settings.. > Component > AToast.js 클릭 >  닫기 > 변경 사항 적용 -> Yes**
+
+
+
+* select를 눌러 Function Namefme 를 onSimpleGridSelect로 설정하여 Grid의 이벤트 설정
 
 ![](../../.gitbook/assets/Grid-07.png)
 
-**4.빌드를 실행 합니다.**
 
-> 셀을 선택하면 이벤트가 발생합니다.
 
-![](https://wikidocs.net/images/page/274109/Grid-03.png) ![](../../.gitbook/assets/Grid-05.png)
+4. **프로젝트 실행**
 
-### 다음 예제는 JavaScript를 사용하여 그리드(Grid)를 추가합니다.
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 165716.gif" alt=""><figcaption></figcaption></figure>
 
-**1. Framework를 추가합니다.**
 
-* Framework의 afc에서 AGrid/AGeidEvent를 추가합니다.
+
+### 코드로 Grid 생성 예제
+
+**1. Framework 추가.**
+
+* Framework의 afc에서 AGrid/AGrdEvent를 추가합니다.
 
 ![](../../.gitbook/assets/Grid-04.png)
 
@@ -137,3 +130,5 @@
 * 셀을 선택하면 이벤트가 발생합니다.
 
 ![](../../.gitbook/assets/Grid-03.png) ![](../../.gitbook/assets/Grid-05.png)
+
+[^1]: 
