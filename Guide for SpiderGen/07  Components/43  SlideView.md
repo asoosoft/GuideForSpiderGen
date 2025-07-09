@@ -61,11 +61,7 @@ onInitDone()
 }
 ```
 
-#### 5. 프로젝트 실행
-
-### Button SlideView Example
-
-#### 1. 2개 Button 만들기
+#### 5. 이전, 다음  Button 만들기
 
 * **prevBtn**
   * **text** : 이전
@@ -76,7 +72,9 @@ onInitDone()
 
 ![](../../.gitbook/assets/slide_btn.png)
 
-#### 2. Button에 click 이벤트 설정
+#### 6. Button에 click 이벤트 설정
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 132430.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 132448.png" alt=""><figcaption></figcaption></figure></div>
 
 * **prevBtn** : onPrevBtnClick
 * **nextBtn** : onNextBtnClick
@@ -93,9 +91,13 @@ onNextBtnClick(comp, info, e)
 }
 ```
 
-#### 3. 프로젝트 빌드 후 결과 확인
+#### 7. 프로젝트 빌드 후 결과 확인
+
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 132303.gif" alt=""><figcaption></figcaption></figure>
 
 ### Page SlideView Sample
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 134719.png" alt=""><figcaption></figcaption></figure>
 
 #### 1. View와 Button 배치 및 설정
 
@@ -104,27 +106,70 @@ onNextBtnClick(comp, info, e)
 * **Button**
   * **text** : '1', '2', '3'
 
-![](../../.gitbook/assets/slide_page.png)
-
 #### 2. MainView.js 수정
 
 ```js
 onInitDone()
 {
 	super.onInitDone()
-	this.slideView.setButtonView(this.slidePageView);
+	
+	this.slideView.addItem('Source/afc/SubView/SubView1.lay', [1]);
+	this.slideView.addItem('Source/afc/SubView/SubView2.lay', [2]);
+	this.slideView.addItem('Source/afc/SubView/SubView3.lay', [3]);
+
+	// 추가
+        this.slideView.setButtonView(this.slidePageView);
 }
 ```
 
 #### 3. 프로젝트 실행
 
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 134212.gif" alt=""><figcaption></figcaption></figure>
+
 ### SelectBox SlideView Example
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 135335.png" alt=""><figcaption></figcaption></figure>
 
 #### 1. SelectBox 컴포넌트 배치
 
-![](../../.gitbook/assets/slide_select.png)
+* id: selectbox
 
 #### 2. Attribute의 Default Data 수정
 
 ![](../../.gitbook/assets/slide_selectData.png)
 
+3. SelectBox에 click 이벤트 설정
+
+<figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 135532.png" alt=""><figcaption></figcaption></figure>
+
+```javascript
+onSelectboxChange(comp, info, e)
+{
+
+    const index = comp.getSelectedIndex();
+    this.slideView.slideTo(index, true);
+
+}
+```
+
+#### 4.MainView.js 수정
+
+```javascript
+onInitDone()
+{
+    super.onInitDone()
+
+    this.slideView.addItem('Source/afc/SubView/SubView1.lay', [1]);
+    this.slideView.addItem('Source/afc/SubView/SubView2.lay', [2]);
+    this.slideView.addItem('Source/afc/SubView/SubView3.lay', [3]);
+
+    this.selectbox.addEventListener('change', this, 'onSelectboxChange');
+
+}
+```
+
+
+
+5. **프로젝트 실행**
+
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 140010.gif" alt=""><figcaption></figcaption></figure>
