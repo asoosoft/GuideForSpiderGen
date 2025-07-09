@@ -72,63 +72,65 @@ onSimpleGridSelect(comp, info, e)
 
 **1. Framework 추가.**
 
-* Framework의 afc에서 AGrid/AGrdEvent를 추가합니다.
+* AGrid.js + AToast.js + AGridEvent.js 선
 
 ![](../../.gitbook/assets/Grid-04.png)
 
-**2. 코드를 추가합니다.**
 
-* 아래의 코드를 추가합니다.
+
+* **MainView.js 수정**
 
 ```
-    onInitDone() {
-        super.onInitDone()
+onInitDone() {
+    super.onInitDone()
 
-        // 그리드 생성
-        const grid = new AGrid();
-        grid.init();
+    // 그리드 생성
+    const grid = new AGrid();
+    grid.init();
 
-        // 그리드 속성 설정
-        grid.setSize('100%', '100%');
-        grid.setPos(0, 0);
+    // 그리드 속성 설정
+    grid.setSize('100%', '100%');
+    grid.setPos(0, 0);
 
-        // 그리드 옵션 설정
-        grid.setOption({
-            hideHeader: false,
-            hideFooter: false,
-            fullrowSelect: true,
-            singleSelect: false,
-            sortable: true
-        });
+    // 그리드 옵션 설정
+    grid.setOption({
+        hideHeader: false,
+        hideFooter: false,
+        fullrowSelect: true,
+        singleSelect: false,
+        sortable: true
+    });
 
-        // 그리드를 MainView에 추가
-        this.getContainer().addComponent(grid);
+    // 그리드를 MainView에 추가
+    this.getContainer().addComponent(grid);
 
-        // 그리드 데이터 설정
-        let data = [
-            ['Item 1', 'Description 1', 'Price 1'],
-            ['Item 2', 'Description 2', 'Price 2'],
-            ['Item 3', 'Description 3', 'Price 3']
-        ];
-        grid.setData(data);
+    // 그리드 데이터 설정
+    let data = [
+        ['Item 1', 'Description 1', 'Price 1'],
+        ['Item 2', 'Description 2', 'Price 2'],
+        ['Item 3', 'Description 3', 'Price 3'],
+        ['Item 4', 'Description 4', 'Price 4'],
+        ['Item 5', 'Description 5', 'Price 5']
+    ];
+    grid.setData(data);
 
-        // 그리드 이벤트 설정
-        grid.addEventListener('select', this, 'onGridSelect');
+    // 그리드 이벤트 설정
+    grid.addEventListener('select', this, 'onGridSelect');
 
-    }
+}
 
-  //선택 이벤트
-    onGridSelect(comp, info, e) {
-       let cell = info[0];
-       let pos = comp.indexOfCell(cell);
-       alert("Selected cell at row: " + pos[0] + ", column: " + pos[1]);
-   }
+//선택 이벤트
+onGridSelect(comp, info, e) {
+    let cell = info[0];
+    let pos = comp.indexOfCell(cell);
+    AToast.show("Selected cell at row: " + pos[0] + ", column: " + pos[1]);
+}
 ```
 
-**3. 빌드를 실행 합니다.**
 
-* 셀을 선택하면 이벤트가 발생합니다.
 
-![](../../.gitbook/assets/Grid-03.png) ![](../../.gitbook/assets/Grid-05.png)
+* 프로젝트 실행
+
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 165716.gif" alt=""><figcaption></figcaption></figure>
 
 [^1]: 
