@@ -34,16 +34,16 @@ class  MainView  extends  AView
 		super.init(context, evtListener)
 		
 		// 초기 프로그레스 값을 설정
-		this.progressID.setValue(progressVal); 
+		this.progressID.setValue(this.progressVal); 
 	}
 
 	// 버튼 클릭 이벤트 함수 추가
 	// 버튼을 클릭할 때 마다 프로그레스 값을 증가시키는 로직
 	onButtonClick(comp, info, e) {  
-		if(progressVal < 100) { 
+		if(this.progressVal < 100) { 
 			this.progressVal += 10; // 10%씩 증가 
 			// 프로그래스 바 업데이트
-			this.progressID.setValue(progressVal);  
+			this.progressID.setValue(this.progressVal);  
 		} 
 	}
 }
