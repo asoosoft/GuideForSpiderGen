@@ -55,8 +55,10 @@ init(context, evtListener)
       [ "005380", "현대자동차", "003" ],
     ];
   
-    // setItemInfo(dataArr) -> EXItemView에 데이터 설정
-    this.itemView.setItemInfo(this.dataArr);            
+    //데이터 설정시 변경 이벤트 발생여부
+    const isReport = true;
+    // setItemInfo(dataArr) -> EXItemView에 하나의 데이터 설정
+    this.itemView.setItemInfo(this.dataArr[0], isReport);
 }
 ```
 
@@ -79,8 +81,9 @@ onOpenDrop(comp, info, e)
 // EXItemView의 Change 이벤트 지정
 onItemViewChange(comp, info, e)
 {
-    // 위 openDrop으로 연 데이터 리스트에서 아이템을 선택할 시 실행할 명령 작성
-    // 아래와 같이 아이템 선택 시 각 ALabel 컴포넌트에 선택한 데이터의 코드와 이름이 들어가게함
+    // setItemInfo(itemInfo, isReport) 호출시 isReport 값이 true 인 경우 change 이벤트 발생
+    // 또는 위 openDrop으로 연 데이터 리스트에서 아이템을 선택시 change 이벤트 발생
+    // 각 ALabel 컴포넌트에 선택한 데이터의 코드와 이름이 들어가게 함
     this.code.setText(info[0]);
     this.name.setText(info[1]);
 }

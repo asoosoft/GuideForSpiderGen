@@ -50,6 +50,7 @@ EXSearchView 속성
 * 예시와 같이 임시 데이터 설정
 
 ```javascript
+
 init(context, evtListener)
 {
     super.init(context, evtListener)  
@@ -66,7 +67,7 @@ init(context, evtListener)
 }
 ```
 
-<figure><img src="../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<div align="center"><figure><img src="../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure></div>
 
 * 배치한 EXSearchView 의 레이아웃을 위 사진과 같이 일부 변형해서 사용
 * 검색 버튼인 searchBtn에 클릭 이벤트 설정
@@ -74,7 +75,6 @@ init(context, evtListener)
 <pre class="language-javascript"><code class="lang-javascript">
 onSearchBtnClick(comp, info, e)
 {
-
     // 검색 버튼 클릭 할 때 마다 이전 검색 데이터 삭제
     this.grid.removeAll();
     
@@ -85,7 +85,6 @@ onSearchBtnClick(comp, info, e)
 
     // 결과 출력
     this.grid.setData(result)
-
 }
 </code></pre>
 
@@ -107,12 +106,16 @@ AGrid에서 검색 결과를 위 사진과 같이 2개로 표시하고 싶다면
 AGrid 우클릭 -> Data Properties -> Column의 수를 2로 변경
 {% endhint %}
 
-<div><figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure></div>
-
 {% hint style="danger" %}
-해당 오류 발생 시
+Search is not defined 오류 발생 시
+
+&#x20;<img src="../../.gitbook/assets/image (101).png" alt="" data-size="original">  &#x20;
+
+
 
 프로젝트의 Framework -> stock 우클릭 -> Default Load Settings... -> library에 있는 Search.js를 로드
+
+<img src="../../.gitbook/assets/image (102).png" alt="" data-size="original">
 {% endhint %}
 
 
