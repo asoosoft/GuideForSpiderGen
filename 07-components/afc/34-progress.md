@@ -2,21 +2,17 @@
 
 ![](../../.gitbook/assets/progress.png)
 
-**프로그래스(AProgress)** 는 진행 상황을 시각적으로 표시하는 데 사용되는 컴포넌트입니다.\
-
-
-프로그래스는 작업의 완료 비율을 나타내는 데 유용하며, 사용자에게 현재 진행 상태를 알려주는 역할을 합니다.
+진행 상황을 시각적으로 표시하는 데 사용되는 컴포넌트. 작업의 완료 비율을 나타내는 데 유용하며, 사용자에게 현재 진행 상태를 알려주는 역할.
 
 ### Example
 
-AProgress 컴포넌트는 파일 업로드, 다운로드 진행 상황, 작업 처리 상태 등을 사용자에게 시각적으로 알릴 때 유용하게 사용됩니다.\
+**컴포넌트 생성**
+
+<div align="left"><figure><img src="../../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure></div>
 
 
-프로그레스 바의 값을 동적으로 업데이트하여 사용자에게 실시간으로 진행 상황을 보여줄 수 있습니다.
 
-**1️⃣ 레이아웃에서 생성**
-
-![](../../.gitbook/assets/pg_res1.png)
+* MainView.js 수정
 
 ```js
 class  MainView  extends  AView
@@ -49,40 +45,95 @@ class  MainView  extends  AView
 }
 ```
 
-***
 
-**2️⃣ 코드에서 생성**
 
-![](../../.gitbook/assets/pg_res2.png)
+**코드로 컴포넌트 생성**
+
+* **Framework > afc > Default Load Settings**
+
+<div align="left"><figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+* Component > AProgress.js + AButton.js
+
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 161033.png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+* event > AButtonEvent.js
+
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 161102.png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+* MainView.js 수정
 
 ```javascript
 
-onInitDone()
+class MainView extends AView
 {
-	super.onInitDone()
+	constructor()
+	{
+		super()
 
-	// 사용자 함수 불러오기
-	this.createProgress();
+        this.progressVal = 0; 
+
+		//TODO:edit here
+
+	}
+
+	init(context, evtListener)
+	{
+		super.init(context, evtListener)
+
+		//TODO:edit here
+
+	}
+
+    onInitDone() {
+        super.onInitDone();
+
+        this.progressID = new AProgress();
+        this.progressID.init();
+        this.addComponent(this.progressID);
+
+        this.progressID.setPos(20, 50);
+        this.progressID.setSize("300px", "25px");
+
+        this.progressID.setValue(this.progressVal);
+
+
+        let btn = new AButton();
+        btn.init();
+        btn.setText("증가");
+        this.addComponent(btn);
+        btn.setSize("100px", "30px");
+        btn.setPos(40, 80);
+        btn.addEventListener("click", this, "onButtonClick");
+    }
+
+
+	onActiveDone(isFirst)
+	{
+		super.onActiveDone(isFirst)
+
+		//TODO:edit here
+
+	}
+
+    onButtonClick(comp, info, e) {
+		if (this.progressVal < 100) {
+			this.progressVal += 10;
+			this.progressID.setValue(this.progressVal);
+		}
+	}
+
 }
-
-// 사용자 함수 생성
-createProgress()
-{
-	// 프로그래스 생성
-	const progress = new AProgress();
-
-	// 체크박스 초기화
-	progress.init();
-	
-	// 프로그래스 속성 설정
-	
-    // 프로그래스의 값 설정
-	progress.setValue(50); 
-	
-	// 프로그래스를 특정 컨테이너에 추가
-	// 스파이더젠에서는 컴포넌트의 jQuery 객체를 사용하여 
-	// DOM 조작을 수행합니다.
-	this.view.$ele.append(progress.$ele);
-}
-
 ```
+
+
+
+* 프로젝트 실행
+
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-10 161340.gif" alt=""><figcaption></figcaption></figure></div>
