@@ -72,6 +72,10 @@ send_pageList()
     
     //경로 설정은 하단 이미지 참고
     this.listView.addItem('Source/data/subView.lay', this.listdata);
+    
+    //페이지 전환 초기화 코
+    this.listView.removeAllItems();
+    
     this.pageBar.setPageView();  
 }
 
@@ -150,4 +154,4 @@ onClick(comp, info, e)
 
 * 프로젝트 실행
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-10 114225.gif" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-10 151449.gif" alt=""><figcaption></figcaption></figure></div>
