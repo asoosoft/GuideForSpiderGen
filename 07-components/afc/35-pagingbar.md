@@ -34,16 +34,21 @@
 * MainView.js 수정
 
 ```javascript
+init(context, evtListener)
+{
+    super.init(context, evtListener)
+
+    this.pageBar.setDelegator(this);
+    this.pageBar.setIsCenter(true);
+    this.page = 1;
+
+}
+
 onInitDone()
 {
     super.onInitDone()
 
     //TODO:edit here
-
-    this.pageBar.setDelegator(this);
-
-    this.pageBar.setIsCenter(true);
-    this.page = 1;
 
     this.send_pageList();
 
