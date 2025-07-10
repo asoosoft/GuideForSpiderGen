@@ -5,7 +5,7 @@
 
 ## Attribute
 
-![](../../.gitbook/assets/slide_attribute.png)
+<div align="left"><img src="../../.gitbook/assets/slide_attribute.png" alt=""></div>
 
 #### Direction
 
@@ -26,7 +26,7 @@ id 는 slideView 로 설정
 
 #### 2. Source > New Folder > views 생성 > SubView 생성
 
-![](../../.gitbook/assets/slide_subview.png)
+<div align="left"><img src="../../.gitbook/assets/slide_subview.png" alt=""></div>
 
 #### 3. 각 Subview 설정
 
@@ -74,7 +74,7 @@ onInitDone()
 
 #### 6. Button에 click 이벤트 설정
 
-<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 132430.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 132448.png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 132430.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 132448.png" alt=""><figcaption></figcaption></figure></div>
 
 * **prevBtn** : onPrevBtnClick
 * **nextBtn** : onNextBtnClick
@@ -93,7 +93,7 @@ onNextBtnClick(comp, info, e)
 
 #### 7. 프로젝트 빌드 후 결과 확인
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 132303.gif" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 132303.gif" alt=""><figcaption></figcaption></figure></div>
 
 ### Page SlideView Sample
 
@@ -124,7 +124,7 @@ onInitDone()
 
 #### 3. 프로젝트 실행
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 134212.gif" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 134212.gif" alt=""><figcaption></figcaption></figure></div>
 
 ### SelectBox SlideView Example
 
@@ -136,11 +136,11 @@ onInitDone()
 
 #### 2. Attribute의 Default Data 수정
 
-![](../../.gitbook/assets/slide_selectData.png)
+<div align="left"><img src="../../.gitbook/assets/slide_selectData.png" alt=""></div>
 
 3. SelectBox에 click 이벤트 설정
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 135532.png" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 135532.png" alt=""><figcaption></figcaption></figure></div>
 
 ```javascript
 onSelectboxChange(comp, info, e)
@@ -172,13 +172,13 @@ onInitDone()
 
 5. **프로젝트 실행**
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 140010.gif" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 140010.gif" alt=""><figcaption></figcaption></figure></div>
 
 
 
 ## 코드로 SlideView 생성 예제
 
-<figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 154913.png" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-09 154913.png" alt=""><figcaption></figcaption></figure></div>
 
 * **프로젝트 트리뷰에서 Framework > afc 우클릭 Default Load Settings.. 클릭**
 * **Component에 AButton.js + ASlideView.js 선택**&#x20;

@@ -51,7 +51,7 @@ Label 속성
 * Attribute 에서 Data 항목을 다음과 같이 설정
 * Text : 라벨테스트
 
-![](../../.gitbook/assets/label_test.png)
+<div align="left"><img src="../../.gitbook/assets/label_test.png" alt=""></div>
 
 
 
@@ -86,7 +86,7 @@ onInitDone()
 
 * 레이블의 텍스트가 바뀌어서 출력 되는 것을 확인
 
-![](../../.gitbook/assets/label_screen2.png)
+<div align="left"><img src="../../.gitbook/assets/label_screen2.png" alt=""></div>
 
 **5. 코드로 라벨 생성**
 
@@ -105,7 +105,7 @@ onInitDone()
 }
 ```
 
-![](../../.gitbook/assets/label_new.png)
+<div align="left"><img src="../../.gitbook/assets/label_new.png" alt=""></div>
 
 Build 에러발생시 처리
 
