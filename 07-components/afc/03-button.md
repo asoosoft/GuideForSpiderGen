@@ -64,7 +64,7 @@
 
 ### Style
 
-![](<../../.gitbook/assets/2 (1).png>)
+<div align="left"><img src="../../.gitbook/assets/2 (1).png" alt=""></div>
 
 | Style     | 설명                             |
 | --------- | ------------------------------ |

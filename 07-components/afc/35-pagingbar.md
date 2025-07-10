@@ -9,6 +9,7 @@
 ### Example
 
 * **MainView.lay에** [**ListView**](14-listview/)**와 APagingBar 컴포넌트 배치**
+  * ListView id값 listView, PagingBar id값 pageBar로 지정
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -33,9 +34,11 @@
 * MainView.js 수정
 
 ```javascript
-init(context, evtListener)
+onInitDone()
 {
-    super.init(context, evtListener)
+    super.onInitDone()
+
+    //TODO:edit here
 
     this.pageBar.setDelegator(this);
 
@@ -63,7 +66,7 @@ send_pageList()
     this.pageBar.addParam(this.listdata);
     
     //경로 설정은 하단 이미지 참고
-    this.listView.addItem('Source/afc/data/subView.lay', this.listdata);
+    this.listView.addItem('Source/data/subView.lay', this.listdata);
     this.pageBar.setPageView();  
 }
 
