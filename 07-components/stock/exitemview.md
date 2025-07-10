@@ -6,14 +6,14 @@ description: 종목 선택을 위한 뷰 컴포넌트
 
 <figure><img src="../../.gitbook/assets/image (90).png" alt=""><figcaption><p>&#x3C;EXItemView 컴포넌트></p></figcaption></figure>
 
-이 컴포넌트는 사용자가 특정 종목을 선택하고, 그에 따른 정보를 표시하거나 조작할 수 있도록 도움
+사용자가 특정 종목을 선택하면 change 이벤트가 발생하고, 이를 통해 해당 종목에 맞는 정보를 자동으로 표시하거나 조작할 수 있도록 도와주는 컴포넌트입니다. 예를 들어, EXItemView를 추가한 화면에서 change 이벤트가 발생하면 다른 화면의특정 함수를 호출하여 이벤트를 전달할 수 있습니다.
 
-&#x20;EXItemView는 다양한 속성과 메서드를 제공하여 <mark style="color:red;">종목 데이터를 관리하고 사용자 인터페이스와 상호작용</mark> 할 수 있음
+EXItemView는 다양한 속성과 메서드를 제공하여 <mark style="color:red;">종목 데이터를 관리하고 사용자 인터페이스와 상호작용</mark> 할 수 있습니다.
 
 <figure><img src="../../.gitbook/assets/image (91).png" alt=""><figcaption><p>&#x3C;EXItemView의 기본 트리 구조></p></figcaption></figure>
 
 {% hint style="warning" %}
-**EXItemView의 레이아웃은 사용자들이 많이 사용하는 구성으로 짜여있으며 이는 삭제하고 사용해도 무방**
+**EXItemView의 레이아웃은 사용자들이 많이 사용하는 구성으로 짜여있으며 이는 삭제하고 사용해도 무방합니다.**&#x20;
 {% endhint %}
 
 ### Appearance
@@ -75,7 +75,9 @@ onOpenDrop(comp, info, e)
 {
     // EXItemView의 openDrop 함수를 dropBtn 아이디를 가진 AButton 컴포넌트의 클릭이벤트에 설정
     // => openDrop(itemArr)
-    this.itemView.openDrop(this.Data);
+    this.itemView.openDrop(this.dataArr);
+    
+    //위의 함수를 사용하는 것 보다는 디자인에 맞는 UI로 직접 구현하는 것을 권장합니다.
 }
 
 // EXItemView의 Change 이벤트 지정
