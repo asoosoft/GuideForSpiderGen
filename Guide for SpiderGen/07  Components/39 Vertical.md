@@ -4,10 +4,6 @@
 
 자식  컴포넌트의 배치를 세로로 정렬하는 컴포넌트
 
-### Attribute
-
-![](../../.gitbook/assets/vertical_Attribute.png)
-
 
 
 ## Attribute
