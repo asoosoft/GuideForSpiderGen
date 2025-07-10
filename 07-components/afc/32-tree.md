@@ -1,91 +1,103 @@
 # Tree
 
-![](../../.gitbook/assets/스크린샷_2025-01-24_104143.png)\
-계층 구조를 시각적으로 표현하는 데 사용되는 **트리 컴포넌트**
+![](../../.gitbook/assets/스크린샷_2025-01-24_104143.png)
 
-> 아이템을 추가하거나 삭제할 수 있으며, 특정 아이템을 선택하거나 선택 해제 가능.
-
-> 드래그 앤 드롭 기능을 통해 아이템을 이동할 수 있으며, 아이템의 선택 스타일, 드래그 오버 스타일 등을 설정 가능.
+\
+계층 구조를 시각적으로 표현하는 데 사용되는 컴포넌&#xD2B8;**.** 아이템을 추가하거나 삭제할 수 있으며, 특정 아이템을 선택하거나 선택 해제 가능.
 
 ### Example
 
-**1. Component에서 `Tree` 를 추가하여 배치하거나, 직접 코드로 추가**
+**컴포넌트 생성**
 
-#### 컴포넌트에서 추가하여 배치하는 경우
+* id값 myTreeId로 지정
 
-![](../../.gitbook/assets/스크린샷_2025-01-24_105432.png)
+<div align="left"><figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
 
-> Tree ID = `myTreeId`
 
-#### 직접 코드로 추가하는 경우
 
-**1. 생성 및 초기화**
+* MainView.js 수정
 
-```js
-// 트리 컴포넌트 생성 
-const myTree = new ATree(); 
+```javascript
+onInitDone() {
+    super.onInitDone();
 
-// 2. 트리 컴포넌트 초기화 
-myTree.init({ 
-	id: 'myTreeId', 
-	position: 'left:10px, top:10px', 
-	size: 'width:300px, height:400px' 
-});
-```
+    const treeData = { 
+        name: '메뉴', 
+        sub: [ 
+            { name: '홈' }, 
+            { name: '나의정보', 
+            sub: [
+                { name: '회원수정' }, 
+                { name: '회원탈퇴' }
+                ] 
+            } 
+        ] 
+    };
 
-**2. 데이터를 설정**
+    this.insertTreeData(this.myTreeId, treeData);
 
-```js
-const treeData = { 
-	name: '메뉴', 
-	sub: [ 
-		{ name: '홈' }, 
-		{ name: '나의정보', 
-		  sub: [
-			  { name: '회원수정' }, 
-			  { name: '회원탈퇴' }
-			  ] 
-		} 
-	] 
-};
-```
+}
 
-**3. 함수를 작성하고 호출**
-
-```js
 insertTreeData(tree, data) { 
-	const item = tree.insertItemObj(data, true); 
-	if (data.sub) { 
-		data.sub.forEach(subData => { 
-			subData.pItem = item; 
-			this.insertTreeData(tree, subData); 
-		}); 
-	} 
-	return item; 
+    const item = tree.insertItemObj(data, true); 
+    if (data.sub) { 
+        data.sub.forEach(subData => { 
+            subData.pItem = item; 
+            this.insertTreeData(tree, subData); 
+        }); 
+    } 
+    return item; 
 } 
-
-this.insertTreeData(this.myTreeId, treeData);
-
-// 상황에 맞게 this. 를 삭제하거나 추가.
 ```
 
-`Tree 옵션을 지정 (선택)`
 
-```js
-this.myTreeId.setOption({ 
-	// ctrl 키를 누르고 선택해도 하나만 선택됩니다.
-	isSingleSelect: true,  
-	
-	// 아이템 선택 시 선택 표시가 라인 전체로 표시되지 않습니다.
-	isFullSelect: false,  
-	
-	// 트리 드래그 여부
-	isDraggable: true,
-	  
-	// 드래그 아이콘
-	dragIcon: './Source/img/drag.png' });
+
+**코드로 생성**
+
+```javascript
+onInitDone() {
+    super.onInitDone();
+
+    // 트리 컴포넌트 생성
+    this.myTreeId = new ATree();
+    this.myTreeId.init();
+    this.addComponent(this.myTreeId);
+
+    this.myTreeId.setSize("300px", "200px");
+    this.myTreeId.setPos(20, 20);
+
+    // 트리 데이터 삽입
+    const treeData = {
+        name: '메뉴',
+        sub: [
+            { name: '홈' },
+            {
+                name: '나의정보',
+                sub: [
+                    { name: '회원수정' },
+                    { name: '회원탈퇴' }
+                ]
+            }
+        ]
+    };
+
+    this.insertTreeData(this.myTreeId, treeData);
+}
+
+insertTreeData(tree, data) {
+    const item = tree.insertItemObj(data, true);
+    if (data.sub) {
+        data.sub.forEach(subData => {
+            subData.pItem = item;
+            this.insertTreeData(tree, subData);
+        });
+    }
+    return item;
+}
 ```
 
-**4. 결과 확인**
 
-![](../../.gitbook/assets/스크린샷_2025-01-24_104143.png)
+
+* 프로젝트 실행
+
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-10 163332.gif" alt=""><figcaption></figcaption></figure></div>
