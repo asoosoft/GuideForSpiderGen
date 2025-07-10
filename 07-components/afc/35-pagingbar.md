@@ -1,138 +1,145 @@
 # PagingBar
 
-![](../../.gitbook/assets/pagingbar.png)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-**페이징 바(APagingBar)** 는 데이터를 페이지 단위로 나누어 표시할 때 사용되는 컴포넌트입니다.\
-
-
-페이징 바 컴포넌트를 통해 사용자는 여러 페이지에 걸쳐 있는 데이터를 쉽게 탐색할 수 있습니다.\
+데이터를 페이지 단위로 나누어 표시할 때 사용되는 컴포넌트. 사용자는 여러 페이지에 걸쳐 있는 데이터를 쉽게 탐색하고  페이지 설정 및 탐색 기능을 지원.
 
 
-페이징바 컴포넌트는 다양한 메서드를 제공하여 페이지 설정 및 탐색 기능을 지원합니다.
-
-### Event
-
-* **pagingBindData(comp, info)**\
-  페이지 버튼을 클릭할 때 호출되는 함수입니다.\
-  이 함수는 **setDelegator**를 통해 위임된 객체에서 정의되어야 합니다.\
-  페이지 변경 시 필요한 추가 작업을 이 함수에서 처리할 수 있습니다.
 
 ### Example
 
-페이징바 컴포넌트를 사용하면 대량의 데이터를 효율적으로 관리하고 사용자에게 직관적인 탐색 경험을 제공할 수 있습니다.
+* **MainView.lay에** [**ListView**](14-listview/)**와 APagingBar 컴포넌트 배치**
 
-PagingBar 컴포넌트와 ListView 컴포넌트를 활용한 예제입니다.\
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 
-> ListView 컴포넌트 설명을 보고오시면 이해가 빠릅니다.\
-> [ListView 컴포넌트 설명 링크](https://wikidocs.net/24833)\
->
 
-**1️⃣ 컴포넌트 배치**
+*   **Framework > afc 설정**
 
-**MainView에 PagingBar와 ListView를 배치합니다.**
+    * Default Load Settings 클릭
 
-![](../../.gitbook/assets/pagingbar_ex.png)
+    ![](../../.gitbook/assets/afc.png)\
 
-> ⚠️ 빌드 시 PagingBar 컴포넌트가 깨져보인다면
->
-> ![](../../.gitbook/assets/afc.png)\
->
->
-> Framework 폴더 내 afc에서 우클릭 후 사진과 같은 항목을 클릭
->
-> ![](../../.gitbook/assets/compex.png)\
-> compEx.css 항목을 클릭해서 로딩설정을 저장합니다.
 
-**2️⃣ 코드 작성**
+    * CompEx.css + AToast.js 클릭
 
-**아래와 같은 코드를 작성합니다.**
+    <div align="left"><figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+    * 우측 상단 X 클릭 > 변경 사항 적용 -> Yes
+
+
+* MainView.js 수정
 
 ```javascript
-
-init(context, evtListener) 
+init(context, evtListener)
 {
-	 super.init(context, evtListener); 
+    super.init(context, evtListener)
 
-	 // 페이징 바의 delegator를 설정합니다. 
-	 this.pagingbar.setDelegator(this);
-	 
-	 // 페이징 바를 중앙에 배치
-	 this.pagingbar.setIsCenter(true);
-	 this.page =  1;  //현재 페이지번호.
-	 
-	 this.send_pageList();
- } 
+    this.pageBar.setDelegator(this);
+
+    this.pageBar.setIsCenter(true);
+    this.page = 1;
+
+    this.send_pageList();
+
+}
 
 send_pageList() 
 { 
-	// 전체 레코드 수, 현재 페이지 번호, 페이지당 레코드 수, 블럭당 페이지 수 설정 
-	this.pagingbar.setPage(250, this.page, 10, 10); 
-	
-	// 현재 페이지에 맞는 데이터를 가져오는 코드
-	// 예: 서버에 요청하여 데이터를 가져오는 로직을 추가
-	this.listdata = [] ;
-	for(let i=1; i <= per; i++)
-	{
-	 	let j = ((this.page - 1) * 10 )+ i;
-	 	let temp = null;
-	 	temp = {
-			'number' : j ,
-			'title' :j + "번 글 제목입니다."
-		}
-		this.listdata.push(temp);
-	}
-	this.pagingbar.addParam(this.listdata);
-	
-    this.listView.addItem('Source/subview1.lay',this.listdata);
-	
-	// 페이징 컴포넌트를 렌더링
-	this.pagingbar.setPageView();  
-} 
+    const per = 10;
+    this.pageBar.setPage(250, this.page, per, 10); 
+    
+    this.listdata = [] ;
+    for (let i = 1; i <= per; i++) {
+        const j = ((this.page - 1) * per) + i;
+        this.listdata.push({
+            number: `번호: ${j}`,             // 보기 좋게 출력용 문자열로
+            title: `제목: ${j}번 글입니다.`   // 명확히 줄 구분되도록
+        });
+    }
+
+    this.pageBar.addParam(this.listdata);
+    
+    //경로 설정은 하단 이미지 참고
+    this.listView.addItem('Source/afc/data/subView.lay', this.listdata);
+    this.pageBar.setPageView();  
+}
+
 
 // 페이지 버튼을 클릭할 때마다 호출되는 이벤트 함수 
 pagingBindData(comp, info) 
 { 
 
-	// 클릭된 페이지가 현재 페이지와 같으면 리턴 
-	const page = info.pageIdx; 
-	if (page == this.page) return; 
-	
-	// 페이지 번호 업데이트 
-	this.page = page; 
-	
-	// 새로운 페이지에 맞는 데이터를 가져오는 함수 호출 
-	this.send_pageList(); 
+    // 클릭된 페이지가 현재 페이지와 같으면 리턴 
+    const page = info.pageIdx; 
+    if (page == this.page) return; 
+    
+    // 페이지 번호 업데이트 
+    this.page = page; 
+    
+    // 새로운 페이지에 맞는 데이터를 가져오는 함수 호출 
+    this.send_pageList(); 
 }
-
 ```
 
-**3️⃣ subview1.lay 생성**
+* listview에 출력할 lay는 프로젝트 우클릭 > Copy Url로 경로 복사
 
-**ListView 에 추가할 아이템 (레이아웃) 인 subview1.lay를 생성**
+<div align="left"><figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure></div>
 
-**4️⃣ 컴포넌트 배치**
 
-**subview1에 아래와 같이 label (id: number), label (id: title)을 배치합니다.**
 
-![](../../.gitbook/assets/pagingbar_sublay.png)
+* **Source 폴더 우클릭 > New Folder > 폴더명 지정하고(ex: data) 폴더 생성**
 
-**5️⃣ 데이터 받기**
+<div><figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 111128.png" alt=""><figcaption></figcaption></figure></div>
 
-**MainView에서 subview를 추가할 때 넘겨준 데이터를 받아와 각 label에 넣어줍니다.**
+
+
+*   **ListView 에 추가할 아이템 (레이아웃) 인 subview1.lay를 생성**
+
+    * 생성한 폴더에서 우클릭 > Add new > View > Name 작성(ex: subView.lay) > OK
+
+    <div align="left"><figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 111824.png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+
+
+* **subview.lay에 Label 컴포넌트 2개 배치하고, ID값은 각각 number, title로 지정**
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+
+
+* **subView.js 수정**
 
 ```javascript
+init(context, evtListener)
+{
+    super.init(context, evtListener)
+
+    //TODO:edit here
+
+    this.element.addEventListener('click', this.onClick.bind(this));
+
+}
 
 setData(data)
 {
-	this.data = data;
-	this.number.setText(data.number);
-	this.title.setText(data.title);
+    this.data = data;
+    this.number.setText(data.number);
+    this.title.setText(data.title);
 }
 
+onClick(comp, info, e)
+{
+    AToast.show(this.data.number + ' - ' + this.data.title);
+}
 ```
 
-**6️⃣ 결과확인**
 
-![](../../.gitbook/assets/pagingbar_res.png)\
-페이징 바를 클릭해 결과를 확인해봅니다.
+
+* 프로젝트 실행
+
+<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-10 114225.gif" alt=""><figcaption></figcaption></figure>
