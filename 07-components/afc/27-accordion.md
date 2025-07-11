@@ -12,7 +12,7 @@
 
 ### Attribute
 
-![](../../.gitbook/assets/ac_Attribute.png)
+<div align="left"><img src="../../.gitbook/assets/ac_Attribute.png" alt=""></div>
 
 **1️⃣ Items**
 
@@ -44,105 +44,76 @@
 
 ### Example
 
-AAccordion 컴포넌트는 사용자가 많은 정보를 효율적으로 탐색할 수 있도록 도와주는 유용한 도구입니다.\
+* **레이아웃에서 아이템 추가**
+
+<div align="left"><img src="../../.gitbook/assets/ac_add.png" alt=""></div>
 
 
-이를 통해 복잡한 사용자 인터페이스를 간결하고 직관적으로 설계할 수 있습니다.
 
-**1️⃣ 레이아웃에서 생성**\
-
-
-**1️⃣-1️⃣ 레이아웃에서 아이템을 추가한 경우**
-
-![](../../.gitbook/assets/ac_add.png)
-
-**<사진 Accordion 컴포넌트의 속성에서 레이아웃 추가 >**
-
-
+* **코드로 아이템 추가**
 
 ```javascript
-
 onInitDone()
 {
-	// Accordion 초기 설정
+    super.onInitDone()
 
-	// 패딩 설정
-	this.accordionID.setMenuPadding(10, 20);
-	// UP 아이콘 설정
-	this.accordionID.setMenuUpIcon('asset/icon/up.png');
+    // Accordion 초기 설정
+
+    // 패딩 설정
+    this.accordionID.setMenuPadding(10, 20);
+    // UP 아이콘 설정
+    this.accordionID.setMenuUpIcon('Assets/icon/up.jpg');
+
+    // 아이템 추가 
+    this.accordionID.insertItem('Item 1', 'Source/view1.lay'); 
+    this.accordionID.insertItem('Item 2', 'Source/view2.lay');
+
 }
-
 ```
 
-\
 
 
-**1️⃣-2️⃣ 코드에서 아이템을 추가한 경우**
-
-```javascript
-
-onInitDone()
-{
-	// Accordion 초기 설정
-
-	// 패딩 설정
-	this.accordionID.setMenuPadding(10, 20);
-	// UP 아이콘 설정
-	this.accordionID.setMenuUpIcon('asset/icon/up.png');
-
-	// 아이템 추가 
-	accordionID.insertItem('Item 1', 'Source/Views/Item1.lay'); 
-	accordionID.insertItem('Item 2', 'Source/Views/Item2.lay');
-}
-
-```
-
-\
-\
-
-
-**2️⃣ 코드에서 생성**\
-
+* **코드로 컴포넌트 생성**
 
 ```javascript
-
 onInitDone()
 {
-	// 사용자 함수 불러오기
-	this.createAccordion()
+    // 사용자 함수 불러오기
+    this.createAccordion()
 }
 
 createAccordion()
 {
-	// AAccordion 생성
-	const accordion = new AAccordion();
+    // AAccordion 생성
+    const accordion = new AAccordion();
 
-	// 아코디언 초기화
-	accordion.init();
+    // 아코디언 초기화
+    accordion.init();
 
-	// 아코디언 옵션 설정
-	accordion.setAccordionOption({ 
-		isSingleShow: true, // 한 번에 하나의 메뉴만 펼치기
-		isAnimation: true, // 애니메이션 효과 사용 
-		isShowToggle: true // 펼쳐진 항목 다시 클릭 시 숨기기 
-	});
+    // 아코디언 옵션 설정
+    accordion.setAccordionOption({ 
+        isSingleShow: true, // 한 번에 하나의 메뉴만 펼치기
+        isAnimation: true, // 애니메이션 효과 사용 
+        isShowToggle: true // 펼쳐진 항목 다시 클릭 시 숨기기 
+    });
 
-	// 아코디언 아이템 추가
-	accordion.insertItem('Item 1', 'Source/Views/Item1.lay', true); 
-	accordion.insertItem('Item 2', 'Source/Views/Item2.lay', false); 
+    // 아코디언 아이템 추가
+    accordion.insertItem('Item 1', 'Source/view1.lay', true); 
+    accordion.insertItem('Item 2', 'Source/view2.lay', false); 
 
-	// 아코디언을 특정 컨테이너에 추가
-	// jQuery 객체를 사용하여 추가 
-	this.view.$ele.append(accordion.$ele); 
+    // 아코디언을 특정 컨테이너에 추가
+    // jQuery 객체를 사용하여 추가 
+    this.$ele.append(accordion.$ele);
 
-	// 아코디언의 선택 이벤트 설정
-	accordion.addEventListener('select', function(comp, info, e) { 
-		alert('선택된 아이템: ' + info.innerText); 
-	});
+
+    // 아코디언의 선택 이벤트 설정
+    accordion.addEventListener('select', function(comp, info, e) { 
+        console.log('select 이벤트 발생:', info);
+        AToast.show('선택된 아이템: ' + info.innerText); 
+    });
 }
-
 ```
 
 **결과화면**
 
-![](../../.gitbook/assets/ac_res.png)
+<div align="left"><img src="../../.gitbook/assets/ac_res.png" alt=""></div>

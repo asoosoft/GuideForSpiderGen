@@ -1,12 +1,12 @@
 # Grid
 
-![](../../.gitbook/assets/Grid-01.png)
+<div align="left"><img src="../../.gitbook/assets/Grid-01.png" alt=""></div>
 
 컴포넌트는 데이터를 테이블 형식으로 표시하고 관리할 수 있는 도구.  다양한 속성과 메서드를 제공하여 데이터를 효율적으로 표시하고 조작.
 
 ### Attributes
 
-![](../../.gitbook/assets/Grid-02.png)
+<div align="left"><img src="../../.gitbook/assets/Grid-02.png" alt=""></div>
 
 <table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Hide Header</code></td><td>헤더 숨김 여부를 설정</td></tr><tr><td><code>Hide Footer</code></td><td>푸터 <a data-footnote-ref href="#user-content-fn-1">숨김 여부를 설정</a></td></tr><tr><td><code>Fullrow Select</code></td><td>특정 셀을 클릭해도 그 로우 전체가 선택되도록 설정</td></tr><tr><td><code>Single Select</code></td><td>Ctrl 키를 누르고 선택해도 하나만 선택되도록 설정</td></tr><tr><td><code>Flexible Row</code></td><td>TR의 높이를 TABLE 높이에 맞추는 옵션</td></tr><tr><td><code>Selectable</code></td><td>선택 가능 여부를 설정</td></tr><tr><td><code>Clear Row Template</code></td><td>그리드 초기화 후 템플릿 로우를 보존할지 여부를 설정</td></tr><tr><td><code>Sortable</code></td><td>헤더 선택 시 정렬 처리 여부를 설정</td></tr><tr><td><code>Column Resize</code></td><td>컬럼 리사이즈 여부를 설정</td></tr><tr><td><code>Width Changable</code></td><td>컬럼 리사이즈 시 그리드 넓이 변경 여부를 설정</td></tr></tbody></table>
 
@@ -50,7 +50,7 @@ onSimpleGridSelect(comp, info, e)
 
 
 
-<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure></div>
 
 * **프로젝트 트리뷰에서 Framework > afc 우클릭 Default Load Settings.. > Component > AToast.js 클릭 >  닫기 > 변경 사항 적용 -> Yes**
 
@@ -64,7 +64,7 @@ onSimpleGridSelect(comp, info, e)
 
 4. **프로젝트 실행**
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 165716.gif" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 165716.gif" alt=""><figcaption></figcaption></figure></div>
 
 
 
@@ -74,7 +74,7 @@ onSimpleGridSelect(comp, info, e)
 
 * AGrid.js + AToast.js + AGridEvent.js 선
 
-![](../../.gitbook/assets/Grid-04.png)
+<div align="left"><img src="../../.gitbook/assets/Grid-04.png" alt=""></div>
 
 
 
@@ -131,6 +131,6 @@ onGridSelect(comp, info, e) {
 
 * 프로젝트 실행
 
-<figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 165716.gif" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/화면 녹화 중 2025-07-09 165716.gif" alt=""><figcaption></figcaption></figure></div>
 
 [^1]: 
