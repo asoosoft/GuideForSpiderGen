@@ -1,10 +1,12 @@
 # DataGrid
 
+<div align="left"><figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+
 데이터를 테이블 형식으로 표시하고 조작할 수 있는 컴포넌트
 
 ### Appearance
 
-![](../../.gitbook/assets/dataGrid_apper.png)
+<div align="left"><img src="../../.gitbook/assets/dataGrid_apper.png" alt=""></div>
 
 #### Style
 
@@ -21,11 +23,11 @@
 
 ### Attribute
 
-![](../../.gitbook/assets/dataGrid_attri.png)
+<div align="left"><img src="../../.gitbook/assets/dataGrid_attri.png" alt=""></div>
 
 #### Option
 
-* **`Pivot Gird`**
+* **`Pivot Grid`**
   * 피벗 그리드 사용 여부를 설정하는 옵션
   * 데이터를 요약하고 분석하는 데 유용한 기능을 제공
 * **`Hide-H-Scrollbar`**
@@ -59,13 +61,15 @@
 
 ### Example
 
-**1. DataGrid 추가**
+1. **DataGrid 추가**
 
 * 그리드의 id를 datagrid 로 설정
 
 ![](../../.gitbook/assets/datagrid_new.png)
 
-**2. 코드로 데이터 추가**
+
+
+* MainView.js 수정
 
 ```javascript
 ...
@@ -84,44 +88,63 @@ onInitDone()
 ...
 ```
 
-**3. 프로젝트 실행**
 
-_**Framework > afc > DnDManager.js & ADataMask.js 추가**_
 
-![](../../.gitbook/assets/datagrid_plus.png)
+* _**Framework > afc > DnDManager.js & ADataMask.js 추가**_
 
-**4. 코드로 DataGrid 추가**
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 110457.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 110443.png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+* 프로젝트 실행
+
+<div align="left"><img src="../../.gitbook/assets/datagrid_plus.png" alt=""></div>
+
+
+
+2. **코드로 DataGrid 추가**
+
+* **Framework > afc > component**
+  * &#x20;**AScrollbar.js + ADataGrid.js + AGrid.js 추가**
+* **Framework > afc > event**
+  * **AScrollbarEvent.js + ADataGridEvent.js + AGridEvent.js 추가**
+
+<div><figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 110712.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 110725.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 110735.png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+* MainView.js 수정
 
 ```javascript
-...
-
 onInitDone()
 {
-	super.onInitDone()
-	//TODO:edit here
-	let dataGrid =  new  ADataGrid();
-	dataGrid.init()
-	dataGrid.setOption({
-	hideHeader:  false,
-	hideFooter:  false,
-	fullrowSelect:  true,
-	singleSelect:  false,
-	sortable:  true
-	})
+    super.onInitDone()
 
-	this.addComponent(dataGrid)
-	dataGrid.setSize('100%',  '100%');
-	dataGrid.setPos(0,0);
-	let data =  [
-	{ column1:  'value1', column2:  'value2'  },
-	{ column1:  'value3', column2:  'value4'  }
-	];
-	dataGrid.setData(data);
-	}
+    let dataGrid = new ADataGrid();
+    dataGrid.init();
 
-...
+    dataGrid.setOption({
+        hideHeader:  false,
+        hideFooter:  false,
+        fullrowSelect:  true,
+        singleSelect:  false,
+        sortable:  true
+    });     
+
+    this.addComponent(dataGrid);
+
+    dataGrid.setSize('100%',  '100%');
+    dataGrid.setPos(0,0);
+    let data =  [
+    { column1:  'value1', column2:  'value2'  },
+    { column1:  'value3', column2:  'value4'  }
+    ];
+    
+    dataGrid.setData(data);
+
+}
 ```
 
-**5. 프로젝트 실행**
+* **프로젝트 실행**
 
 ![](../../.gitbook/assets/dg_new2.png)
