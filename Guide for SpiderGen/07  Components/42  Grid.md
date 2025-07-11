@@ -56,7 +56,7 @@ onSimpleGridSelect(comp, info, e)
 
 
 
-* select를 눌러 Function Namefme 를 onSimpleGridSelect로 설정하여 Grid의 이벤트 설정
+* select를 눌러 Function Name을 onSimpleGridSelect로 설정하여 Grid의 이벤트 설정
 
 ![](../../.gitbook/assets/Grid-07.png)
 
