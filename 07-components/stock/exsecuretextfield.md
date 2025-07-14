@@ -24,7 +24,7 @@ EXSecureTextField 속성
 
 1. **라이브러리**
 
-<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<div align="left"><figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure></div>
 
 * _**프로젝트 트리뷰에서 Framework > Library 우클릭 > Add new > Javascript**_&#x20;
 

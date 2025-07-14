@@ -1,103 +1,132 @@
 # SplitView
 
-![](../../.gitbook/assets/splitView.png)
 
 
+<div align="left"><figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure></div>
 
-두개 이상의 View 를 원하는 크기로 분할하여 담을수 있는 Component
+두 개 이상의 View 를 원하는 크기로 분할하여 담을 수 있는 컴포넌트
 
 ### Example
 
-**1. Source 폴더 아래 Views 폴더 생성**
+* **Source 폴더 아래 Views 폴더 생성하고 이름 LeftView, RightView로 지정**
 
-**2. Views 폴더에 LeftView, RightView 추가**
+<div align="left"><figure><img src="../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure></div>
 
-**3. MainView.js에 멤버변수 추가**
 
-```javascript
-...
 
-constructor()
-{
-	super()
-	
-	this.leftView =  null;
-	this.rightView =  null;
-}
-
-...
-```
-
-**4. 컴포넌트 배치**
-
-| component  | id        |
-| ---------- | --------- |
-| ASplitView | splitView |
+* MainView.lay에 SplitView 컴포넌트 추가 -> ID값 지정(ex: splitView)
 
 ![](../../.gitbook/assets/split_view.png)
 
-**5. MainView.js 에 스플릿 생성**
 
-| view count | left view   | right view                         | direction |
-| ---------- | ----------- | ---------------------------------- | --------- |
-| 2          | width:300px | width:-1(전체사이즈에서 200px를 뺀 나머지 사이즈) | row       |
+
+* **MainView.js 수정**
 
 ```javascript
-...
+constructor()
+{
+    super()
+
+    //TODO:edit here
+
+    this.leftView =  null;
+    this.rightView =  null;
+
+}
 
 onInitDone() 
 { 
- 
+
     //스플릿 생성 
-    this.splitView.createSplit(2, [200, -1], 'row'); 
- 
+    this.splitView.createSplit(2, [-1, -1], 'row');
+
     //스플릿에 뷰 설정  
     this.leftView = this.splitView.setSplitView(0, 'Source/Views/LeftView.lay');     
     this.rightView = this.splitView.setSplitView(1, 'Source/Views/RightView.lay');     
- 
-};  
 
-...
+}; 
 ```
 
-**6. LeftView.lay 컴포넌트 배치**
 
-* LeftView.lay 백그라운드 컬러를 \*\*`#acacac`\*\*로 설정
 
-| component  | id       | text             | placeholder       |
-| ---------- | -------- | ---------------- | ----------------- |
-| ATextField | txtLeft  |                  | 우측에 보낼 내용을 입력하세요. |
-| ALabel     | lblLabel | 오른쪽에 내용을 읽어 옵니다. |                   |
-| AButton    | btnSend  | send             |                   |
-| AButton    | btnGet   | get              |                   |
+* **LeftView.lay에 컴포넌트 배치**
+
+| component  | id      | text            | placeholder       |
+| ---------- | ------- | --------------- | ----------------- |
+| ATextField | txtLeft |                 | 우측에 보낼 내용을 입력하세요. |
+| ALabel     | lblLeft | 오른쪽 내용을 읽어 옵니다. |                   |
+| AButton    | btnSend | send            |                   |
+| AButton    | btnGet  | get             |                   |
 
 ![](../../.gitbook/assets/split_left.png)
 
 **7. RightView.lay 컴포넌트 배치**
 
-| component  | id       | text            | placeholder       |
-| ---------- | -------- | --------------- | ----------------- |
-| ATextField | txtRight |                 | 좌측에 보낼 내용을 입력하세요. |
-| ALabel     | lblRight | 왼쪽에 내용을 읽어 옵니다. |                   |
-| AButton    | btnSend  | send            |                   |
-| AButton    | btnGet   | get             |                   |
+| component  | id       | text           | placeholder       |
+| ---------- | -------- | -------------- | ----------------- |
+| ATextField | txtRight |                | 좌측에 보낼 내용을 입력하세요. |
+| ALabel     | lblRight | 왼쪽 내용을 읽어 옵니다. |                   |
+| AButton    | btnSend  | send           |                   |
+| AButton    | btnGet   | get            |                   |
 
 ![](../../.gitbook/assets/split_right.png)
 
-**8. LeftView.js 멤버변수 설정**
+
+
+* **LeftView.js 수정**
 
 ```javascript
-...
-
 constructor()
 {
-	super()
+    super()
 
-	this.mainView =  null;
-	this.rightView =  null;
+    //TODO:edit here
+
+    
+    this.mainView =  null;
+    this.rightView =  null;
+
 }
- 
-...
+
+onInitDone() 
+{ 
+    //메인뷰 설정 
+    this.mainView = this.getContainer().getView();     
+
+    this.rightView = this.mainView.splitView.getSplitView(1);     
+
+}; 
+
+
+onBtnSendClick(comp, info, e)
+{
+
+    let sendTxt = this.txtLeft.getText(); 
+
+    if(!sendTxt || sendTxt.length < 1){ 
+
+        AToast.show('전송할 내용을 입력하세요.'); 
+        return; 
+    } 
+
+    this.rightView.lblRight.setText(sendTxt); 
+
+}
+
+onBtnGetClick(comp, info, e)
+{
+
+    let getTxt = this.rightView.txtRight.getText(); 
+
+    if(!getTxt || getTxt.length < 1) 
+    { 
+        AToast.show('입력된 내용이 없습니다.'); 
+        return; 
+    } 
+
+    this.lblLeft.setText(getTxt); 
+
+}
 ```
 
 **9. LeftView.js 수정**
