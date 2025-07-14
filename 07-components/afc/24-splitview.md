@@ -2,7 +2,7 @@
 
 
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (134) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 두 개 이상의 View 를 원하는 크기로 분할하여 담을 수 있는 컴포넌트
 
