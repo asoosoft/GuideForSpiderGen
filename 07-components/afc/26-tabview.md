@@ -1,8 +1,8 @@
 # TabView
 
-![](../../.gitbook/assets/tabview-comp-00.png)
+<div align="left"><img src="../../.gitbook/assets/tabview-comp-00.png" alt=""></div>
 
-탭을 클릭하여 서로 다른 콘텐츠를 전환하는 컴포넌트.
+탭을 클릭하여 서로 다른 콘텐츠로 전환하는 UI 컴포넌트.
 
 ### Appearance
 
@@ -22,36 +22,57 @@
 * **Select** 탭뷰 중 기본적으로 선택될 탭아이디를 설정하는 속성입니다.
 * **edit** 탭의 설정 내용을 수정하는 속성입니다.
 * **del** 선택한 탭을 삭제합니다.
-* **add** 탭뷰를 추가하는 속성입니다
+* **add** 탭뷰를 추가하는 속성입니다.
+
+<div align="left"><img src="../../.gitbook/assets/tabview-ex-02.png" alt=""></div>
+
 * **ID** 탭을 구분하기 위한 ID 입니다.
 * **Name** 탭에 표시될 텍스트 입니다.
 * **URL** 탭과 매칭될 탭뷰의 URL 입니다.
 
 ### Example
 
-**1. 컴포넌트 생성**
+**컴포넌트 생성 예제**
 
 * TabView 컴포넌트 생성하고 ID값 mainTabView로 지정
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 135528.png" alt=""><figcaption></figcaption></figure>
 
-**2. 폴더 및 SubView 생성.**
+* MainView.lay에ATabView 생성하고 ID값 지정(ex:mainTabView)
+
+<div align="left"><figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure></div>
+
+
 
 * 새로운 폴더를 생성해서 TabView에 표시할 화면 추가
 * Views 폴더에 SubView 생성 (파일명은 사용자 지정)
 
-<div align="left"><img src="../../.gitbook/assets/tabview-comp-07.png" alt=""></div>
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 151601.png" alt=""><figcaption></figcaption></figure> <img src="../../.gitbook/assets/tabview-comp-07.png" alt=""></div>
 
-**3. SubView 배경색 변경.**
 
-* 페이지 전환을 식별할 수 있게 View의 구조를 각각 다르게 설정.
-* tabView 컴포넌트를 Attribute > Items에 위에서 생성한 tView를 추가하고 Select에 tab1을 추가.
+
+* 추가한 화면의 색을 각각 다르게 설정합니다.
+* MainView의 tabView 컴포넌트 Appearance > Items에 위에서 생성한 tView를 추가하고 Select에 tab1을 추가합니다.
+* Url은 CopyUrl 을 사용해서 복사할 수 있습니다.
 
 <div align="left"><img src="../../.gitbook/assets/d886c56b-0525-4ff6-8ee2-8830f8950b39.png" alt=""> <img src="../../.gitbook/assets/tabview-ex-03.png" alt=""></div>
 
 
 
 * 코드를 생성하여 tabview에 표시할SubView 추가.
+* 서브뷰 구조 변경 및 TabView Items 설정.(label 컴포넌트 생성해서 view 별로이름 지정)
+
+<div align="left"><figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 151405 (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 151415 (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-11 151423 (1).png" alt=""><figcaption></figcaption></figure></div>
+
+
+
+<div align="left"><img src="../../.gitbook/assets/d886c56b-0525-4ff6-8ee2-8830f8950b39.png" alt=""> <img src="../../.gitbook/assets/tabview-ex-03.png" alt=""></div>
+
+* 생성한 tView의 경로를 복사
+* MainView.lay에 생성한 tabView 컴포넌트 > Attribute > items에 생성한 tView를 추가하고 Select에 tab1 추가.
+  * Select로 지정한 view는 메인 화면으로 지정.
+
+
 
 ```
 onInitDone()
@@ -63,8 +84,8 @@ onInitDone()
 	this.mainTabView.addTab('Tab 2', 'Source/Views/tView2.lay', 'tab2');
 	this.mainTabView.addTab('Tab 3', 'Source/Views/tView3.lay', 'tab3');
 	
-	this.mainTabView.selectTabById('tab1')
-
+	this.tabView.selectTabById('tab1')
+	
 } 
 ```
 
@@ -84,6 +105,8 @@ onInitDone()
 
 ![](../../.gitbook/assets/tabview-comp-08.png)
 
+<div align="left"><img src="../../.gitbook/assets/tabview-comp-07 (1).png" alt=""></div>
+
 
 
 * MainView.js 수정
@@ -98,6 +121,9 @@ onInitDone()
         tabView.setSize('100%', '100%');// 탭 뷰 크기 설정 (전체 화면 크기)
         tabView.setPos(0, 0);// 탭 뷰 위치 설정 (좌상단 위치로 설정)
 
+
+
+
         // 탭 추가: 탭 이름, 해당 탭에 로드될 레이아웃 파일 경로, 탭의 고유 ID
         tabView.addTab('Tab 1', 'Source/Views/tView1.lay', 'tab1');
         tabView.addTab('Tab 2', 'Source/Views/tView2.lay', 'tab2');
@@ -106,6 +132,7 @@ onInitDone()
         tabView.selectTabById('tab1')
         // 탭 뷰를 부모 컨테이너에 추가하여 화면에 표시
         this.getContainer().addComponent(tabView);
+
 }
 ```
 

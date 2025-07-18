@@ -10,7 +10,7 @@
 
 * **Source 폴더 아래 Views 폴더 생성하고 이름 LeftView, RightView로 지정**
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (135) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 
 
