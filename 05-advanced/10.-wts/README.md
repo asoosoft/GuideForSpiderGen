@@ -19,13 +19,13 @@ description: stock 프레임워크를 이용한 WTS 개발
 
 예시) Spidergen 홈페이지 WTS 구조
 
-<figure><img src="../.gitbook/assets/spidergenWTS.png" alt=""><figcaption><p>Spidergen WTS</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/spidergenWTS.png" alt=""><figcaption><p>Spidergen WTS</p></figcaption></figure>
 
 ## 개발
 
-### [프로젝트 생성](../03-start-guide/01.md)
+### [프로젝트 생성](../../03-start-guide/01.md)
 
-### [stock 프레임워크](../07-components/stock/) 추가
+### [stock 프레임워크](../../07-components/stock/) 추가
 
 ### 화면 구조 잡기
 
@@ -150,7 +150,7 @@ displayMainPage()
 
 MainView.lay
 
-<div align="left"><figure><img src="../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure></div>
 
 MainView.js
 
@@ -212,11 +212,11 @@ init(context, evtListener)
 
 main, view 폴더 추가
 
-<figure><img src="../.gitbook/assets/WTSSample - C__Users_MinsooKim_Documents_SpiderGenWorkspace_WTSSample_ 2025-07-08 오후 3_54_45 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/WTSSample - C__Users_MinsooKim_Documents_SpiderGenWorkspace_WTSSample_ 2025-07-08 오후 3_54_45 (1).png" alt=""><figcaption></figcaption></figure>
 
 main, view 폴더내에화면추가
 
-<figure><img src="../.gitbook/assets/WTSSample - C__Users_MinsooKim_Documents_SpiderGenWorkspace_WTSSample_ 2025-07-08 오후 3_55_14 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/WTSSample - C__Users_MinsooKim_Documents_SpiderGenWorkspace_WTSSample_ 2025-07-08 오후 3_55_14 (1).png" alt=""><figcaption></figcaption></figure>
 
 main 폴더에 추가할 파일목록
 
@@ -239,7 +239,7 @@ Exchange.lay
 
 흰색 사각형 안의 스타일을 GridLayou 와 프로퍼티에 적용
 
-<figure><img src="../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
 
 Exchange.js
 
@@ -478,13 +478,13 @@ ItemInfoView.lay
 
 EXItemView 추가, id itemView로 세팅, change 이벤트 등록
 
-<figure><img src="../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
 
 컴포넌트에 name 속성 셋팅
 
 tp: 현재가, scp: 전일대비값, scr: 전일대비등락율, hp: 고가, lp: 저가, atv24h: 24시간누적거래량
 
-<figure><img src="../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -542,11 +542,11 @@ setMarketData(data)
 
 Build, Run 하여 확인
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
-### [Query 시스템](<../Guide for SpiderGen/05  Advanced/02  I O System.md>)
+### [Query 시스템](<../../Guide for SpiderGen/05  Advanced/02  I O System.md>)
 
 {% hint style="info" %}
 아래 내용에는 RestAPI 를 QueryManager로 송수신하기 위한 내용은 들어있지 않으니 샘플 소스를 참고해주세요.
@@ -559,15 +559,15 @@ Query 시스템 사용시 위의 RestAPI, Websocket 을  단독으로 사용할 
 프로젝트 트리뷰에서 Framework > sys 우클릭 > Default Load Settings.. 설정창 열고\
 Library > AQuery.js, AQueryData.js, QueryManager.js 등선택하여 기본 로드처리
 
-<div align="left"><figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
 
 
 
-1. [qry 파일생성](<../Guide for SpiderGen/05  Advanced/02  I O System/C  Query 파일 생성과 데이터 송수신.md>)
+1. [qry 파일생성](<../../Guide for SpiderGen/05  Advanced/02  I O System/C  Query 파일 생성과 데이터 송수신.md>)
 
 * ticker.qry
 
-<figure><img src="../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```json
 {
@@ -628,9 +628,9 @@ Library > AQuery.js, AQueryData.js, QueryManager.js 등선택하여 기본 로�
 
 ticker 로 수신한 데이터 중 EXTriangle 에 매핑할 정보가 없어 \[User Field] 버튼으로 cs 필드명을 임의로 지정하고 수신되는 데이터에 `block.cs = scp>0?2:5` (양수:  상승, 음수: 하락) 값을 저장처리
 
-<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 3. QueryManager 상속클래스 생성
 
@@ -857,5 +857,5 @@ onItemViewChange(comp, info, e)
 
 ## WTS 샘플 프로젝트
 
-{% file src="../.gitbook/assets/WTSSample.zip" %}
+{% file src="../../.gitbook/assets/WTSSample.zip" %}
 
