@@ -542,7 +542,7 @@ setMarketData(data)
 
 Build, Run 하여 확인
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -559,7 +559,7 @@ Query 시스템 사용시 위의 RestAPI, Websocket 을  단독으로 사용할 
 프로젝트 트리뷰에서 Framework > sys 우클릭 > Default Load Settings.. 설정창 열고\
 Library > AQuery.js, AQueryData.js, QueryManager.js 등선택하여 기본 로드처리
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 
 
@@ -628,9 +628,9 @@ Library > AQuery.js, AQueryData.js, QueryManager.js 등선택하여 기본 로�
 
 ticker 로 수신한 데이터 중 EXTriangle 에 매핑할 정보가 없어 \[User Field] 버튼으로 cs 필드명을 임의로 지정하고 수신되는 데이터에 `block.cs = scp>0?2:5` (양수:  상승, 음수: 하락) 값을 저장처리
 
-<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 3. QueryManager 상속클래스 생성
 

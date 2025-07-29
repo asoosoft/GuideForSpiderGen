@@ -40,7 +40,7 @@
 
 * MainView.lay에ATabView 생성하고 ID값 지정(ex:mainTabView)
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure></div>
 
 
 

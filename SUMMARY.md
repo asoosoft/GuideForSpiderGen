@@ -56,7 +56,7 @@
   * [08.  Flavor](<Guide for SpiderGen/05  Advanced/07  Flavor.md>)
   * [09. Git 연동](<Guide for SpiderGen/05  Advanced/08  Git 연동.md>)
   * [10. WTS 개발하기](05-advanced/10.-wts/README.md)
-    * [1. 거래소 연결및 데이터 수신](05-advanced/10.-wts/1..md)
+    * [1. 거래소연결 및 종목정보 수신](05-advanced/10.-wts/1..md)
   * [11. Framework 생성하기](05-advanced/11.-framework.md)
 * [06. SpiderGen Editor](<Guide for SpiderGen/06  SpiderGen Editor.md>)
   * [01. Main Menu](<Guide for SpiderGen/06  SpiderGen Editor/01  Main Menu.md>)
