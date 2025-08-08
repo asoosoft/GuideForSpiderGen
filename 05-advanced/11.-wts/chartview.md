@@ -1,2 +1,0 @@
-# ChartView 적용
-
