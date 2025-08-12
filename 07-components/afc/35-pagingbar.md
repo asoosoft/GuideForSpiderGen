@@ -1,6 +1,6 @@
 # PagingBar
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 데이터를 페이지 단위로 나누어 표시할 때 사용되는 컴포넌트. 사용자는 여러 페이지에 걸쳐 있는 데이터를 쉽게 탐색하고  페이지 설정 및 탐색 기능을 지원.
 
@@ -11,7 +11,7 @@
 * **MainView.lay에** [**ListView**](14-listview/)**와 APagingBar 컴포넌트 배치**
   * ListView id값 listView, PagingBar id값 pageBar로 지정
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -24,7 +24,7 @@
 
     * CompEx.css + AToast.js 클릭
 
-    <div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
+    <div align="left"><figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 
 
@@ -98,13 +98,13 @@ pagingBindData(comp, info)
 
 * listview에 출력할 lay는 프로젝트 우클릭 > Copy Url로 경로 복사
 
-<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 
 
 * **Source 폴더 우클릭 > New Folder > 폴더명 지정하고(ex: data) 폴더 생성**
 
-<div><figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 111128.png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 111128.png" alt=""><figcaption></figcaption></figure></div>
 
 
 
@@ -112,7 +112,7 @@ pagingBindData(comp, info)
 
     * 생성한 폴더에서 우클릭 > Add new > View > Name 작성(ex: subView.lay) > OK
 
-    <div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 111824.png" alt=""><figcaption></figcaption></figure></div>
+    <div align="left"><figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/스크린샷 2025-07-10 111824.png" alt=""><figcaption></figcaption></figure></div>
 
 
 
@@ -120,7 +120,7 @@ pagingBindData(comp, info)
 
 * **subview.lay에 Label 컴포넌트 2개 배치하고, ID값은 각각 number, title로 지정**
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
