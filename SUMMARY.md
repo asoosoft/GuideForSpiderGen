@@ -53,7 +53,7 @@
   * [05. Mask](05-advanced/05.-mask.md)
   * [06.  반응형](<Guide for SpiderGen/05  Advanced/04  반응형.md>)
   * [07. 확장 컴포넌트](<Guide for SpiderGen/05  Advanced/05  확장 컴포넌트.md>)
-  * [08. Figma와 Spidergen 연동하기](05-advanced/06-figma-spidergen/README.md)
+  * [08. Figma와 Spidergen 연동하기](<Guide for SpiderGen/05  Advanced/06  Figma와 Spidergen 연동하기.md>)
     * [1. Template 준비](05-advanced/06-figma-spidergen/1.-template.md)
     * [2. Component 작업](05-advanced/06-figma-spidergen/2.-component.md)
     * [3. Component 를 조합한 화면 생성 및 적용](05-advanced/06-figma-spidergen/3.-component.md)
