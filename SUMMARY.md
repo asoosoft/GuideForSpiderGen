@@ -60,6 +60,7 @@
     * [4. Component 를 조합한 화면 생성 및 적용](05-advanced/06-figma-spidergen/3.-component.md)
     * [5. Tlay 로 화면 생성](05-advanced/06-figma-spidergen/4.-tlay.md)
     * [6. Component 없이 Figma 화면 적용](05-advanced/06-figma-spidergen/5.-component-figma.md)
+    * [7. Component 디자인 가이드](05-advanced/06-figma-spidergen/7.-component.md)
   * [09.  Flavor](<Guide for SpiderGen/05  Advanced/07  Flavor.md>)
   * [10. Git 연동](<Guide for SpiderGen/05  Advanced/08  Git 연동.md>)
   * [11. Framework 생성하기](05-advanced/11.-framework.md)
