@@ -18,7 +18,7 @@
 
 Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방법이 있습니다.
 
-### 1. 전부 Figma 에서 진행하는 방법&#x20;
+### 1. 전부 Figma 에서 진행하는 방법 (Component, Scene 작업)
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
