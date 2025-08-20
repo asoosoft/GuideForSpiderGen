@@ -280,6 +280,6 @@ onCodeSxfChange(comp, info, e)
 
 _**프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > EXSecureTextField.js 체크 > 우측 상단  X(창닫기) 클릭 > 변경된 정보를 저장하시겠습니까> > Yes**_
 
-![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 {% endhint %}
 

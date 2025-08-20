@@ -6,7 +6,7 @@
 
 ### 1.addJavaScriptHandler
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 InAppWebView 위젯은 controller객체의 `addJavaScriptHandler` 메서드를  이용하여\
 아래와 같이 웹뷰가 flutter InAppWebView의  콜백을 호출할 수 있습니다.
@@ -55,7 +55,7 @@ InAppWebView 위젯은 controller객체의 `addJavaScriptHandler` 메서드를  
 
 ### 2.postWebMessage
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 InAppWebView 위젯은 controller객체의 `postWebMessage` 메서드를  이용하여\
 아래와 같이 flutter가 웹뷰에게 메세지 이벤트를 트리거 할  수 있습니다.
