@@ -30,9 +30,9 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 진행 순서는 아래와 같습니다.
 
-1. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
-2. [2.-component.md](../../05-advanced/06-figma-spidergen/2.-component.md "mention")
-3. [3.-component.md](../../05-advanced/06-figma-spidergen/3.-component.md "mention")
+1. [2.-template.md](../../05-advanced/06-figma-spidergen/2.-template.md "mention")
+2. [3.-component.md](../../05-advanced/06-figma-spidergen/3.-component.md "mention")
+3. [4.-component.md](../../05-advanced/06-figma-spidergen/4.-component.md "mention")
 
 
 
@@ -49,9 +49,9 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 진행순서는 아래와 같습니다.
 
-1. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
-2. [2.-component.md](../../05-advanced/06-figma-spidergen/2.-component.md "mention")
-3. [4.-tlay.md](../../05-advanced/06-figma-spidergen/4.-tlay.md "mention")
+1. [2.-template.md](../../05-advanced/06-figma-spidergen/2.-template.md "mention")
+2. [3.-component.md](../../05-advanced/06-figma-spidergen/3.-component.md "mention")
+3. [5.-tlay.md](../../05-advanced/06-figma-spidergen/5.-tlay.md "mention")
 
 
 
@@ -67,7 +67,7 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 진행순서는 아래와 같습니다.
 
-1. [5.-component-figma.md](../../05-advanced/06-figma-spidergen/5.-component-figma.md "mention")
+1. [6.-component-figma.md](../../05-advanced/06-figma-spidergen/6.-component-figma.md "mention")
 
 
 
