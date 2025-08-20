@@ -23,7 +23,7 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 * Figma 디자이너가 화면을 전부 진행가능한 경우 사용.
-  * 화면을 구성하는 Component 와, 이를 조합한 Scene 을 전부 Figma 에서 디자인 진행.
+  * UI를 구성하는 Component 와, 이를 조합한 Scene 을 전부 Figma 에서 디자인 진행.
   * 완료된 작업을 Figma 플러그인을 통해 Spidergen 으로 변환
 
 
