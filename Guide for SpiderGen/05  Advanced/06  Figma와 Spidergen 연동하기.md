@@ -20,9 +20,9 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 ### 1. 전부 Figma 에서 진행하는 방법 (Component, Scene 작업)
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-* Figma 디자이너가 화면을 전부 진행가능한 경우 사용.
+* Figma ㄴㅇ래ㅑㅓㅇㄴ 에서 Component , Scene&#x20;
   * UI를 구성하는 Component 와, 이를 조합한 Scene 을 전부 Figma 에서 디자인 진행.
   * 완료된 작업을 Figma 플러그인을 통해 Spidergen 으로 변환
 
@@ -32,14 +32,14 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 1. [1-.-figmatolay.md](../../05-advanced/06-figma-spidergen/1-.-figmatolay.md "mention")
 2. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
-3. [2.-component.md](../../05-advanced/06-figma-spidergen/2.-component.md "mention")
+3. [3.-component](../../05-advanced/06-figma-spidergen/3.-component/ "mention")
 4. [3.-component.md](../../05-advanced/06-figma-spidergen/3.-component.md "mention")
 
 
 
 ### 2.  Component 작업만 Figma 에서 진행하는 방법
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Component는 디자이너가, 실 화면의 개발은 개발자가 진행해야  할경우 사용.
   * 화면을 구성하는 Component 만 Figma 에서 디자인.
@@ -52,14 +52,14 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 1. [1-.-figmatolay.md](../../05-advanced/06-figma-spidergen/1-.-figmatolay.md "mention")
 2. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
-3. [2.-component.md](../../05-advanced/06-figma-spidergen/2.-component.md "mention")
+3. [3.-component](../../05-advanced/06-figma-spidergen/3.-component/ "mention")
 4. [4.-tlay.md](../../05-advanced/06-figma-spidergen/4.-tlay.md "mention")
 
 
 
 ### 3. Component 없이 화면만 Figma 에서 진행하는 방법
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Figma에서 러프하게 작업된 화면을  개발자가 담당해야 할 경우 사용.
   * 디자인된 화면을 플러그인을 통해 SpdierGen 형식으로 변환
