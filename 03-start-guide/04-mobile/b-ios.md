@@ -71,7 +71,7 @@ cordova platform add ios
 
 * `myApp/platforms/ios/platform_www` 경로에 생성된 **cordova.js**파일을  **SpiderGen 프로젝트** **Assets** **폴더**에 복사합니다.
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -125,7 +125,7 @@ cordova platform add ios
 
 * **Xcode**의 상단에서 **HelloCordova프로젝트**를 **선택**하고 **실제 디바이스 또는 시뮬레이터 선택후** ▶ 버튼을 눌러 실행합니다.
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 * 앱실행 후 **버튼**을 눌러 "기능이 동작합니다" **텍스트가 출력**되는지 **확인**합니다.
 
