@@ -110,7 +110,7 @@ onInitDone()
 
 {% columns %}
 {% column %}
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="157"><figcaption><p>이해를 돕기 위한 차트 예시</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="157"><figcaption><p>이해를 돕기 위한 차트 예시</p></figcaption></figure>
 {% endcolumn %}
 
 {% column %}

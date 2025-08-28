@@ -31,7 +31,7 @@ cmd 창에서 <mark style="background-color:red;">cordova 프로젝트 경로</m
 
 &#x20;<mark style="color:red;background-color:red;">**cordova**</mark> 로 설정해야 합니다.
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>생성된 Bridge 폴더</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>생성된 Bridge 폴더</p></figcaption></figure>
 
 위에서 cordova로 설정을 완료했다면 위 사진처럼 Bridge 폴더와 그 하위 폴더들이 자동으로 생성되어 있습니다.
 
@@ -47,7 +47,7 @@ cmd 창에서 <mark style="background-color:red;">cordova 프로젝트 경로</m
 
 ### 3.2. 네이티브 & 웹
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( 기본 none 상태 )</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>스파이더젠 Properties 화면 ( 기본 none 상태 )</p></figcaption></figure>
 
 네이티브 & 웹 전용으로 제작하려면 스파이더젠의 File > Properties에서 Native Bridge를
 
@@ -70,11 +70,11 @@ Assets 폴더 내에 파일들은 자동으로 로드하지 않으므로 해당 
 
 &#x20;\platforms\android\app\src\main\res\xml 위치에 존재하는 config.xml에 코드를 추가해야합니다.
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 사진과 같이 config.xml을 코드 창으로 연 후
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 아래 코드를 복사 후 붙여넣기 해주세요.
 
@@ -281,12 +281,12 @@ Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\android` 를
 > 디바이스를 직접 연결 하거나 가상 디바이스를 설정해야 합니다.\
 > 가상 디바이스는 **Menu - Tools -Device Manager** 에서 설정할 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **05. 버튼을 눌러 정상 동작을 확인합니다.**
 
 
 
-<div><figure><img src="../../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (13) (1) (1) (1).png" alt="" width="186"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (13) (1) (1) (1).png" alt="" width="186"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>
 
-<div><figure><img src="../../.gitbook/assets/image (10) (1) (1) (1) (1).png" alt="" width="350"><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (12) (1) (1) (1) (1).png" alt="" width="189"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt="" width="350"><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (12) (1) (1) (1) (1).png" alt="" width="189"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>

@@ -63,6 +63,7 @@
         * [Button](05-advanced/06-figma-spidergen/3.-component/3.-component/button.md)
         * [Label](05-advanced/06-figma-spidergen/3.-component/3.-component/label.md)
         * [CheckBox](05-advanced/06-figma-spidergen/3.-component/3.-component/checkbox.md)
+        * [공통 - Image 생성 Guide](05-advanced/06-figma-spidergen/3.-component/3.-component/image-guide.md)
     * [4. Figma 에서 생성한 화면 변환](05-advanced/06-figma-spidergen/4.-figma.md)
     * [5. Tlay 로 SppiderGen 에 화면 생성](05-advanced/06-figma-spidergen/5.-tlay-sppidergen.md)
     * [6. Component 없이 Figma 화면 적용](05-advanced/06-figma-spidergen/5.-component-figma.md)

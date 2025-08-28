@@ -144,7 +144,7 @@ onInitDone() {
 
 프로젝트 트리뷰에서 Framework > stock 우클릭 > Default Load Settings.. > Component > **EXMiniChart** 선택 (이벤트 사용시  **EXMiniChartEvent** 선택)
 
-![](<../../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1) (1).png>)
 {% endhint %}
 
 **결과 확인**
