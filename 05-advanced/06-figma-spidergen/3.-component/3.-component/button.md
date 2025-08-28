@@ -6,7 +6,7 @@ description: 일반적으로 사용하는 버튼 컴포넌트.
 
 ## 1. 기본 구조
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 * Variants
   * Normal&#x20;
@@ -19,13 +19,13 @@ description: 일반적으로 사용하는 버튼 컴포넌트.
   * 텍스트 Node&#x20;
   *
 
-      <figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ## 2. Component Configuration
 
-<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 * 용도
   * Template 컴포넌트를 복사해서 사용하지 않고  직접 처음부터 생성하는경우, 아래 코드를 Component Configuration 에 추가해야 합니다.
@@ -43,32 +43,43 @@ $${{"acomp":"AButton","class":["","","",""]}}
 
 ### 1. 텍스트  버튼
 
-<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 * 텍스트만 표시할때 사용되는 버튼
 * 계층 구조
   * 텍스트 Node
     *
 
-        <figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. 이미지 버튼
 
-<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 * 이미지만 표시할때 사용되는 버튼
 * 계층구조
   * 이미지 Node
     *
 
-        <figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+        <figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 
-  * 좀더 복잡한 구조의 이미지사용이 필요한 경우, /
+  * 좀더 복잡한 구조의 이미지사용이 필요한 경우,  [image-guide.md](image-guide.md "mention") 참고 (필독!)
 
 ### 3. 복합 버튼
 
+<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
+* 이미지, 텍스트 둘다 표시할떄 사용되는 버튼.
+* 계층구조
+  * 이미지
+  * 텍스트
+    *
+
+        <figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+
+  * 백그라운드와 아이콘을 함께 쓰는등의 복잡한 사용이 필요한 경우, [image-guide.md](image-guide.md "mention") 참고
 
 
 

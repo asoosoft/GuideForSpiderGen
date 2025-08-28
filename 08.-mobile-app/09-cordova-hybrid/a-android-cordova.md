@@ -287,6 +287,6 @@ Menu에 진입 후 File -> Open 생성해두었던 `MyApp\platforms\android` 를
 
 
 
-<div><figure><img src="../../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (13) (1) (1) (1).png" alt="" width="186"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (13) (1) (1) (1) (1).png" alt="" width="186"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>
 
-<div><figure><img src="../../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt="" width="350"><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (12) (1) (1) (1) (1).png" alt="" width="189"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png" alt="" width="350"><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (12) (1) (1) (1) (1) (1).png" alt="" width="189"><figcaption><p>확인 터치 후 변경 모습</p></figcaption></figure></div>
