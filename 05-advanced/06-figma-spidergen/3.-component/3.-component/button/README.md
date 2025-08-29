@@ -4,9 +4,55 @@ description: 일반적으로 사용하는 버튼 컴포넌트.
 
 # Button
 
-## 1. 기본 구조
+## 1. 기본 버튼 생성
 
-<figure><img src="../../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+* 배경 설정
+  * 프레임 선택후 버튼의 기본 영역을 그립니다.
+  * 배경 색상을 적당히 설정합니다
+    *
+
+        <figure><img src="../../../../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
+
+        &#x20;
+* 텍스트 설정 (Optional)
+  * TextTool 로 Frame 안에 버튼 텍스트를 추가합니다
+  * 이미지만 사용하는 버튼인경우 이 과정을 생략합니다.
+    *
+
+        <figure><img src="../../../../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
+
+
+
+* 이미지 설정  (Optional)
+  * 이미지는 2가지 방식으로 가능합니다.
+    * 자식에 Frame 을 추가하세
+* 다중 이미지 설정 (Optional)
+* 레이어로 이미지 설정(Optional)
+
+## 2. 컴포넌트 크기조절에 따른 처리
+
+* Auto Layout 설정
+* Constraint 설정
+
+
+
+## 3. 배경 이미지 처리
+
+
+
+## 3. 컴포넌트 완성하기
+
+* Component Configuration 설정
+
+
+
+* 상태 추가
+
+
+
+*
+
+
 
 * Variants
   * Normal&#x20;
