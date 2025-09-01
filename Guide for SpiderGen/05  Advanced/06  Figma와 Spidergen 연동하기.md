@@ -1,4 +1,4 @@
-# 08. Figma와 Spidergen 연동하기
+# 08. Figma와 Spidergen 연동하기 (작성중)
 
 ## 1. 개발 목적
 
@@ -31,7 +31,7 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 진행 순서는 아래와 같습니다.
 
 1. [1-.-figmatolay.md](../../05-advanced/06-figma-spidergen/1-.-figmatolay.md "mention")
-2. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
+2. [2.-component-set.md](../../05-advanced/06-figma-spidergen/2.-component-set.md "mention")
 3. [3.-component](../../05-advanced/06-figma-spidergen/3.-component/ "mention")
 4. [4.-figma.md](../../05-advanced/06-figma-spidergen/4.-figma.md "mention")
 
@@ -51,7 +51,7 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 진행순서는 아래와 같습니다.
 
 1. [1-.-figmatolay.md](../../05-advanced/06-figma-spidergen/1-.-figmatolay.md "mention")
-2. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
+2. [2.-component-set.md](../../05-advanced/06-figma-spidergen/2.-component-set.md "mention")
 3. [3.-component](../../05-advanced/06-figma-spidergen/3.-component/ "mention")
 4. [5.-tlay-sppidergen.md](../../05-advanced/06-figma-spidergen/5.-tlay-sppidergen.md "mention")
 
