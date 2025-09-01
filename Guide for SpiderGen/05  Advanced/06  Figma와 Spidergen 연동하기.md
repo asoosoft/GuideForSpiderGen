@@ -55,20 +55,3 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 3. [3.-component](../../05-advanced/06-figma-spidergen/3.-component/ "mention")
 4. [5.-tlay-sppidergen.md](../../05-advanced/06-figma-spidergen/5.-tlay-sppidergen.md "mention")
 
-
-
-### 3. Component 없이 화면만 Figma 에서 진행하는 방법 (개발중)
-
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-* Figma에서 러프하게 작업된 화면을  개발자가 담당해야 할 경우 사용.
-  * 디자인된 화면을 플러그인을 통해 SpdierGen 형식으로 변환
-  * 변환된 각 요소를 개발자가 직접 Component 로 변환
-
-
-
-진행순서는 아래와 같습니다.
-
-1. [1-.-figmatolay.md](../../05-advanced/06-figma-spidergen/1-.-figmatolay.md "mention")
-2. [5.-component-figma.md](../../05-advanced/06-figma-spidergen/5.-component-figma.md "mention")
-
