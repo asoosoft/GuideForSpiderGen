@@ -1,4 +1,4 @@
-# 08. Figma와 Spidergen 연동하기 (작성중)
+# 08. Figma와 Spidergen 연동하기
 
 ## 1. 개발 목적
 
@@ -20,7 +20,7 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 ### 1. 전부 Figma 에서 진행하는 방법 (Component, Scene 작업)
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Figma ㄴㅇ래ㅑㅓㅇㄴ 에서 Component , Scene&#x20;
   * UI를 구성하는 Component 와, 이를 조합한 Scene 을 전부 Figma 에서 디자인 진행.
@@ -39,7 +39,7 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 
 ### 2.  Component 작업만 Figma 에서 진행하는 방법
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Component는 디자이너가, 실 화면의 개발은 개발자가 진행해야  할경우 사용.
   * 화면을 구성하는 Component 만 Figma 에서 디자인.
