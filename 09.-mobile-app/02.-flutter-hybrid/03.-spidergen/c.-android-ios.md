@@ -38,7 +38,7 @@ class _MyAppState extends State&#x3C;MyApp> {
       appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
       body: InAppWebView(
         //InAppWebView를 생성하고 외부 URL 설정
-        initialUrlRequest: URLRequest(url: WebUri("http://192.168.0.69:7443")),
+        initialUrlRequest: URLRequest(url: WebUri("http://원하는 도메인 주소")),
       ),
     );
   }
