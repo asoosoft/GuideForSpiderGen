@@ -35,7 +35,7 @@ class _MyAppState extends State&#x3C;MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("InAppWebView LocalhostServer Example")),
+      appBar: AppBar(title: const Text("InAppWebView ExternalServer Example")),
       body: InAppWebView(
         //InAppWebView를 생성하고 외부 URL 설정
         initialUrlRequest: URLRequest(url: WebUri("http://원하는 도메인 주소")),
