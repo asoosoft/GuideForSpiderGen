@@ -15,7 +15,7 @@ flutter 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 
 ### 2. flutter에 웹뷰 위젯 추가 및 로컬 서버 추가
 
-`프로젝트이름/lib/main.dart` 에서 플러그인 "InAppWebView" 위젯을 추가하고 url속성을 추가하여&#x20;
+`프로젝트이름/lib/main.dart` 에서 플러그인 "InAppWebView" 위젯을 추가하고 url속성을 추가하여 외부 웹페이지를 출력합니다
 
 <pre class="language-dart"><code class="lang-dart"><strong>/// lib\main.dart
 </strong>import 'package:flutter/material.dart';
