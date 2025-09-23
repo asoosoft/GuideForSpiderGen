@@ -65,7 +65,7 @@
       * [2. Component Set 으로부터 Component 디자인](05-advanced/06-figma-spidergen/3.-component/2.-template-component.md)
     * [4. Figma 에서 생성한 화면 변환](05-advanced/06-figma-spidergen/4.-figma.md)
     * [5. Tlay 로 SppiderGen 에 화면 생성](05-advanced/06-figma-spidergen/5.-tlay-sppidergen.md)
-    * [7- AI 에 의한 변환](05-advanced/06-figma-spidergen/7-ai.md)
+    * [6- AI 에 의한 변환](05-advanced/06-figma-spidergen/6-ai.md)
   * [09.  Flavor](<Guide for SpiderGen/05  Advanced/07  Flavor.md>)
   * [10. Git 연동](<Guide for SpiderGen/05  Advanced/08  Git 연동.md>)
   * [11. Framework 생성하기](05-advanced/11.-framework.md)
