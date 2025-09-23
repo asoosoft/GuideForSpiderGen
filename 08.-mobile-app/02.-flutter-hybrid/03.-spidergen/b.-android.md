@@ -18,7 +18,12 @@ flutter 앱을 개발하기 위해서는 환경설정이 필요합니다.\
 원하는 위젯의 위치에 설치했던 플러그인 "InAppWebView" 위젯을 추가합니다.
 
 <pre class="language-dart"><code class="lang-dart"><strong>/// lib\main.dart
-</strong>import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+</strong>import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+
+void main() {
+  runApp(MaterialApp(home: const WebViewExample()));
+}
 
 class WebViewExample extends StatefulWidget {
   const WebViewExample({super.key});
