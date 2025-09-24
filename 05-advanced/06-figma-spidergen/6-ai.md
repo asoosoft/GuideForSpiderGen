@@ -13,7 +13,7 @@ description: UI 로 구성된 스크린샷을 AI 를 통하여 Figma Component �
 * 업로드영역에 스크린샷을  붙여넣거나 이미지 업로드 버튼을 통해 업로드
   *
 
-      <figure><img src="../../.gitbook/assets/image (241).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../../.gitbook/assets/image (241) (1).png" alt=""><figcaption></figcaption></figure>
 * 변환하기를 클릭하여 Figma 화면으로 변환이 되었는지 확인.
   *
 
@@ -21,5 +21,5 @@ description: UI 로 구성된 스크린샷을 AI 를 통하여 Figma Component �
 * 변환된 화면 선택후 Layout 탭에서 View 로 변환히기를 클릭하여, SpiderGen 로 변환이 되었는지 확인
   *
 
-      <div data-full-width="true"><figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+      <div data-full-width="true"><figure><img src="../../.gitbook/assets/image (241).png" alt=""><figcaption></figcaption></figure></div>
 
