@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # (심화) Firebase 네이티브 푸시알림
 
 {% hint style="success" %}
