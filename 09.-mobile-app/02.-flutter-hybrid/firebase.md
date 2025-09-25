@@ -111,13 +111,13 @@ flutterfire configure
 ```
 
 {% hint style="warning" %}
-**Android**에서 firebase\_messaging를 사용하기 위해서는 android sdk버전이 21 이상이어야 합니다.
+**Android**에서 firebase\_messaging를 사용하기 위해서는 android sdk버전이 23 이상이어야 합니다.
 
 > The plugin 'firebase\_messaging' requires a higher Android SDK version.
 
-위 오류 발생시 `프로젝트이름\android\app\build.gradle.kts` 를 열어 보유중인  SDK 버전 중 **21이상**을 아래와 같이 버전을 수정합니다.
+위 오류 발생시 `프로젝트이름\android\app\build.gradle.kts` 를 열어 보유중인  SDK 버전 중 **23이상**을 아래와 같이 버전을 수정합니다.
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (251).png>)
 {% endhint %}
 
 {% hint style="warning" %}
