@@ -176,6 +176,6 @@
     * [(활용) Flutter<-->WebView 통신하기](08.-mobile-app/02.-flutter-hybrid/flutter-less-than-greater-than-webview/README.md)
       * [A. Flutter<-->Android 통신하기](08.-mobile-app/02.-flutter-hybrid/flutter-less-than-greater-than-webview/a.-flutter-less-than-greater-than-android.md)
       * [B. Flutter<-->IOS통신하기](08.-mobile-app/02.-flutter-hybrid/flutter-less-than-greater-than-webview/b.-flutter-less-than-greater-than-ios.md)
-    * [(심화) Firebase 네이티브 푸시알림](09.-mobile-app/02.-flutter-hybrid/firebase.md)
+    * [(활용) Firebase 네이티브 푸시알림](09.-mobile-app/02.-flutter-hybrid/firebase.md)
     * [01. flutter 앱 구축하기](08.-mobile-app/02.-flutter-hybrid/01.-flutter.md)
 * [10. 동영상 강좌](09..md)
