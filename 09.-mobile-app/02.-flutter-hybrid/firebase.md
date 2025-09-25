@@ -115,7 +115,7 @@ flutterfire configure
 
 > The plugin 'firebase\_messaging' requires a higher Android SDK version.
 
-위 오류 발생시 `프로젝트이름\android\app\build.gradle.kts` 를 열어 보유중인  SDK 버전 중 21이상을 아래와 같이 버전을 수정합니다.
+위 오류 발생시 `프로젝트이름\android\app\build.gradle.kts` 를 열어 보유중인  SDK 버전 중 **21이상**을 아래와 같이 버전을 수정합니다.
 
 ![](../../.gitbook/assets/image.png)
 {% endhint %}
@@ -125,7 +125,7 @@ flutterfire configure
 
 > firebase\_messaging: Using Firebase SDK version '12.2.0' defined in 'firebase\_core'
 
-위 오류 발생시 `프로젝트이름\ios\podfile` 을 열어 **xcode에 설치된 SDK 버전중 12이상** 버전으로 아래와 같이 버전을 수정합니다.
+위 오류 발생시 `프로젝트이름\ios\podfile` 을 열어 xcode에 설치된 SDK 버전 중 **12이상**으로 아래와 같이 버전을 수정합니다.
 
 ![](<../../.gitbook/assets/image (250).png>)
 
@@ -141,7 +141,7 @@ pod install //수정된 podfile로 다시 설치합니다
 
 ### 4. flutter에 웹뷰 위젯 추가 및 로컬 서버 추가
 
-`프로젝트이름/lib/main.dart`&#x20;
+`프로젝트이름/lib/main.dart` 에서 `FirebaseMessaging.instance`로 런타임에서 권한을 얻고 포어그라운드는 `FirebaseMessaging.onMessage`로 백그라운드는 `FirebaseMessaging.onBackgroundMessage`로 Firebase신호가올때 처리할 기능을 구현합니다.
 
 <pre class="language-dart"><code class="lang-dart"><strong>/// lib\main.dart
 </strong>import 'package:firebase_core/firebase_core.dart';
