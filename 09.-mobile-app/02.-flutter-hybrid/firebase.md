@@ -12,7 +12,7 @@ hidden: true
 
 ### 1. 시스템 환경변수 설정
 
-이전 개발 환경 설정 단계 외에 "flutterfire\_cli" dart 전역  플러그인을 사용하기 위해 추가적인시스템 변수 설정이 필요합니다.
+이전 개발 환경 설정 단계 외에 "flutterfire\_cli" dart 전역  플러그인을 사용하기 위해 추가적인 시스템 변수 설정이 필요합니다.
 
 * 환경 변수 설정: "고급 시스템 설정" 실행 -> 고급 탭 (환경 변수)
 * 시스템 변수 Path 편집
@@ -52,10 +52,11 @@ Firebase에 앱을등록하면 네이티브 푸시 알림 서비스를 별도로
 > **Apple Push Notification service(APNs) 설정**
 >
 > > 1. &#x20;[Apple Developer Program](https://www.google.com/search?q=https://developer.apple.com/account/\&authuser=1) 웹사이트에 로그인합니다.
-> > 2. 왼쪽 메뉴에서 \*\*'Certificates, IDs & Profiles'\*\*를 클릭합니다.
-> > 3. 'Keys' 섹션 선택: 좌측 사이드바에서 \*\*'Keys'\*\*를 선택한 후, 우측 상단의 파란색 '+' 버튼을 클릭합니다.
-> > 4. 키 정보 입력: 키 이름(예: `FCM_APNs_Key`)을 입력하고, 'Apple Push Notifications service (APNs)' 체크박스를 활성화합니다.
-> > 5. 키 생성 및 다운로드: 계속 진행하면 키가 생성됩니다. 이때만 다운로드할 수 있으므로, 반드시 `.p8` 파일을 안전한 곳에 보관해야 합니다. 또한, 키와 함께 제공되는 '**Key ID**'를 복사해 둡니다.
+> > 2. 상단 메뉴에서 '계정'을 클릭합니다.
+> > 3. '프로그램 리소스' - '인증서, ID 및 프로파일' - '키'를 클릭합니다.
+> > 4. 우측 상단의 파란색 '+' 버튼을 클릭합니다.
+> > 5. 키 이름(예: `FCM_APNs_Key`)을 입력하고, 'Apple Push Notifications service (APNs)' 체크박스를 활성화합니다.
+> > 6. 키 생성 및 다운로드: 계속 진행하면 키가 생성됩니다. 이때만 다운로드할 수 있으므로, 반드시 `.p8` 파일을 안전한 곳에 보관해야 합니다. 또한, 키와 함께 제공되는 '**Key ID**'를 복사해 둡니다.
 
 ### 2.2 Firebase 앱 등록
 
@@ -69,14 +70,14 @@ Firebase에 앱을등록하면 네이티브 푸시 알림 서비스를 별도로
 <sub>**안드로이드(Android) 앱**</sub>
 
 > 1. Firebase에 안드로이드 앱 등록: 생성된 프로젝트 개요 페이지에서 안드로이드 아이콘(Android)을 클릭합니다.
-> 2. 앱 등록 정보 입력: 앱의 \*\*패키지 이름(Package name)\*\*을 입력하고, 앱 닉네임과 디버그 서명 인증서(SHA-1)는 선택적으로 입력합니다.
+> 2. 앱 등록 정보 입력: 앱의 패키지 이름(Package name)을 입력하고, 앱 닉네임과 디버그 서명 인증서(SHA-1)는 선택적으로 입력합니다.
 
 <sub>**iOS 앱**</sub>
 
 > **Firebase 앱등록**
 >
 > 1. Firebase에 iOS 앱 등록: 프로젝트 개요 페이지에서 iOS 아이콘을 클릭합니다.
-> 2. 앱 등록 정보 입력: 앱의 \*\*번들 ID(Bundle ID)\*\*를 입력하고, 앱 닉네임과 앱스토어 ID는 선택적으로 입력합니다.
+> 2. 앱 등록 정보 입력: 앱의 번들 ID(Bundle ID)를 입력하고, 앱 닉네임과 앱스토어 ID는 선택적으로 입력합니다.
 >
 > **Firebase 클라우드 메세징 서비스 등록**
 >
@@ -84,7 +85,7 @@ Firebase에 앱을등록하면 네이티브 푸시 알림 서비스를 별도로
 > 2. 좌측 상단의 톱니바퀴 아이콘을 클릭하고, '**프로젝트 설정**'으로 들어갑니다.
 > 3. 상단 탭에서 '**클라우드 메시징**'을 선택합니다.
 > 4. Apple 앱 구성 섹션에서 '**APNs 인증 키**' 영역을 찾습니다.
-> 5. Key ID 정보 입력 및 `.p8` 파일 업로드
+> 5. Key ID, team ID 정보 입력 및 `.p8` 파일 업로드
 
 
 
@@ -110,7 +111,7 @@ flutterfire configure
 ```
 
 {% hint style="warning" %}
-Android에서 FCM를 사용하기 위해서는 android sdk버전이 21 이상이어야 합니다.
+**Android**에서 firebase\_messaging를 사용하기 위해서는 android sdk버전이 21 이상이어야 합니다.
 
 > The plugin 'firebase\_messaging' requires a higher Android SDK version.
 
@@ -118,6 +119,25 @@ Android에서 FCM를 사용하기 위해서는 android sdk버전이 21 이상이
 
 ![](../../.gitbook/assets/image.png)
 {% endhint %}
+
+{% hint style="warning" %}
+**IOS**에서 firebase\_messaging를 사용하기 위해서는 sdk버전이 12.2.0 이상이어야 합니다.
+
+> firebase\_messaging: Using Firebase SDK version '12.2.0' defined in 'firebase\_core'
+
+위 오류 발생시 `프로젝트이름\ios\podfile` 을 열어 **xcode에 설치된 SDK 버전중 12이상** 버전으로 아래와 같이 버전을 수정합니다.
+
+![](<../../.gitbook/assets/image (250).png>)
+
+저장후 아래 코드를 터미널에서 실행합니다.
+
+```bash
+cd ios //ios 네이티브 코드 디렉토리로 이동합니다
+pod install //수정된 podfile로 다시 설치합니다
+```
+{% endhint %}
+
+
 
 ### 4. flutter에 웹뷰 위젯 추가 및 로컬 서버 추가
 
@@ -249,7 +269,20 @@ class ExternalWebViewState extends State&#x3C;ExternalWebView>
 >         ... 생략 ...
 > </code></pre>
 
-> **IOS의 경우** `ios\Runner\info.plist`를 열어 아래와 같이 추가합니다.
+> **IOS의 경우** `ios\Runner\info.plist`를 열어 아래와 같이 추가합니다
 >
 > ```xml
+> <?xml version="1.0" encoding="UTF-8"?>
+> <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+> <plist version="1.0">
+> <dict>
+> 	<key>CADisableMinimumFrameDurationOnPhone</key>
+> 	<true/>
+> 	... 생략 ...
 > ```
+>
+>
+>
+> 추가적으로  xcode를 열어 Signing & Capabilities에 아래와 같이 추가합니다.
+>
+> ![](<../../.gitbook/assets/스크린샷 2025-09-24 오후 4.11.03 (2).png>)![](<../../.gitbook/assets/image (247).png>)![](<../../.gitbook/assets/스크린샷 2025-09-24 오후 4.14.27 (1).png>)
