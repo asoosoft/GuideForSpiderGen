@@ -1,4 +1,4 @@
-# (심화) Firebase 네이티브 푸시알림
+# (활용) Firebase 네이티브 푸시알림
 
 {% hint style="success" %}
 이 방법은 Android/IOS 모두 사용할 수 있습니다.
@@ -222,7 +222,7 @@ class ExternalWebView extends StatefulWidget {
 
 class ExternalWebViewState extends State&#x3C;ExternalWebView>
     with WidgetsBindingObserver {
-  final String uri = "http://192.168.0.69:7443";
+  final String uri = "http://웹뷰에 띄울 주소";
   late InAppWebViewController webViewController;
 
   //fcm 신호가 오는경우 main에서 호출할 웹뷰 핸들러
