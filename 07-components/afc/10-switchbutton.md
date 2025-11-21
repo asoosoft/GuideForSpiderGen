@@ -7,10 +7,9 @@
 \>SwitchButton 요소를 사용하여 클릭이 가능한 스위치 버튼(SwitchButton) 을 만듭니다.\
 사용자가 스위치 버튼(SwitchButton) 을 클릭하면 on/off 상태에 설정해둔 이벤트가 트리거 됩니다.
 
-### 스위치 버튼(SwitchButton) 만들기 
+### 스위치 버튼(SwitchButton) 만들기<br>
 
-UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니다.\
-
+UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니다.<br>
 
 ### Appearance
 
@@ -18,12 +17,9 @@ UI 또는 JavaScript 로 스위치 버튼(SwitchButton)을 만들 수 있습니�
 
 **style**
 
-* **default** 스위치 버튼의(SwitchButton) on/off 상태의 스타일을 지정합니다\
-
-* **On** 스위치 버튼이(SwitchButton) On상태일때 스타일을 지정합니다.\
-
-* **Off** 스위치 버튼이(SwitchButton) Off상태일때 스타일을 지정합니다.\
-
+* **default** 스위치 버튼의(SwitchButton) on/off 상태의 스타일을 지정합니다<br>
+* **On** 스위치 버튼이(SwitchButton) On상태일때 스타일을 지정합니다.<br>
+* **Off** 스위치 버튼이(SwitchButton) Off상태일때 스타일을 지정합니다.<br>
 
 **Data**
 

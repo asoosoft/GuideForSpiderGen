@@ -51,8 +51,7 @@ cmd 창에서 <mark style="background-color:red;">cordova 프로젝트 경로</m
 
 네이티브 & 웹 전용으로 제작하려면 스파이더젠의 File > Properties에서 Native Bridge를
 
-&#x20;<mark style="color:red;background-color:red;">none (기본값)</mark> 로 설정해야 합니다.\
-
+&#x20;<mark style="color:red;background-color:red;">none (기본값)</mark> 로 설정해야 합니다.<br>
 
 `MyApp\platforms\android\platform_www`&#x20;
 

@@ -38,8 +38,7 @@ this.Data = [
 this.listView.addItem('Source/리스트 뷰 아이템.lay',  this.Data);
 ```
 
-\
-
+<br>
 
 해당 리스트 뷰에 아래 사진과 같은 아이템을 추가해 게시판을 구현
 

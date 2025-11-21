@@ -19,8 +19,7 @@
 
     * Default Load Settings 클릭
 
-    ![](../../.gitbook/assets/afc.png)\
-
+    ![](../../.gitbook/assets/afc.png)<br>
 
     * CompEx.css + AToast.js 클릭
 

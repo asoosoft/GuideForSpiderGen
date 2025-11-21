@@ -2,8 +2,7 @@
 
 아래 사진과 같이 PivotGrid 배치
 
-**Data Properties**: 총 컬럼 **9**\
-
+**Data Properties**: 총 컬럼 **9**<br>
 
 > \[ 경기수, 득점수, 실점수, 도움, 슈팅, 유효슈팅, 세트피스 골, PK 골, PK 골 허용 ] 을 테이블 명으로 설정
 
@@ -74,11 +73,9 @@ let scrollData =  [
 this.grid.setData(pivotData, scrollData);
 ```
 
-\
+<br>
 
-
-시뮬레이터를 통해 결과확인\
-
+시뮬레이터를 통해 결과확인<br>
 
 > ⚠️ 좌우 스크롤은 모바일 환경에서만 가능하므로\
 > DevTool을 활성화한 후 모바일 환경에서 테스트 가능

@@ -6,11 +6,9 @@ HTML, CSS, JavaScript로 작성된 웹 콘텐츠를 로드하고 표시할 수 �
 
 ### Data
 
-![](https://wikidocs.net/images/page/24840/webview-ex-001.png)\
+![](https://wikidocs.net/images/page/24840/webview-ex-001.png)<br>
 
-
-**`Load Url`** : 웹뷰에 로드할 Url 주소를 설정하는 속성.\
-
+**`Load Url`** : 웹뷰에 로드할 Url 주소를 설정하는 속성.<br>
 
 ### Example
 
