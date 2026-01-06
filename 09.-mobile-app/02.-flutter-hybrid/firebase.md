@@ -14,7 +14,7 @@
 * 시스템 변수 Path 편집
 * 새로  만들기 "C:\Users\사용자명\AppData\Local\Pub\Cache\bin" 추가
 
-<figure><img src="../../.gitbook/assets/image (13) (1) (1) (1) (1) (1).png" alt="환경변수-시스템변수-Path편집"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1) (1) (1) (1) (1) (1).png" alt="환경변수-시스템변수-Path편집"><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/스크린샷 2025-09-23 165041.png" alt=""><figcaption></figcaption></figure>
 

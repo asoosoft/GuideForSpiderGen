@@ -2,7 +2,7 @@
 
 ### 직접 네이티브 코드 작성
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 `ios\Runner\AppDelegate.swift` 위치의 AppDelegate.swif에서 application 메서드를 재정의하여\
 네이티브 모듈을 직접 작성하고  등록할 수  있습니다.

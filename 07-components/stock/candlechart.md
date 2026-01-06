@@ -22,7 +22,7 @@ CandleChart 속성
 
 **Data**
 
-<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Mode</code></td><td>차트 타입 선택(Candle, Line)</td></tr><tr><td><code>Intervals</code></td><td><p>데이터가 집계되는 시간 단위</p><ul><li><code>CandleChart.INTERVALS_MONTH</code> — 월봉</li><li><code>CandleChart.INTERVALS_WEEK</code> — 주봉</li><li><code>CandleChart.INTERVALS_DAY</code> — 일봉</li><li><code>CandleChart.INTERVALS_MINUTE</code> — 분봉</li><li><code>CandleChart.INTERVALS_TICK</code> — 틱 차트 (거래 단위)</li></ul><p></p><ul><li>ex) candleChart.setIntervals(CandleChart.INTERVALS_DAY); // 일봉 차트</li></ul></td></tr><tr><td><code>Indicator</code></td><td><p>차트 하단에 보조 지표 표시</p><ul><li><code>CandleChart.INDICATOR_VOLUME</code> — 거래량</li><li><code>CandleChart.INDICATOR_OBV</code> — OBV</li><li><code>CandleChart.INDICATOR_MACD</code> — MACD</li><li><code>CandleChart.INDICATOR_SLOW</code> — Slow Stochastic</li><li><code>CandleChart.INDICATOR_FAST</code> — Fast Stochastic</li><li><code>CandleChart.INDICATOR_DISPARITY</code> — 이격도</li><li><code>CandleChart.INDICATOR_RSI</code> — RSI</li><li><code>CandleChart.INDICATOR_EMPTY</code> — 보조 지표 없음</li></ul><p></p><ul><li>ex) candleChart.setIndicator(CandleChart.INDICATOR_MACD); // MACD 보조지표 표시</li></ul></td></tr><tr><td><code>updateRefVal</code></td><td><p><strong>실시간 데이터 갱신 주기</strong>를 설정하는 값</p><ul><li>단위는 밀리초(ms)</li></ul><ul><li>예를 들어 <code>1000</code>을 넣으면 <strong>1초마다 데이터 갱신</strong>을 의미.</li><li><code>Intervals</code>가 <code>Minute</code>나 <code>Tick</code>일 때만 유효.</li></ul></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="361"></th><th></th></tr></thead><tbody><tr><td><strong>이름</strong></td><td><strong>설명</strong></td></tr><tr><td><code>Mode</code></td><td>차트 타입 선택(Candle, Line)</td></tr><tr><td><code>Intervals</code></td><td><p>데이터가 집계되는 시간 단위</p><ul><li><code>CandleChart.INTERVALS_MONTH</code> — 월봉</li><li><code>CandleChart.INTERVALS_WEEK</code> — 주봉</li><li><code>CandleChart.INTERVALS_DAY</code> — 일봉</li><li><code>CandleChart.INTERVALS_MINUTE</code> — 분봉</li><li><code>CandleChart.INTERVALS_TICK</code> — 틱 차트 (거래 단위)</li></ul><p></p><ul><li>ex) candleChart.setIntervals(CandleChart.INTERVALS_DAY); // 일봉 차트</li></ul></td></tr><tr><td><code>Indicator</code></td><td><p>차트 하단에 보조 지표 표시</p><ul><li><code>CandleChart.INDICATOR_VOLUME</code> — 거래량</li><li><code>CandleChart.INDICATOR_OBV</code> — OBV</li><li><code>CandleChart.INDICATOR_MACD</code> — MACD</li><li><code>CandleChart.INDICATOR_SLOW</code> — Slow Stochastic</li><li><code>CandleChart.INDICATOR_FAST</code> — Fast Stochastic</li><li><code>CandleChart.INDICATOR_DISPARITY</code> — 이격도</li><li><code>CandleChart.INDICATOR_RSI</code> — RSI</li><li><code>CandleChart.INDICATOR_EMPTY</code> — 보조 지표 없음</li></ul><p></p><ul><li>ex) candleChart.setIndicator(CandleChart.INDICATOR_MACD); // MACD 보조지표 표시</li></ul></td></tr><tr><td><code>updateRefVal</code></td><td><p><strong>실시간 데이터 갱신 주기</strong>를 설정하는 값</p><ul><li>단위는 밀리초(ms)</li><li>예를 들어 <code>1000</code>을 넣으면 <strong>1초마다 데이터 갱신</strong>을 의미.</li><li><code>Intervals</code>가 <code>Minute</code>나 <code>Tick</code>일 때만 유효.</li></ul></td></tr></tbody></table>
 
 
 
@@ -70,31 +70,31 @@ CandleChart 속성
 
 * OBV
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * MACD
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Slow
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Fast
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Disparity
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * RSI
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * EMPTY
 
-<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
