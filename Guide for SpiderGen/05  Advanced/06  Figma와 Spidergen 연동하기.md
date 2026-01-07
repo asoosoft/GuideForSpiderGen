@@ -33,7 +33,7 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 1. [1-.-figmatolay.md](../../05-advanced/06-figma-spidergen/1-.-figmatolay.md "mention")
 2. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
 3. [3.-css.md](../../05-advanced/06-figma-spidergen/3.-css.md "mention")
-4. [4.-figma.md](../../05-advanced/06-figma-spidergen/4.-figma.md "mention")
+4. [4-2.-view-lay.md](../../05-advanced/06-figma-spidergen/4-2.-view-lay.md "mention")
 
 
 
@@ -53,5 +53,5 @@ Figma  와 SpdierGen 을 연동하여  작업하는 방법은 크게 3가지 방
 1. [1-.-figmatolay.md](../../05-advanced/06-figma-spidergen/1-.-figmatolay.md "mention")
 2. [1.-template.md](../../05-advanced/06-figma-spidergen/1.-template.md "mention")
 3. [3.-css.md](../../05-advanced/06-figma-spidergen/3.-css.md "mention")
-4. [5.-tlay-sppidergen.md](../../05-advanced/06-figma-spidergen/5.-tlay-sppidergen.md "mention")
+4. [4-1.-view-tlay.md](../../05-advanced/06-figma-spidergen/4-1.-view-tlay.md "mention")
 
