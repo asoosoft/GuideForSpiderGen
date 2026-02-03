@@ -57,7 +57,7 @@
   * [05. Mask](05-advanced/05.-mask.md)
   * [06.  반응형](<Guide for SpiderGen/05  Advanced/04  반응형.md>)
   * [07. 확장 컴포넌트](<Guide for SpiderGen/05  Advanced/05  확장 컴포넌트.md>)
-  * [08. Figma와 Spidergen 연동하기](<Guide for SpiderGen/05  Advanced/06  Figma와 Spidergen 연동하기.md>)
+  * [08. Figma와 연동하기](<Guide for SpiderGen/05  Advanced/06  Figma와 Spidergen 연동하기.md>)
     * [1 . FigmaToLay 플러그인 설치](05-advanced/06-figma-spidergen/1-.-figmatolay.md)
     * [2. Component Set 준비](05-advanced/06-figma-spidergen/1.-template.md)
     * [3. CSS 로 보내기](05-advanced/06-figma-spidergen/3.-css.md)
