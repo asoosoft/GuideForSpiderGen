@@ -65,6 +65,7 @@
     * [4-2. View 로 보내기(LAY)](05-advanced/06-figma-spidergen/4-2.-view-lay.md)
     * [6. 테마 적용하기](05-advanced/06-figma-spidergen/6..md)
     * [7- AI 에 의한 변환](05-advanced/06-figma-spidergen/7-ai.md)
+    * [8-Downloads](05-advanced/06-figma-spidergen/8-downloads.md)
   * [09.  Flavor](<Guide for SpiderGen/05  Advanced/07  Flavor.md>)
   * [10. Git 연동](<Guide for SpiderGen/05  Advanced/08  Git 연동.md>)
   * [11. Framework 생성하기](05-advanced/11.-framework.md)
