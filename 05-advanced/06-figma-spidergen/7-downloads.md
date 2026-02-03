@@ -2,7 +2,7 @@
 description: 페이지에 소개된 플러그인및 Component Set 다운로드 페이지
 ---
 
-# 8-Downloads
+# 7-Downloads
 
 [Figma Desktop Download](https://www.figma.com/ko-kr/downloads/)
 
@@ -12,5 +12,7 @@ description: 페이지에 소개된 플러그인및 Component Set 다운로드 �
 
 
 
-[FigmaToLay PlugIn Download](https://www.spidergen.org/download/utils/FigmaToLay.zip)
+FigmaToLay PlugIn Download
+
+* [5.0.8](https://www.spidergen.org/download/utils/FigmaToLay_5_0_8.zip)
 
